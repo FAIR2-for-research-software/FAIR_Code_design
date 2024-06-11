@@ -1,19 +1,20 @@
 ---
-title: "Don't touch your code anymore!"
+title: "Writing clean code"
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How can you modify your code configuration without touching it?
+- How to write clean?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Using configuration files
-- Demonstrate how to create a simple command line interface
+- Get to know what are the correct covention of Python code
+- Learn how to comment and document your code
+- Be familiar with Code formatting
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -1,19 +1,19 @@
 ---
-title: "Don't touch your code anymore!"
+title: "Code structure"
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How can you modify your code configuration without touching it?
+- How to struture a code in a scalable and reusable way?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Using configuration files
-- Demonstrate how to create a simple command line interface
+- Learn to use functions and classes
+- Understand how to organise your code in modules and packages
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

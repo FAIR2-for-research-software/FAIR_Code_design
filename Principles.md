@@ -1,19 +1,19 @@
 ---
-title: "Don't touch your code anymore!"
+title: "Principles of Code design"
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How can you modify your code configuration without touching it?
+- How to write maintainable, readble, resusable and scalable code?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Using configuration files
-- Demonstrate how to create a simple command line interface
+- Be familiar with standard principles of code design
+- Understand what they mean and how to apply them
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

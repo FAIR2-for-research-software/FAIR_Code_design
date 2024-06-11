@@ -4,9 +4,23 @@ title: "Licenses"
 
 ## Instructional Material
 
-All Carpentries (Software Carpentry, Data Carpentry, and Library Carpentry)
-instructional material is made available under the [Creative Commons
-Attribution license][cc-by-human]. The following is a human-readable summary of
+This lesson is based on a
+[template](https://github.com/carpentries/workbench-template-md)
+created by [The Carpentries](https://carpentries.org/) which is
+Copyright (c) The Carpentries and is made available under the
+[Creative Commons
+Attribution](https://creativecommons.org/licenses/by/4.0/) licence.
+[Changes have been
+made](https://github.com/RSE-Sheffield/fair4rs-lesson-setup) to adapt the
+template to the specific context of the University of Sheffield's FAIR
+for Research Software training programme.
+
+<!-- #FIXME include reference/attribution for any materials derived
+from other sources -->
+
+Unless otherwise noted, the instructional material in this lesson is
+made available under the [Creative Commons Attribution
+license][cc-by-human]. The following is a human-readable summary of
 (and not a substitute for) the [full legal text of the CC BY 4.0
 license][cc-by-legal].
 
@@ -22,12 +36,12 @@ terms.
 
 Under the following terms:
 
-- **Attribution**---You must give appropriate credit (mentioning that your work
-  is derived from work that is Copyright (c) The Carpentries and, where
-  practical, linking to <https://carpentries.org/>), provide a [link to the
-  license][cc-by-human], and indicate if changes were made. You may do so in
-  any reasonable manner, but not in any way that suggests the licensor endorses
-  you or your use.
+- **Attribution**---You must give appropriate credit (mentioning that
+  your work is derived from work that is Copyright (c) The University
+  of Sheffield and, where practical, provide a [link to the
+  license][cc-by-human], and indicate if changes were made. You may do
+  so in any reasonable manner, but not in any way that suggests the
+  licensor endorses you or your use.
 
 - **No additional restrictions**---You may not apply legal terms or
   technological measures that legally restrict others from doing anything the
@@ -44,9 +58,11 @@ Notices:
 
 ## Software
 
-Except where otherwise noted, the example programs and other software provided
-by The Carpentries are made available under the [OSI][osi]-approved [MIT
-license][mit-license].
+Except where otherwise noted, the example programs and other software
+provided in this work are made available under the [OSI][osi]-approved
+[MIT license][mit-license].
+
+Copyright (c) The University of Sheffield
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

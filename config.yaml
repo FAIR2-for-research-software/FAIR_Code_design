@@ -11,29 +11,34 @@
 carpentry: 'incubator'
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Design you code! (and write less of it)'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: 11/6/2024
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries' # FIXME
+keywords: 'software, lesson, The Carpentries, FAIR4RS'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha' # FIXME
+# (the default, pre-alpha, is the appropriate for brand new lessons)
+life_cycle: 'pre-alpha'
 
 # License of the lesson
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/Romain-Thomas-Shef/FAIR_Code_design'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'romain.thomas@sheffield.ac.uk'
+
+# Custom URL if you are deploying to a URL that is not the default
+# github pages domain
+# url:
 
 # Navigation ------------------------------------------------
 #
@@ -74,5 +79,4 @@ profiles:
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
-
-
+varnish: RSE-Sheffield/uos-varnish@main

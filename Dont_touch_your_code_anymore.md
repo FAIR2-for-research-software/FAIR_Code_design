@@ -1,19 +1,19 @@
 ---
-title: "Using Markdown"
+title: "Don't touch your code anymore!"
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using Markdown and `{sandpaper}`?
+- How can you modify your code configuration without touching it?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with The Carpentries Workbench
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Using configuration files
+- Demonstrate how to create a simple command line interface
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -1,19 +1,18 @@
 ---
-title: "Using Markdown"
+title: "Introduction"
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using Markdown and `{sandpaper}`?
+- Why should you know about code design?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with The Carpentries Workbench
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Understand the 4 main concepts developed in this course: Maintainability, readability, reusability and scalibility?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -1,45 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/CODE_OF_CONDUCT.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/LICENSE.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/index.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/acknowledgements.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/LICENSE.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/index.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/introduction.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/profiles.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/reference.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/acknowledgements.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/introduction.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/profiles.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/reference.html</loc>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://Romain-Thomas-Shef.github.io/FAIR_Code_design/reference.html</loc>
   </url>
 </urlset>

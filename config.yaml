@@ -65,6 +65,7 @@ contact: 'romain.thomas@sheffield.ac.uk'
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- Dont_touch_your_code_anymore.md
 
 # Information for Learners
 learners: 

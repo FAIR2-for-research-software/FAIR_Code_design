@@ -19,7 +19,7 @@ exercises: 2
 ## The loop of code design
 
 
-![alt text](./Figures/introduction/DesignLoop.png)
+![alt text](./../Figures/introduction/DesignLoop.png)
 
 
 

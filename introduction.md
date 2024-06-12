@@ -12,14 +12,14 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand the 4 main concepts developed in this course: Maintainability, readability, reusability and scalibility?
+- Understand the 4 main concepts developed in this course: Maintainability, readability, reusability and scalibility
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Why should you care?
 
 
-![alt text](Figures/DesignLoop.png)
+![alt text](fig/DesignLoop.png)
 
 
 ## Maintainability

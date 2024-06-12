@@ -16,15 +16,14 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The loop of code design
+## Why should you care?
 
 
-![alt text](Figures/introduction/DesignLoop.png)
-
-
+![alt text](Figures/DesignLoop.png)
 
 
 ## Maintainability
+
 
 ## Readability
 
@@ -33,5 +32,8 @@ exercises: 2
 
 
 ## Scalability
+
+
+## Quizz
 
 [r-markdown]: https://rmarkdown.rstudio.com/

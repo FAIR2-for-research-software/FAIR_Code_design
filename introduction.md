@@ -16,11 +16,10 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction: the endless loop of code design
+## The loop of code design
 
 
-
-![alt text](Figures/introduction/DesignLoop.png)
+![alt text](./Figures/introduction/DesignLoop.png)
 
 
 

@@ -23,6 +23,7 @@ exercises: 2
 
 ### B- Designing your code is a continuous process
 
+![Designing loop](fig/Loop.png)
 
 
 ## Maintainability

@@ -20,7 +20,7 @@ exercises: 2
 
 
 
-![alt text](Figures/introduction/DesignLoop.png "Code design loop")
+![alt text](Figures/introduction/DesignLoop.png)
 
 
 

@@ -18,10 +18,11 @@ exercises: 2
 
 ## Why should you care?
 
+### A-  
 
-### Designing your code is a continuous process
 
-![Designing loop](fig/DesignLoop.png)
+### B- Designing your code is a continuous process
+
 
 
 ## Maintainability

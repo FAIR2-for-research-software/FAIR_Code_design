@@ -19,7 +19,9 @@ exercises: 2
 ## Why should you care?
 
 
-![alt text](fig/DesignLoop.png)
+### Designing your code is a continuous process
+
+![Designing loop](fig/DesignLoop.png)
 
 
 ## Maintainability

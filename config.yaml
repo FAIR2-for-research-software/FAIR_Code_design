@@ -14,7 +14,7 @@ carpentry: 'incubator'
 title: 'Design you code! (and write less of it)'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 11/6/2024
+created: 2024-06-11
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, lesson, The Carpentries, FAIR4RS'

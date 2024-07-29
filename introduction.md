@@ -18,10 +18,20 @@ exercises: 2
 
 ## Why should you care?
 
-### A-  
+### Reproducibility and Reliability
+Good code practices ensure that research results are reproducible and reliable. Research findings are often scrutinized and validated by others in the field, and well-written code facilitates this process. Clean, well-documented, and well-tested code allows other researchers to replicate experiments, verify results, and build upon existing work, thus advancing scientific knowledge.
+
+### Efficiency and Maintainability
+Writing good code enhances efficiency and maintainability. Research projects can span several years and involve multiple collaborators. Readable and well-structured code makes it easier for current and future researchers to understand, modify, and extend the software. This reduces the time and effort required to troubleshoot issues, implement new features, or adapt the code for different datasets or experiments.
+
+### Collaboration and Community Contribution
+Good coding practices facilitate collaboration and contribution from the wider research community. Open-source research software, written with clear, standardized coding practices, attracts contributions from other researchers and developers. This collaborative environment can lead to improvements in the software, innovative uses, and more robust and versatile tools, ultimately benefiting the entire research community.
+
+### Conclusion
+In summary, researchers should prioritize writing good code because it underpins the reproducibility and reliability of their findings, enhances the efficiency and maintainability of their projects, and fosters collaboration and community contributions. By adhering to good coding practices, researchers can ensure that their work remains robust, adaptable, and valuable to the scientific community over time.
 
 
-### B- Designing your code is a continuous process
+## Designing your code is a continuous process
 
 Research software development is inherently a continuous process driven by the need to adapt to evolving scientific requirements, maintain and enhance quality, and integrate new technologies. This ongoing cycle is fueled by feedback from researchers, advancements in scientific methodologies, and technological progress, all of which necessitate regular updates and improvements.
 

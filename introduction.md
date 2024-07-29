@@ -27,8 +27,6 @@ Writing good code enhances efficiency and maintainability. Research projects can
 ### Collaboration and Community Contribution
 Good coding practices facilitate collaboration and contribution from the wider research community. Open-source research software, written with clear, standardized coding practices, attracts contributions from other researchers and developers. This collaborative environment can lead to improvements in the software, innovative uses, and more robust and versatile tools, ultimately benefiting the entire research community.
 
-### Conclusion
-In summary, researchers should prioritize writing good code because it underpins the reproducibility and reliability of their findings, enhances the efficiency and maintainability of their projects, and fosters collaboration and community contributions. By adhering to good coding practices, researchers can ensure that their work remains robust, adaptable, and valuable to the scientific community over time.
 
 
 ## Designing your code is a continuous process

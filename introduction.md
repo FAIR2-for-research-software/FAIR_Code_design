@@ -32,13 +32,13 @@ Readability in software refers to **how easily a human reader can understand the
 
 Key aspects:
 
-- Descriptve Naming:
+- Descriptve Naming: Use meaningful and descriptive names that convey the purpose of the variable.
 
-- Consistent Formatting:
+- Consistent Formatting: Consistent indentation improves the visual structure of the code. Keeping lines of code within a reasonable length (usually 80-100 characters) prevents horizontal scrolling and improves readability.
 
-- Comments and documentation:
+- Comments and documentation: Brief comments within the code explaining non-obvious parts. Detailed documentation at the beginning of modules, classes, and functions explaining their purpose, parameters, and return values.
 
-- Code structure:
+- Code structure: Breaking down code into functions, classes, and modules that each handle a specific task. Group related pieces of code together, and separate different functionalities clearly.
 
 Benefits:
 

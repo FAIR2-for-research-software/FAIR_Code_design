@@ -28,7 +28,7 @@ exercises: 2
 
 ## Readability
 
-Readability in software refers to how easily a human reader can understand the purpose, control flow, and operation of the code. High readability means that the code is clear, easy to follow, and well-organized, which greatly enhances maintainability, collaboration, and reduces the likelihood of bugs.
+Readability in software refers to **how easily a human reader can understand the purpose, control flow, and operation of the code**. High readability means that the code is clear, easy to follow, and well-organized, which greatly enhances maintainability, collaboration, and reduces the likelihood of bugs.
 
 Key aspects:
 

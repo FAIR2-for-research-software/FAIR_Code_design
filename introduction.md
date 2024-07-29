@@ -28,6 +28,7 @@ exercises: 2
 
 ## Readability
 
+### Definition and key aspects
 Readability in software refers to **how easily a human reader can understand the purpose, control flow, and operation of the code**. High readability means that the code is clear, easy to follow, and well-organized, which greatly enhances maintainability, collaboration, and reduces the likelihood of bugs.
 
 Key aspects:
@@ -40,7 +41,7 @@ Key aspects:
 
 - Code structure: Breaking down code into functions, classes, and modules that each handle a specific task. Group related pieces of code together, and separate different functionalities clearly.
 
-Benefits:
+### Benefits:
 
 1 - Maintainability: Your code will be easier to understand and modify the code. It will also greatly reduce the risk of errors when introducing changes.
 
@@ -53,8 +54,38 @@ Benefits:
 
 ## Reusability
 
+### Definition and Key aspects
+
+Reusability in software refers to the ability to use existing software components (such as functions, classes, modules, or libraries) across multiple projects or in different parts of the same project without significant modification. Reusable code is designed to be generic and flexible, promoting efficiency, reducing redundancy, and enhancing maintainability.
+
+Key aspects:
+
+- Modularity: Encapsulate functionality within well-defined modules or classes that can be independently reused.
+
+- Abstraction: Provide simple interfaces while hiding the complex implementation details.
+
+- Parametrization: Design functions and methods that accept parameters to make them adaptable to different situations.
+
+- Generic and Reusable Components: Develop generic libraries and utility functions that can be reused across multiple projects.
+
+- Documentation and Naming: Provide comprehensive documentation for modules, classes, and functions to explain their usage. 
+
+- Avoid hardcoding values:  Instead, use constants or configuration files.
+
+
+### Benefits:
+
+- Time saving: Reusable components save development time. You don't need to rewrite from sratch! Avoids duplication of effort by using existing solutions for common tasks.
+
+- Consistency: Using the same code components across projects ensures consistency in functionality and behavior. 
+
+- Maintainability: Reusable components can be maintained and updated independently, making it easier to manage large codebases.
+
+- Quality: Reusable components are often well-tested, leading to more reliable and bug-free software
+
 ## Maintainability
 
+### Definition
 The maintainability of software depends on a few different factors. In general, it must be easy to understand the software (how it works, what it does, and why it does it the way it does), easy to find what needs to be change, easy to make changes and easy to check that the changes have not introduced any bugs.
 
 Maintainable software allows you to quickly and easily:
@@ -73,6 +104,8 @@ The ease with which a software system or component can be modified to correct fa
 
 
 ## Scalability
+
+### Definition and key aspects
 Scalability in software refers to the ability of a system, application, or process to handle increased loads or demands without compromising performance, reliability, or efficiency. This involves the capacity of the software to grow and manage higher demands by adding resources or optimizing the existing ones. Scalability is a critical consideration in software design and architecture, ensuring that the system can accommodate growth in users, transactions, data volume, or other metrics over time.
 
 
@@ -82,7 +115,8 @@ Multiple types of scalability can be considered, here are a few examples:
 - User scalability: Supporting an increasing number of simultaneous users without degradation of performance
 - Functional scalability: The ability to add new features of functionalities to the software without affecting existing performance
 
-Benefits:
+
+### Benefits
 - Improved Performance: Scalable systems maintain or improve performance levels as the load increases.
 - Cost Efficiency: Scalability allows for gradual investment in additional resources as needed, rather than over-provisioning from the start.
 - Reliability and Availability: Scalable systems often include redundancy and failover mechanisms, improving overall system reliability and uptime.

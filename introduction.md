@@ -23,6 +23,12 @@ exercises: 2
 
 ### B- Designing your code is a continuous process
 
+Research software development is inherently a continuous process driven by the need to adapt to evolving scientific requirements, maintain and enhance quality, and integrate new technologies. This ongoing cycle is fueled by feedback from researchers, advancements in scientific methodologies, and technological progress, all of which necessitate regular updates and improvements.
+
+Maintaining and supporting research software involves continuous tasks such as implementation of new fetures, bug fixing and performance optimization. As research needs and computational loads change, software must be regularly updated to optimize performance. A scalable architecture and modular design allow for independent development, deployment, and scaling of individual components, fostering ongoing enhancements. Regular usability testing, peer reviews, and iterative design improvements ensure that research software remains user-friendly and meets evolving scientific needs.
+
+The benefits of continuous research software development are significant, including enhanced responsiveness to researcher feedback and advancements in the field, higher quality through ongoing testing and improvements, and fostering innovation by incorporating new scientific methods and technologies. However, this approach also presents challenges, such as managing resources effectively, ensuring team coordination, and addressing technical debt. Overall, a continuous development process ensures that research software remains relevant, secure, and valuable to the scientific community over time.
+
 ![Designing loop](fig/Loop.png)
 
 
@@ -43,13 +49,13 @@ Key aspects:
 
 ### Benefits:
 
-1 - Maintainability: Your code will be easier to understand and modify the code. It will also greatly reduce the risk of errors when introducing changes.
+1 - **Maintainability**: Your code will be easier to understand and modify the code. It will also greatly reduce the risk of errors when introducing changes.
 
-2 - Collaboration: writing readable code will enhance teamwork and make it easy for others to contribute. Code reviews will be easy!
+2 - **Collaboration**: writing readable code will enhance teamwork and make it easy for others to contribute. Code reviews will be easy!
 
-3 - Efficiency: You are going to save a LOT of time. You will waste less time deciphering your code. That saved time will be used to develop the code.
+3 - **Efficiency**: You are going to save a LOT of time. You will waste less time deciphering your code. That saved time will be used to develop the code.
 
-4 - Quality: Reduces the likelihood of bugs and errors, leading to more reliable code
+4 - **Quality**: Reduces the likelihood of bugs and errors, leading to more reliable code
 
 
 ## Reusability
@@ -75,38 +81,42 @@ Key aspects:
 
 ### Benefits:
 
-- Time saving: Reusable components save development time. You don't need to rewrite from sratch! Avoids duplication of effort by using existing solutions for common tasks.
+- **Time saving**: Reusable components save development time. You don't need to rewrite from sratch! Avoids duplication of effort by using existing solutions for common tasks.
 
-- Consistency: Using the same code components across projects ensures consistency in functionality and behavior. 
+- **Consistency**: Using the same code components across projects ensures consistency in functionality and behavior. 
 
-- Maintainability: Reusable components can be maintained and updated independently, making it easier to manage large codebases.
+- **Maintainability**: Reusable components can be maintained and updated independently, making it easier to manage large codebases.
 
-- Quality: Reusable components are often well-tested, leading to more reliable and bug-free software
+- **Quality**: Reusable components are often well-tested, leading to more reliable and bug-free software
 
 ## Maintainability
 
 ### Definition
-The maintainability of software depends on a few different factors. In general, it must be easy to understand the software (how it works, what it does, and why it does it the way it does), easy to find what needs to be change, easy to make changes and easy to check that the changes have not introduced any bugs.
+Maintainability in software refers to the ease with which a software system can be modified to correct faults, improve performance or other attributes, or adapt to a changed environment. Highly maintainable software is designed to be easily understood, tested, and updated by developers, ensuring that the software can evolve over time with minimal effort and cost.
 
-Maintainable software allows you to quickly and easily:
+Key aspects:
 
-- Fix a bug, without introducing a new bug as you do so
-- Add new features, without introducing bugs as you do so
-- Improve usability
-- Increase performance
-- Make a fix that prevents a bug from occurring in future
-- Make changes to support new environments, operating systems or tools
-- Bring new developers on board your project
+- Core readibility:  
+
+- Modularity:
+
+- Documentation: 
+
+- Consistent formating:
+
+- Automated testing:
+
+- Version Control:
+
+- Refactoring: 
 
 
-It is defined by the 'IEEE Standard Glossary of Software Engineering Terminology' as ''
-The ease with which a software system or component can be modified to correct faults, improve performance or other attributes, or adapt to a changed environment''
-
+###Benefits
 
 ## Scalability
 
 ### Definition and key aspects
-Scalability in software refers to the ability of a system, application, or process to handle increased loads or demands without compromising performance, reliability, or efficiency. This involves the capacity of the software to grow and manage higher demands by adding resources or optimizing the existing ones. Scalability is a critical consideration in software design and architecture, ensuring that the system can accommodate growth in users, transactions, data volume, or other metrics over time.
+**Scalability in software refers to the ability of a system, application, or process to handle increased loads or demands without compromising performance, reliability, or efficiency**. This involves the capacity of the software to grow and manage higher demands by adding resources or optimizing the existing ones. Scalability is a critical consideration in software design and architecture, ensuring that the system can accommodate growth in users, transactions, data volume, or other metrics over time.
 
 
 Multiple types of scalability can be considered, here are a few examples:
@@ -118,9 +128,13 @@ Multiple types of scalability can be considered, here are a few examples:
 
 ### Benefits
 - Improved Performance: Scalable systems maintain or improve performance levels as the load increases.
+
 - Cost Efficiency: Scalability allows for gradual investment in additional resources as needed, rather than over-provisioning from the start.
+
 - Reliability and Availability: Scalable systems often include redundancy and failover mechanisms, improving overall system reliability and uptime.
+
 - User Satisfaction: Providing consistent and reliable performance even as user demand grows ensures a better user experience.
+
 - Future-Proofing: Designing for scalability ensures that the system can grow and adapt to future requirements without significant overhauls.
 
 

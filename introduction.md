@@ -267,3 +267,45 @@ calculate_statistics()
 However, the code is not reusable because the function calculate_statistics is hardcoded to work with a specific dataset defined within the function. It cannot be easily reused with different datasets without modifying the function itself.
 
 :::::::::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::: challenge
+
+Code #4: 
+
+```
+def factorial(n):
+    """
+    Calculate the factorial of a non-negative integer n.
+    
+    Parameters:
+    n (int): A non-negative integer whose factorial is to be computed.
+    
+    Returns:
+    int: The factorial of the given number n.
+    """
+    # Base case: factorial of 0 or 1 is 1
+    if n == 0 or n == 1:
+        return 1
+    # Recursive case: n * factorial of (n-1)
+    return n * factorial(n - 1)
+
+# Example usage
+number = 5
+result = factorial(number)
+print(f"Factorial of {number} is {result}")
+```
+
+::::::::::::::::: solution
+
+- **Maintainable**: The code is well-structured with a clear base case and recursive case. The function is documented, explaining what it does and the parameters it takes.
+- **Readable**: The variable names are descriptive, and the function logic is simple and easy to follow. The use of comments and a docstring further enhances readability.
+- **Reusable**: The factorial function can be reused to calculate the factorial of any non-negative integer.
+
+However, the recursive approach to calculating factorial is not scalable for large values of n due to the risk of stack overflow and the inefficiency of repeated function calls. For large inputs, this implementation will not perform well and can cause a maximum recursion depth exceeded error in Python.
+
+::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::
+
+

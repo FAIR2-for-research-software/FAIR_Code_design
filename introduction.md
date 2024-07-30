@@ -146,11 +146,29 @@ Multiple types of scalability can be considered, here are a few examples:
 - Future-Proofing: Designing for scalability ensures that the system can grow and adapt to future requirements without significant overhauls.
 
 
-## Quizz
 
-[r-markdown]: https://rmarkdown.rstudio.com/
+##Quizz
+
+---> Got to [this website](https://www.mentimeter.com/) and enter the following code:
+
+### Questions analysis
+
+The code:
+
+```
+
+def process_list(data):
+    return [x * 2 + 3 for x in data if x % 2 == 0]
+
+#Example usage
+input_data = [1, 2, 3, 4, 5, 6]
+result = process_list(input_data)
+print("processed list:", result)
+
+```
+
+
+	
 
 
 
-Sources for this page:
-[SSI maintainable software]: https://www.software.ac.uk/guide/developing-maintainable-software#:~:text=More%20formally%2C%20the%20IEEE%20Standard,adapt%20to%20a%20changed%20environment.%22

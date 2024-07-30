@@ -33,11 +33,13 @@ Good coding practices facilitate collaboration and contribution from the wider r
 
 Research software development is inherently a continuous process driven by the need to adapt to evolving scientific requirements, maintain and enhance quality, and integrate new technologies. This ongoing cycle is fueled by feedback from researchers, advancements in scientific methodologies, and technological progress, all of which necessitate regular updates and improvements.
 
+
+![Designing loop](fig/Loop.png)
+
 Maintaining and supporting research software involves continuous tasks such as implementation of new fetures, bug fixing and performance optimization. As research needs and computational loads change, software must be regularly updated to optimize performance. A scalable architecture and modular design allow for independent development, deployment, and scaling of individual components, fostering ongoing enhancements. Regular usability testing, peer reviews, and iterative design improvements ensure that research software remains user-friendly and meets evolving scientific needs.
 
 The benefits of continuous research software development are significant, including enhanced responsiveness to researcher feedback and advancements in the field, higher quality through ongoing testing and improvements, and fostering innovation by incorporating new scientific methods and technologies. However, this approach also presents challenges, such as managing resources effectively, ensuring team coordination, and addressing technical debt. Overall, a continuous development process ensures that research software remains relevant, secure, and valuable to the scientific community over time.
 
-![Designing loop](fig/Loop.png)
 
 
 ## Readability

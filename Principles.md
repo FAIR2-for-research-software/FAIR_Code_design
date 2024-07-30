@@ -20,6 +20,7 @@ exercises: 2
 ## Don't repeat yourself (DRY) - Rule of three
 
 
+
 ## Keep it simple, Stupid (KISS) & Curly's Law - Do one Thing
 
 

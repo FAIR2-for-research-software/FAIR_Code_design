@@ -54,8 +54,9 @@ Namespaces are one honking great idea -- let's do more of those!
 
 ## ''Code is read much more often than it is written'' (G. van Rossum)
 
-While coding you may spend of a few hours (days) on a piece of code and when you will be done with it you will not write it again. Nevertheless there is a very high chance that you will read it again. If the piece of code is part of an on-going project you will have to remember what that code does and why you actually wrote it. Hence, readability counts! Remembering what a code does after a few weeks/months is not easy. If you follow the standard guidelines it will greatly help you (and save you a lot of time!). It is also never too late to start writing clean code!  
+While coding you may spend of a few hours (days) on a piece of code and when you will be done with it you will not write it again. Nevertheless there is a very high chance that you will read it again. If the piece of code is part of an on-going project you will have to remember what that code does and why you actually wrote it. Hence, readability counts! Remembering what a code does after a few weeks/months is not easy. If you follow the standard guidelines it will greatly help you (and save you a lot of time!). 
 
+In addition, if multiple people are looking at the code and developing with you, writing readable code is paramount. If people have to decipher your coding style before actually trying to understand what you are coding that will become very difficult. PEP8 provides a standardisation of the python coding style. 
 
 ## 
 

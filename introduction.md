@@ -154,7 +154,18 @@ Multiple types of scalability can be considered, here are a few examples:
 
 ::::::::::::::::::::::::::::::::: challenge
 
-Let's create a new code project. Create a new, empty directory to contain your work. Then, start writing your README!
+Code #1: 
+
+```
+def process_list(data):
+    return [x * 2 + 3 for x in data if x % 2 == 0]
+
+#Example usage
+input_data = [1, 2, 3, 4, 5, 6]
+result = process_list(input_data)
+print("processed list:", result)
+
+```
 
 ::::::::::::::::: solution
 

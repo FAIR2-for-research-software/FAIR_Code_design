@@ -524,9 +524,23 @@ print("processed list:", result)
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>mkdir myproject touch myproject/README.txt echo “This is my code”
-&gt;&gt; myproject/README.txt</p>
-</div>
+<ul><li>Readable: The code is readable because it uses a list comprehension
+that is relatively straightforward to understand for someone familiar
+with Python.</li>
+<li>Reusable: The function can be used with any list of integers to
+filter and transform the data.</li>
+<li>Scalable: The function uses a list comprehension, which is efficient
+for processing lists.</li>
+</ul><p>However, the code will be difficult to maintain because:</p>
+<ul><li>There are no comments explaining what the function is doing or why
+it’s doing it.</li>
+<li>The logic includes “magic numbers” (2 and 3) without any explanation
+or named constants.</li>
+<li>There is no error handling, which makes it harder to maintain when
+unexpected inputs occur.</li>
+<li>The purpose and constraints of the function are not documented,
+making future modifications risky.</li>
+</ul></div>
 </div>
 </div>
 </div>

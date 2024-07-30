@@ -595,7 +595,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -651,7 +651,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -721,7 +721,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -781,7 +781,7 @@ print(f"Factorial of {number} is {result}")</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ul>
 <li>
@@ -836,10 +836,8 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Write code conformed to PEP 8</li>
-<li>Understand the reasoning behind PEP8</li>
-<li>
-</li>
+<li>Understand why it is important to write good code</li>
+<li>Write PEP8 compliant code</li>
 </ul>
 </div>
 </div>
@@ -895,15 +893,34 @@ Nevertheless there is a very high chance that you will read it again. If
 the piece of code is part of an on-going project you will have to
 remember what that code does and why you actually wrote it. Hence,
 readability counts! Remembering what a code does after a few
-weeks/months is not easy. If you follow the standard guidelines it will
-greatly help you (and save you a lot of time!).</p>
+weeks/months is not easy. <strong>If you follow the standard guidelines
+it will greatly help you (and save you a lot of time!)</strong>.</p>
 <p>In addition, if multiple people are looking at the code and
 developing with you, writing readable code is paramount. If people have
 to decipher your coding style before actually trying to understand what
-you are coding that will become very difficult. PEP8 provides a
-standardisation of the python coding style.</p>
-</section><section><h2 class="section-heading" id="section"></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="section-1"></h2>
+you are coding that will become very difficult for everybody. PEP8
+provides a standardisation of the python coding style.</p>
+</section><section><h2 class="section-heading" id="naming-convention">Naming convention<a class="anchor" aria-label="anchor" href="#naming-convention"></a>
+<a class="anchor" aria-label="anchor" href="#naming-convention"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="code-layout">Code layout<a class="anchor" aria-label="anchor" href="#code-layout"></a>
+<a class="anchor" aria-label="anchor" href="#code-layout"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="maximum-line-length-and-line-breaking">Maximum line length and line breaking<a class="anchor" aria-label="anchor" href="#maximum-line-length-and-line-breaking"></a>
+<a class="anchor" aria-label="anchor" href="#maximum-line-length-and-line-breaking"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="comments-and-documentation-strings">Comments and Documentation strings<a class="anchor" aria-label="anchor" href="#comments-and-documentation-strings"></a>
+<a class="anchor" aria-label="anchor" href="#comments-and-documentation-strings"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="whitespace-in-expression-and-statements">Whitespace in Expression and Statements<a class="anchor" aria-label="anchor" href="#whitespace-in-expression-and-statements"></a>
+<a class="anchor" aria-label="anchor" href="#whitespace-in-expression-and-statements"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="programing-recommentations">Programing recommentations<a class="anchor" aria-label="anchor" href="#programing-recommentations"></a>
+<a class="anchor" aria-label="anchor" href="#programing-recommentations"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="tools-that-might-help-you">Tools that might help you<a class="anchor" aria-label="anchor" href="#tools-that-might-help-you"></a>
+<a class="anchor" aria-label="anchor" href="#tools-that-might-help-you"></a>
+</h2>
 <hr class="half-width">
 <!--
 Place links that you need to refer to multiple times across pages here. Delete

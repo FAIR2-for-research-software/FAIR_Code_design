@@ -135,15 +135,15 @@ Multiple types of scalability can be considered, here are a few examples:
 
 
 ### Benefits
-- Improved Performance: Scalable systems maintain or improve performance levels as the load increases.
+- **Improved Performance: Scalable systems maintain or improve performance levels as the load increases.
 
-- Cost Efficiency: Scalability allows for gradual investment in additional resources as needed, rather than over-provisioning from the start.
+- **Cost Efficiency**: Scalability allows for gradual investment in additional resources as needed, rather than over-provisioning from the start.
 
-- Reliability and Availability: Scalable systems often include redundancy and failover mechanisms, improving overall system reliability and uptime.
+- **Reliability and Availability**: Scalable systems often include redundancy and failover mechanisms, improving overall system reliability and uptime.
 
-- User Satisfaction: Providing consistent and reliable performance even as user demand grows ensures a better user experience.
+- **User Satisfaction**: Providing consistent and reliable performance even as user demand grows ensures a better user experience.
 
-- Future-Proofing: Designing for scalability ensures that the system can grow and adapt to future requirements without significant overhauls.
+- **Future-Proofing**: Designing for scalability ensures that the system can grow and adapt to future requirements without significant overhauls.
 
 
 
@@ -157,8 +157,9 @@ Multiple types of scalability can be considered, here are a few examples:
 Code #1: 
 
 ```
+import numpy
 def process_list(data):
-    return [x * 2 + 3 for x in data if x % 2 == 0]
+    return [numpy.sqrt(x) * 2 + 3 for x in data if x * 1.5 < 5]
 
 #Example usage
 input_data = [1, 2, 3, 4, 5, 6]
@@ -176,9 +177,9 @@ print("processed list:", result)
 However, the code will be difficult to maintain because:
 
 - There are no comments explaining what the function is doing or why it’s doing it.
+- Constraints are not explained.
 - The logic includes "magic numbers" (2 and 3) without any explanation or named constants.
 - There is no error handling, which makes it harder to maintain when unexpected inputs occur.
-- The purpose and constraints of the function are not documented, making future modifications risky.
 
 ::::::::::::::::::::::::::
 

@@ -481,19 +481,20 @@ performance</li>
 </ul></div>
 <div class="section level3">
 <h3 id="benefits-2">Benefits<a class="anchor" aria-label="anchor" href="#benefits-2"></a></h3>
-<ul><li><p>Improved Performance: Scalable systems maintain or improve
+<ul><li><p>**Improved Performance: Scalable systems maintain or improve
 performance levels as the load increases.</p></li>
-<li><p>Cost Efficiency: Scalability allows for gradual investment in
-additional resources as needed, rather than over-provisioning from the
-start.</p></li>
-<li><p>Reliability and Availability: Scalable systems often include
-redundancy and failover mechanisms, improving overall system reliability
-and uptime.</p></li>
-<li><p>User Satisfaction: Providing consistent and reliable performance
-even as user demand grows ensures a better user experience.</p></li>
-<li><p>Future-Proofing: Designing for scalability ensures that the
-system can grow and adapt to future requirements without significant
-overhauls.</p></li>
+<li><p><strong>Cost Efficiency</strong>: Scalability allows for gradual
+investment in additional resources as needed, rather than
+over-provisioning from the start.</p></li>
+<li><p><strong>Reliability and Availability</strong>: Scalable systems
+often include redundancy and failover mechanisms, improving overall
+system reliability and uptime.</p></li>
+<li><p><strong>User Satisfaction</strong>: Providing consistent and
+reliable performance even as user demand grows ensures a better user
+experience.</p></li>
+<li><p><strong>Future-Proofing</strong>: Designing for scalability
+ensures that the system can grow and adapt to future requirements
+without significant overhauls.</p></li>
 </ul></div>
 </section><section><h2 class="section-heading" id="quizz">Quizz<a class="anchor" aria-label="anchor" href="#quizz"></a>
 <a class="anchor" aria-label="anchor" href="#quizz"></a></h2>
@@ -508,8 +509,9 @@ and enter the following code:</p>
 </h3>
 <div class="callout-content">
 <p>Code #1:</p>
-<pre><code>def process_list(data):
-    return [x * 2 + 3 for x in data if x % 2 == 0]
+<pre><code>import numpy
+def process_list(data):
+    return [numpy.sqrt(x) * 2 + 3 for x in data if x * 1.5 &lt; 5]
 
 #Example usage
 input_data = [1, 2, 3, 4, 5, 6]
@@ -536,12 +538,11 @@ for processing lists.</li>
 </ul><p>However, the code will be difficult to maintain because:</p>
 <ul><li>There are no comments explaining what the function is doing or why
 it’s doing it.</li>
+<li>Constraints are not explained.</li>
 <li>The logic includes “magic numbers” (2 and 3) without any explanation
 or named constants.</li>
 <li>There is no error handling, which makes it harder to maintain when
 unexpected inputs occur.</li>
-<li>The purpose and constraints of the function are not documented,
-making future modifications risky.</li>
 </ul></div>
 </div>
 </div>

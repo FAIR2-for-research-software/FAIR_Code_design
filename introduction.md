@@ -151,12 +151,11 @@ Multiple types of scalability can be considered, here are a few examples:
 
 ---> Got to [this website](https://www.mentimeter.com/) and enter the following code:
 
-### Questions analysis
+### Code 1
 
 The code:
 
 ```
-
 def process_list(data):
     return [x * 2 + 3 for x in data if x % 2 == 0]
 

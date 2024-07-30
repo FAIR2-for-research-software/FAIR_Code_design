@@ -18,7 +18,7 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## PEP 8 – Style Guide for Python Code
+## Python Enhancement Proposals
 
 The Python Enhancement Proposals are documents that provide information to the Python community, or describing a new feature for Python or its processes or environment. Some of them are also focusing on design and style: 
 
@@ -52,8 +52,10 @@ Namespaces are one honking great idea -- let's do more of those!
 ```
 
 
+## ''Code is read much more often than it is written'' (G. van Rossum)
 
-## 
+While coding you may spend of a few hours (days) on a piece of code and when you will be done with it you will not write it again. Nevertheless there is a very high chance that you will read it again. If the piece of code is part of an on-going project you will have to remember what that code does and why you actually wrote it. Hence, readability counts! Remembering what a code does after a few weeks/months is not easy. If you follow the standard guidelines it will greatly help you (and save you a lot of time!). It is also never too late to start writing clean code!  
+
 
 ## 
 

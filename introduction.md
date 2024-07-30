@@ -262,9 +262,10 @@ calculate_statistics()
 - **Readable**: The code uses descriptive variable names and simple constructs, making it easy to follow.
 - **Scalable**: The code efficiently handles the data processing tasks (sum, average, median, mode) for a list of numbers.
 
-::::::::::::::::::::::::::
 
 However, the code is not reusable because the function calculate_statistics is hardcoded to work with a specific dataset defined within the function. It cannot be easily reused with different datasets without modifying the function itself.
+
+::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::
 

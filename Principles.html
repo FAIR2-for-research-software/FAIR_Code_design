@@ -169,8 +169,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#introduction">Introduction</a></li>
-<li><a href="#dont-repeat-yourself-dry---rule-of-three">Don’t repeat yourself (DRY) - Rule of three</a></li>
+        <ul><li><a href="#dont-repeat-yourself-dry---rule-of-three">Don’t repeat yourself (DRY) - Rule of three</a></li>
 <li><a href="#keep-it-simple-stupid-kiss-curlys-law---do-one-thing">Keep it simple, Stupid (KISS) &amp; Curly’s Law - Do one Thing</a></li>
 <li><a href="#you-arent-gonna-need-it-yagni">You aren’t gonna need it (YAGNI)</a></li>
 <li><a href="#principle-of-least-astonishment-pola">Principle of least astonishment (POLA)</a></li>
@@ -266,7 +265,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Principles of Code design</h1>
-        <p>Last updated on 2024-06-11 |
+        <p>Last updated on 2024-07-30 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Principles.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -285,7 +284,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How to write maintainable, readble, resusable and scalable
+<ul><li>How to write maintainable, readable, resusable and scalable
 code?</li>
 </ul></div>
 </div>
@@ -301,86 +300,7 @@ code?</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.txt" class="external-link">Pandoc-flavored Markdown</a>
-for static files and <a href="https://rmarkdown.rstudio.com/" class="external-link">R
-Markdown</a> for dynamic files that can render code into output. Please
-refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson:</p>
-<ol style="list-style-type: decimal"><li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol><div id="challenge-1-can-you-do-it" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?<a class="anchor" aria-label="anchor" href="#challenge-1-can-you-do-it"></a>
-</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge-2-how-do-you-nest-solutions-within-challenge-blocks"></a>
-</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="dont-repeat-yourself-dry---rule-of-three">Don’t repeat yourself (DRY) - Rule of three<a class="anchor" aria-label="anchor" href="#dont-repeat-yourself-dry---rule-of-three"></a>
+<section><h2 class="section-heading" id="dont-repeat-yourself-dry---rule-of-three">Don’t repeat yourself (DRY) - Rule of three<a class="anchor" aria-label="anchor" href="#dont-repeat-yourself-dry---rule-of-three"></a>
 <a class="anchor" aria-label="anchor" href="#dont-repeat-yourself-dry---rule-of-three"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="keep-it-simple-stupid-kiss-curlys-law---do-one-thing">Keep it simple, Stupid (KISS) &amp; Curly’s Law - Do one Thing<a class="anchor" aria-label="anchor" href="#keep-it-simple-stupid-kiss-curlys-law---do-one-thing"></a>
 <a class="anchor" aria-label="anchor" href="#keep-it-simple-stupid-kiss-curlys-law---do-one-thing"></a></h2>
@@ -464,7 +384,7 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/Principles.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/Principles.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-06-11",
+  "dateModified": "2024-07-30",
   "datePublished": "2024-07-30"
 }
 

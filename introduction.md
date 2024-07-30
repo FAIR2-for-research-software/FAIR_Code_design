@@ -170,9 +170,9 @@ print("processed list:", result)
 
 ::::::::::::::::: solution
 
-- Readable: The code is readable because it uses a list comprehension that is relatively straightforward to understand for someone familiar with Python.
-- Reusable: The function can be used with any list of integers to filter and transform the data.
-- Scalable: The function uses a list comprehension, which is efficient for processing lists.
+- **Readable**: The code is readable because it uses a list comprehension that is relatively straightforward to understand for someone familiar with Python.
+- **Reusable**: The function can be used with any list of integers to filter and transform the data.
+- **Scalable**: The function uses a list comprehension, which is efficient for processing lists.
 
 However, the code will be difficult to maintain because:
 

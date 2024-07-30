@@ -526,7 +526,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul><li>
 <strong>Readable</strong>: The code is readable because it uses a
@@ -559,7 +559,17 @@ unexpected inputs occur.</li>
 </h3>
 <div class="callout-content">
 <p>Code #2:</p>
-<pre><code><span><span class="fu">print</span><span class="op">(</span><span class="st">"processed list:"</span>, <span class="va">result</span><span class="op">)</span></span></code></pre>
+<pre><code>def b(m, n):
+    if m == 0:
+        return n + 1
+    elif m &gt; 0 and n == 0:
+        return b(m - 1, 1)
+    else:
+        return b(m - 1, b(m, n - 1))
+
+# Example usage
+result = b(3, 2)
+print("Result:", result)</code></pre>
 </div>
 </div>
 </div>
@@ -568,9 +578,25 @@ unexpected inputs occur.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-
+<p>This code implements the Ackermann function, a classic example of a
+computationally intensive function.</p>
+<ul><li>
+<strong>Maintainable</strong>: The code is structured and easy to
+update.</li>
+<li>
+<strong>Reusable</strong>: You can call the b function with
+different arguments to compute the Ackermann function for different
+inputs.</li>
+<li>
+<strong>Scalable</strong>: It is a recursive function that computes
+the Ackermann function efficiently.</li>
+</ul><p>Nevertheless, the code is difficult to read:</p>
+<p>The code may not be very readable to someone unfamiliar with the
+Ackermann function or the specific implementation details. The function
+name <em>b</em> and the lack of comments or descriptive variable names
+may make it difficult to understand at first glance.</p>
 </div>
 </div>
 </div>

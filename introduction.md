@@ -137,7 +137,7 @@ Multiple types of scalability can be considered, here are a few examples:
 
 
 ### Benefits
-- **Improved Performance: Scalable systems maintain or improve performance levels as the load increases.
+- **Improved Performance**: Scalable systems maintain or improve performance levels as the load increases.
 
 - **Cost Efficiency**: Scalability allows for gradual investment in additional resources as needed, rather than over-provisioning from the start.
 

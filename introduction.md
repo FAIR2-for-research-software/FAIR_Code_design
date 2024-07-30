@@ -150,3 +150,17 @@ Multiple types of scalability can be considered, here are a few examples:
 ## Quizz
 
 ---> Got to [this website](https://www.mentimeter.com/) and enter the following code:
+
+
+::::::::::::::::::::::::::::::::: challenge
+
+Let's create a new code project. Create a new, empty directory to contain your work. Then, start writing your README!
+
+::::::::::::::::: solution
+
+mkdir myproject
+touch myproject/README.txt
+echo "This is my code" >> myproject/README.txt
+::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::

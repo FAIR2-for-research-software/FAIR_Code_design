@@ -69,7 +69,10 @@ Naming convention
 
 Code layout, indentation, maximum line length
 
-## Errors should never pass silently....Unless explicitly silenced
+## Sparse is better than dense.
+
+Whitespace
+
 
 ## If the implementation is hard to explain, it’s a bad idea...If the implementation is easy to explain, it may be a good idea.
 
@@ -77,14 +80,13 @@ Code layout, indentation, maximum line length
 Comments and documentation strings
 
 
-## Sparse is better than dense.
 
-Whitespace
+
+## Errors should never pass silently....Unless explicitly silenced
+
 
 
 ## Simple is better than complex...complex is better than complicated
-
-
 
 
 ## Tools that might help you

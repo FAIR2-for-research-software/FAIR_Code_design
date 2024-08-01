@@ -598,7 +598,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -654,7 +654,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -724,7 +724,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -784,7 +784,7 @@ print(f"Factorial of {number} is {result}")</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1237,11 +1237,51 @@ will do this a few times (or a lot!). Along the way, and unless you are
 able to track very well all your trials, you will probably loose track
 of some of them. In addition, modifying endlessly the code increase
 greatly the risk of introducing errors…</p>
-<p>In order to avoid</p>
+<p>In order to avoid such problems we are going to see a couple of
+options that are easily available and implementable: - Configuration
+files - Command line interface</p>
+</section><section><h2 class="section-heading" id="configuration-files">Configuration files<a class="anchor" aria-label="anchor" href="#configuration-files"></a>
+<a class="anchor" aria-label="anchor" href="#configuration-files"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="advantages-of-using-configuration-files">Advantages of using configuration files<a class="anchor" aria-label="anchor" href="#advantages-of-using-configuration-files"></a>
+</h3>
+<p>Using configuration files in a research context offers several
+specific benefits that can greatly enhance the efficiency,
+reproducibility, and manageability of research projects. Here are the
+key reasons why configuration files are beneficial in a research
+setting:</p>
+<ul>
+<li><p>Reproducibility: Configuration files ensure that experiments can
+be easily replicated by maintaining consistent settings across different
+runs. This is critical for verifying results and peer review.</p></li>
+<li><p>Parameter Management: Research often involves experimenting with
+various parameters. Configuration files allow researchers to manage and
+tweak these parameters without altering the core codebase, enabling
+easier experimentation and optimization.</p></li>
+<li><p>Collaboration: Research projects often involve collaboration
+between multiple researchers. Configuration files provide a clear and
+centralized way to share settings, making it easier for team members to
+understand and modify the setup as needed.</p></li>
+<li><p>Documentation: Well-structured configuration files serve as
+documentation for the experimental setup. They provide a clear and
+organized record of the settings used, which is crucial for
+understanding and interpreting results.</p></li>
+<li><p>Version Control: Configuration files can be versioned alongside
+the code using version control systems like Git. This makes it easy to
+track changes in experimental setups over time and understand the impact
+of these changes on the results.</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="how-to-build-configuration-files-what-library-should-i-use">How to build configuration files? What library should I use?<a class="anchor" aria-label="anchor" href="#how-to-build-configuration-files-what-library-should-i-use"></a>
+</h3>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section>
 </div>
     </main>

@@ -8,7 +8,7 @@ title: Setup
 
 ::::::::::::::::::::::::::::::::::::::: discussion
 
-In order to teach this course we will work on some short pieces of code. [Python][python] has been chosen as the language to fulfill that task. 
+In order to teach this course we will work on some short pieces of code. [Python][https://www.python.org/] has been chosen as the language to fulfill that task. 
 
 If you already have python 3 installed in your system then you are good to go. If not I suggest you use Anaconda to setup a virtual environment. To that end you should install [Miniconda3][miniconda3] on your system prior to
 attending the course.

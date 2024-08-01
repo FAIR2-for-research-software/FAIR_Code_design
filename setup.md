@@ -2,53 +2,80 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
 
-## Data Sets
+## Setup
 
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
-
-## Software Setup
+## Installing Python
 
 ::::::::::::::::::::::::::::::::::::::: discussion
 
-### Details
+In order to teach this course we will work on some short pieces of code. [Python][python] has been chosen as the language to fulfill that task. 
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+If you already have python 3 installed in your system then you are good to go. If not I suggest you use Anaconda to setup a virtual environment. To that end you should install [Miniconda3][miniconda3] on your system prior to
+attending the course.
+
+If you are already familiar with Python and Virtual Environments you can simply create a fresh virtual environment to
+use for the course.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::: spoiler
+:::::::::::::::: solution
 
-### Windows
+### Installing Miniconda
 
-Use PuTTY
+Please follow the instructions at [Installing Miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/)
+for your Operating System.
 
-::::::::::::::::::::::::
+:::::::::::::::::::::::::
 
-:::::::::::::::: spoiler
+:::::::::::::::: solution
 
-### MacOS
+### Creating A Virtual Environment
 
-Use Terminal.app
+You will have to create a virtual environment to undertake the course. If you have installed Miniconda as described
+above you open a terminal (Windows use the Git Bash Shell) and create a Virtual Environment called `git-collaboation`.
 
-::::::::::::::::::::::::
+``` bash
+conda create --name git-collaboration python=3.11
+conda activate git-collaboration
+```
+
+:::::::::::::::::::::::::
 
 
-:::::::::::::::: spoiler
 
-### Linux
+## Linting
 
-Use Terminal
+::::::::::::::::::::::::::::::::::::::: discussion
 
-::::::::::::::::::::::::
+We will learn what is code linting and we will use one tool called [pylint](https://www.pylint.org/). You will need to install this tool in order to use it. It is important to install the correct version of the software. For this lecture we will use pylint 3.2.2.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::: solution
+
+### Using pip
+
+To install pylint with pip
+
+``` bash
+pip3 install pylint==3.2.2
+```
+
+:::::::::::::::::::::::::
+
+
+
+:::::::::::::::: solution
+
+### Using conda
+
+To install pylint with conda
+
+``` bash
+conda install pylint=3.2.2
+```
+
+:::::::::::::::::::::::::
+
 

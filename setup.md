@@ -2,7 +2,6 @@
 title: Setup
 ---
 
-
 ## Setup
 
 ## Installing Python
@@ -77,5 +76,3 @@ conda install pylint=3.2.2
 ```
 
 :::::::::::::::::::::::::
-
-

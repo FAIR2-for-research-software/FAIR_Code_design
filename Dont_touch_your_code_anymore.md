@@ -12,8 +12,8 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Using configuration files
-- Demonstrate how to create a simple command line interface
+- Learn how to set up configuration files
+- Be able to create simple command line interfaces
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

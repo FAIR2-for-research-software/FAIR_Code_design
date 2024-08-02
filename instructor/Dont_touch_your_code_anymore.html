@@ -431,7 +431,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -522,7 +522,35 @@ value is <code>1</code>, <code>yes</code>, <code>true</code> or
 <h4 id="writing-configuration-files">Writing configuration files<a class="anchor" aria-label="anchor" href="#writing-configuration-files"></a></h4>
 <p>In some occasions it might also be interesting to be able to write
 configuration file programatically. <strong>Configparser</strong> allows
-the user to write INI files as well.</p>
+the user to write INI files as well. As for reading them, everything
+starts by importing the module and creating an object:</p>
+<pre><code>#Let's import the ConfigParser object directly
+from configparser import ConfigParser
+
+# And create a config object
+config = ConfigParser()</code></pre>
+<p>Creating a configuration is equivalent of creating a
+dictionaries:</p>
+<pre><code>config['simulation'] = {'time_step': 1.0, 'total_time': 200.0}
+config['environment'] = {'gravity': 9.81, 'air_resistance': 0.02}
+config['initial_conditions'] = {'velocity': 5.0, 'angle': 30.0, 'height': 0.5}</code></pre>
+<p>And finally you will have to save it:</p>
+<pre><code>with open('config_file_program.ini', 'w') as configfile: ##This open the condif_file_program.ini in write mode
+    config.write(configfile)</code></pre>
+<p>After running that piece of code, you will end with a new file called
+<code>config_file_program.ini</code> with the following content:</p>
+<pre><code>[simulation]
+time_step = 1.0
+total_time = 200.0
+
+[environment]
+gravity = 9.81
+air_resistance = 0.02
+
+[initial_conditions]
+velocity = 5.0
+angle = 30.0
+height = 0.5</code></pre>
 </div>
 <div class="section level4">
 <h4 id="exercice">Exercice:<a class="anchor" aria-label="anchor" href="#exercice"></a></h4>
@@ -557,7 +585,7 @@ initial_height = 0.0</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre><code># Step 2: Read the Configuration File
 config = configparser.ConfigParser()

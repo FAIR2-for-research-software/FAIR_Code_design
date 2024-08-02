@@ -429,7 +429,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -478,12 +478,19 @@ True
 &gt;&gt;&gt;print(parser.has_section('Finalstate'))
 False</code></pre>
 <p>Eventually, you will need to extract the values in the configuration
-file. You can get all of them at once:</p>
-<pre><code>&gt;&gt;&gt; items_in_simulation = parser.items(simulation)
+file. You can get all the keys inside a section at once:</p>
+<pre><code>&gt;&gt;&gt; options = parser.options('simulation')
+['time_step', 'total_time']</code></pre>
+<p>You can also extract everything at once, in that caseeach couple
+key/value will be called an <em>item</em>:</p>
+<pre><code>&gt;&gt;&gt; items_in_simulation = parser.items('simulation')
 &gt;&gt;&gt; print(items_in_simulation)
 [('time_step', '0.01'), ('total_time', '100.0')]</code></pre>
-<p>or individually, precising the section where the keyword is, like
-this:</p>
+<p>That method will return a <em>list</em> of <em>tuples</em>, each
+<em>tuple</em> will contain the couple key/value. Values will always be
+of type string.</p>
+<p>Finally, you can access directly values of keys inside a given
+section like this:</p>
 <pre><code>&gt;&gt;&gt; time_step = parser['simulation']['time_step']
 &gt;&gt;&gt; print(time_step)
 0.01</code></pre>
@@ -493,7 +500,8 @@ option is to use the method <code>.get()</code>:</p>
 &gt;&gt;&gt; print(time_step_with_get)
 0.01</code></pre>
 <p>It will also be giving a string…And that can be annoying when you
-have some other types. Fortunately, other methods are available:</p>
+have some other types because you will have to convert everything to the
+right type. Fortunately, other methods are available:</p>
 <ul><li>
 <code>.getint()</code> will extract the keyword and convert it to
 integer</li>
@@ -510,6 +518,9 @@ value is <code>1</code>, <code>yes</code>, <code>true</code> or
 </ul></div>
 <div class="section level4">
 <h4 id="writing-configuration-files">Writing configuration files<a class="anchor" aria-label="anchor" href="#writing-configuration-files"></a></h4>
+<p>In some occasions it might also be interesting to be able to write
+configuration file programatically. <strong>Configparser</strong> allows
+the user to write INI files as well.</p>
 </div>
 <div class="section level4">
 <h4 id="exercice">Exercice:<a class="anchor" aria-label="anchor" href="#exercice"></a></h4>
@@ -544,7 +555,7 @@ initial_height = 0.0</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre><code># Step 2: Read the Configuration File
 config = configparser.ConfigParser()

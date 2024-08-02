@@ -33,15 +33,15 @@ In order to avoid such problems we are going to see a couple of options that are
 Using configuration files in a research context offers several specific benefits that can greatly enhance the efficiency, reproducibility, and manageability of research projects. Here are the key reasons why configuration files are beneficial in a research setting:
 
 
-- Reproducibility: Configuration files ensure that experiments can be easily replicated by maintaining consistent settings across different runs. This is critical for verifying results and peer review.
+- **Reproducibility**: Configuration files ensure that experiments can be easily replicated by maintaining consistent settings across different runs. This is critical for verifying results and peer review.
 
-- Parameter Management: Research often involves experimenting with various parameters. Configuration files allow researchers to manage and tweak these parameters without altering the core codebase, enabling easier experimentation and optimization.
+- **Parameter Managemen**t: Research often involves experimenting with various parameters. Configuration files allow researchers to manage and tweak these parameters without altering the core codebase, enabling easier experimentation and optimization.
 
-- Collaboration: Research projects often involve collaboration between multiple researchers. Configuration files provide a clear and centralized way to share settings, making it easier for team members to understand and modify the setup as needed.
+- **Collaboration**: Research projects often involve collaboration between multiple researchers. Configuration files provide a clear and centralized way to share settings, making it easier for team members to understand and modify the setup as needed.
 
-- Documentation: Well-structured configuration files serve as documentation for the experimental setup. They provide a clear and organized record of the settings used, which is crucial for understanding and interpreting results.
+- **Documentation**: Well-structured configuration files serve as documentation for the experimental setup. They provide a clear and organized record of the settings used, which is crucial for understanding and interpreting results.
 
-- Version Control: Configuration files can be versioned alongside the code using version control systems like Git. This makes it easy to track changes in experimental setups over time and understand the impact of these changes on the results.
+- **Version Control**: Configuration files can be versioned alongside the code using version control systems like Git. This makes it easy to track changes in experimental setups over time and understand the impact of these changes on the results.
 
 ### How to build configuration files? What library should I use?
 

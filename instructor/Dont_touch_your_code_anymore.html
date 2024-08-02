@@ -199,7 +199,7 @@
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#configuration-files">Configuration files</a></li>
 <li><a href="#using-command-line-interfaces">Using command line interfaces</a></li>
-<li><a href="#how-to-do-it-in-python">How to do it in Python?</a></li>
+<li><a href="#how-to-do-it">How to do it?</a></li>
 <li><a href="#final-exercice-mixing-command-line-interfaces-and-configuration-file">Final exercice: Mixing command line interfaces and configuration
 file</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -306,15 +306,15 @@ file</a></li>
 <a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>Research software is often based on a trial-error or trial-trial
 loops. You will often find yourself trying to rerun a code with
-different parameters to try different configuration of your code. So far
-what we have seen deals with the design of the code itself and how to
-make it cleaner, more readable and maintainable. BUT! what is you need
-to try something new by changing few parameters of your code? You will
-need to go and change the code itself! And it is very likely that you
-will do this a few times (or a lot!). Along the way, and unless you are
-able to track very well all your trials, you will probably loose track
-of some of them. In addition, modifying endlessly the code increase
-greatly the risk of introducing errors…</p>
+different parameters to try different configuration of your experiment.
+So far what we have seen deals with the design of the code itself and
+how to make it cleaner, more readable and maintainable. BUT! what if you
+need to try something new by changing few parameters of your code? You
+will need to go and change the code itself! And it is very likely that
+you will do this a few times (or a lot!). Along the way, and unless you
+are able to track very well all your trials, you will probably loose
+track of some of them. In addition, modifying endlessly the code
+increase greatly the risk of introducing errors…</p>
 <p>In order to avoid such problems we are going to see a couple of
 options that are easily available and implementable: - Configuration
 files - Command line interface</p>
@@ -583,10 +583,16 @@ of your software as requirements evolve.</p></li>
 functionality of your script through the <code>help</code> command,
 making it clearer how different options and parameters affect the
 outcome.</p></li>
+<li><p><strong>Use in HPCs</strong>: HPCs are often accessible through
+terminal making command line interfaces particularly useful to start
+codes from HPCs.</p></li>
 </ul></div>
-</section><section><h2 class="section-heading" id="how-to-do-it-in-python">How to do it in Python?<a class="anchor" aria-label="anchor" href="#how-to-do-it-in-python"></a>
-<a class="anchor" aria-label="anchor" href="#how-to-do-it-in-python"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interfaces-and-configuration-file">Final exercice: Mixing command line interfaces and configuration
+</section><section><h2 class="section-heading" id="how-to-do-it">How to do it?<a class="anchor" aria-label="anchor" href="#how-to-do-it"></a>
+<a class="anchor" aria-label="anchor" href="#how-to-do-it"></a></h2>
+<hr class="half-width"><p>In Python, there is a very nice module called <a href="https://docs.python.org/3/library/argparse.html" class="external-link">argparse</a>. It
+allows to write in a very limited amount of lines a nice command line
+user interface.</p>
+</section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interfaces-and-configuration-file">Final exercice: Mixing command line interfaces and configuration
 file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a>
 <a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a></h2>
 <hr class="half-width"><!--

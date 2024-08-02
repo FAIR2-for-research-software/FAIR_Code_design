@@ -598,7 +598,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -654,7 +654,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -724,7 +724,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -784,7 +784,7 @@ print(f"Factorial of {number} is {result}")</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1061,7 +1061,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -1093,7 +1093,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1121,7 +1121,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1228,15 +1228,15 @@ any links that you are not going to use.
 <hr class="half-width">
 <p>Research software is often based on a trial-error or trial-trial
 loops. You will often find yourself trying to rerun a code with
-different parameters to try different configuration of your code. So far
-what we have seen deals with the design of the code itself and how to
-make it cleaner, more readable and maintainable. BUT! what is you need
-to try something new by changing few parameters of your code? You will
-need to go and change the code itself! And it is very likely that you
-will do this a few times (or a lot!). Along the way, and unless you are
-able to track very well all your trials, you will probably loose track
-of some of them. In addition, modifying endlessly the code increase
-greatly the risk of introducing errors…</p>
+different parameters to try different configuration of your experiment.
+So far what we have seen deals with the design of the code itself and
+how to make it cleaner, more readable and maintainable. BUT! what if you
+need to try something new by changing few parameters of your code? You
+will need to go and change the code itself! And it is very likely that
+you will do this a few times (or a lot!). Along the way, and unless you
+are able to track very well all your trials, you will probably loose
+track of some of them. In addition, modifying endlessly the code
+increase greatly the risk of introducing errors…</p>
 <p>In order to avoid such problems we are going to see a couple of
 options that are easily available and implementable: - Configuration
 files - Command line interface</p>
@@ -1526,12 +1526,19 @@ of your software as requirements evolve.</p></li>
 functionality of your script through the <code>help</code> command,
 making it clearer how different options and parameters affect the
 outcome.</p></li>
+<li><p><strong>Use in HPCs</strong>: HPCs are often accessible through
+terminal making command line interfaces particularly useful to start
+codes from HPCs.</p></li>
 </ul>
 </div>
-</section><section><h2 class="section-heading" id="how-to-do-it-in-python">How to do it in Python?<a class="anchor" aria-label="anchor" href="#how-to-do-it-in-python"></a>
-<a class="anchor" aria-label="anchor" href="#how-to-do-it-in-python"></a>
+</section><section><h2 class="section-heading" id="how-to-do-it">How to do it?<a class="anchor" aria-label="anchor" href="#how-to-do-it"></a>
+<a class="anchor" aria-label="anchor" href="#how-to-do-it"></a>
 </h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interfaces-and-configuration-file">Final exercice: Mixing command line interfaces and configuration
+<hr class="half-width">
+<p>In Python, there is a very nice module called <a href="https://docs.python.org/3/library/argparse.html" class="external-link">argparse</a>. It
+allows to write in a very limited amount of lines a nice command line
+user interface.</p>
+</section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interfaces-and-configuration-file">Final exercice: Mixing command line interfaces and configuration
 file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a>
 <a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a>
 </h2>

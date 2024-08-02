@@ -315,9 +315,10 @@ are able to track very well all your trials, you will probably loose
 track of some of them. In addition, modifying endlessly the code
 increase greatly the risk of introducing errors…</p>
 <p>In order to avoid such problems we are going to see a couple of
-options that are easily available and implementable: - Configuration
-files - Command line interface</p>
-</section><section><h2 class="section-heading" id="configuration-files">Configuration files<a class="anchor" aria-label="anchor" href="#configuration-files"></a>
+options that are easily available and implementable:</p>
+<ul><li>Configuration files</li>
+<li>Command line interface</li>
+</ul></section><section><h2 class="section-heading" id="configuration-files">Configuration files<a class="anchor" aria-label="anchor" href="#configuration-files"></a>
 <a class="anchor" aria-label="anchor" href="#configuration-files"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="advantages-of-using-configuration-files">Advantages of using configuration files<a class="anchor" aria-label="anchor" href="#advantages-of-using-configuration-files"></a></h3>
@@ -674,7 +675,7 @@ the default value will be selected:
 <li><p><code>type</code>: By default, the argument will be extracted as
 strings. Nevertheless, it is possible to have them interpreted as other
 types using the <code>type</code> argument:
-<code>parser.add_argument('-i', type=int)</code>. It the user pass a
+<code>parser.add_argument('-i', type=int)</code>. It the user passes a
 value that cannot be converted to the expected type an error will be
 returned.</p></li>
 <li><p><code>choices</code>: If you want to restrict the values an

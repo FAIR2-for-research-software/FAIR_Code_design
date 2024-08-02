@@ -365,14 +365,30 @@ key1 = value1
 [Section3]
 key = value3
     multiline</code></pre>
-<p>INI files is structured as (case sensitive) sections in which you can
-list keyword/values (like for a dictionary) separated by either the
-<code>=</code> or <code>:</code> signs. Values can span multiple lines
-and comments are accepted as long as the extra lines are indented with
-respect to the first line.</p>
-<ul><li><p>JSON: Originally developed for JavaScript, very popular in web
-applications.</p></li>
-<li><p>YAML Files: are also a popular</p></li>
+<p>INI files are structured as (case sensitive) sections in which you
+can list keyword/value pairs (like for a dictionary) separated by either
+the <code>=</code> or <code>:</code> signs. Values can span multiple
+lines and comments are accepted as long as the extra lines are indented
+with respect to the first line.</p>
+<ul><li>JSON: Originally developed for JavaScript, very popular in web
+applications. The module to read these files is <a href="https://docs.python.org/3/library/json.html#module-json" class="external-link">json</a>
+and also part of the standard library.</li>
+</ul><pre><code>{
+  "section1": {
+    "key1": "value1",
+    "key2": "value2"
+  },
+  "section2": {
+    "key1": "value1"
+  }
+}</code></pre>
+<p>JSON files are also structured as section and keyword/value pairs.
+JSON files start with an opening brace <code>{</code> and end with a
+closing brace <code>}</code>. Then each section comes with its name
+followed by <code>:</code>. Then key/value pairs are listed within
+braces (one for each section). Nevertheless, comments are not
+allowed.</p>
+<ul><li>YAML Files: are also a popular</li>
 </ul><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.

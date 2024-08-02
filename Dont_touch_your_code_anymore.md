@@ -105,7 +105,7 @@ YAML files work also with sections and keyword/value pairs.
 
 ### Configparser: loading and writing config files
 
-In the following we will be using INI files. We will start by a simple exercice on writing a configuration file manually. 
+In the following we will be using INI files. We will start by a simple exercice on writing a configuration file, manually. 
 
  
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -135,10 +135,23 @@ height = 0.0
 ```
 :::::::::::::::::::::::::::::::::
 
-
-
-
 #### Reading configuration files
+
+Reading an INI file is very easy. It requires the use of the [Configparser](https://docs.python.org/3/library/configparser.html) library. You do not need to install it because it comes as part of the standard library. When you want to read a config file you will need to import it and create a parser object which will then be used to read the file we created just above, as follows:
+
+```
+##Import the library
+import configparser 
+
+##Create the parser object
+config = configparser.ConfigParser()
+
+
+##Read the configuration file
+config.read('config.ini')
+```
+
+From there you can access everything that is in the configuration file. 
 
 
 #### Writing configuration files

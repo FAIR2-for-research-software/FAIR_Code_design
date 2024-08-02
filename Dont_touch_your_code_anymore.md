@@ -102,17 +102,48 @@ YAML files work also with sections and keyword/value pairs.
 
 
 
-In the following we will be using INI files.
 
 ### Configparser: loading and writing config files
 
+In the following we will be using INI files. We will start by a simple exercice on writing a configuration file manually. 
+
+ 
+::::::::::::::::::::::::::::::::::::: challenge
+
+Create an INI file with three sections: simulation, environment and initial conditions. 
+In the first section, to parameters are given: `time_step` set at 0.01s and `total_time` set at 100.0s. The environment section also has two parameters with `gravity` at 9.81 and `air_resistance` at 0.02. Finally the initial conditions are: `velocity` at 10.0 km/s, `angle` at 45 degrees and `height` at 1 m
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution
+```
+[simulation]
+time_step = 0.01
+total_time = 100.0
+
+[environment]
+gravity = 9.81
+air_resistance = 0.02
+
+[initial_conditions]
+initial_velocity = 10.0
+initial_angle = 45.0
+initial_height = 0.0
+```
+:::::::::::::::::::::::::::::::::
+
+
+
+
+#### Reading configuration files
+
+
+#### Writing configuration files
 
 
 #### Exercice: 
 
 ::::::::::::::::::::::::::::::::::::: challenge
-
-Challenge 1
 
 Create a Python script that reads from, writes to, and modifies the following configuration files using the configparser module. This script will simulate managing settings for a simple application.
 

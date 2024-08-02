@@ -595,7 +595,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -651,7 +651,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -721,7 +721,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -781,7 +781,7 @@ print(f"Factorial of {number} is {result}")</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1324,7 +1324,7 @@ install a third party package called <a href="https://pyyaml.org/" class="extern
 <h3 id="configparser-loading-and-writing-config-files">Configparser: loading and writing config files<a class="anchor" aria-label="anchor" href="#configparser-loading-and-writing-config-files"></a>
 </h3>
 <p>In the following we will be using INI files. We will start by a
-simple exercice on writing a configuration file manually.</p>
+simple exercice on writing a configuration file, manually.</p>
 <div id="discussion1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -1372,6 +1372,22 @@ height = 0.0</code></pre>
 <div class="section level4">
 <h4 id="reading-configuration-files">Reading configuration files<a class="anchor" aria-label="anchor" href="#reading-configuration-files"></a>
 </h4>
+<p>Reading an INI file is very easy. It requires the use of the <a href="https://docs.python.org/3/library/configparser.html" class="external-link">Configparser</a>
+library. You do not need to install it because it comes as part of the
+standard library. When you want to read a config file you will need to
+import it and create a parser object which will then be used to read the
+file we created just above, as follows:</p>
+<pre><code>##Import the library
+import configparser
+
+##Create the parser object
+config = configparser.ConfigParser()
+
+
+##Read the configuration file
+config.read('config.ini')</code></pre>
+<p>From there you can access everything that is in the configuration
+file.</p>
 </div>
 <div class="section level4">
 <h4 id="writing-configuration-files">Writing configuration files<a class="anchor" aria-label="anchor" href="#writing-configuration-files"></a>

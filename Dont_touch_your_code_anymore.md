@@ -146,13 +146,16 @@ import configparser
 ##Create the parser object
 config = configparser.ConfigParser()
 
-
 ##Read the configuration file
 config.read('config.ini')
 ```
 
-From there you can access everything that is in the configuration file. 
+From there you can access everything that is in the configuration file. Firstly you can access the section names:
 
+```
+>>> print(parser.sections())
+['simulation', 'environment', 'initial_conditions'] 
+```
 
 #### Writing configuration files
 

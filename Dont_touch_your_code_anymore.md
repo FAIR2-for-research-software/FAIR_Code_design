@@ -164,15 +164,25 @@ True
 False
 ```
 
-Eventually, you will need to extract the values in the configuration file. You can get all of them at once:
+Eventually, you will need to extract the values in the configuration file. You can get all the keys inside a section at once:
+
 
 ```
->>> items_in_simulation = parser.items(simulation)
+>>> options = parser.options('simulation')
+['time_step', 'total_time']
+```
+
+You can also extract everything at once, in that caseeach couple key/value will be called an *item*:
+
+```
+>>> items_in_simulation = parser.items('simulation')
 >>> print(items_in_simulation)
 [('time_step', '0.01'), ('total_time', '100.0')]
 ``` 
 
-or individually, precising the section where the keyword is, like this:
+That method will return a *list* of *tuples*, each *tuple* will contain the couple key/value. Values will always be of type string. 
+
+Finally, you can access directly values of keys inside a given section like this:
 
 ```
 >>> time_step = parser['simulation']['time_step']
@@ -187,17 +197,18 @@ By default, *ALL* values will be a *string*. Another option is to use the method
 0.01
 ```
 
-It will also be giving a string...And that can be annoying when you have some other types. Fortunately, other methods are available:
+It will also be giving a string...And that can be annoying when you have some other types because you will have to convert everything to the right type. Fortunately, other methods are available:
 
 - `.getint()` will extract the keyword and convert it to integer
 - `.getfloat()` will extract the keyword and convert it to a float 
 - `.getboolean()` will extract the keyword and convert it to a boolean. Interestingly, you it return `True` is the value is `1`, `yes`, `true` or `on`, while it will return False if the value is `0`, `no`, `false`, or `off`.
 
 
-
-
-
 #### Writing configuration files
+
+In some occasions it might also be interesting to be able to write configuration file programatically. **Configparser** allows the user to write INI files as well.
+
+
 
 
 #### Exercice: 

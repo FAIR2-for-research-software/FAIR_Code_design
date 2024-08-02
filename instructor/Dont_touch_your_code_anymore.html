@@ -370,8 +370,8 @@ can list keyword/value pairs (like for a dictionary) separated by either
 the <code>=</code> or <code>:</code> signs. Values can span multiple
 lines and comments are accepted as long as the extra lines are indented
 with respect to the first line.</p>
-<ul><li>JSON: Originally developed for JavaScript, very popular in web
-applications. The module to read these files is <a href="https://docs.python.org/3/library/json.html#module-json" class="external-link">json</a>
+<ul><li>JSON: Originally developed for JavaScript, they are very popular in
+web applications. The module to read these files is <a href="https://docs.python.org/3/library/json.html#module-json" class="external-link">json</a>
 and also part of the standard library.</li>
 </ul><pre><code>{
   "section1": {
@@ -388,7 +388,9 @@ closing brace <code>}</code>. Then each section comes with its name
 followed by <code>:</code>. Then key/value pairs are listed within
 braces (one for each section). Nevertheless, comments are not
 allowed.</p>
-<ul><li>YAML Files: are also a popular</li>
+<ul><li>YAML Files: are also a popular format (used for github action for
+example). In order to read (and write) YAML files, you will need to
+install a third party package called <a href="https://pyyaml.org/" class="external-link">PyYAML</a>.</li>
 </ul><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.

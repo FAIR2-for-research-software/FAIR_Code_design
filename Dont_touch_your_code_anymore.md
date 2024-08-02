@@ -110,7 +110,7 @@ In the following we will be using INI files.
 
 #### Exercice: 
 
-::::::::::::::::::::::::::::::::::::: challenge 1: Read, modify and save configuration files
+::::::::::::::::::::::::::::::::::::: challenge
 
 Challenge 1
 

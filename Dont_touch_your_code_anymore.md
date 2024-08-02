@@ -110,12 +110,15 @@ In the following we will be using INI files. We will start by a simple exercice 
  
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Create an INI file with three sections: simulation, environment and initial conditions. 
+Using the text editor of your choice, create an INI file with three sections: simulation, environment and initial conditions. 
 In the first section, to parameters are given: `time_step` set at 0.01s and `total_time` set at 100.0s. The environment section also has two parameters with `gravity` at 9.81 and `air_resistance` at 0.02. Finally the initial conditions are: `velocity` at 10.0 km/s, `angle` at 45 degrees and `height` at 1 m
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution
+
+Creating a file `'config.ini'` with the following content.
+
 ```
 [simulation]
 time_step = 0.01

@@ -168,7 +168,7 @@ Eventually, you will need to extract the values in the configuration file. You c
 
 ```
 >>> items_in_simulation = parser.items(simulation)
->>> print(items)
+>>> print(items_in_simulation)
 [('time_step', '0.01'), ('total_time', '100.0')]
 ``` 
 
@@ -179,7 +179,21 @@ or individually, precising the section where the keyword is, like this:
 >>> print(time_step)
 0.01
 ```
-By default, *ALL* values will be a *string*.
+By default, *ALL* values will be a *string*. Another option is to use the method `.get()`:
+
+```
+>>> time_step_with_get = parser.get('simulation', 'time_step')
+>>> print(time_step_with_get)
+0.01
+```
+
+It will also be giving a string...And that can be annoying when you have some other types. Fortunately, other methods are available:
+
+- `.getint()` will extract the keyword and convert it to integer
+- `.getfloat()` will extract the keyword and convert it to a float 
+- `.getboolean()` will extract the keyword and convert it to a boolean. Interestingly, you it will return `True` is the value is `1`, `yes`, `true` or `on`, while it will return False if the value is `0`, `no`, `false`, or `off`.
+
+
 
 
 

@@ -116,6 +116,23 @@ Challenge 1
 
 Create a Python script that reads from, writes to, and modifies the following configuration files using the configparser module. This script will simulate managing settings for a simple application.
 
+
+```
+[simulation]
+time_step = 0.01
+total_time = 100.0
+
+[environment]
+gravity = 9.81
+air_resistance = 0.02
+
+[initial_conditions]
+initial_velocity = 10.0
+initial_angle = 45.0
+initial_height = 0.0
+```
+
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 

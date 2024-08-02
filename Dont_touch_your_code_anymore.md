@@ -144,18 +144,44 @@ Reading an INI file is very easy. It requires the use of the [Configparser](http
 import configparser 
 
 ##Create the parser object
-config = configparser.ConfigParser()
+parser = configparser.ConfigParser()
 
 ##Read the configuration file
-config.read('config.ini')
+parser.read('config.ini')
 ```
 
-From there you can access everything that is in the configuration file. Firstly you can access the section names:
+From there you can access everything that is in the configuration file. Firstly you can access the section names and check if sections are there or not (useful to check that the config file is compliant with what you would expect):
 
 ```
 >>> print(parser.sections())
 ['simulation', 'environment', 'initial_conditions'] 
+
+
+>>>print(parser.has_section('simulation'))
+True
+
+>>>print(parser.has_section('Finalstate'))
+False
 ```
+
+Eventually, you will need to extract the values in the configuration file. You can get all of them at once:
+
+```
+>>> items_in_simulation = parser.items(simulation)
+>>> print(items)
+[('time_step', '0.01'), ('total_time', '100.0')]
+``` 
+
+or individually, precising the section where the keyword is, like this:
+
+```
+>>> time_step = parser['simulation']['time_step']
+>>> print(time_step)
+0.01
+```
+By default, *ALL* values will be a *string*.
+
+
 
 #### Writing configuration files
 

@@ -140,7 +140,7 @@ height = 0.0
 
 Reading an INI file is very easy. It requires the use of the [Configparser](https://docs.python.org/3/library/configparser.html) library. You do not need to install it because it comes as part of the standard library. When you want to read a config file you will need to import it and create a parser object which will then be used to read the file we created just above, as follows:
 
-```
+``` Python
 ##Import the library
 import configparser 
 
@@ -153,7 +153,7 @@ parser.read('config.ini')
 
 From there you can access everything that is in the configuration file. Firstly you can access the section names and check if sections are there or not (useful to check that the config file is compliant with what you would expect):
 
-```
+``` Python
 >>> print(parser.sections())
 ['simulation', 'environment', 'initial_conditions'] 
 
@@ -168,14 +168,14 @@ False
 Eventually, you will need to extract the values in the configuration file. You can get all the keys inside a section at once:
 
 
-```
+``` Python
 >>> options = parser.options('simulation')
 ['time_step', 'total_time']
 ```
 
 You can also extract everything at once, in that caseeach couple key/value will be called an *item*:
 
-```
+``` Python
 >>> items_in_simulation = parser.items('simulation')
 >>> print(items_in_simulation)
 [('time_step', '0.01'), ('total_time', '100.0')]
@@ -185,14 +185,14 @@ That method will return a *list* of *tuples*, each *tuple* will contain the coup
 
 Finally, you can access directly values of keys inside a given section like this:
 
-```
+``` Python
 >>> time_step = parser['simulation']['time_step']
 >>> print(time_step)
 0.01
 ```
 By default, *ALL* values will be a *string*. Another option is to use the method `.get()`:
 
-```
+``` Python
 >>> time_step_with_get = parser.get('simulation', 'time_step')
 >>> print(time_step_with_get)
 0.01
@@ -283,7 +283,7 @@ As for the configuration files, we must start by importing the module and creati
 
 We would proceed as follows:
 
-```Python
+``` Python
 ###import the library
 import argparse
 
@@ -298,7 +298,7 @@ parser = argparse.ArgumentParser(prog='My program',
 
 Now we need to add arguments. To do so we need to use the `add_argument` method, part of the parser object:
 
-```
+``` Python
 ###Add positional argument
 parser.add_argument('filename')
 parser.add_argument('outputdir')
@@ -307,7 +307,7 @@ parser.add_argument('outputdir')
 Using this type of argument ('filename' and 'outputdir') will make them mandatory. The user will have to pass a filename AND an output directory to the program. It is worth mentioning that they will have to be passed in the right order by the user.
 It is useful sometimes to create optional arguments. This will be done using a `-` sign as first character in the name of the argument:
 
-```
+``` Python
 ###Add optional arguments
 parser.add_argument('-s', '--start')
 parser.add_argument('-e')

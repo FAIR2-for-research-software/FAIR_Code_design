@@ -191,7 +191,7 @@ It will also be giving a string...And that can be annoying when you have some ot
 
 - `.getint()` will extract the keyword and convert it to integer
 - `.getfloat()` will extract the keyword and convert it to a float 
-- `.getboolean()` will extract the keyword and convert it to a boolean. Interestingly, you it will return `True` is the value is `1`, `yes`, `true` or `on`, while it will return False if the value is `0`, `no`, `false`, or `off`.
+- `.getboolean()` will extract the keyword and convert it to a boolean. Interestingly, you it return `True` is the value is `1`, `yes`, `true` or `on`, while it will return False if the value is `0`, `no`, `false`, or `off`.
 
 
 

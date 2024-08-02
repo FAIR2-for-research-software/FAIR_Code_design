@@ -326,5 +326,7 @@ It is possible to use extra options to define arguments, we list a few here:
 
 - `choices`: If you want to restrict the values an argument can take, you can use the `choice` option to add this contraints: `parser.add_argument('--color', choiced=['blue', 'red', 'green'])`. If the user pass 'purple' as value, an error will be raised. 
 
+- `help`: finally, and it is probably the most important option, you can provide a short description of the argument: `parser.add_argument('--color', help='Color of the curve displayed in the plot')` 
+
 
 ## Final exercice: Mixing command line interfaces and configuration file 

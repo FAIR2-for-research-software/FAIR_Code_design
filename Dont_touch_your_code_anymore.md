@@ -250,86 +250,27 @@ angle = 30.0
 height = 0.5
 ```
 
+## Using command line interfaces
+
+### Definition & advantages
+
+A Command Line Interface (CLI) is a text-based interface used to interact with software and operating systems. It allows users to type commands into a terminal or command prompt to perform specific tasks, ranging from file manipulation to running scripts or programs.
+
+When writing research software CLIs are particularly suitable:
+
+- **Configuration**: Using CLI it is easy to modify the configuration of a software without having to touch the source code.
+
+- **Batch Processing**: Researchers often need to process large datasets or run simulations multiple times. CLI commands can be easily scripted to automate these tasks, saving time and reducing the potential for human error.
+
+- **Quick Execution**: Experienced users can perform complex tasks more quickly with a CLI compared to navigating through a GUI.
+
+- **Adding New Features**: Adding new arguments and options is straightforward, making it easy to extend the functionality of your software as requirements evolve.
+
+- **Documentation**: CLI helps document the functionality of your script through the `help` command, making it clearer how different options and parameters affect the outcome.
+
+## How to do it in Python?
 
 
 
 
-
-
-#### Exercice: 
-
-::::::::::::::::::::::::::::::::::::: challenge
-
-Create a Python script that reads from, writes to, and modifies the following configuration files using the configparser module. This script will simulate managing settings for a simple application.
-
-
-```
-[simulation]
-time_step = 0.01
-total_time = 100.0
-
-[environment]
-gravity = 9.81
-air_resistance = 0.02
-
-[initial_conditions]
-initial_velocity = 10.0
-initial_angle = 45.0
-initial_height = 0.0
-```
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::: solution
-
-```
-# Step 2: Read the Configuration File
-config = configparser.ConfigParser()
-config.read('config.ini')
-
-# Step 3: Print the Configuration
-print("Sections:", config.sections())
-
-print("\n[simulation]")
-for key in config['simulation']:
-    print(f"{key} = {config['simulation'][key]}")
-
-print("\n[environment]")
-for key in config['environment']:
-    print(f"{key} = {config['environment'][key]}")
-
-print("\n[initial_conditions]")
-for key in config['initial_conditions']:
-    print(f"{key} = {config['initial_conditions'][key]}")
-
-# Step 4: Modify the Configuration
-config['simulation']['time_step'] = '0.005'
-config['environment']['air_resistance'] = '0.03'
-config['initial_conditions']['initial_velocity'] = '12.0'
-
-# Step 5: Write the Updated Configuration Back to the File
-with open('config.ini', 'w') as configfile:
-    config.write(configfile)
-
-# Step 6: Verify the Changes
-config.read('config.ini')
-
-print("\nUpdated [simulation]")
-for key in config['simulation']:
-    print(f"{key} = {config['simulation'][key]}")
-
-print("\nUpdated [environment]")
-for key in config['environment']:
-    print(f"{key} = {config['environment'][key]}")
-
-print("\nUpdated [initial_conditions]")
-for key in config['initial_conditions']:
-    print(f"{key} = {config['initial_conditions'][key]}")
-```
-
-:::::::::::::::::::::::::::::::::
-
-
-
-
-
-
+## Final exercice: Mixing command line interfaces and configuration file 

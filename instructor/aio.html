@@ -1061,7 +1061,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -1093,7 +1093,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1121,7 +1121,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1370,7 +1370,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -1531,13 +1531,73 @@ terminal making command line interfaces particularly useful to start
 codes from HPCs.</p></li>
 </ul>
 </div>
-</section><section><h2 class="section-heading" id="how-to-do-it">How to do it?<a class="anchor" aria-label="anchor" href="#how-to-do-it"></a>
-<a class="anchor" aria-label="anchor" href="#how-to-do-it"></a>
-</h2>
-<hr class="half-width">
+<div class="section level3">
+<h3 id="creating-a-command-line-interface-in-python">Creating a command line interface in Python<a class="anchor" aria-label="anchor" href="#creating-a-command-line-interface-in-python"></a>
+</h3>
 <p>In Python, there is a very nice module called <a href="https://docs.python.org/3/library/argparse.html" class="external-link">argparse</a>. It
 allows to write in a very limited amount of lines a nice command line
-user interface.</p>
+user interface. Again, that module is part of the standard library so
+you do not need to install anything.</p>
+<p>As for the configuration files, we must start by importing the module
+and creating a parser object. The parser object can take a few
+arguments, the main ones are:</p>
+<ul>
+<li>
+<code>prog</code>: The name of the program</li>
+<li>
+<code>description</code>: A short description of the program.</li>
+<li>
+<code>epilog</code>: Text displayed at the bottom of the help</li>
+</ul>
+<p>We would proceed as follows:</p>
+<pre><code>###import the library
+import argparse
+
+
+###create the parser object
+parser = argparse.ArgumentParser(prog='My program',
+                                 description='This program is an example of command line interface in Python',
+ 				 epilog='Author: R. Thomas, 2024, UoS')
+</code></pre>
+<p>Now we need to add arguments. To do so we need to use the
+<code>add_argument</code> method, part of the parser object:</p>
+<pre><code><span><span class="co">###Add positional argument</span></span>
+<span><span class="fu">parser.add_argument</span><span class="op">(</span><span class="st">'filename'</span><span class="op">)</span></span>
+<span><span class="fu">parser.add_argument</span><span class="op">(</span><span class="st">'outputdir'</span><span class="op">)</span></span></code></pre>
+<p>Using this type of argument (‘filename’ and ‘outputdir’) will make
+them mandatory. The user will have to pass a filename AND an output
+directory to the program. It is worth mentioning that they will have to
+be passed in the right order by the user. It is useful sometimes to
+create optional arguments. This will be done using a <code>-</code> sign
+as first character in the name of the argument:</p>
+<pre><code><span><span class="co">###Add optional arguments</span></span>
+<span><span class="fu">parser.add_argument</span><span class="op">(</span><span class="st">'-s'</span>, <span class="st">'--start'</span><span class="op">)</span></span>
+<span><span class="fu">parser.add_argument</span><span class="op">(</span><span class="st">'-e'</span><span class="op">)</span></span>
+<span><span class="fu">parser.add_argument</span><span class="op">(</span><span class="st">'--color'</span><span class="op">)</span></span></code></pre>
+<p>You can either use the single dash (‘-s’), or double dash (‘–color’)
+or both. When given two options to call an argument, the user will have
+to make a choice on how to call it.</p>
+<p>It is possible to use extra options to define arguments, we list a
+few here:</p>
+<ul>
+<li><p><code>actions</code>: this options allows you to do</p></li>
+<li><p><code>default</code>: This allows you to define a default value
+for the argument. In the case thr argument will not be used by the user,
+the default value will be selected:
+<code>parser.add_argument('--color', default='blue')</code>.</p></li>
+<li><p><code>type</code>: By default, the argument will be extracted as
+strings. Nevertheless, it is possible to have them interpreted as other
+types using the <code>type</code> argument:
+<code>parser.add_argument('-i', type=int)</code>. It the user pass a
+value that cannot be converted to the expected type an error will be
+returned.</p></li>
+<li><p><code>choices</code>: If you want to restrict the values an
+argument can take, you can use the <code>choice</code> option to add
+this contraints:
+<code>parser.add_argument('--color', choiced=['blue', 'red', 'green'])</code>.
+If the user pass ‘purple’ as value, an error will be raised.</p></li>
+</ul>
+</div>
 </section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interfaces-and-configuration-file">Final exercice: Mixing command line interfaces and configuration
 file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a>
 <a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a>

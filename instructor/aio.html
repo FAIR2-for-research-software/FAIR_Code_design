@@ -1061,7 +1061,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -1093,7 +1093,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1121,7 +1121,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1370,7 +1370,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -1495,95 +1495,51 @@ velocity = 5.0
 angle = 30.0
 height = 0.5</code></pre>
 </div>
-<div class="section level4">
-<h4 id="exercice">Exercice:<a class="anchor" aria-label="anchor" href="#exercice"></a>
-</h4>
-<div id="discussion2" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+</section><section><h2 class="section-heading" id="using-command-line-interfaces">Using command line interfaces<a class="anchor" aria-label="anchor" href="#using-command-line-interfaces"></a>
+<a class="anchor" aria-label="anchor" href="#using-command-line-interfaces"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="definition-advantages">Definition &amp; advantages<a class="anchor" aria-label="anchor" href="#definition-advantages"></a>
 </h3>
-<div class="callout-content">
-<p>Create a Python script that reads from, writes to, and modifies the
-following configuration files using the configparser module. This script
-will simulate managing settings for a simple application.</p>
-<pre><code>[simulation]
-time_step = 0.01
-total_time = 100.0
-
-[environment]
-gravity = 9.81
-air_resistance = 0.02
-
-[initial_conditions]
-initial_velocity = 10.0
-initial_angle = 45.0
-initial_height = 0.0</code></pre>
+<p>A Command Line Interface (CLI) is a text-based interface used to
+interact with software and operating systems. It allows users to type
+commands into a terminal or command prompt to perform specific tasks,
+ranging from file manipulation to running scripts or programs.</p>
+<p>When writing research software CLIs are particularly suitable:</p>
+<ul>
+<li><p><strong>Configuration</strong>: Using CLI it is easy to modify
+the configuration of a software without having to touch the source
+code.</p></li>
+<li><p><strong>Batch Processing</strong>: Researchers often need to
+process large datasets or run simulations multiple times. CLI commands
+can be easily scripted to automate these tasks, saving time and reducing
+the potential for human error.</p></li>
+<li><p><strong>Quick Execution</strong>: Experienced users can perform
+complex tasks more quickly with a CLI compared to navigating through a
+GUI.</p></li>
+<li><p><strong>Adding New Features</strong>: Adding new arguments and
+options is straightforward, making it easy to extend the functionality
+of your software as requirements evolve.</p></li>
+<li><p><strong>Documentation</strong>: CLI helps document the
+functionality of your script through the <code>help</code> command,
+making it clearer how different options and parameters affect the
+outcome.</p></li>
+</ul>
 </div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<pre><code># Step 2: Read the Configuration File
-config = configparser.ConfigParser()
-config.read('config.ini')
-
-# Step 3: Print the Configuration
-print("Sections:", config.sections())
-
-print("\n[simulation]")
-for key in config['simulation']:
-    print(f"{key} = {config['simulation'][key]}")
-
-print("\n[environment]")
-for key in config['environment']:
-    print(f"{key} = {config['environment'][key]}")
-
-print("\n[initial_conditions]")
-for key in config['initial_conditions']:
-    print(f"{key} = {config['initial_conditions'][key]}")
-
-# Step 4: Modify the Configuration
-config['simulation']['time_step'] = '0.005'
-config['environment']['air_resistance'] = '0.03'
-config['initial_conditions']['initial_velocity'] = '12.0'
-
-# Step 5: Write the Updated Configuration Back to the File
-with open('config.ini', 'w') as configfile:
-    config.write(configfile)
-
-# Step 6: Verify the Changes
-config.read('config.ini')
-
-print("\nUpdated [simulation]")
-for key in config['simulation']:
-    print(f"{key} = {config['simulation'][key]}")
-
-print("\nUpdated [environment]")
-for key in config['environment']:
-    print(f"{key} = {config['environment'][key]}")
-
-print("\nUpdated [initial_conditions]")
-for key in config['initial_conditions']:
-    print(f"{key} = {config['initial_conditions'][key]}")</code></pre>
-</div>
-</div>
-</div>
-</div>
+</section><section><h2 class="section-heading" id="how-to-do-it-in-python">How to do it in Python?<a class="anchor" aria-label="anchor" href="#how-to-do-it-in-python"></a>
+<a class="anchor" aria-label="anchor" href="#how-to-do-it-in-python"></a>
+</h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interfaces-and-configuration-file">Final exercice: Mixing command line interfaces and configuration
+file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a>
+<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a>
+</h2>
+<hr class="half-width">
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</div>
-</div>
-</section></section>
+ --></section></section>
 </div>
     </main>
 </div>

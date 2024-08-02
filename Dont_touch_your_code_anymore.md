@@ -283,7 +283,7 @@ As for the configuration files, we must start by importing the module and creati
 
 We would proceed as follows:
 
-```
+```Python
 ###import the library
 import argparse
 

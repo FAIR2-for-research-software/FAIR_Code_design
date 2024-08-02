@@ -19,7 +19,8 @@ exercises: 2
 
 ## Introduction
 
-Research software is often based on a trial-error or trial-trial loops. You will often find yourself trying to rerun a code with different parameters to try different configuration of your code. So far what we have seen deals with the design of the code itself and how to make it cleaner, more readable and maintainable. BUT! what is you need to try something new by changing few parameters of your code? You will need to go and change the code itself! And it is very likely that you will do this a few times (or a lot!). Along the way, and unless you are able to track very well all your trials, you will probably loose track of some of them. In addition, modifying endlessly the code increase greatly the risk of introducing errors...
+Research software is often based on a trial-error or trial-trial loops. You will often find yourself trying to rerun a code with different parameters to try different configuration of your experiment. 
+So far what we have seen deals with the design of the code itself and how to make it cleaner, more readable and maintainable. BUT! what if you need to try something new by changing few parameters of your code? You will need to go and change the code itself! And it is very likely that you will do this a few times (or a lot!). Along the way, and unless you are able to track very well all your trials, you will probably loose track of some of them. In addition, modifying endlessly the code increase greatly the risk of introducing errors...
 
 In order to avoid such problems we are going to see a couple of options that are easily available and implementable:
 - Configuration files
@@ -268,8 +269,11 @@ When writing research software CLIs are particularly suitable:
 
 - **Documentation**: CLI helps document the functionality of your script through the `help` command, making it clearer how different options and parameters affect the outcome.
 
-## How to do it in Python?
+- **Use in HPCs**: HPCs are often accessible through terminal making command line interfaces particularly useful to start codes from HPCs.
 
+## How to do it?
+
+In Python, there is a very nice module called [argparse](https://docs.python.org/3/library/argparse.html). It allows to write in a very limited amount of lines a nice command line user interface.
 
 
 

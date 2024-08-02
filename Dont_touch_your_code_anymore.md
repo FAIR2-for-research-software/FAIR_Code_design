@@ -23,6 +23,7 @@ Research software is often based on a trial-error or trial-trial loops. You will
 So far what we have seen deals with the design of the code itself and how to make it cleaner, more readable and maintainable. BUT! what if you need to try something new by changing few parameters of your code? You will need to go and change the code itself! And it is very likely that you will do this a few times (or a lot!). Along the way, and unless you are able to track very well all your trials, you will probably loose track of some of them. In addition, modifying endlessly the code increase greatly the risk of introducing errors...
 
 In order to avoid such problems we are going to see a couple of options that are easily available and implementable:
+
 - Configuration files
 - Command line interface 
 
@@ -322,7 +323,7 @@ It is possible to use extra options to define arguments, we list a few here:
 
 - `default`: This allows you to define a default value for the argument. In the case thr argument will not be used by the user, the default value will be selected: `parser.add_argument('--color', default='blue')`.
 
-- `type`: By default, the argument will be extracted as strings. Nevertheless, it is possible to have them interpreted as other types using the `type` argument: `parser.add_argument('-i', type=int)`. It the user pass a value that cannot be converted to the expected type an error will be returned.
+- `type`: By default, the argument will be extracted as strings. Nevertheless, it is possible to have them interpreted as other types using the `type` argument: `parser.add_argument('-i', type=int)`. It the user passes a value that cannot be converted to the expected type an error will be returned.
 
 - `choices`: If you want to restrict the values an argument can take, you can use the `choice` option to add this contraints: `parser.add_argument('--color', choiced=['blue', 'red', 'green'])`. If the user pass 'purple' as value, an error will be raised. 
 

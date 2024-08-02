@@ -207,6 +207,51 @@ It will also be giving a string...And that can be annoying when you have some ot
 #### Writing configuration files
 
 In some occasions it might also be interesting to be able to write configuration file programatically. **Configparser** allows the user to write INI files as well.
+As for reading them, everything starts by importing the module and creating an object:
+
+
+```
+#Let's import the ConfigParser object directly
+from configparser import ConfigParser 
+
+# And create a config object
+config = ConfigParser()
+```
+
+Creating a configuration is equivalent of creating a dictionaries:
+
+```
+config['simulation'] = {'time_step': 1.0, 'total_time': 200.0}
+config['environment'] = {'gravity': 9.81, 'air_resistance': 0.02}
+config['initial_conditions'] = {'velocity': 5.0, 'angle': 30.0, 'height': 0.5}
+```
+
+And finally you will have to save it:
+
+```
+with open('config_file_program.ini', 'w') as configfile: ##This open the condif_file_program.ini in write mode
+    config.write(configfile)
+```
+
+After running that piece of code, you will end with a new file called `config_file_program.ini` with the following content:
+
+```
+[simulation]
+time_step = 1.0
+total_time = 200.0
+
+[environment]
+gravity = 9.81
+air_resistance = 0.02
+
+[initial_conditions]
+velocity = 5.0
+angle = 30.0
+height = 0.5
+```
+
+
+
 
 
 

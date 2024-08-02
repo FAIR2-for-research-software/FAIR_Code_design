@@ -271,10 +271,60 @@ When writing research software CLIs are particularly suitable:
 
 - **Use in HPCs**: HPCs are often accessible through terminal making command line interfaces particularly useful to start codes from HPCs.
 
-## How to do it?
+### Creating a command line interface in Python
 
-In Python, there is a very nice module called [argparse](https://docs.python.org/3/library/argparse.html). It allows to write in a very limited amount of lines a nice command line user interface.
+In Python, there is a very nice module called [argparse](https://docs.python.org/3/library/argparse.html). It allows to write in a very limited amount of lines a nice command line user interface. Again, that module is part of the standard library so you do not need to install anything.
 
+As for the configuration files, we must start by importing the module and creating a parser object. The parser object can take a few arguments, the main ones are:
+
+- `prog`: The name of the program
+- `description`: A short description of the program.
+- `epilog`: Text displayed at the bottom of the help
+
+We would proceed as follows:
+
+```
+###import the library
+import argparse
+
+
+###create the parser object
+parser = argparse.ArgumentParser(prog='My program',
+                                 description='This program is an example of command line interface in Python',
+ 				 epilog='Author: R. Thomas, 2024, UoS')
+
+```
+
+
+Now we need to add arguments. To do so we need to use the `add_argument` method, part of the parser object:
+
+```
+###Add positional argument
+parser.add_argument('filename')
+parser.add_argument('outputdir')
+```
+
+Using this type of argument ('filename' and 'outputdir') will make them mandatory. The user will have to pass a filename AND an output directory to the program. It is worth mentioning that they will have to be passed in the right order by the user.
+It is useful sometimes to create optional arguments. This will be done using a `-` sign as first character in the name of the argument:
+
+```
+###Add optional arguments
+parser.add_argument('-s', '--start')
+parser.add_argument('-e')
+parser.add_argument('--color')
+```
+
+You can either use the single dash ('-s'), or double dash ('--color') or both. When given two options to call an argument, the user will have to make a choice on how to call it. 
+
+It is possible to use extra options to define arguments, we list a few here:
+
+- `actions`: this options allows you to do 
+
+- `default`: This allows you to define a default value for the argument. In the case thr argument will not be used by the user, the default value will be selected: `parser.add_argument('--color', default='blue')`.
+
+- `type`: By default, the argument will be extracted as strings. Nevertheless, it is possible to have them interpreted as other types using the `type` argument: `parser.add_argument('-i', type=int)`. It the user pass a value that cannot be converted to the expected type an error will be returned.
+
+- `choices`: If you want to restrict the values an argument can take, you can use the `choice` option to add this contraints: `parser.add_argument('--color', choiced=['blue', 'red', 'green'])`. If the user pass 'purple' as value, an error will be raised. 
 
 
 ## Final exercice: Mixing command line interfaces and configuration file 

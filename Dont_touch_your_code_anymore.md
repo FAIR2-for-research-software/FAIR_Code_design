@@ -47,7 +47,7 @@ Using configuration files in a research context offers several specific benefits
 
 As it is often the case in Python, multiple options are available:
 
-- INI Files are easy to read and parse. The module used to load these files is [configparser]() and part of the [Python standard Library](https://docs.python.org/3/library/index.html) 
+- INI Files are easy to read and parse. The module used to load these files is [configparser](https://docs.python.org/3/library/configparser.html) and part of the [Python standard Library](https://docs.python.org/3/library/index.html).   
 
 ```
 [section1]
@@ -57,5 +57,10 @@ key2 = value2
 [section2]
 key1 = value1
 ```
+
+INI files is structured as sections in which you can list keyword/value (like for a dictionary) separated by either the `=` or `:` signs. 
+ 
+
+
 - YAML Files:
 - JSON: 

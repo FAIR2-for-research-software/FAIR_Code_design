@@ -87,6 +87,41 @@ JSON files are also structured as section and keyword/value pairs. JSON files st
 
 - YAML Files: are also a popular format (used for github action for example). In order to read (and write) YAML files, you will need to install a third party package called [PyYAML](https://pyyaml.org/).
 
+```
+section1:
+  key1: value1
+  key2: value2
+
+section2:
+  key1: value1
+
+# Comments
+```
+
+YAML files work also with sections and keyword/value pairs.  
+
+
+
+In the following we will be using INI files.
+
+### Configparser: loading and writing config files
+
+
+
+#### Exercice: 
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Challenge 1
+
+Create a Python script that reads from, writes to, and modifies the following configuration files using the configparser module. This script will simulate managing settings for a simple application.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
 
 
 

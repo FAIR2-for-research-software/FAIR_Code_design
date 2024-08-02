@@ -1280,8 +1280,9 @@ of these changes on the results.</p></li>
 <p>As it is often the case in Python, multiple options are
 available:</p>
 <ul>
-<li>INI Files are easy to read and parse. The module used to load these
-files is <a href="https://docs.python.org/3/library/configparser.html" class="external-link">configparser</a>
+<li>
+<a href="https://en.wikipedia.org/wiki/INI_file" class="external-link">INI</a> Files are
+easy to read and parse. The module used to load these files is <a href="https://docs.python.org/3/library/configparser.html" class="external-link">configparser</a>
 and part of the <a href="https://docs.python.org/3/library/index.html" class="external-link">Python standard
 Library</a>.</li>
 </ul>
@@ -1289,14 +1290,24 @@ Library</a>.</li>
 key1 = value1
 key2 = value2
 
+#Comments
+
 [section2]
-key1 = value1</code></pre>
-<p>INI files is structured as sections in which you can list
-keyword/value (like for a dictionary) separated by either the
-<code>=</code> or <code>:</code> signs.</p>
+key1 = value1
+
+
+[Section3]
+key = value3
+    multiline</code></pre>
+<p>INI files is structured as (case sensitive) sections in which you can
+list keyword/values (like for a dictionary) separated by either the
+<code>=</code> or <code>:</code> signs. Values can span multiple lines
+and comments are accepted as long as the extra lines are indented with
+respect to the first line.</p>
 <ul>
-<li>YAML Files:</li>
-<li>JSON:</li>
+<li><p>JSON: Originally developed for JavaScript, very popular in web
+applications.</p></li>
+<li><p>YAML Files: are also a popular</p></li>
 </ul>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete

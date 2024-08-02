@@ -598,7 +598,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -654,7 +654,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -724,7 +724,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -784,7 +784,7 @@ print(f"Factorial of {number} is {result}")</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1365,6 +1365,59 @@ initial_velocity = 10.0
 initial_angle = 45.0
 initial_height = 0.0</code></pre>
 <p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<pre><code># Step 2: Read the Configuration File
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# Step 3: Print the Configuration
+print("Sections:", config.sections())
+
+print("\n[simulation]")
+for key in config['simulation']:
+    print(f"{key} = {config['simulation'][key]}")
+
+print("\n[environment]")
+for key in config['environment']:
+    print(f"{key} = {config['environment'][key]}")
+
+print("\n[initial_conditions]")
+for key in config['initial_conditions']:
+    print(f"{key} = {config['initial_conditions'][key]}")
+
+# Step 4: Modify the Configuration
+config['simulation']['time_step'] = '0.005'
+config['environment']['air_resistance'] = '0.03'
+config['initial_conditions']['initial_velocity'] = '12.0'
+
+# Step 5: Write the Updated Configuration Back to the File
+with open('config.ini', 'w') as configfile:
+    config.write(configfile)
+
+# Step 6: Verify the Changes
+config.read('config.ini')
+
+print("\nUpdated [simulation]")
+for key in config['simulation']:
+    print(f"{key} = {config['simulation'][key]}")
+
+print("\nUpdated [environment]")
+for key in config['environment']:
+    print(f"{key} = {config['environment'][key]}")
+
+print("\nUpdated [initial_conditions]")
+for key in config['initial_conditions']:
+    print(f"{key} = {config['initial_conditions'][key]}")</code></pre>
+</div>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.

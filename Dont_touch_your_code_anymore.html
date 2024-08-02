@@ -429,7 +429,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -460,14 +460,34 @@ file we created just above, as follows:</p>
 import configparser
 
 ##Create the parser object
-config = configparser.ConfigParser()
+parser = configparser.ConfigParser()
 
 ##Read the configuration file
-config.read('config.ini')</code></pre>
+parser.read('config.ini')</code></pre>
 <p>From there you can access everything that is in the configuration
-file. Firstly you can access the section names:</p>
+file. Firstly you can access the section names and check if sections are
+there or not (useful to check that the config file is compliant with
+what you would expect):</p>
 <pre><code>&gt;&gt;&gt; print(parser.sections())
-['simulation', 'environment', 'initial_conditions'] </code></pre>
+['simulation', 'environment', 'initial_conditions']
+
+
+&gt;&gt;&gt;print(parser.has_section('simulation'))
+True
+
+&gt;&gt;&gt;print(parser.has_section('Finalstate'))
+False</code></pre>
+<p>Eventually, you will need to extract the values in the configuration
+file. You can get all of them at once:</p>
+<pre><code>&gt;&gt;&gt; items_in_simulation = parser.items(simulation)
+&gt;&gt;&gt; print(items)
+[('time_step', '0.01'), ('total_time', '100.0')]</code></pre>
+<p>or individually, precising the section where the keyword is, like
+this:</p>
+<pre><code>&gt;&gt;&gt; time_step = parser['simulation']['time_step']
+&gt;&gt;&gt; print(time_step)
+0.01</code></pre>
+<p>By default, <em>ALL</em> values will be a <em>string</em>.</p>
 </div>
 <div class="section level4">
 <h4 id="writing-configuration-files">Writing configuration files<a class="anchor" aria-label="anchor" href="#writing-configuration-files"></a></h4>
@@ -505,7 +525,7 @@ initial_height = 0.0</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre><code># Step 2: Read the Configuration File
 config = configparser.ConfigParser()

@@ -131,11 +131,56 @@ initial_velocity = 10.0
 initial_angle = 45.0
 initial_height = 0.0
 ```
-
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::: solution
 
+```
+# Step 2: Read the Configuration File
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# Step 3: Print the Configuration
+print("Sections:", config.sections())
+
+print("\n[simulation]")
+for key in config['simulation']:
+    print(f"{key} = {config['simulation'][key]}")
+
+print("\n[environment]")
+for key in config['environment']:
+    print(f"{key} = {config['environment'][key]}")
+
+print("\n[initial_conditions]")
+for key in config['initial_conditions']:
+    print(f"{key} = {config['initial_conditions'][key]}")
+
+# Step 4: Modify the Configuration
+config['simulation']['time_step'] = '0.005'
+config['environment']['air_resistance'] = '0.03'
+config['initial_conditions']['initial_velocity'] = '12.0'
+
+# Step 5: Write the Updated Configuration Back to the File
+with open('config.ini', 'w') as configfile:
+    config.write(configfile)
+
+# Step 6: Verify the Changes
+config.read('config.ini')
+
+print("\nUpdated [simulation]")
+for key in config['simulation']:
+    print(f"{key} = {config['simulation'][key]}")
+
+print("\nUpdated [environment]")
+for key in config['environment']:
+    print(f"{key} = {config['environment'][key]}")
+
+print("\nUpdated [initial_conditions]")
+for key in config['initial_conditions']:
+    print(f"{key} = {config['initial_conditions'][key]}")
+```
+
+:::::::::::::::::::::::::::::::::
 
 
 

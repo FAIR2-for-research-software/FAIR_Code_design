@@ -45,4 +45,17 @@ Using configuration files in a research context offers several specific benefits
 
 ### How to build configuration files? What library should I use?
 
+As it is often the case in Python, multiple options are available:
 
+- INI Files are easy to read and parse. The module used to load these files is [configparser]() and part of the [Python standard Library](https://docs.python.org/3/library/index.html) 
+
+```
+[section1]
+key1 = value1
+key2 = value2
+
+[section2]
+key1 = value1
+```
+- YAML Files:
+- JSON: 

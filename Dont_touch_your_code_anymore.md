@@ -65,10 +65,24 @@ key = value3
     multiline
 ```
 
-INI files is structured as (case sensitive) sections in which you can list keyword/values (like for a dictionary) separated by either the `=` or `:` signs. Values can span multiple lines and comments are accepted as long as the extra lines are  indented with respect to the first line. 
+INI files are structured as (case sensitive) sections in which you can list keyword/value pairs (like for a dictionary) separated by either the `=` or `:` signs. Values can span multiple lines and comments are accepted as long as the extra lines are  indented with respect to the first line. 
  
 
-- JSON: Originally developed for JavaScript, very popular in web applications.  
+- JSON: Originally developed for JavaScript, very popular in web applications. The module to read these files is [json](https://docs.python.org/3/library/json.html#module-json) and also part of the standard library.  
+
+```
+{
+  "section1": {
+    "key1": "value1",
+    "key2": "value2"
+  },
+  "section2": {
+    "key1": "value1"
+  }
+}
+```
+
+JSON files are also structured as section and keyword/value pairs. JSON files start with an opening brace `{` and end with a closing brace `}`. Then each section comes with its name followed by `:`. Then key/value pairs are listed within braces (one for each section). Nevertheless, comments are not allowed.
 
 
 - YAML Files: are also a popular

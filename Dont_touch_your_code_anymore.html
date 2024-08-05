@@ -265,7 +265,7 @@ file</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Don't touch your code anymore!</h1>
-        <p>Last updated on 2024-08-02 |
+        <p>Last updated on 2024-08-05 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Dont_touch_your_code_anymore.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -688,10 +688,40 @@ option, you can provide a short description of the argument:
 </section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interfaces-and-configuration-file">Final exercice: Mixing command line interfaces and configuration
 file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a>
 <a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interfaces-and-configuration-file"></a></h2>
-<hr class="half-width"><!--
+<hr class="half-width"><p>For this last part of the final lecture we will combine both package
+we just reviewed: <code>argparse</code> and <code>configparser</code>.
+Find the instructions below:</p>
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+</h3>
+<div class="callout-content">
+<p>The program that you will create will take an optional configuration
+file. If not configuration file is given, the program will load an
+internal one that you can find <a href="">here</a> (you need to put this
+next to your code). To do this you will create an argument
+<code>--file</code>.</p>
+<p>arguments:</p>
+<ul><li>
+<code>--save</code>: This argument require a directory as value. If
+used, the configuration is saved into that directory under the name
+<code>X_config.ini</code> where <code>X</code> is the name of the user
+found in the configuration file.</li>
+<li>
+<code>--name</code>: This argument requires a name. If it is used,
+the value given will replace the default name in the configuration
+file.</li>
+</ul></div>
+</div>
+</div>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></div> <!-- / div.lesson-content -->
+ -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="Code_structure.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -762,8 +792,8 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/Dont_touch_your_code_anymore.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/Dont_touch_your_code_anymore.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-08-02",
-  "datePublished": "2024-08-02"
+  "dateModified": "2024-08-05",
+  "datePublished": "2024-08-05"
 }
 
   </script><script>

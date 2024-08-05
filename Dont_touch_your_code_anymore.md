@@ -331,3 +331,20 @@ It is possible to use extra options to define arguments, we list a few here:
 
 
 ## Final exercice: Mixing command line interfaces and configuration file 
+
+For this last part of the final lecture we will combine both package we just reviewed: `argparse` and `configparser`. Find the instructions below:
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+The program that you will create will take an optional configuration file. If not configuration file is given, the program will load an internal one that you can find [here]() (you need to put this next to your code). To do this you will create an argument `--file`. 
+
+ arguments:
+
+- `--save`: This argument require a directory as value. If used, the configuration is saved into that directory under the name `X_config.ini` where `X` is the name of the user found in the configuration file.
+- `--name`: This argument requires a name. If it is used, the value given will replace the default name in the configuration file.
+ 
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+

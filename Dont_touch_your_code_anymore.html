@@ -433,7 +433,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -684,7 +684,11 @@ If the user pass ‘purple’ as value, an error will be raised.</p></li>
 <li><p><code>help</code>: finally, and it is probably the most important
 option, you can provide a short description of the argument:
 <code>parser.add_argument('--color', help='Color of the curve displayed in the plot')</code></p></li>
-</ul></div>
+</ul><p>Finally you must be able to retrieve all the argument values:</p>
+<pre><code><span><span class="co">###retrieve all arguments</span></span>
+<span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse_args</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="va">args.start</span>, <span class="va">args.e</span>, <span class="va">args.color</span><span class="op">)</span></span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interface-and-configuration-file">Final exercice: Mixing command line interface and configuration
 file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interface-and-configuration-file"></a>
 <a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interface-and-configuration-file"></a></h2>
@@ -722,7 +726,7 @@ file.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>AHAHAHAHA you really though it would be that easy…. :)</p>
 </div>

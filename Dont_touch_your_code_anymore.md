@@ -329,6 +329,14 @@ It is possible to use extra options to define arguments, we list a few here:
 
 - `help`: finally, and it is probably the most important option, you can provide a short description of the argument: `parser.add_argument('--color', help='Color of the curve displayed in the plot')` 
 
+Finally you must be able to retrieve all the argument values:
+
+```
+###retrieve all arguments 
+args = parser.parse_args()
+print(args.start, args.e, args.color)
+```
+
 
 ## Final exercice: Mixing command line interface and configuration file 
 

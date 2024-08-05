@@ -179,7 +179,7 @@ implementation is easy to explain, it may be a good idea.</a></li>
 <li><a href="#errors-should-never-pass-silently.unless-explicitly-silenced">Errors should never pass silently….Unless explicitly silenced</a></li>
 <li><a href="#simple-is-better-than-complexcomplex-is-better-than-complicated">Simple is better than complex…complex is better than
 complicated</a></li>
-<li><a href="#tools-that-might-help-you">Tools that might help you</a></li>
+<li><a href="#pylint">PyLint</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -271,7 +271,7 @@ complicated</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>The Zen of Python</h1>
-        <p>Last updated on 2024-07-31 |
+        <p>Last updated on 2024-08-05 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Writing_clean_code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -375,13 +375,69 @@ implementation is easy to explain, it may be a good idea.<a class="anchor" aria-
 <hr class="half-width"></section><section><h2 class="section-heading" id="simple-is-better-than-complexcomplex-is-better-than-complicated">Simple is better than complex…complex is better than
 complicated<a class="anchor" aria-label="anchor" href="#simple-is-better-than-complexcomplex-is-better-than-complicated"></a>
 <a class="anchor" aria-label="anchor" href="#simple-is-better-than-complexcomplex-is-better-than-complicated"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="tools-that-might-help-you">Tools that might help you<a class="anchor" aria-label="anchor" href="#tools-that-might-help-you"></a>
-<a class="anchor" aria-label="anchor" href="#tools-that-might-help-you"></a></h2>
-<hr class="half-width"><p>pylint</p>
+<hr class="half-width"></section><section><h2 class="section-heading" id="pylint">PyLint<a class="anchor" aria-label="anchor" href="#pylint"></a>
+<a class="anchor" aria-label="anchor" href="#pylint"></a></h2>
+<hr class="half-width"><p>PyLint is a tool that analyzes Python code to find programming
+errors, enforce a coding standard, and look for improvements. It
+provides a score based on the number of issues detected, helping
+developers maintain clean and readable code.</p>
+<div class="section level3">
+<h3 id="key-features-of-pylint">Key Features of PyLint<a class="anchor" aria-label="anchor" href="#key-features-of-pylint"></a></h3>
+<ul><li><p>Error Detection: Identifies syntax errors, undefined variables,
+and other potential bugs. Detects issues such as using undefined
+variables, unnecessary imports, and more.</p></li>
+<li><p>Coding Standard Enforcement: Checks the code against PEP 8
+(Python Enhancement Proposal 8), the widely accepted style guide for
+Python code. Flags violations such as incorrect indentation, naming
+conventions, and line length.</p></li>
+<li><p>Code Quality Metrics: Provides a detailed report with metrics
+like code complexity, number of lines, and number of classes. Offers a
+score that reflects the overall quality of the code.</p></li>
+<li><p>Refactoring Suggestions: Suggests improvements to make the code
+cleaner and more efficient. Highlights duplicated code, unused
+variables, and functions that can be simplified.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a></h3>
+<p>To analyse a python file you can simply run:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+</div>
+<p>When you run PyLint on a Python file, it provides an output with the
+following components:</p>
+<ul><li>Messages: Each detected issue is reported with a message ID, type,
+line number, and a brief description.</li>
+<li>Statistics: Provides a summary of the issues found, such as the
+number of errors, warnings, and refactor suggestions.</li>
+<li>Score: An overall score out of 10, reflecting the code quality based
+on the issues detected.</li>
+</ul><p>Let’s have a look at an example: Consider that file <a href="">here</a> and run PyLint on it.</p>
+</div>
+<div class="section level3">
+<h3 id="configuration">Configuration:<a class="anchor" aria-label="anchor" href="#configuration"></a></h3>
+<p>PyLint can be configured to match your specific project requirements.
+You can create a configuration file (.pylintrc) to customize the
+behavior of PyLint, such as enabling/disabling certain checks, adjusting
+thresholds, and more. Generate a configuration file using:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="integrating-with-ides">Integrating with IDEs<a class="anchor" aria-label="anchor" href="#integrating-with-ides"></a></h3>
+<p>Many Integrated Development Environments (IDEs) and text editors,
+such as Visual Studio Code, PyCharm, and Sublime Text, support PyLint
+integration. This allows you to see linting results directly within your
+editor as you write code.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -453,7 +509,7 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/Writing_clean_code.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/Writing_clean_code.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-07-31",
+  "dateModified": "2024-08-05",
   "datePublished": "2024-08-05"
 }
 

@@ -814,7 +814,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-Writing_clean_code"><p>Content from <a href="Writing_clean_code.html">The Zen of Python</a></p>
 <hr>
-<p>Last updated on 2024-07-31 |
+<p>Last updated on 2024-08-05 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Writing_clean_code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -934,15 +934,79 @@ implementation is easy to explain, it may be a good idea.<a class="anchor" aria-
 complicated<a class="anchor" aria-label="anchor" href="#simple-is-better-than-complexcomplex-is-better-than-complicated"></a>
 <a class="anchor" aria-label="anchor" href="#simple-is-better-than-complexcomplex-is-better-than-complicated"></a>
 </h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="tools-that-might-help-you">Tools that might help you<a class="anchor" aria-label="anchor" href="#tools-that-might-help-you"></a>
-<a class="anchor" aria-label="anchor" href="#tools-that-might-help-you"></a>
+<hr class="half-width"></section><section><h2 class="section-heading" id="pylint">PyLint<a class="anchor" aria-label="anchor" href="#pylint"></a>
+<a class="anchor" aria-label="anchor" href="#pylint"></a>
 </h2>
 <hr class="half-width">
-<p>pylint</p>
+<p>PyLint is a tool that analyzes Python code to find programming
+errors, enforce a coding standard, and look for improvements. It
+provides a score based on the number of issues detected, helping
+developers maintain clean and readable code.</p>
+<div class="section level3">
+<h3 id="key-features-of-pylint">Key Features of PyLint<a class="anchor" aria-label="anchor" href="#key-features-of-pylint"></a>
+</h3>
+<ul>
+<li><p>Error Detection: Identifies syntax errors, undefined variables,
+and other potential bugs. Detects issues such as using undefined
+variables, unnecessary imports, and more.</p></li>
+<li><p>Coding Standard Enforcement: Checks the code against PEP 8
+(Python Enhancement Proposal 8), the widely accepted style guide for
+Python code. Flags violations such as incorrect indentation, naming
+conventions, and line length.</p></li>
+<li><p>Code Quality Metrics: Provides a detailed report with metrics
+like code complexity, number of lines, and number of classes. Offers a
+score that reflects the overall quality of the code.</p></li>
+<li><p>Refactoring Suggestions: Suggests improvements to make the code
+cleaner and more efficient. Highlights duplicated code, unused
+variables, and functions that can be simplified.</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a>
+</h3>
+<p>To analyse a python file you can simply run:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+</div>
+<p>When you run PyLint on a Python file, it provides an output with the
+following components:</p>
+<ul>
+<li>Messages: Each detected issue is reported with a message ID, type,
+line number, and a brief description.</li>
+<li>Statistics: Provides a summary of the issues found, such as the
+number of errors, warnings, and refactor suggestions.</li>
+<li>Score: An overall score out of 10, reflecting the code quality based
+on the issues detected.</li>
+</ul>
+<p>Let’s have a look at an example: Consider that file <a href="">here</a> and run PyLint on it.</p>
+</div>
+<div class="section level3">
+<h3 id="configuration">Configuration:<a class="anchor" aria-label="anchor" href="#configuration"></a>
+</h3>
+<p>PyLint can be configured to match your specific project requirements.
+You can create a configuration file (.pylintrc) to customize the
+behavior of PyLint, such as enabling/disabling certain checks, adjusting
+thresholds, and more. Generate a configuration file using:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="integrating-with-ides">Integrating with IDEs<a class="anchor" aria-label="anchor" href="#integrating-with-ides"></a>
+</h3>
+<p>Many Integrated Development Environments (IDEs) and text editors,
+such as Visual Studio Code, PyCharm, and Sublime Text, support PyLint
+integration. This allows you to see linting results directly within your
+editor as you write code.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section><section id="aio-Principles"><p>Content from <a href="Principles.html">Principles of Code design</a></p>
 <hr>
 <p>Last updated on 2024-07-30 |
@@ -1372,7 +1436,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -1684,7 +1748,7 @@ found in the configuration file OR the one given by the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>AHAHAHAHA you really though it would be that easy…. :)</p>
 </div>

@@ -89,8 +89,52 @@ Comments and documentation strings
 ## Simple is better than complex...complex is better than complicated
 
 
-## Tools that might help you
+## PyLint
 
-pylint
 
+PyLint is a tool that analyzes Python code to find programming errors, enforce a coding standard, and look for improvements. It provides a score based on the number of issues detected, helping developers maintain clean and readable code.
  
+
+### Key Features of PyLint
+
+- Error Detection: Identifies syntax errors, undefined variables, and other potential bugs.
+Detects issues such as using undefined variables, unnecessary imports, and more.
+
+- Coding Standard Enforcement: Checks the code against PEP 8 (Python Enhancement Proposal 8), the widely accepted style guide for Python code. Flags violations such as incorrect indentation, naming conventions, and line length.
+
+- Code Quality Metrics: Provides a detailed report with metrics like code complexity, number of lines, and number of classes. Offers a score that reflects the overall quality of the code.
+
+- Refactoring Suggestions: Suggests improvements to make the code cleaner and more efficient.
+Highlights duplicated code, unused variables, and functions that can be simplified.
+
+
+### Running pylint
+
+To analyse a python file you can simply run:
+
+``` bash
+pylint your_python_file.py
+```
+
+When you run PyLint on a Python file, it provides an output with the following components:
+
+- Messages: Each detected issue is reported with a message ID, type, line number, and a brief description.
+- Statistics: Provides a summary of the issues found, such as the number of errors, warnings, and refactor suggestions.
+- Score: An overall score out of 10, reflecting the code quality based on the issues detected.
+
+
+Let's have a look at an example: Consider that file [here]() and run PyLint on it.
+
+
+### Configuration: 
+
+PyLint can be configured to match your specific project requirements. You can create a configuration file (.pylintrc) to customize the behavior of PyLint, such as enabling/disabling certain checks, adjusting thresholds, and more. Generate a configuration file using:
+
+
+``` bash
+pylint --generate-rcfile > .pylintrc
+```
+
+### Integrating with IDEs
+
+Many Integrated Development Environments (IDEs) and text editors, such as Visual Studio Code, PyCharm, and Sublime Text, support PyLint integration. This allows you to see linting results directly within your editor as you write code.

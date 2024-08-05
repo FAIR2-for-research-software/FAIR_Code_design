@@ -330,14 +330,14 @@ It is possible to use extra options to define arguments, we list a few here:
 - `help`: finally, and it is probably the most important option, you can provide a short description of the argument: `parser.add_argument('--color', help='Color of the curve displayed in the plot')` 
 
 
-## Final exercice: Mixing command line interfaces and configuration file 
+## Final exercice: Mixing command line interface and configuration file 
 
 For this last part of the final lecture we will combine both package we just reviewed: `argparse` and `configparser`. Find the instructions below:
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-The program that you will create will take an optional configuration file. If not configuration file is given, the program will load an internal one that you can find [here]() (you need to put this next to your code). To do this you will create an argument `--file`. 
+The program that you will create will take an optional configuration file. If not configuration file is given, the program will load an internal one that you can find [here](https://github.com/Romain-Thomas-Shef/FAIR_Code_design/blob/main/final_exercice/config_default.conf) (you need to put this next to your code). To do this you will create an argument `--file`. 
 
  arguments:
 
@@ -349,6 +349,6 @@ The program that you will create will take an optional configuration file. If no
 :::::::::::::::::::::::: solution
 
 
-
+AHAHAHAHA you really though it would be that easy.... :)
 
 :::::::::::::::::::::::::::::::::

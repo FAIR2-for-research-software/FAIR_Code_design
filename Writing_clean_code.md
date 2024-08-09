@@ -216,7 +216,29 @@ print(result)
 ## Sparse is better than dense.
 
 
-When you write your code it is important to make it readable. Avoiding cluttered code by making is sparse and spaced out makes it easier to read and increase clarity and readability. Use whitespaces, correct indentation and separation will make your code quicker to understand. Moreover, when code is spread out with proper comments and breaks it is easier to modify or debug. So what are the rules?
+When you write your code it is important to make it readable. Avoiding cluttered code by making is sparse and spaced out makes it easier to read and increase clarity and readability. Use whitespaces, correct indentation and separation will make your code quicker to understand. Moreover, when code is spread out with proper comments and breaks it is easier to modify or debug. Let's see an example:
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+What is this code doing?
+
+``` python
+def   example_function(param1,param2):print(param1+param2*2, end=' ')
+print("The result is:",  param1,param2) 
+def   another_function(x,y):return x+y
+class  MyClass: def __init__(self,param):self.param=param
+def  method(self):if self.param >10:print("Value is greater than 10")
+else:print("Value is 10 or less") 
+my_list=[1,2,3,4,5]
+dictionary={'key1':'value1','key2':'value2'}
+result=another_function(5,10) 
+print(result)
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+So what are the rules?
 
 * Indentation: The convention is to use 4 spaces. Tabs are not recommended as they can lead to inconsistencies:
 

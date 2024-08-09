@@ -81,7 +81,7 @@ diameter = 2*height + 2*width
 ```
 Just by using descriptive names we can understand what the code is trying to do.
 
-In addition, everything that you write (variables, constants, function, classes...) comes with a way to write it:
+In addition, everything that you write (variables, constants, function, classes...) comes with a way to name it. The main conventions are:
 
 * **Variables, function and methods use the `Snake_case` convention.** It means that they should use lowercase letters and words should be separated by underscore:
 
@@ -95,7 +95,7 @@ def compute_diameter(width, height):
     return 2*width + 2*height
 ```
 
-* **Class names follow the PascalCase convention (also known as CamelCase).** In that convention, each word starts with a capital letter and there are **NO** underscores between lines.
+* **Class names follow the PascalCase convention (also known as CamelCase).** In that convention, each word starts with a capital letter and there are **NO** underscores between words.
 
 ``` python
 # This is bad
@@ -105,8 +105,18 @@ class example_class:
 class ExampleClass:
 ```
 
+* **Constant name follow the UPPER_SNAKE_CASE convention.** Constants, or variables that are intended to remain unchanged, should be written in all uppercase letters, with words separated by underscores.
 
 
+``` python
+# This is bad:
+speedoflight = 3e8
+plankconstant = 6.62e-34
+
+# This is good
+SPEED_OF_LIGHT = 3e8
+PLANK_CONSTANT = 6.62e-34 
+```
 
 ## Beautiful is better than ugly 
 

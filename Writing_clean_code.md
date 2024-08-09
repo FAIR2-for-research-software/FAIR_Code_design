@@ -52,7 +52,7 @@ Namespaces are one honking great idea -- let's do more of those!
 ```
 
 
-## Readbility counts 
+## Readability counts 
 
 As Guido van Rossum (Python creator and Benevolent dictator for life) once said ''Code is read much more often than it is written''
 
@@ -213,11 +213,40 @@ print(result)
 :::::::::::::::::::::::::::::::::
 
 
-
-
 ## Sparse is better than dense.
 
-Whitespace
+
+When you write your code it is important to make it readable. Avoiding cluttered code by making is sparse and spaced out makes it easier to read and increase clarity and readability. Use whitespaces, correct indentation and separation will make your code quicker to understand. Moreover, when code is spread out with proper comments and breaks it is easier to modify or debug. So what are the rules?
+
+* Indentation: The convention is to use 4 spaces. Tabs are not recommended as they can lead to inconsistencies:
+
+``` python
+def example_function():
+    if True:
+        print("Indented correctly")
+```
+
+* Whitespaces around operators: A single space on both sides of binary operators should be included (`+, -, *, /, =, ==, !=, <, >, <=, >=, etc`).
+
+``` python
+#This is bad
+a=2
+b=3
+c=4
+result=a+b+c
+
+
+#This is good
+a = 2
+b = 3
+c = 4
+result = a + b * c
+```
+
+
+  
+
+
 
 
 ## If the implementation is hard to explain, it’s a bad idea...If the implementation is easy to explain, it may be a good idea.

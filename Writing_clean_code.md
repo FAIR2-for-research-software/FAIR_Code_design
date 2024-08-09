@@ -125,22 +125,9 @@ When you run PyLint on a Python file, it provides an output with the following c
 ::::::::::::::::::::::::::::::::::::: challenge
 
 
-Let's have a look at an example: Consider that file [here]() and run PyLint on it.
+Let's have a look at an example: Consider that file [here](https://github.com/Romain-Thomas-Shef/FAIR_Code_design/blob/main/write_clean_code/example_bad_PEP8.py) and run PyLint on it. Try to clean up the code according to the error messages you see.
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::: solution
-
-You should get a result that look like this:
-
-```bash
-
-```
-
-:::::::::::::::::::::::::::::::::
-
-
-
 
 ### Configuration: 
 

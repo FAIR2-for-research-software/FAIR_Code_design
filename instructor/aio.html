@@ -598,7 +598,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -654,7 +654,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -724,7 +724,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -784,7 +784,7 @@ print(f"Factorial of {number} is {result}")</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ul>
 <li>
@@ -931,7 +931,8 @@ name to variables, function and classes. Avoid single letter names like
 <p>Just by using descriptive names we can understand what the code is
 trying to do.</p>
 <p>In addition, everything that you write (variables, constants,
-function, classes…) comes with a way to write it:</p>
+function, classes…) comes with a way to name it. The main conventions
+are:</p>
 <ul>
 <li>
 <strong>Variables, function and methods use the
@@ -953,7 +954,7 @@ use lowercase letters and words should be separated by underscore:</li>
 <li>
 <strong>Class names follow the PascalCase convention (also known as
 CamelCase).</strong> In that convention, each word starts with a capital
-letter and there are <strong>NO</strong> underscores between lines.</li>
+letter and there are <strong>NO</strong> underscores between words.</li>
 </ul>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -963,6 +964,24 @@ letter and there are <strong>NO</strong> underscores between lines.</li>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># This is good</span></span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">class</span> ExampleClass:</span></code></pre>
+</div>
+<ul>
+<li>
+<strong>Constant name follow the UPPER_SNAKE_CASE
+convention.</strong> Constants, or variables that are intended to remain
+unchanged, should be written in all uppercase letters, with words
+separated by underscores.</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># This is bad:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>speedoflight <span class="op">=</span> <span class="fl">3e8</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>plankconstant <span class="op">=</span> <span class="fl">6.62e-34</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># This is good</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>SPEED_OF_LIGHT <span class="op">=</span> <span class="fl">3e8</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>PLANK_CONSTANT <span class="op">=</span> <span class="fl">6.62e-34</span> </span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="beautiful-is-better-than-ugly">Beautiful is better than ugly<a class="anchor" aria-label="anchor" href="#beautiful-is-better-than-ugly"></a>
 <a class="anchor" aria-label="anchor" href="#beautiful-is-better-than-ugly"></a>
@@ -1017,10 +1036,10 @@ variables, and functions that can be simplified.</p></li>
 <h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a>
 </h3>
 <p>To analyse a python file you can simply run:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
 </div>
 <p>When you run PyLint on a Python file, it provides an output with the
 following components:</p>
@@ -1054,10 +1073,10 @@ messages you see.</p>
 You can create a configuration file (.pylintrc) to customize the
 behavior of PyLint, such as enabling/disabling certain checks, adjusting
 thresholds, and more. Generate a configuration file using:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -1501,7 +1520,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -1813,7 +1832,7 @@ found in the configuration file OR the one given by the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>AHAHAHAHA you really though it would be that easy…. :)</p>
 </div>

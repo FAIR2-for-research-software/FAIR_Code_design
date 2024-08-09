@@ -63,7 +63,40 @@ In addition, if multiple people are looking at the code and developing with you,
 
 ## Explicit is better than implicit.
 
-Naming convention
+Writing clear code is not complicated. It starts by giving meaningful name to variables, function and classes. Avoid single letter names like `x` or `y`.
+For example:
+
+``` python
+# This is bad:
+
+x = 5
+y = 10
+z = 2*x + 2*y
+
+# This is much better:
+
+width = 5
+height = 10
+diameter = 2*height + 2* width
+```
+Just by using descriptive names we can understand what the code is trying to do.
+
+In addition, everything that you write (variables, constants, function, classes...) comes with a way to write it:
+
+* Variables, function and methods use the `Snake_case` convention. It means that they should use lowercase letters and words should be separated by underscore:
+
+```
+# This is bad
+def ComputeDiameter(width, height):
+    return 2*width + 2*height
+
+# This is good
+def compute_diameter(width, height):
+    return 2*width + 2*height
+```
+
+
+
 
 ## Beautiful is better than ugly 
 

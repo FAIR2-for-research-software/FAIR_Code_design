@@ -887,8 +887,8 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!</code></pre>
-</section><section><h2 class="section-heading" id="readbility-counts">Readbility counts<a class="anchor" aria-label="anchor" href="#readbility-counts"></a>
-<a class="anchor" aria-label="anchor" href="#readbility-counts"></a>
+</section><section><h2 class="section-heading" id="readability-counts">Readability counts<a class="anchor" aria-label="anchor" href="#readability-counts"></a>
+<a class="anchor" aria-label="anchor" href="#readability-counts"></a>
 </h2>
 <hr class="half-width">
 <p>As Guido van Rossum (Python creator and Benevolent dictator for life)
@@ -1112,7 +1112,44 @@ understandable.</p>
 <a class="anchor" aria-label="anchor" href="#sparse-is-better-than-dense-"></a>
 </h2>
 <hr class="half-width">
-<p>Whitespace</p>
+<p>When you write your code it is important to make it readable.
+Avoiding cluttered code by making is sparse and spaced out makes it
+easier to read and increase clarity and readability. Use whitespaces,
+correct indentation and separation will make your code quicker to
+understand. Moreover, when code is spread out with proper comments and
+breaks it is easier to modify or debug. So what are the rules?</p>
+<ul>
+<li>Indentation: The convention is to use 4 spaces. Tabs are not
+recommended as they can lead to inconsistencies:</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">True</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Indented correctly"</span>)</span></code></pre>
+</div>
+<ul>
+<li>Whitespaces around operators: A single space on both sides of binary
+operators should be included
+(<code>+, -, *, /, =, ==, !=, &lt;, &gt;, &lt;=, &gt;=, etc</code>).</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co">#This is bad</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>a<span class="op">=</span><span class="dv">2</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>b<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>c<span class="op">=</span><span class="dv">4</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>result<span class="op">=</span>a<span class="op">+</span>b<span class="op">+</span>c</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#This is good</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>result <span class="op">=</span> a <span class="op">+</span> b <span class="op">*</span> c</span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="if-the-implementation-is-hard-to-explain-its-a-bad-ideaif-the-implementation-is-easy-to-explain-it-may-be-a-good-idea-">If the implementation is hard to explain, it’s a bad idea…If the
 implementation is easy to explain, it may be a good idea.<a class="anchor" aria-label="anchor" href="#if-the-implementation-is-hard-to-explain-its-a-bad-ideaif-the-implementation-is-easy-to-explain-it-may-be-a-good-idea."></a>
 <a class="anchor" aria-label="anchor" href="#if-the-implementation-is-hard-to-explain-its-a-bad-ideaif-the-implementation-is-easy-to-explain-it-may-be-a-good-idea-"></a>
@@ -1156,10 +1193,10 @@ variables, and functions that can be simplified.</p></li>
 <h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a>
 </h3>
 <p>To analyse a python file you can simply run:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
 </div>
 <p>When you run PyLint on a Python file, it provides an output with the
 following components:</p>
@@ -1193,10 +1230,10 @@ messages you see.</p>
 You can create a configuration file (.pylintrc) to customize the
 behavior of PyLint, such as enabling/disabling certain checks, adjusting
 thresholds, and more. Generate a configuration file using:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -1329,7 +1366,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -1361,7 +1398,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1389,7 +1426,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1640,7 +1677,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -1952,7 +1989,7 @@ found in the configuration file OR the one given by the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>AHAHAHAHA you really though it would be that easy…. :)</p>
 </div>

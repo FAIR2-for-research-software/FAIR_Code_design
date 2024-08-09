@@ -77,13 +77,13 @@ z = 2*x + 2*y
 
 width = 5
 height = 10
-diameter = 2*height + 2* width
+diameter = 2*height + 2*width
 ```
 Just by using descriptive names we can understand what the code is trying to do.
 
 In addition, everything that you write (variables, constants, function, classes...) comes with a way to write it:
 
-* Variables, function and methods use the `Snake_case` convention. It means that they should use lowercase letters and words should be separated by underscore:
+* **Variables, function and methods use the `Snake_case` convention**. It means that they should use lowercase letters and words should be separated by underscore:
 
 ``` python
 # This is bad

@@ -255,6 +255,31 @@ dictionary = {'key1': 'value1', 'key2': 'value2'}
 
 ```  
 
+* Blank lines: Use two blank lines before a top-level function or class definition and use a single blank line between method definitions inside a class.
+
+
+``` python
+# This is bad
+class MyClass:
+    def method_one(self):
+        pass
+    def method_two(self):
+        pass
+
+# This is good
+
+class MyClass:
+    def method_one(self):
+        pass
+
+    def method_two(self):
+        pass
+
+```
+
+
+
+
 ## If the implementation is hard to explain, it’s a bad idea...If the implementation is easy to explain, it may be a good idea.
 
 

@@ -241,13 +241,19 @@ a = 2
 b = 3
 c = 4
 result = a + b * c
-```
+``` 
 
+* Comma and colon spacing: you shoud include a single space after a comma and you should include a space after the colon in dictionary:
 
-  
+```python
 
+#This is bad
+dictionary={'key1':'value1','key2':'value2'}
 
+#This is good
+dictionary = {'key1': 'value1', 'key2': 'value2'}
 
+```  
 
 ## If the implementation is hard to explain, it’s a bad idea...If the implementation is easy to explain, it may be a good idea.
 

@@ -226,7 +226,7 @@ def example_function():
         print("Indented correctly")
 ```
 
-* Whitespaces around operators: A single space on both sides of binary operators should be included (`+, -, *, /, =, ==, !=, <, >, <=, >=, etc`).
+* **Whitespaces around operators**: A single space on both sides of binary operators should be included (`+, -, *, /, =, ==, !=, <, >, <=, >=, etc`).
 
 ``` python
 #This is bad
@@ -243,7 +243,7 @@ c = 4
 result = a + b * c
 ``` 
 
-* Comma and colon spacing: you shoud include a single space after a comma and you should include a space after the colon in dictionary:
+* **Comma and colon spacing**: you shoud include a single space after a comma and you should include a space after the colon in dictionary:
 
 ```python
 
@@ -255,7 +255,7 @@ dictionary = {'key1': 'value1', 'key2': 'value2'}
 
 ```  
 
-* Blank lines: Use two blank lines before a top-level function or class definition and use a single blank line between method definitions inside a class.
+* **Blank lines**: Use two blank lines before a top-level function or class definition and use a single blank line between method definitions inside a class.
 
 
 ``` python

@@ -83,7 +83,7 @@ Just by using descriptive names we can understand what the code is trying to do.
 
 In addition, everything that you write (variables, constants, function, classes...) comes with a way to write it:
 
-* **Variables, function and methods use the `Snake_case` convention**. It means that they should use lowercase letters and words should be separated by underscore:
+* **Variables, function and methods use the `Snake_case` convention.** It means that they should use lowercase letters and words should be separated by underscore:
 
 ``` python
 # This is bad
@@ -93,6 +93,16 @@ def ComputeDiameter(width, height):
 # This is good
 def compute_diameter(width, height):
     return 2*width + 2*height
+```
+
+* **Class names follow the PascalCase convention (also known as CamelCase).** In that convention, each word starts with a capital letter and there are **NO** underscores between lines.
+
+``` python
+# This is bad
+class example_class:
+
+# This is good
+class ExampleClass:
 ```
 
 

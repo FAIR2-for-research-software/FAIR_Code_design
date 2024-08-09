@@ -79,6 +79,7 @@ width = 5
 height = 10
 diameter = 2*height + 2*width
 ```
+
 Just by using descriptive names we can understand what the code is trying to do.
 
 In addition, everything that you write (variables, constants, function, classes...) comes with a way to name it. The main conventions are:
@@ -120,7 +121,28 @@ PLANK_CONSTANT = 6.62e-34
 
 ## Beautiful is better than ugly 
 
-Code layout, indentation, maximum line length
+
+In the context of Python, *beautiful* means that the code is clean, readable and well structured. *Beautiful* code is easy to understand, not only for you but also others people who might have to maintain the code in the future. It uses meaningful names and clear logic and structure.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+What is this code doing?
+
+```
+print(sum(x**2 for x in range(2, 100) if all(x % d != 0 for d in range(2, int(x**0.5) + 1))))
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution
+
+This one-liner finds all prime numbers less than 100, squares them, and returns the sum of these squares.
+
+:::::::::::::::::::::::::::::::::
+
+'Beautiful is better than ugly' means that developers should aim for simplicity and elegant solution. It makes a code very difficult to maintain when the author tries to cram as much as much functionality as possible in a single line or function. Always tries to break down into clear single component.
+
+Beautiful code is aesthetically pleasing because it follows good design principles (see next chapter). It is modular, reusable, and adheres to the DRY (Don't Repeat Yourself) principle. It avoids unnecessary complexity and focuses on clarity.
 
 ## Sparse is better than dense.
 

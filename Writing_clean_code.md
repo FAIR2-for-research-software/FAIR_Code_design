@@ -144,6 +144,77 @@ This one-liner finds all prime numbers less than 100, squares them, and returns 
 
 Beautiful code is aesthetically pleasing because it follows good design principles (see next chapter). It is modular, reusable, and adheres to the DRY (Don't Repeat Yourself) principle. It avoids unnecessary complexity and focuses on clarity.
 
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Rewrite the one-liner given above to make it more readable and understandable.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution
+
+``` python
+def is_prime(n):
+    """Check if a number is prime using a basic method."""
+    
+    # If n is less than or equal to 1, it is not a prime number
+    if n <= 1:
+        return False
+    
+    # 2 and 3 are prime numbers
+    if n <= 3:
+        return True
+    
+    # Exclude multiples of 2 and 3
+    # If n is divisible by 2 or 3, it is not a prime number
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    
+    # Check potential factors from 5 up to the square root of n
+    # The step size is 6 because after checking 2 and 3, we only need to check numbers of the form 6k ± 1
+    # This is because all prime numbers are of the form 6k ± 1, except for 2 and 3
+    i = 5
+    while i * i <= n:
+        # If n is divisible by i, it is not a prime number
+        if n % i == 0:
+            return False
+        # If n is divisible by i + 2, it is not a prime number
+        if n % (i + 2) == 0:
+            return False
+        # Move to the next potential factor
+        i += 6
+    
+    # If no divisors were found, n is a prime number
+    return True
+
+
+def sum_of_squares_of_primes(upper_limit):
+    """
+    Find all prime numbers less than 'upper_limit', square them, and return their sum.
+    """
+    sum_squares = 0
+    
+    # Iterate through numbers to find primes and calculate their squares
+    for number in range(2, upper_limit):
+        if is_prime(number):
+            sum_squares += number ** 2
+
+    return sum_squares
+
+# Define the upper limit
+upper_limit = 100
+
+# Calculate and print the result
+result = sum_of_squares_of_primes(upper_limit)
+print(result)
+
+```
+
+:::::::::::::::::::::::::::::::::
+
+
+
+
 ## Sparse is better than dense.
 
 Whitespace

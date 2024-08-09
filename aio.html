@@ -1006,7 +1006,7 @@ logic and structure.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>This one-liner finds all prime numbers less than 100, squares them,
 and returns the sum of these squares.</p>
@@ -1023,6 +1023,87 @@ clear single component.</p>
 design principles (see next chapter). It is modular, reusable, and
 adheres to the DRY (Don’t Repeat Yourself) principle. It avoids
 unnecessary complexity and focuses on clarity.</p>
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+</h3>
+<div class="callout-content">
+<p>Rewrite the one-liner given above to make it more readable and
+understandable.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> is_prime(n):</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co">"""Check if a number is prime using a basic method."""</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    </span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="co"># If n is less than or equal to 1, it is not a prime number</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    </span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>    <span class="co"># 2 and 3 are prime numbers</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">3</span>:</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>    </span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>    <span class="co"># Exclude multiples of 2 and 3</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>    <span class="co"># If n is divisible by 2 or 3, it is not a prime number</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> n <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    </span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>    <span class="co"># Check potential factors from 5 up to the square root of n</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>    <span class="co"># The step size is 6 because after checking 2 and 3, we only need to check numbers of the form 6k ± 1</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>    <span class="co"># This is because all prime numbers are of the form 6k ± 1, except for 2 and 3</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">*</span> i <span class="op">&lt;=</span> n:</span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a>        <span class="co"># If n is divisible by i, it is not a prime number</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a>        <span class="cf">if</span> n <span class="op">%</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>        <span class="co"># If n is divisible by i + 2, it is not a prime number</span></span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>        <span class="cf">if</span> n <span class="op">%</span> (i <span class="op">+</span> <span class="dv">2</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a>        <span class="co"># Move to the next potential factor</span></span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">6</span></span>
+<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a>    </span>
+<span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a>    <span class="co"># If no divisors were found, n is a prime number</span></span>
+<span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a><span class="kw">def</span> sum_of_squares_of_primes(upper_limit):</span>
+<span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="co">    Find all prime numbers less than 'upper_limit', square them, and return their sum.</span></span>
+<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a>    sum_squares <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a>    </span>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a>    <span class="co"># Iterate through numbers to find primes and calculate their squares</span></span>
+<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a>    <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, upper_limit):</span>
+<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a>        <span class="cf">if</span> is_prime(number):</span>
+<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a>            sum_squares <span class="op">+=</span> number <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a>    <span class="cf">return</span> sum_squares</span>
+<span id="cb7-47"><a href="#cb7-47" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" tabindex="-1"></a><span class="co"># Define the upper limit</span></span>
+<span id="cb7-49"><a href="#cb7-49" tabindex="-1"></a>upper_limit <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb7-50"><a href="#cb7-50" tabindex="-1"></a></span>
+<span id="cb7-51"><a href="#cb7-51" tabindex="-1"></a><span class="co"># Calculate and print the result</span></span>
+<span id="cb7-52"><a href="#cb7-52" tabindex="-1"></a>result <span class="op">=</span> sum_of_squares_of_primes(upper_limit)</span>
+<span id="cb7-53"><a href="#cb7-53" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="sparse-is-better-than-dense-">Sparse is better than dense.<a class="anchor" aria-label="anchor" href="#sparse-is-better-than-dense."></a>
 <a class="anchor" aria-label="anchor" href="#sparse-is-better-than-dense-"></a>
 </h2>
@@ -1071,10 +1152,10 @@ variables, and functions that can be simplified.</p></li>
 <h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a>
 </h3>
 <p>To analyse a python file you can simply run:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
 </div>
 <p>When you run PyLint on a Python file, it provides an output with the
 following components:</p>
@@ -1086,12 +1167,12 @@ number of errors, warnings, and refactor suggestions.</li>
 <li>Score: An overall score out of 10, reflecting the code quality based
 on the issues detected.</li>
 </ul>
-<div id="discussion2" class="callout discussion">
+<div id="discussion3" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion3"></a>
 </h3>
 <div class="callout-content">
 <p>Let’s have a look at an example: Consider that file <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/blob/main/write_clean_code/example_bad_PEP8.py" class="external-link">here</a>
@@ -1108,10 +1189,10 @@ messages you see.</p>
 You can create a configuration file (.pylintrc) to customize the
 behavior of PyLint, such as enabling/disabling certain checks, adjusting
 thresholds, and more. Generate a configuration file using:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -1538,7 +1619,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -1850,7 +1931,7 @@ found in the configuration file OR the one given by the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>AHAHAHAHA you really though it would be that easy…. :)</p>
 </div>

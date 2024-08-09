@@ -385,7 +385,7 @@ trying to do.</p>
 function, classes…) comes with a way to write it:</p>
 <ul><li>
 <strong>Variables, function and methods use the
-<code>Snake_case</code> convention</strong>. It means that they should
+<code>Snake_case</code> convention.</strong> It means that they should
 use lowercase letters and words should be separated by underscore:</li>
 </ul><div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -397,6 +397,19 @@ use lowercase letters and words should be separated by underscore:</li>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co"># This is good</span></span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="kw">def</span> compute_diameter(width, height):</span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span><span class="op">*</span>width <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>height</span></code></pre>
+</div>
+<ul><li>
+<strong>Class names follow the PascalCase convention (also known as
+CamelCase).</strong> In that convention, each word starts with a capital
+letter and there are <strong>NO</strong> underscores between lines.</li>
+</ul><div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># This is bad</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">class</span> example_class:</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># This is good</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">class</span> ExampleClass:</span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="beautiful-is-better-than-ugly">Beautiful is better than ugly<a class="anchor" aria-label="anchor" href="#beautiful-is-better-than-ugly"></a>
 <a class="anchor" aria-label="anchor" href="#beautiful-is-better-than-ugly"></a></h2>
@@ -437,10 +450,10 @@ variables, and functions that can be simplified.</p></li>
 <div class="section level3">
 <h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a></h3>
 <p>To analyse a python file you can simply run:</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
 </div>
 <p>When you run PyLint on a Python file, it provides an output with the
 following components:</p>
@@ -471,10 +484,10 @@ messages you see.</p>
 You can create a configuration file (.pylintrc) to customize the
 behavior of PyLint, such as enabling/disabling certain checks, adjusting
 thresholds, and more. Generate a configuration file using:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 </div>
 <div class="section level3">

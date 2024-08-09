@@ -430,7 +430,46 @@ separated by underscores.</li>
 </div>
 </section><section><h2 class="section-heading" id="beautiful-is-better-than-ugly">Beautiful is better than ugly<a class="anchor" aria-label="anchor" href="#beautiful-is-better-than-ugly"></a>
 <a class="anchor" aria-label="anchor" href="#beautiful-is-better-than-ugly"></a></h2>
-<hr class="half-width"><p>Code layout, indentation, maximum line length</p>
+<hr class="half-width"><p>In the context of Python, <em>beautiful</em> means that the code is
+clean, readable and well structured. <em>Beautiful</em> code is easy to
+understand, not only for you but also others people who might have to
+maintain the code in the future. It uses meaningful names and clear
+logic and structure.</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
+<p>What is this code doing?</p>
+<pre><code>print(sum(x**2 for x in range(2, 100) if all(x % d != 0 for d in range(2, int(x**0.5) + 1))))</code></pre>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>This one-liner finds all prime numbers less than 100, squares them,
+and returns the sum of these squares.</p>
+</div>
+</div>
+</div>
+</div>
+<p>‘Beautiful is better than ugly’ means that developers should aim for
+simplicity and elegant solution. It makes a code very difficult to
+maintain when the author tries to cram as much as much functionality as
+possible in a single line or function. Always tries to break down into
+clear single component.</p>
+<p>Beautiful code is aesthetically pleasing because it follows good
+design principles (see next chapter). It is modular, reusable, and
+adheres to the DRY (Don’t Repeat Yourself) principle. It avoids
+unnecessary complexity and focuses on clarity.</p>
 </section><section><h2 class="section-heading" id="sparse-is-better-than-dense-">Sparse is better than dense.<a class="anchor" aria-label="anchor" href="#sparse-is-better-than-dense."></a>
 <a class="anchor" aria-label="anchor" href="#sparse-is-better-than-dense-"></a></h2>
 <hr class="half-width"><p>Whitespace</p>
@@ -467,10 +506,10 @@ variables, and functions that can be simplified.</p></li>
 <div class="section level3">
 <h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a></h3>
 <p>To analyse a python file you can simply run:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
 </div>
 <p>When you run PyLint on a Python file, it provides an output with the
 following components:</p>
@@ -480,12 +519,12 @@ line number, and a brief description.</li>
 number of errors, warnings, and refactor suggestions.</li>
 <li>Score: An overall score out of 10, reflecting the code quality based
 on the issues detected.</li>
-</ul><div id="discussion1" class="callout discussion">
+</ul><div id="discussion2" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
 </h3>
 <div class="callout-content">
 <p>Let’s have a look at an example: Consider that file <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/blob/main/write_clean_code/example_bad_PEP8.py" class="external-link">here</a>
@@ -501,10 +540,10 @@ messages you see.</p>
 You can create a configuration file (.pylintrc) to customize the
 behavior of PyLint, such as enabling/disabling certain checks, adjusting
 thresholds, and more. Generate a configuration file using:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 </div>
 <div class="section level3">

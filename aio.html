@@ -1160,6 +1160,30 @@ comma and you should include a space after the colon in dictionary:</li>
 <span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#This is good</span></span>
 <span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>dictionary <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span></code></pre>
 </div>
+<ul>
+<li>Blank lines: Use two blank lines before a top-level function or
+class definition and use a single blank line between method definitions
+inside a class.</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># This is bad</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co"># This is good</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="if-the-implementation-is-hard-to-explain-its-a-bad-ideaif-the-implementation-is-easy-to-explain-it-may-be-a-good-idea-">If the implementation is hard to explain, it’s a bad idea…If the
 implementation is easy to explain, it may be a good idea.<a class="anchor" aria-label="anchor" href="#if-the-implementation-is-hard-to-explain-its-a-bad-ideaif-the-implementation-is-easy-to-explain-it-may-be-a-good-idea."></a>
 <a class="anchor" aria-label="anchor" href="#if-the-implementation-is-hard-to-explain-its-a-bad-ideaif-the-implementation-is-easy-to-explain-it-may-be-a-good-idea-"></a>
@@ -1203,10 +1227,10 @@ variables, and functions that can be simplified.</p></li>
 <h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a>
 </h3>
 <p>To analyse a python file you can simply run:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
 </div>
 <p>When you run PyLint on a Python file, it provides an output with the
 following components:</p>
@@ -1240,10 +1264,10 @@ messages you see.</p>
 You can create a configuration file (.pylintrc) to customize the
 behavior of PyLint, such as enabling/disabling certain checks, adjusting
 thresholds, and more. Generate a configuration file using:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -1392,7 +1416,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1420,7 +1444,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>

@@ -92,7 +92,7 @@ Comments and documentation strings
 ## PyLint
 
 
-PyLint is a tool that analyzes Python code to find programming errors, enforce a coding standard, and look for improvements. It provides a score based on the number of issues detected, helping developers maintain clean and readable code.
+PyLint is a tool that analyzes Python code to find programming errors, enforce a coding standard, and look for improvements. It provides a score based on the number of issues detected, helping you writing clean and readable code.
  
 
 ### Key Features of PyLint
@@ -100,7 +100,7 @@ PyLint is a tool that analyzes Python code to find programming errors, enforce a
 - Error Detection: Identifies syntax errors, undefined variables, and other potential bugs.
 Detects issues such as using undefined variables, unnecessary imports, and more.
 
-- Coding Standard Enforcement: Checks the code against PEP 8 (Python Enhancement Proposal 8), the widely accepted style guide for Python code. Flags violations such as incorrect indentation, naming conventions, and line length.
+- Coding Standard Enforcement: Checks the code against PEP 8. Flags violations such as incorrect indentation, naming conventions, and line length.
 
 - Code Quality Metrics: Provides a detailed report with metrics like code complexity, number of lines, and number of classes. Offers a score that reflects the overall quality of the code.
 
@@ -122,8 +122,24 @@ When you run PyLint on a Python file, it provides an output with the following c
 - Statistics: Provides a summary of the issues found, such as the number of errors, warnings, and refactor suggestions.
 - Score: An overall score out of 10, reflecting the code quality based on the issues detected.
 
+::::::::::::::::::::::::::::::::::::: challenge
+
 
 Let's have a look at an example: Consider that file [here]() and run PyLint on it.
+ 
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution
+
+You should get a result that look like this:
+
+```bash
+
+```
+
+:::::::::::::::::::::::::::::::::
+
+
 
 
 ### Configuration: 

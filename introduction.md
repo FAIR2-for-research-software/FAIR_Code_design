@@ -27,21 +27,6 @@ Writing good code enhances efficiency and maintainability. Research projects can
 ### Collaboration and Community Contribution
 Good coding practices facilitate collaboration and contribution from the wider research community. Open-source research software, written with clear, standardized coding practices, attracts contributions from other researchers and developers. This collaborative environment can lead to improvements in the software, innovative uses, and more robust and versatile tools, ultimately benefiting the entire research community.
 
-
-
-## Designing your code is a continuous process
-
-Research software development is inherently a continuous process driven by the need to adapt to evolving scientific requirements, maintain and enhance quality, and integrate new technologies. This ongoing cycle is fueled by feedback from researchers, advancements in scientific methodologies, and technological progress, all of which necessitate regular updates and improvements.
-
-
-![Designing loop](fig/Loop.png)
-
-Maintaining and supporting research software involves continuous tasks such as implementation of new fetures, bug fixing and performance optimization. As research needs and computational loads change, software must be regularly updated to optimize performance. A scalable architecture and modular design allow for independent development, deployment, and scaling of individual components, fostering ongoing enhancements. Regular usability testing, peer reviews, and iterative design improvements ensure that research software remains user-friendly and meets evolving scientific needs.
-
-The benefits of continuous research software development are significant, including enhanced responsiveness to researcher feedback and advancements in the field, higher quality through ongoing testing and improvements, and fostering innovation by incorporating new scientific methods and technologies. However, this approach also presents challenges, such as managing resources effectively, ensuring team coordination, and addressing technical debt. Overall, a continuous development process ensures that research software remains relevant, secure, and valuable to the scientific community over time.
-
-
-
 ## Readability
 
 ### Definition and key aspects
@@ -99,30 +84,6 @@ Key aspects:
 
 - **Quality**: Reusable components are often well-tested, leading to more reliable and bug-free software
 
-## Maintainability
-
-### Definition
-Maintainability in software refers to the ease with which a software system can be modified to correct faults, improve performance or other attributes, or adapt to a changed environment. Highly maintainable software is designed to be easily understood, tested, and updated by developers, ensuring that the software can evolve over time with minimal effort and cost.
-
-Key aspects:
-
-- Core readibility:  
-
-- Modularity:
-
-- Documentation: 
-
-- Consistent formating:
-
-- Automated testing:
-
-- Version Control:
-
-- Refactoring: 
-
-
-### Benefits
-
 ## Scalability
 
 ### Definition and key aspects
@@ -148,11 +109,38 @@ Multiple types of scalability can be considered, here are a few examples:
 - **Future-Proofing**: Designing for scalability ensures that the system can grow and adapt to future requirements without significant overhauls.
 
 
+## Maintainability
+
+### Definition and key aspects
+Maintainability in software refers to the ease with which a software system can be modified to correct faults, improve performance or other attributes, or adapt to a changed environment. Highly maintainable software is designed to be easily understood, tested, and updated by developers, ensuring that the software can evolve over time with minimal effort and cost.
+
+Key aspects:
+
+- Core readibility: your code should be organized logically with meaningful names for variables, functions and classes.  
+
+- Modularity: If you divide your software into distinct modules or components, each responsible for a specific functionality, you will greatly reduce dependencies.
+
+- Documentation: The documentation of the code should be continuously updated to reflect the latest state of the sotware.
+
+- Automated testing: Testing your software is important to make sure that modification and implementatio of new functionalities do not break it. 
+
+
+
+### Benefits
+
+- **Reduce technical debt**: Maintainable code is easier to refacto ad improve over time, reducing the accumulation of technical debt. The cost and effort to maintain the software will be significantly reduced
+
+- **Faster development**: If you code is maintainable, it will be easier to understand, modify and extend. It will also be easier to identfy and fix bugs.
+
+- **Increase collaboration**: Having a maintainable code will make it easier for people to join you!
+
+- **Adaptability to new requirements**: if your code is maintainable it will be easier to adapt it to changing (or new) requirements, as it is often the case in research.
+
+
 
 ## Quizz
 
----> Got to [this website](https://www.mentimeter.com/) and enter the following code:
-
+Results of the Quiz in mentimeter slides. The question for each code is 'Is this code readable, reusable, maintainable, scalable'?
 
 ::::::::::::::::::::::::::::::::: challenge
 

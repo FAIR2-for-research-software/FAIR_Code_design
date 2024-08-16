@@ -303,7 +303,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2024-07-30 |
+<p>Last updated on 2024-08-16 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -371,35 +371,6 @@ lead to improvements in the software, innovative uses, and more robust
 and versatile tools, ultimately benefiting the entire research
 community.</p>
 </div>
-</section><section><h2 class="section-heading" id="designing-your-code-is-a-continuous-process">Designing your code is a continuous process<a class="anchor" aria-label="anchor" href="#designing-your-code-is-a-continuous-process"></a>
-<a class="anchor" aria-label="anchor" href="#designing-your-code-is-a-continuous-process"></a>
-</h2>
-<hr class="half-width">
-<p>Research software development is inherently a continuous process
-driven by the need to adapt to evolving scientific requirements,
-maintain and enhance quality, and integrate new technologies. This
-ongoing cycle is fueled by feedback from researchers, advancements in
-scientific methodologies, and technological progress, all of which
-necessitate regular updates and improvements.</p>
-<figure><img src="../fig/Loop.png" alt="Designing loop" class="figure mx-auto d-block"><div class="figcaption">Designing loop</div>
-</figure><p>Maintaining and supporting research software involves continuous
-tasks such as implementation of new fetures, bug fixing and performance
-optimization. As research needs and computational loads change, software
-must be regularly updated to optimize performance. A scalable
-architecture and modular design allow for independent development,
-deployment, and scaling of individual components, fostering ongoing
-enhancements. Regular usability testing, peer reviews, and iterative
-design improvements ensure that research software remains user-friendly
-and meets evolving scientific needs.</p>
-<p>The benefits of continuous research software development are
-significant, including enhanced responsiveness to researcher feedback
-and advancements in the field, higher quality through ongoing testing
-and improvements, and fostering innovation by incorporating new
-scientific methods and technologies. However, this approach also
-presents challenges, such as managing resources effectively, ensuring
-team coordination, and addressing technical debt. Overall, a continuous
-development process ensures that research software remains relevant,
-secure, and valuable to the scientific community over time.</p>
 </section><section><h2 class="section-heading" id="readability">Readability<a class="anchor" aria-label="anchor" href="#readability"></a>
 <a class="anchor" aria-label="anchor" href="#readability"></a>
 </h2>
@@ -491,34 +462,6 @@ codebases.</p></li>
 well-tested, leading to more reliable and bug-free software</p></li>
 </ul>
 </div>
-</section><section><h2 class="section-heading" id="maintainability">Maintainability<a class="anchor" aria-label="anchor" href="#maintainability"></a>
-<a class="anchor" aria-label="anchor" href="#maintainability"></a>
-</h2>
-<hr class="half-width">
-<div class="section level3">
-<h3 id="definition">Definition<a class="anchor" aria-label="anchor" href="#definition"></a>
-</h3>
-<p>Maintainability in software refers to the ease with which a software
-system can be modified to correct faults, improve performance or other
-attributes, or adapt to a changed environment. Highly maintainable
-software is designed to be easily understood, tested, and updated by
-developers, ensuring that the software can evolve over time with minimal
-effort and cost.</p>
-<p>Key aspects:</p>
-<ul>
-<li><p>Core readibility:</p></li>
-<li><p>Modularity:</p></li>
-<li><p>Documentation:</p></li>
-<li><p>Consistent formating:</p></li>
-<li><p>Automated testing:</p></li>
-<li><p>Version Control:</p></li>
-<li><p>Refactoring:</p></li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="benefits-2">Benefits<a class="anchor" aria-label="anchor" href="#benefits-2"></a>
-</h3>
-</div>
 </section><section><h2 class="section-heading" id="scalability">Scalability<a class="anchor" aria-label="anchor" href="#scalability"></a>
 <a class="anchor" aria-label="anchor" href="#scalability"></a>
 </h2>
@@ -547,7 +490,7 @@ performance</li>
 </ul>
 </div>
 <div class="section level3">
-<h3 id="benefits-3">Benefits<a class="anchor" aria-label="anchor" href="#benefits-3"></a>
+<h3 id="benefits-2">Benefits<a class="anchor" aria-label="anchor" href="#benefits-2"></a>
 </h3>
 <ul>
 <li><p><strong>Improved Performance</strong>: Scalable systems maintain
@@ -566,12 +509,58 @@ ensures that the system can grow and adapt to future requirements
 without significant overhauls.</p></li>
 </ul>
 </div>
+</section><section><h2 class="section-heading" id="maintainability">Maintainability<a class="anchor" aria-label="anchor" href="#maintainability"></a>
+<a class="anchor" aria-label="anchor" href="#maintainability"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="definition-and-key-aspects-3">Definition and key aspects<a class="anchor" aria-label="anchor" href="#definition-and-key-aspects-3"></a>
+</h3>
+<p>Maintainability in software refers to the ease with which a software
+system can be modified to correct faults, improve performance or other
+attributes, or adapt to a changed environment. Highly maintainable
+software is designed to be easily understood, tested, and updated by
+developers, ensuring that the software can evolve over time with minimal
+effort and cost.</p>
+<p>Key aspects:</p>
+<ul>
+<li><p>Core readibility: your code should be organized logically with
+meaningful names for variables, functions and classes.</p></li>
+<li><p>Modularity: If you divide your software into distinct modules or
+components, each responsible for a specific functionality, you will
+greatly reduce dependencies.</p></li>
+<li><p>Documentation: The documentation of the code should be
+continuously updated to reflect the latest state of the
+sotware.</p></li>
+<li><p>Automated testing: Testing your software is important to make
+sure that modification and implementatio of new functionalities do not
+break it.</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="benefits-3">Benefits<a class="anchor" aria-label="anchor" href="#benefits-3"></a>
+</h3>
+<ul>
+<li><p><strong>Reduce technical debt</strong>: Maintainable code is
+easier to refacto ad improve over time, reducing the accumulation of
+technical debt. The cost and effort to maintain the software will be
+significantly reduced</p></li>
+<li><p><strong>Faster development</strong>: If you code is maintainable,
+it will be easier to understand, modify and extend. It will also be
+easier to identfy and fix bugs.</p></li>
+<li><p><strong>Increase collaboration</strong>: Having a maintainable
+code will make it easier for people to join you!</p></li>
+<li><p><strong>Adaptability to new requirements</strong>: if your code
+is maintainable it will be easier to adapt it to changing (or new)
+requirements, as it is often the case in research.</p></li>
+</ul>
+</div>
 </section><section><h2 class="section-heading" id="quizz">Quizz<a class="anchor" aria-label="anchor" href="#quizz"></a>
 <a class="anchor" aria-label="anchor" href="#quizz"></a>
 </h2>
 <hr class="half-width">
-<p>—&gt; Got to <a href="https://www.mentimeter.com/" class="external-link">this website</a>
-and enter the following code:</p>
+<p>Results of the Quiz in mentimeter slides. The question for each code
+is ‘Is this code readable, reusable, maintainable, scalable’?</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1010,7 +999,7 @@ logic and structure.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>This one-liner finds all prime numbers less than 100, squares them,
 and returns the sum of these squares.</p>
@@ -1045,7 +1034,7 @@ understandable.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2130,8 +2119,8 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/aio.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/aio.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-08-13",
-  "datePublished": "2024-08-13"
+  "dateModified": "2024-08-16",
+  "datePublished": "2024-08-16"
 }
 
   </script><script>

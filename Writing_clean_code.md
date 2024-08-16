@@ -304,17 +304,38 @@ class MyClass:
 
 ## If the implementation is hard to explain, it’s a bad idea...If the implementation is easy to explain, it may be a good idea.
 
+If you follow this FAIR training program you might be interested to share your code with the wider research community. If that's the case people might want to have a look at your code. This aphorism tells you that how you implemented your code matters! Code should always be easy to understand. If you are unable to explain what your code is doing then you should not leave it in your software. Conversely, if you are able to explain in an easy what your piece of code is doing, this is probably a good implementation. For example
 
-Comments and documentation strings
+::::::::::::::::::::::::::::::::::::: challenge
 
+What is this code doing?
 
+``` python
 
+def check_number(num):
+    if num % 2 == 0:
+        if num % 5 == 0:
+            return True
+        else:
+            return False
+    else:
+        return False
+```
 
-## Errors should never pass silently....Unless explicitly silenced
+How could you make it easier to understand?
 
+::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::: solution
 
-## Simple is better than complex...complex is better than complicated
+The function checks if a number is both even and a multiple of 5. A better way of doing it could be:
+
+```
+def check_number(num):
+    return num % 2 == 0 and num % 5 == 0
+```
+
+:::::::::::::::::::::::::::::::::
 
 
 ## PyLint

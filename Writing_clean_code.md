@@ -128,7 +128,7 @@ In the context of Python, *beautiful* means that the code is clean, readable and
 
 What is this code doing?
 
-```
+``` python
 print(sum(x**2 for x in range(2, 100) if all(x % d != 0 for d in range(2, int(x**0.5) + 1))))
 ```
 

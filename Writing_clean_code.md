@@ -330,12 +330,23 @@ How could you make it easier to understand?
 
 The function checks if a number is both even and a multiple of 5. A better way of doing it could be:
 
-```
+``` python
 def check_number(num):
     return num % 2 == 0 and num % 5 == 0
 ```
 
 :::::::::::::::::::::::::::::::::
+
+In addition to writing simpler and more logical code, commenting your code is important. For more complex type of operations it is often useful to explain what is the logic behind the reasoning and why a particular approach has been chosen.
+
+ There are a few rules for writing comments in Python:
+
+* Comments should be complete sentences and start with a capital letter.
+* Block comments apply to the code coming after it and are indented to the same level of that code. Each line should start with a `#` followed by a single space. 
+* Inline comments should be separate by at least two spaces from the piece of code they are related to.
+* Comments should not state the obvious (it is distracting).
+
+Finally, when you update your code you should **always** update the comment. 'Comments that contradict the code are worse than no comments' [PEP8].
 
 
 ## PyLint

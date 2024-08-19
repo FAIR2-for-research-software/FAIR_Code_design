@@ -6,15 +6,17 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
+- What are PEPs?
 - How to write clean?
+- How can I do this efficiently with Pylint?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Understand why it is important to write good code
-- 
 - Write PEP8 compliant code
+- Use Pylint to help with code formating and programmatic errors
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

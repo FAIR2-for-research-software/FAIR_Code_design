@@ -86,7 +86,7 @@ Just by using descriptive names we can understand what the code is trying to do.
 
 In addition, everything that you write (variables, constants, function, classes...) comes with a way to name it. The main conventions are:
 
-* **Variables, function and methods use the `Snake_case` convention.** It means that they should use lowercase letters and words should be separated by underscore:
+* **Variables, function and methods use the `snake_case` convention.** It means that they should use lowercase letters and words should be separated by underscore:
 
 ``` python
 # This is bad
@@ -108,11 +108,11 @@ class example_class:
 class ExampleClass:
 ```
 
-* **Constant name follow the UPPER_SNAKE_CASE convention.** Constants, or variables that are intended to remain unchanged, should be written in all uppercase letters, with words separated by underscores.
+* **Constant names follow the UPPER_SNAKE_CASE convention.** Constants, or variables that are intended to remain unchanged, should be written in all uppercase letters, with words separated by underscores.
 
 
 ``` python
-# This is bad:
+# This is bad
 speedoflight = 3e8
 plankconstant = 6.62e-34
 
@@ -142,74 +142,71 @@ This one-liner finds all prime numbers less than 100, squares them, and returns 
 
 :::::::::::::::::::::::::::::::::
 
-'Beautiful is better than ugly' means that developers should aim for simplicity and elegant solution. It makes a code very difficult to maintain when the author tries to cram as much as much functionality as possible in a single line or function. Always tries to break down into clear single component.
+'Beautiful is better than ugly' means that developers should aim for simplicity and elegant solution. It makes a code very difficult to maintain when the author tries to cram as much functionality as possible in a single line or function. Always tries to break down into clear single component.
 
 Beautiful code is aesthetically pleasing because it follows good design principles (see next chapter). It is modular, reusable, and adheres to the DRY (Don't Repeat Yourself) principle. It avoids unnecessary complexity and focuses on clarity.
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
+Rewrite the following one-liner:
 
-Rewrite the one-liner given above to make it more readable and understandable.
+``` python
+words = ['apple', 'banana', 'cherry', 'date', 'fig', 'grape']
+result = [len(word) for word in words if len(word) % 2 == 0 and 'a' in word.lower()]
+```
+
+You will create three functions: `has_even_length`, `contains_letter_a`, `process_words` and you will pass the following list of word `words = ['apple', 'banana', 'cherry', 'date', 'fig', 'grape']`.
+ 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution
 
 ``` python
-def is_prime(n):
-    """Check if a number is prime using a basic method."""
-    
-    # If n is less than or equal to 1, it is not a prime number
-    if n <= 1:
-        return False
-    
-    # 2 and 3 are prime numbers
-    if n <= 3:
-        return True
-    
-    # Exclude multiples of 2 and 3
-    # If n is divisible by 2 or 3, it is not a prime number
-    if n % 2 == 0 or n % 3 == 0:
-        return False
-    
-    # Check potential factors from 5 up to the square root of n
-    # The step size is 6 because after checking 2 and 3, we only need to check numbers of the form 6k ± 1
-    # This is because all prime numbers are of the form 6k ± 1, except for 2 and 3
-    i = 5
-    while i * i <= n:
-        # If n is divisible by i, it is not a prime number
-        if n % i == 0:
-            return False
-        # If n is divisible by i + 2, it is not a prime number
-        if n % (i + 2) == 0:
-            return False
-        # Move to the next potential factor
-        i += 6
-    
-    # If no divisors were found, n is a prime number
-    return True
-
-
-def sum_of_squares_of_primes(upper_limit):
+def has_even_length(word):
     """
-    Find all prime numbers less than 'upper_limit', square them, and return their sum.
-    """
-    sum_squares = 0
+    Check if the length of the word is even.
     
-    # Iterate through numbers to find primes and calculate their squares
-    for number in range(2, upper_limit):
-        if is_prime(number):
-            sum_squares += number ** 2
+    Args:
+        word (str): The word to check.
+        
+    Returns:
+        bool: True if the length of the word is even, False otherwise.
+    """
+    return len(word) % 2 == 0
 
-    return sum_squares
+def contains_letter_a(word):
+    """
+    Check if the word contains the letter 'a' (case-insensitive).
+    
+    Args:
+        word (str): The word to check.
+        
+    Returns:
+        bool: True if the word contains 'a', False otherwise.
+    """
+    return 'a' in word.lower()
 
-# Define the upper limit
-upper_limit = 100
+def process_words(words):
+    """
+    Process a list of words to return the lengths of words that are both even in length and contain the letter 'a'.
+    
+    Args:
+        words (list of str): The list of words to process.
+        
+    Returns:
+        list of int: A list of lengths of words that meet the criteria.
+    """
+    lengths = []
+    for word in words:
+        if has_even_length(word) and contains_letter_a(word):
+            lengths.append(len(word))
+    return lengths
 
-# Calculate and print the result
-result = sum_of_squares_of_primes(upper_limit)
-print(result)
-
+# Example usage:
+words = ['apple', 'banana', 'cherry', 'date', 'fig', 'grape']
+result = process_words(words)
+print(result)  # Output: [5, 6]
 ```
 
 :::::::::::::::::::::::::::::::::

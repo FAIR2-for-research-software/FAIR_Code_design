@@ -371,18 +371,12 @@ class ValueChecker:
 numbers_list = [1, 2, 3, 4, 5]
 key_value_pairs = {'key1': 'value1', 'key2': 'value2'}
 
-# Calculate and print adjusted sum
-calculate_adjusted_sum(5, 10)
-
 # Add two numbers and print the result
 result = add_two_numbers(5, 10)
 print("Sum of numbers:", result)
-
-# Check value and print message
-checker = ValueChecker(15)
-checker.check_and_print_message()
-
 ```
+
+We actually see now that the class or the first function were not used at all in the rest of the code. If that codes stands like this, they can be removed..
 
 :::::::::::::::::::::::::::::::::
 

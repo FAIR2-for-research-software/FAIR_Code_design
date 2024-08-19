@@ -219,7 +219,7 @@ When you write your code it is important to make it readable. Avoiding cluttered
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-What is this code doing?
+What is wrong with this code? Is it actually working?
 
 ``` python
 def   example_function(param1,param2):print(param1+param2*2, end=' ')
@@ -297,6 +297,94 @@ class MyClass:
         pass
 
 ```
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Based on what we saw up to now, rewrite this code to make it easier to understand.
+
+``` python
+def   example_function(param1,param2):print(param1+param2*2, end=' ')
+print("The result is:",  param1,param2) 
+def   another_function(x,y):return x+y
+class  MyClass: def __init__(self,param):self.param=param
+def  method(self):if self.param >10:print("Value is greater than 10")
+else:print("Value is 10 or less") 
+my_list=[1,2,3,4,5]
+dictionary={'key1':'value1','key2':'value2'}
+result=another_function(5,10) 
+print(result)
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution
+
+``` python
+def calculate_adjusted_sum(base_value, multiplier):
+    """
+    Calculate and print the sum of the base_value and twice the multiplier.
+    
+    Args:
+        base_value (int or float): The base value to which the adjusted multiplier will be added.
+        multiplier (int or float): The value that will be doubled and added to the base value.
+    """
+    adjusted_sum = base_value + (multiplier * 2)
+    print(adjusted_sum, end=' ')
+    print("The adjusted sum is:", base_value, multiplier)
+
+
+def add_two_numbers(x, y):
+    """
+    Return the sum of two numbers.
+    
+    Args:
+        x (int or float): The first number.
+        y (int or float): The second number.
+    
+    Returns:
+        int or float: The sum of x and y.
+    """
+    return x + y
+
+
+class ValueChecker:
+    def __init__(self, value):
+        """
+        Initialize with a specific value.
+        
+        Args:
+            value (int or float): The value to be checked.
+        """
+        self.value = value
+
+    def check_and_print_message(self):
+        """
+        Print a message based on whether the value is greater than 10 or not.
+        """
+        if self.value > 10:
+            print("The value is greater than 10.")
+        else:
+            print("The value is 10 or less.")
+
+
+# Example usage
+numbers_list = [1, 2, 3, 4, 5]
+key_value_pairs = {'key1': 'value1', 'key2': 'value2'}
+
+# Calculate and print adjusted sum
+calculate_adjusted_sum(5, 10)
+
+# Add two numbers and print the result
+result = add_two_numbers(5, 10)
+print("Sum of numbers:", result)
+
+# Check value and print message
+checker = ValueChecker(15)
+checker.check_and_print_message()
+
+```
+
+:::::::::::::::::::::::::::::::::
 
 
 

@@ -438,8 +438,7 @@ PyLint is a tool that analyzes Python code to find programming errors, enforce a
 
 ### Key Features of PyLint
 
-- Error Detection: Identifies syntax errors, undefined variables, and other potential bugs.
-Detects issues such as using undefined variables, unnecessary imports, and more.
+- Error Detection: Detects issues such as using undefined variables, unnecessary imports, and more.
 
 - Coding Standard Enforcement: Checks the code against PEP 8. Flags violations such as incorrect indentation, naming conventions, and line length.
 

@@ -84,31 +84,6 @@ Key aspects:
 
 - **Quality**: Reusable components are often well-tested, leading to more reliable and bug-free software
 
-## Scalability
-
-### Definition and key aspects
-**Scalability in software refers to the ability of a system, application, or process to handle increased loads or demands without compromising performance, reliability, or efficiency**. This involves the capacity of the software to grow and manage higher demands by adding resources or optimizing the existing ones. Scalability is a critical consideration in software design and architecture, ensuring that the system can accommodate growth in users, transactions, data volume, or other metrics over time.
-
-
-Multiple types of scalability can be considered, here are a few examples:
-
-- Data scalability: The ability to efficiently store, retrieve, and process large volumes of data.
-- User scalability: Supporting an increasing number of simultaneous users without degradation of performance
-- Functional scalability: The ability to add new features of functionalities to the software without affecting existing performance
-
-
-### Benefits
-- **Improved Performance**: Scalable systems maintain or improve performance levels as the load increases.
-
-- **Cost Efficiency**: Scalability allows for gradual investment in additional resources as needed, rather than over-provisioning from the start.
-
-- **Reliability and Availability**: Scalable systems often include redundancy and failover mechanisms, improving overall system reliability and uptime.
-
-- **User Satisfaction**: Providing consistent and reliable performance even as user demand grows ensures a better user experience.
-
-- **Future-Proofing**: Designing for scalability ensures that the system can grow and adapt to future requirements without significant overhauls.
-
-
 ## Maintainability
 
 ### Definition and key aspects
@@ -258,45 +233,3 @@ However, the code is not reusable because the function calculate_statistics is h
 ::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::
-
-
-::::::::::::::::::::::::::::::::: challenge
-
-Code #4: 
-
-```
-def factorial(n):
-    """
-    Calculate the factorial of a non-negative integer n.
-    
-    Parameters:
-    n (int): A non-negative integer whose factorial is to be computed.
-    
-    Returns:
-    int: The factorial of the given number n.
-    """
-    # Base case: factorial of 0 or 1 is 1
-    if n == 0 or n == 1:
-        return 1
-    # Recursive case: n * factorial of (n-1)
-    return n * factorial(n - 1)
-
-# Example usage
-number = 5
-result = factorial(number)
-print(f"Factorial of {number} is {result}")
-```
-
-::::::::::::::::: solution
-
-- **Maintainable**: The code is well-structured with a clear base case and recursive case. The function is documented, explaining what it does and the parameters it takes.
-- **Readable**: The variable names are descriptive, and the function logic is simple and easy to follow. The use of comments and a docstring further enhances readability.
-- **Reusable**: The factorial function can be reused to calculate the factorial of any non-negative integer.
-
-However, the recursive approach to calculating factorial is not scalable for large values of n due to the risk of stack overflow and the inefficiency of repeated function calls. For large inputs, this implementation will not perform well and can cause a maximum recursion depth exceeded error in Python.
-
-::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::::
-
-

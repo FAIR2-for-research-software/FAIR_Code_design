@@ -12,8 +12,10 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Learn how to set up configuration files using a simple INI file
-- Be able to create simple command line interfaces with argparse
+- Understand the purpose and usage of configuration files and command line interfaces.
+- Create, read, and write configuration files in different formats (INI, JSON, YAML)
+- Learn to design and implement command-line interfaces (CLI) using argparse
+- Integrate configuration files with CLI arguments for dynamic applications.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

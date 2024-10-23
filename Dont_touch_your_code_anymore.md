@@ -36,47 +36,7 @@ Benefits:
 - **Documentation**: Well-structured configuration files serve as documentation for your run. They provide a clear and organized record of the settings used, which is crucial for understanding and interpreting results.
 - **Version Control**: Configuration files can be versioned alongside the code using version control systems like Git. 
 
-### Types of configuration files and when to use them?
-
-Whan you start exploring the different types of configuration files you will see that you have multiple options. We list below the most common ones that you may come accross:
-
-- INI (Initialization) files:
-  - Use case: Simple key-value pairs; small configuration files.
-  - Pros: Readable, simple and part of the Python standard library.
-  - Cons: Limited structure.
-
-- JSON (JavaScript Object Notation) files:
-  - Use case: Structured data, when the configuration is more complex.
-  - Pros: Well-supported, common format in research datasets (e.g., APIs) and part of the Python standard library.
-  - Cons: Harder to write manually and does not allow comments.
-
--YAML (YAML Ain’t Markup Language):
-  - Use case: Human-readable configurations for larger, more complex files.
-  - Pros: Readability, supports complex structures.
-  - Cons: Slightly less intuitive if you’re unfamiliar and not in the Python Standard Library.
-
-- TOML (Tom's Obvious, Minimal Language):
-  - Use case: Newer, easier-to-read alternative to JSON.
-  - Pros: Minimal and simple, part of the standard Python Library from python 3.11. 
-  - Cons: Less widely used than JSON or YAML.
-
-
-## Configuration files
-
-### Advantages of using configuration files
-
-Using configuration files in a research context offers several specific benefits that can greatly enhance the efficiency, reproducibility, and manageability of research projects. Here are the key reasons why configuration files are beneficial in a research setting:
-
-
-- **Reproducibility**: Configuration files ensure that experiments can be easily replicated by maintaining consistent settings across different runs. This is critical for verifying results and peer review.
-
-- **Parameter Managemen**t: Research often involves experimenting with various parameters. Configuration files allow researchers to manage and tweak these parameters without altering the core codebase, enabling easier experimentation and optimization.
-
-- **Collaboration**: Research projects often involve collaboration between multiple researchers. Configuration files provide a clear and centralized way to share settings, making it easier for team members to understand and modify the setup as needed.
-
-
-
-### How to build configuration files? What library should I use?
+### Types of configuration files 
 
 As it is often the case in Python, multiple options are available:
 
@@ -98,9 +58,8 @@ key = value3
     multiline
 ```
 
-INI files are structured as (case sensitive) sections in which you can list keyword/value pairs (like for a dictionary) separated by either the `=` or `:` signs. Values can span multiple lines and comments are accepted as long as the extra lines are  indented with respect to the first line. 
+INI files are structured as (case sensitive) sections in which you can list keyword/value pairs (like for a dictionary) separated by either the `=` or `:` signs. Values can span multiple lines and comments are accepted as long as the extra lines are indented with respect to the first line. All data are parsed as strings.  
  
-
 - JSON: Originally developed for JavaScript, they are very popular in web applications. The module to read these files is [json](https://docs.python.org/3/library/json.html#module-json) and also part of the standard library.  
 
 ```
@@ -115,7 +74,7 @@ INI files are structured as (case sensitive) sections in which you can list keyw
 }
 ```
 
-JSON files are also structured as section and keyword/value pairs. JSON files start with an opening brace `{` and end with a closing brace `}`. Then each section comes with its name followed by `:`. Then key/value pairs are listed within braces (one for each section). Nevertheless, comments are not allowed.
+JSON files are also structured as section and keyword/value pairs. JSON files start with an opening brace `{` and end with a closing brace `}`. Then each section comes with its name followed by `:`. Then key/value pairs are listed within braces (one for each section). Nevertheless, comments are not allowed and they might be a little bit more complex to write.
 
 
 - YAML Files: are also a popular format (used for github action for example). In order to read (and write) YAML files, you will need to install a third party package called [PyYAML](https://pyyaml.org/).
@@ -134,6 +93,16 @@ section2:
 YAML files work also with sections and keyword/value pairs.  
 
 
+- TOML files are a bit more recent than the other ones but start to be widely use in Python (a simple example is the setup.py file for installation that became a pyproject.toml file in the last years). They allow structure and data formats. They are quite similar to INI files for the syntax. 
+
+```
+[section1]
+key1 = value1 
+key2 = value2
+
+[section2]
+key1 = value1
+```
 
 
 ### Configparser: loading and writing config files

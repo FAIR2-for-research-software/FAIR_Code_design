@@ -486,12 +486,13 @@ simple exercice on writing a configuration file, manually.</p>
 <div class="callout-content">
 <p>Using the text editor of your choice, create an INI file with three
 sections: simulation, environment and initial conditions. In the first
-section, to parameters are given: <code>time_step</code> set at 0.01s
+section, two parameters are given: <code>time_step</code> set at 0.01s
 and <code>total_time</code> set at 100.0s. The environment section also
 has two parameters with <code>gravity</code> at 9.81 and
 <code>air_resistance</code> at 0.02. Finally the initial conditions are:
 <code>velocity</code> at 10.0 km/s, <code>angle</code> at 45 degrees and
-<code>height</code> at 1 m</p>
+<code>height</code> at 1m.</p>
+<p>Do the same for a TOML file.</p>
 </div>
 </div>
 </div>
@@ -500,7 +501,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -521,7 +522,7 @@ height = 0.0</code></pre>
 </div>
 </div>
 <div class="section level4">
-<h4 id="reading-configuration-files">Reading configuration files<a class="anchor" aria-label="anchor" href="#reading-configuration-files"></a></h4>
+<h4 id="reading-configuration-files-ini">Reading configuration files: INI<a class="anchor" aria-label="anchor" href="#reading-configuration-files-ini"></a></h4>
 <p>Reading an INI file is very easy. It requires the use of the <a href="https://docs.python.org/3/library/configparser.html" class="external-link">Configparser</a>
 library. You do not need to install it because it comes as part of the
 standard library. When you want to read a config file you will need to
@@ -791,7 +792,7 @@ found in the configuration file OR the one given by the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>AHAHAHAHA you really though it would be that easy…. :)</p>
 </div>

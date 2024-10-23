@@ -113,7 +113,9 @@ In the following we will be using INI files. We will start by a simple exercice 
 ::::::::::::::::::::::::::::::::::::: challenge
 
 Using the text editor of your choice, create an INI file with three sections: simulation, environment and initial conditions. 
-In the first section, to parameters are given: `time_step` set at 0.01s and `total_time` set at 100.0s. The environment section also has two parameters with `gravity` at 9.81 and `air_resistance` at 0.02. Finally the initial conditions are: `velocity` at 10.0 km/s, `angle` at 45 degrees and `height` at 1 m
+In the first section, two parameters are given: `time_step` set at 0.01s and `total_time` set at 100.0s. The environment section also has two parameters with `gravity` at 9.81 and `air_resistance` at 0.02. Finally the initial conditions are: `velocity` at 10.0 km/s, `angle` at 45 degrees and `height` at 1m.
+
+Do the same for a TOML file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -137,7 +139,7 @@ height = 0.0
 ```
 :::::::::::::::::::::::::::::::::
 
-#### Reading configuration files
+#### Reading configuration files: INI
 
 Reading an INI file is very easy. It requires the use of the [Configparser](https://docs.python.org/3/library/configparser.html) library. You do not need to install it because it comes as part of the standard library. When you want to read a config file you will need to import it and create a parser object which will then be used to read the file we created just above, as follows:
 

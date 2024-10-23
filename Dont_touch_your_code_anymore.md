@@ -214,7 +214,6 @@ It will also be giving a string...And that can be annoying when you have some ot
 In some occasions it might also be interesting to be able to write configuration file programatically. **Configparser** allows the user to write INI files as well.
 As for reading them, everything starts by importing the module and creating an object:
 
-
 ```
 #Let's import the ConfigParser object directly
 from configparser import ConfigParser 
@@ -254,6 +253,19 @@ velocity = 5.0
 angle = 30.0
 height = 0.5
 ```
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Using the [TOML]() documentation, read the configuration file that you create above.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution
+
+:::::::::::::::::::::::::::::::::
+
+
+
 
 ## Using command line interfaces
 

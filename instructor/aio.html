@@ -596,7 +596,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -651,7 +651,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -720,7 +720,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1678,25 +1678,31 @@ applications.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="why-should-you-use-configuration-files">Why should you use configuration files?<a class="anchor" aria-label="anchor" href="#why-should-you-use-configuration-files"></a>
 </h2>
 <hr class="half-width">
-<p>Research software is often based on a trial-error or trial-trial
-loops. You will often find yourself trying to rerun a code with
-different parameters to try different configuration of your experiment.
-So far what we have seen deals with the design of the code itself and
-how to make it cleaner, more readable and maintainable. BUT! what if you
-need to try something new by changing few parameters of your code? You
-will need to go and change the code itself! And it is very likely that
-you will do this a few times (or a lot!). Along the way, and unless you
-are able to track very well all your trials, you will probably loose
-track of some of them. In addition, modifying endlessly the code
-increase greatly the risk of introducing errors…</p>
-<p>In order to avoid such problems we are going to see a couple of
-options that are easily available and implementable:</p>
+<p>Until now, what we have seen deals with the design of the code itself
+and how to make it cleaner, more readable and maintainable. Now we are
+going to see how to actually stop touching while still modifying it.
+Research is often based on a trial-error or trial-trial loops. You will
+often find yourself trying to rerun a code with different parameters to
+try different configuration. Hard coding this values can lead to
+inflexibility and error-prone results because it means that you will
+need to go change the code itself to change the configuration. In
+addition, and unless you are able to track very well all your trials,
+you will probably loose track of some of them.</p>
+<p>Configuration files will allow you to adjust these parameters outside
+the code, improving reproducibility and making the code usable across
+different contexts.</p>
+<p>Benefits:</p>
 <ul>
-<li>Configuration files</li>
-<li>Command line interface</li>
+<li>Easier Reproducibility: By simply changing configuration files, you
+can reproduce the same results or adjust parameters for new
+experiments.</li>
+<li>Collaboration: Configuration files allow collaborators to use the
+same script but adjust settings for their own environment.</li>
+<li>Minimizing Code Modifications: Parameters are externalized, making
+the core code cleaner and more maintainable.</li>
 </ul></section><section><h2 class="section-heading" id="configuration-files">Configuration files<a class="anchor" aria-label="anchor" href="#configuration-files"></a>
 </h2>
 <hr class="half-width">

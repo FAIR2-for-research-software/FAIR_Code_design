@@ -105,7 +105,7 @@ key1 = value1
 ```
 
 
-### Configparser: loading and writing config files
+### Loading and writing INI files: Configparser
 
 In the following we will be using INI files. We will start by a simple exercice on writing a configuration file, manually. 
 
@@ -137,6 +137,7 @@ velocity = 10.0
 angle = 45.0
 height = 0.0
 ```
+
 :::::::::::::::::::::::::::::::::
 
 #### Reading configuration files: INI

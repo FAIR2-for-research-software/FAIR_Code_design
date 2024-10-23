@@ -19,16 +19,18 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Why should you use configuration files?
 
-Research software is often based on a trial-error or trial-trial loops. You will often find yourself trying to rerun a code with different parameters to try different configuration of your experiment. 
-So far what we have seen deals with the design of the code itself and how to make it cleaner, more readable and maintainable. BUT! what if you need to try something new by changing few parameters of your code? You will need to go and change the code itself! And it is very likely that you will do this a few times (or a lot!). Along the way, and unless you are able to track very well all your trials, you will probably loose track of some of them. In addition, modifying endlessly the code increase greatly the risk of introducing errors...
+Until now, what we have seen deals with the design of the code itself and how to make it cleaner, more readable and maintainable. Now we are going to see how to actually stop touching while still modifying it. 
+Research is often based on a trial-error or trial-trial loops. You will often find yourself trying to rerun a code with different parameters to try different configuration. Hard coding this values can lead to inflexibility and error-prone results because it means that you will need to go change the code itself to change the configuration. In addition, and unless you are able to track very well all your trials, you will probably loose track of some of them. 
 
-In order to avoid such problems we are going to see a couple of options that are easily available and implementable:
+Configuration files will allow you to adjust these parameters outside the code, improving reproducibility and making the code usable across different contexts.
 
-- Configuration files
-- Command line interface 
+Benefits:
 
+- Easier Reproducibility: By simply changing configuration files, you can reproduce the same results or adjust parameters for new experiments.
+- Collaboration: Configuration files allow collaborators to use the same script but adjust settings for their own environment.
+- Minimizing Code Modifications: Parameters are externalized, making the core code cleaner and more maintainable.
 
 ## Configuration files
 

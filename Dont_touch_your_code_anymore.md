@@ -19,7 +19,9 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Why should you use configuration files?
+## Configuration files
+
+### Why would need them?
 
 Until now, what we have seen deals with the design of the code itself and how to make it cleaner, more readable and maintainable. Now we are going to see how to actually stop touching while still modifying it. 
 Research is often based on a trial-error or trial-trial loops. You will often find yourself trying to rerun a code with different parameters to try different configuration. Hard coding this values can lead to inflexibility and error-prone results because it means that you will need to go change the code itself to change the configuration. In addition, and unless you are able to track very well all your trials, you will probably loose track of some of them. 
@@ -28,9 +30,36 @@ Configuration files will allow you to adjust these parameters outside the code, 
 
 Benefits:
 
-- Easier Reproducibility: By simply changing configuration files, you can reproduce the same results or adjust parameters for new experiments.
-- Collaboration: Configuration files allow collaborators to use the same script but adjust settings for their own environment.
-- Minimizing Code Modifications: Parameters are externalized, making the core code cleaner and more maintainable.
+- **Easier Reproducibility**: By simply changing configuration files, you can reproduce the same results or adjust parameters for new experiments.
+- **Collaboration**: Configuration files allow collaborators to use the same script but adjust settings for their own environment. It is also easier to share configurations between collaborators.
+- **Minimizing Code Modifications**: Parameters are externalized, making the core code cleaner and more maintainable.
+- **Documentation**: Well-structured configuration files serve as documentation for your run. They provide a clear and organized record of the settings used, which is crucial for understanding and interpreting results.
+- **Version Control**: Configuration files can be versioned alongside the code using version control systems like Git. 
+
+### Types of configuration files and when to use them?
+
+Whan you start exploring the different types of configuration files you will see that you have multiple options. We list below the most common ones that you may come accross:
+
+- INI (Initialization) files:
+  - Use case: Simple key-value pairs; small configuration files.
+  - Pros: Readable, simple and part of the Python standard library.
+  - Cons: Limited structure.
+
+- JSON (JavaScript Object Notation) files:
+  - Use case: Structured data, when the configuration is more complex.
+  - Pros: Well-supported, common format in research datasets (e.g., APIs) and part of the Python standard library.
+  - Cons: Harder to write manually and does not allow comments.
+
+-YAML (YAML Ain’t Markup Language):
+  - Use case: Human-readable configurations for larger, more complex files.
+  - Pros: Readability, supports complex structures.
+  - Cons: Slightly less intuitive if you’re unfamiliar and not in the Python Standard Library.
+
+- TOML (Tom's Obvious, Minimal Language):
+  - Use case: Newer, easier-to-read alternative to JSON.
+  - Pros: Minimal and simple, part of the standard Python Library from python 3.11. 
+  - Cons: Less widely used than JSON or YAML.
+
 
 ## Configuration files
 
@@ -45,9 +74,7 @@ Using configuration files in a research context offers several specific benefits
 
 - **Collaboration**: Research projects often involve collaboration between multiple researchers. Configuration files provide a clear and centralized way to share settings, making it easier for team members to understand and modify the setup as needed.
 
-- **Documentation**: Well-structured configuration files serve as documentation for the experimental setup. They provide a clear and organized record of the settings used, which is crucial for understanding and interpreting results.
 
-- **Version Control**: Configuration files can be versioned alongside the code using version control systems like Git. This makes it easy to track changes in experimental setups over time and understand the impact of these changes on the results.
 
 ### How to build configuration files? What library should I use?
 

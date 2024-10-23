@@ -859,7 +859,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -890,7 +890,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -917,7 +917,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1678,9 +1678,12 @@ applications.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="why-should-you-use-configuration-files">Why should you use configuration files?<a class="anchor" aria-label="anchor" href="#why-should-you-use-configuration-files"></a>
+<section><h2 class="section-heading" id="configuration-files">Configuration files<a class="anchor" aria-label="anchor" href="#configuration-files"></a>
 </h2>
 <hr class="half-width">
+<div class="section level3">
+<h3 id="why-would-need-them">Why would need them?<a class="anchor" aria-label="anchor" href="#why-would-need-them"></a>
+</h3>
 <p>Until now, what we have seen deals with the design of the code itself
 and how to make it cleaner, more readable and maintainable. Now we are
 going to see how to actually stop touching while still modifying it.
@@ -1696,14 +1699,69 @@ the code, improving reproducibility and making the code usable across
 different contexts.</p>
 <p>Benefits:</p>
 <ul>
-<li>Easier Reproducibility: By simply changing configuration files, you
-can reproduce the same results or adjust parameters for new
-experiments.</li>
-<li>Collaboration: Configuration files allow collaborators to use the
-same script but adjust settings for their own environment.</li>
-<li>Minimizing Code Modifications: Parameters are externalized, making
-the core code cleaner and more maintainable.</li>
-</ul></section><section><h2 class="section-heading" id="configuration-files">Configuration files<a class="anchor" aria-label="anchor" href="#configuration-files"></a>
+<li>
+<strong>Easier Reproducibility</strong>: By simply changing
+configuration files, you can reproduce the same results or adjust
+parameters for new experiments.</li>
+<li>
+<strong>Collaboration</strong>: Configuration files allow
+collaborators to use the same script but adjust settings for their own
+environment. It is also easier to share configurations between
+collaborators.</li>
+<li>
+<strong>Minimizing Code Modifications</strong>: Parameters are
+externalized, making the core code cleaner and more maintainable.</li>
+<li>
+<strong>Documentation</strong>: Well-structured configuration files
+serve as documentation for your run. They provide a clear and organized
+record of the settings used, which is crucial for understanding and
+interpreting results.</li>
+<li>
+<strong>Version Control</strong>: Configuration files can be
+versioned alongside the code using version control systems like
+Git.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="types-of-configuration-files-and-when-to-use-them">Types of configuration files and when to use them?<a class="anchor" aria-label="anchor" href="#types-of-configuration-files-and-when-to-use-them"></a>
+</h3>
+<p>Whan you start exploring the different types of configuration files
+you will see that you have multiple options. We list below the most
+common ones that you may come accross:</p>
+<ul>
+<li>INI (Initialization) files:
+<ul>
+<li>Use case: Simple key-value pairs; small configuration files.</li>
+<li>Pros: Readable, simple and part of the Python standard library.</li>
+<li>Cons: Limited structure.</li>
+</ul>
+</li>
+<li>JSON (JavaScript Object Notation) files:
+<ul>
+<li>Use case: Structured data, when the configuration is more
+complex.</li>
+<li>Pros: Well-supported, common format in research datasets (e.g.,
+APIs) and part of the Python standard library.</li>
+<li>Cons: Harder to write manually and does not allow comments.</li>
+</ul>
+</li>
+</ul>
+<p>-YAML (YAML Ain’t Markup Language): - Use case: Human-readable
+configurations for larger, more complex files. - Pros: Readability,
+supports complex structures. - Cons: Slightly less intuitive if you’re
+unfamiliar and not in the Python Standard Library.</p>
+<ul>
+<li>TOML (Tom’s Obvious, Minimal Language):
+<ul>
+<li>Use case: Newer, easier-to-read alternative to JSON.</li>
+<li>Pros: Minimal and simple, part of the standard Python Library from
+python 3.11.</li>
+<li>Cons: Less widely used than JSON or YAML.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="configuration-files-1">Configuration files<a class="anchor" aria-label="anchor" href="#configuration-files-1"></a>
 </h2>
 <hr class="half-width">
 <div class="section level3">
@@ -1728,14 +1786,6 @@ optimization.</p></li>
 collaboration between multiple researchers. Configuration files provide
 a clear and centralized way to share settings, making it easier for team
 members to understand and modify the setup as needed.</p></li>
-<li><p><strong>Documentation</strong>: Well-structured configuration
-files serve as documentation for the experimental setup. They provide a
-clear and organized record of the settings used, which is crucial for
-understanding and interpreting results.</p></li>
-<li><p><strong>Version Control</strong>: Configuration files can be
-versioned alongside the code using version control systems like Git.
-This makes it easy to track changes in experimental setups over time and
-understand the impact of these changes on the results.</p></li>
 </ul>
 </div>
 <div class="section level3">

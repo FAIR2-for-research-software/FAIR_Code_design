@@ -596,7 +596,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -651,7 +651,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -720,7 +720,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -859,7 +859,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -890,7 +890,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -917,7 +917,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1639,7 +1639,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Dont_touch_your_code_anymore"><p>Content from <a href="Dont_touch_your_code_anymore.html">Don't touch your code anymore!</a></p>
 <hr>
-<p>Last updated on 2024-10-23 |
+<p>Last updated on 2024-10-28 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Dont_touch_your_code_anymore.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -1791,7 +1791,8 @@ install a third party package called <a href="https://pyyaml.org/" class="extern
 widely use in Python (a simple example is the setup.py file for
 installation that became a pyproject.toml file in the last years). They
 allow structure and data formats. They are quite similar to INI files
-for the syntax.</li>
+for the syntax. It is worth mentioning that the library <a href="">tomllib</a> is part of the Python standard library from python
+versoin 3.11.</li>
 </ul>
 <pre><code>[section1]
 key1 = value1
@@ -1829,7 +1830,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -1955,7 +1956,7 @@ from configparser import ConfigParser
 
 # And create a config object
 config = ConfigParser()</code></pre>
-<p>Creating a configuration is equivalent of creating a
+<p>Creating a configuration is equivalent to creating a
 dictionaries:</p>
 <pre><code>config['simulation'] = {'time_step': 1.0, 'total_time': 200.0}
 config['environment'] = {'gravity': 9.81, 'air_resistance': 0.02}
@@ -1984,8 +1985,9 @@ height = 0.5</code></pre>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>Using the <a href="">TOML</a> documentation, read the configuration
-file that you create above.</p>
+<p>Using the <a href="https://docs.python.org/3/library/tomllib.html" class="external-link">tomllib</a>
+(json[])docmumentation, write a toml file (withthe same element as the
+previous exercise and read it back).</p>
 </div>
 </div>
 </div>
@@ -1994,7 +1996,7 @@ file that you create above.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -2041,9 +2043,9 @@ codes from HPCs.</p></li>
 <h3 id="creating-a-command-line-interface-in-python">Creating a command line interface in Python<a class="anchor" aria-label="anchor" href="#creating-a-command-line-interface-in-python"></a>
 </h3>
 <p>In Python, there is a very nice module called <a href="https://docs.python.org/3/library/argparse.html" class="external-link">argparse</a>. It
-allows to write in a very limited amount of lines a nice command line
-user interface. Again, that module is part of the standard library so
-you do not need to install anything.</p>
+allows to write, in a very limited amount of lines, a command line
+interface. Again, that module is part of the standard library so you do
+not need to install anything.</p>
 <p>As for the configuration files, we must start by importing the module
 and creating a parser object. The parser object can take a few
 arguments, the main ones are:</p>
@@ -2066,16 +2068,37 @@ arguments, the main ones are:</p>
 <span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="co">###create the parser object</span></span>
 <span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(prog<span class="op">=</span><span class="st">'My program'</span>,</span>
 <span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>                                 description<span class="op">=</span><span class="st">'This program is an example of command line interface in Python'</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a> 				 epilog<span class="op">=</span><span class="st">'Author: R. Thomas, 2024, UoS'</span>)</span></code></pre>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a> 				 epilog<span class="op">=</span><span class="st">'Author: R. Thomas, 2024, UoS'</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a></span></code></pre>
 </div>
+<p>Once this is written, you need to tell the program to analyse (parse)
+the arguments passed to program. This is done with the
+<code>parse_args()</code> method:</p>
+<pre><code><span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse.args</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<p>if you save everything in a python file
+(e.g. <code>commandline.py</code>) and run
+<code>python commandline.py --help</code> you will see the following on
+the terminal:</p>
+<pre><code>usage: My program [-h]
+
+This program is an example of command line interface in Python
+
+options:
+  -h, --help  show this help message and exit
+
+Author: R. Thomas, 2024, UoS</code></pre>
+<p>You can see that the only option that was implemented is the
+<code>help</code>. It is done by constructing the command line interface
+and you do not need to implement it yourself. Now let’s add extra
+arguments!</p>
 <p>Now we need to add arguments. To do so we need to use the
 <code>add_argument</code> method, part of the parser object:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co">###Add positional argument</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>parser.add_argument(<span class="st">'filename'</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>parser.add_argument(<span class="st">'outputdir'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co">###Add positional argument</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>parser.add_argument(<span class="st">'filename'</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>parser.add_argument(<span class="st">'outputdir'</span>)</span></code></pre>
 </div>
 <p>Using this type of argument (‘filename’ and ‘outputdir’) will make
 them mandatory. The user will have to pass a filename AND an output
@@ -2083,13 +2106,13 @@ directory to the program. It is worth mentioning that they will have to
 be passed in the right order by the user. It is useful sometimes to
 create optional arguments. This will be done using a <code>-</code> sign
 as first character in the name of the argument:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co">###Add optional arguments</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>parser.add_argument(<span class="st">'-s'</span>, <span class="st">'--start'</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-e'</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>parser.add_argument(<span class="st">'--color'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co">###Add optional arguments</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>parser.add_argument(<span class="st">'-s'</span>, <span class="st">'--start'</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-e'</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>parser.add_argument(<span class="st">'--color'</span>)</span></code></pre>
 </div>
 <p>You can either use the single dash (‘-s’), or double dash (‘–color’)
 or both. When given two options to call an argument, the user will have
@@ -2162,7 +2185,7 @@ found in the configuration file OR the one given by the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>AHAHAHAHA you really though it would be that easy…. :)</p>
 </div>
@@ -2234,8 +2257,8 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/aio.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/aio.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-10-23",
-  "datePublished": "2024-10-23"
+  "dateModified": "2024-10-28",
+  "datePublished": "2024-10-28"
 }
 
   </script><script>

@@ -351,15 +351,17 @@ For example, you can add this three lines before the `args = parser.parse.args()
 
 ``` Python
 parser.add_argument('file')               # positional argument (mandatory)
-parser.add_argument('file2')               # positional argument (mandatory)
+parser.add_argument('file2')              # positional argument (mandatory)
 parser.add_argument('-c', '--count')      # option that takes a value
+parser.add_argument('-n')                 # option that takes a value
+parser.add_argument('--max')                 # option that takes a value
 ```
 
 If once again you want to print the help in the terminal `python commandline.py --help` you will see the following being displayed:
 
 
 ```
-usage: My program [-h] [-c COUNT] filename
+usage: My program [-h] [-c COUNT] [-n N] [--max MAX] file file2
 
 This program is an example of command line interface in Python
 
@@ -370,11 +372,49 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
   -c COUNT, --count COUNT
+  -n N
+  --max MAX
 
 Author: R. Thomas, 2024, UoS
 ```
 
-The help tells you that `file` and `file2` are positional arguments. THe user have to provide the values for each of them (in the right order!). In the next section named 'options', we find the help, that was already there before, and the `count` option. This option can be called by using `-c` or `--count` and a value `COUNT` that the user will need to provide.
+The help tells you that `file` and `file2` are positional arguments. THe user have to provide the values for each of them (in the right order!). In the next section named 'options', we find the help, that was already there before, and the `count`, `n` and `max` options: 
+- The count option can be called by using `-c` OR `--count` and a value `COUNT` that the user will need to provide.
+- The `n` option is called using '-n' plus a value
+- The `max` option is called using '--max' plus a value
+
+
+Now that we have defined a few argument, we can tune them a little bit. The first thing you will want to do is to provide the user of your program with a small help. As is stands now, displaying the help tells you what are the arguments to be used but nothing tell you what they actually are. To prevent any confusion, add a one-liner help to your argument:
+
+``` Python
+parser.add_argument('file', help='input data file to the program')          # position argument
+parser.add_argument('file2', help='Configuration file to the program')      # position argument
+parser.add_argument('-c', '--count', help='Number of counts per iteration') # option that takes a value
+parser.add_argument('-n', help='Number of iteration')                       # option that takes a value
+parser.add_argument('--max', help='Maximum population per iteration')       # option that takes a value
+```
+
+These short descriptions will be displayed when using the help:
+
+
+```
+usage: My program [-h] [-c COUNT] [-n N] [--max MAX] file file2
+
+This program is an example of command line interface in Python
+
+positional arguments:
+  file                  input data file to the program
+  file2                 Configuration file to the program
+
+options:
+  -h, --help            show this help message and exit
+  -c COUNT, --count COUNT
+                        Number of counts per iteration
+  -n N                  Number of iteration
+  --max MAX             Maximum population per iteration
+
+Author: R. Thomas, 2024, UoS
+```
 
 
 

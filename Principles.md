@@ -20,7 +20,8 @@ exercises: 2
 ## Don't repeat yourself (DRY) - Rule of three
 
 #### Introduction
-The DRY Principle states: “Don’t Repeat Yourself.” It encourages you to minimize duplication by centralizing similar code patterns. This leads to more readable, maintainable, and scalable code.
+
+The DRY Principle states: **“Don’t Repeat Yourself.”** It encourages you to minimize duplication by centralizing similar code patterns. This leads to more readable, maintainable, and scalable code.
 
 Why DRY is it important:
 - Improves Readability: Code is clearer when it's not cluttered with repeated logic.
@@ -28,7 +29,7 @@ Why DRY is it important:
 - Saves Time: Updating and testing code is faster when code is organized with minimal duplication.
 
 
-####Using functions to avoid repeting code
+#### Using functions to avoid repeting code
 
 Instead of writing the same code in multiple places in your script, create a function. This makes updates easier and avoids errors. For example consider the following code:
 
@@ -52,7 +53,7 @@ price3 = calculate_price(200)
 print(price1, price2, price3)
 ```
 
-####Using loops instead of manual repetition
+#### Using loops instead of manual repetition
 
 In the previous examples we still call the function three time which is not optimal. In general, If you’re applying the same operation to multiple elements, use a loop to avoid repeated code blocks:
 
@@ -63,7 +64,7 @@ for price in prices:
 ```
 
 
-####Using constants for common values
+#### Using constants for common values
 
 When a value is repeated in multiple places, declare it as a constant variable. This way, you only need to change it once if necessary. Consider the following code:
 
@@ -95,9 +96,9 @@ Hello, Charlie!
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-####Summary
+#### Summary
 
-DRY helps you write clear, efficient, and error-resistant code. Use functions, loops, and constants to reduce repetition. A DRY approach saves time and effort in the long run, especially when scaling or debugging code.
+**DRY helps you write clear, efficient, and error-resistant code**. Use functions, loops, and constants to reduce repetition. A DRY approach **saves time and effort in the long run**, especially when scaling or debugging code.
 
 
 ## Keep it simple, Stupid (KISS) & Curly's Law - Do one Thing

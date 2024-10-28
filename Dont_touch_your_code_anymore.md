@@ -260,13 +260,6 @@ Using the [tomllib](https://docs.python.org/3/library/tomllib.html) (json[])docm
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::: solution
-
-:::::::::::::::::::::::::::::::::
-
-
-
-
 ## Using command line interfaces
 
 ### Definition & advantages
@@ -473,8 +466,6 @@ Output directory: /results/
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
 ## Final exercice: Mixing command line interface and configuration file 
 
 For this last part of the final lecture we will combine both package we just reviewed: `argparse` and `configparser`. Find the instructions below:
@@ -490,10 +481,3 @@ The program that you will create will take an optional configuration file. If no
 - `--save`: This argument require a directory as value. If used, the configuration is saved into that directory under the name `X_config.ini` where `X` is the name of the user found in the configuration file OR the one given by the `--name` argument.
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::: solution
-
-
-AHAHAHAHA you really though it would be that easy.... :)
-
-:::::::::::::::::::::::::::::::::

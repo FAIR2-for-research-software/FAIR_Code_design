@@ -2054,7 +2054,7 @@ arguments, the main ones are:</p>
 the arguments passed to program. This is done with the
 <code>parse_args()</code> method:</p>
 <pre><code><span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse.args</span><span class="op">(</span><span class="op">)</span></span></code></pre>
-<p>if you save everything in a python file
+<p>If you save everything in a python file
 (e.g. <code>commandline.py</code>) and run
 <code>python commandline.py --help</code> you will see the following on
 the terminal:</p>
@@ -2093,7 +2093,7 @@ the user cannot ignore them and they are not to be called by their name
 <span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>parser.add_argument(<span class="st">'file2'</span>)              <span class="co"># positional argument (mandatory)</span></span>
 <span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-c'</span>, <span class="st">'--count'</span>)      <span class="co"># option that takes a value</span></span>
 <span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>parser.add_argument(<span class="st">'-n'</span>)                 <span class="co"># option that takes a value</span></span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>parser.add_argument(<span class="st">'--max'</span>)                 <span class="co"># option that takes a value</span></span></code></pre>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>parser.add_argument(<span class="st">'--max'</span>)              <span class="co"># option that takes a value</span></span></code></pre>
 </div>
 <p>If once again you want to print the help in the terminal
 <code>python commandline.py --help</code> you will see the following
@@ -2173,14 +2173,48 @@ argument can take, you can use the <code>choice</code> option to add
 this contraints:
 <code>parser.add_argument('--color', choiced=['blue', 'red', 'green'])</code>.
 If the user pass ‘purple’ as value, an error will be raised.</p></li>
-<li><p><code>help</code>: finally, and it is probably the most important
-option, you can provide a short description of the argument:
-<code>parser.add_argument('--color', help='Color of the curve displayed in the plot')</code></p></li>
 </ul>
 <p>Finally you must be able to retrieve all the argument values:</p>
-<pre><code><span><span class="co">###retrieve all arguments</span></span>
-<span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse_args</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">print</span><span class="op">(</span><span class="va">args.start</span>, <span class="va">args.e</span>, <span class="va">args.color</span><span class="op">)</span></span></code></pre>
+<p>####How to get values from the CLI?</p>
+<p>To get values from the command line interface you need to look into
+the <code>args</code> variable that you defined with the line
+<code>args = parser.parse_args()</code>. Each argument can be called via
+the structure ‘arge.’ + argument name:</p>
+<pre><code><span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse_args</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="va">args</span><span class="op">)</span> <span class="co"># Gives the namespace content</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="va">args.file</span><span class="op">)</span> <span class="co">#direct access to the 1st positional argument</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="va">args.max</span><span class="op">)</span> <span class="co">#direct access to the max optional argument</span></span></code></pre>
+<p>Below we give a couple of examples of calls to the program with
+different configurations:</p>
+<pre><code>[user@user]$ python cli.py path/file1 path/file2
+Namespace(file='file1', file2='file2', count=None, n=None, max=None)
+file1
+None
+None
+
+
+[user@user]$ python cli.py file1 file2 --count 3 --max 5
+Namespace(file='file1', file2='file2', count='3', n=None, max='5')
+file1
+3
+5</code></pre>
+<div id="discussion3" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Create a Python script called <code>basic_cli.py</code> that:</p>
+<p>Accepts two arguments: <code>--input_file</code> (path to the data
+file) and <code>--output_dir</code> (directory for saving results).
+Prints out the values of these arguments.</p>
+<p>Expected output:</p>
+<pre><code>Input file: /data/input.txt
+Output directory: /results/</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interface-and-configuration-file">Final exercice: Mixing command line interface and configuration
@@ -2190,7 +2224,7 @@ file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-l
 <p>For this last part of the final lecture we will combine both package
 we just reviewed: <code>argparse</code> and <code>configparser</code>.
 Find the instructions below:</p>
-<div id="discussion3" class="callout discussion">
+<div id="discussion4" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>

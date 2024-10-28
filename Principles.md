@@ -100,6 +100,10 @@ Hello, Charlie!
 
 **DRY helps you write clear, efficient, and error-resistant code**. Use functions, loops, and constants to reduce repetition. A DRY approach **saves time and effort in the long run**, especially when scaling or debugging code.
 
+It is important to note that prematurly refactoring a code might lead to the unecessary complexity. This is why **DRY** is often associated to the **Rule of Three**. The latter is a guideline suggesting that you should wait until a piece of code is repeated three times before refactoring it. It ensures that you only refactor when a pattern is stable and repeated enough time.
+
+
+
 
 ## Keep it simple, Stupid (KISS) & Curly's Law - Do one Thing
 

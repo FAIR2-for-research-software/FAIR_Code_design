@@ -335,30 +335,48 @@ Author: R. Thomas, 2024, UoS
 You can see that the only option that was implemented is the `help`. It is done by constructing the command line interface and you do not need to implement it yourself. Now let's add extra arguments!
 
 
+#### Define command line arguments
 
+The `argparse` modules implements the `add_argument` method to add argument. Based on the code we prepared before, you would use if this way:
 
-
-
-
-Now we need to add arguments. To do so we need to use the `add_argument` method, part of the parser object:
-
-``` Python
-###Add positional argument
-parser.add_argument('filename')
-parser.add_argument('outputdir')
+```
+parser.add_argument(SOMETHING TO ADD HERE)
 ```
 
-Using this type of argument ('filename' and 'outputdir') will make them mandatory. The user will have to pass a filename AND an output directory to the program. It is worth mentioning that they will have to be passed in the right order by the user.
-It is useful sometimes to create optional arguments. This will be done using a `-` sign as first character in the name of the argument:
+Two main types of arguments are possible:
+- Optional arguments: their name start by `-` or `--` and are called in the terminal by their name. They can be ignored by the user.
+- Positional arguments: Their name DO NOT start by `-` or `--`, the user cannot ignore them and they are not to be called by their name (just the value need to be passed).
+
+For example, you can add this three lines before the `args = parser.parse.args()` in the file `commandline.py` that you created before:
 
 ``` Python
-###Add optional arguments
-parser.add_argument('-s', '--start')
-parser.add_argument('-e')
-parser.add_argument('--color')
+parser.add_argument('file')               # positional argument (mandatory)
+parser.add_argument('file2')               # positional argument (mandatory)
+parser.add_argument('-c', '--count')      # option that takes a value
 ```
 
-You can either use the single dash ('-s'), or double dash ('--color') or both. When given two options to call an argument, the user will have to make a choice on how to call it. 
+If once again you want to print the help in the terminal `python commandline.py --help` you will see the following being displayed:
+
+
+```
+usage: My program [-h] [-c COUNT] filename
+
+This program is an example of command line interface in Python
+
+positional arguments:
+  file
+  file2
+
+options:
+  -h, --help            show this help message and exit
+  -c COUNT, --count COUNT
+
+Author: R. Thomas, 2024, UoS
+```
+
+The help tells you that `file` and `file2` are positional arguments. THe user have to provide the values for each of them (in the right order!). In the next section named 'options', we find the help, that was already there before, and the `count` option. This option can be called by using `-c` or `--count` and a value `COUNT` that the user will need to provide.
+
+
 
 It is possible to use extra options to define arguments, we list a few here:
 

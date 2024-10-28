@@ -749,32 +749,51 @@ Author: R. Thomas, 2024, UoS</code></pre>
 <code>help</code>. It is done by constructing the command line interface
 and you do not need to implement it yourself. Now let’s add extra
 arguments!</p>
-<p>Now we need to add arguments. To do so we need to use the
-<code>add_argument</code> method, part of the parser object:</p>
-<div class="codewrapper sourceCode" id="cb19">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co">###Add positional argument</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>parser.add_argument(<span class="st">'filename'</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>parser.add_argument(<span class="st">'outputdir'</span>)</span></code></pre>
-</div>
-<p>Using this type of argument (‘filename’ and ‘outputdir’) will make
-them mandatory. The user will have to pass a filename AND an output
-directory to the program. It is worth mentioning that they will have to
-be passed in the right order by the user. It is useful sometimes to
-create optional arguments. This will be done using a <code>-</code> sign
-as first character in the name of the argument:</p>
+<div class="section level4">
+<h4 id="define-command-line-arguments">Define command line arguments<a class="anchor" aria-label="anchor" href="#define-command-line-arguments"></a></h4>
+<p>The <code>argparse</code> modules implements the
+<code>add_argument</code> method to add argument. Based on the code we
+prepared before, you would use if this way:</p>
+<pre><code>parser.add_argument(SOMETHING TO ADD HERE)</code></pre>
+<p>Two main types of arguments are possible: - Optional arguments: their
+name start by <code>-</code> or <code>--</code> and are called in the
+terminal by their name. They can be ignored by the user. - Positional
+arguments: Their name DO NOT start by <code>-</code> or <code>--</code>,
+the user cannot ignore them and they are not to be called by their name
+(just the value need to be passed).</p>
+<p>For example, you can add this three lines before the
+<code>args = parser.parse.args()</code> in the file
+<code>commandline.py</code> that you created before:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co">###Add optional arguments</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>parser.add_argument(<span class="st">'-s'</span>, <span class="st">'--start'</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-e'</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>parser.add_argument(<span class="st">'--color'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>parser.add_argument(<span class="st">'file'</span>)               <span class="co"># positional argument (mandatory)</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>parser.add_argument(<span class="st">'file2'</span>)               <span class="co"># positional argument (mandatory)</span></span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-c'</span>, <span class="st">'--count'</span>)      <span class="co"># option that takes a value</span></span></code></pre>
 </div>
-<p>You can either use the single dash (‘-s’), or double dash (‘–color’)
-or both. When given two options to call an argument, the user will have
-to make a choice on how to call it.</p>
+<p>If once again you want to print the help in the terminal
+<code>python commandline.py --help</code> you will see the following
+being displayed:</p>
+<pre><code>usage: My program [-h] [-c COUNT] filename
+
+This program is an example of command line interface in Python
+
+positional arguments:
+  file
+  file2
+
+options:
+  -h, --help            show this help message and exit
+  -c COUNT, --count COUNT
+
+Author: R. Thomas, 2024, UoS</code></pre>
+<p>The help tells you that <code>file</code> and <code>file2</code> are
+positional arguments. THe user have to provide the values for each of
+them (in the right order!). In the next section named ‘options’, we find
+the help, that was already there before, and the <code>count</code>
+option. This option can be called by using <code>-c</code> or
+<code>--count</code> and a value <code>COUNT</code> that the user will
+need to provide.</p>
 <p>It is possible to use extra options to define arguments, we list a
 few here:</p>
 <ul><li><p><code>actions</code>: this options allows you to do</p></li>
@@ -800,6 +819,7 @@ option, you can provide a short description of the argument:
 <pre><code><span><span class="co">###retrieve all arguments</span></span>
 <span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse_args</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu">print</span><span class="op">(</span><span class="va">args.start</span>, <span class="va">args.e</span>, <span class="va">args.color</span><span class="op">)</span></span></code></pre>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interface-and-configuration-file">Final exercice: Mixing command line interface and configuration
 file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interface-and-configuration-file"></a></h2>

@@ -93,7 +93,7 @@ section2:
 YAML files work also with sections and keyword/value pairs.  
 
 
-- TOML files are a bit more recent than the other ones but start to be widely use in Python (a simple example is the setup.py file for installation that became a pyproject.toml file in the last years). They allow structure and data formats. They are quite similar to INI files for the syntax. 
+- TOML files are a bit more recent than the other ones but start to be widely use in Python (a simple example is the setup.py file for installation that became a pyproject.toml file in the last years). They allow structure and data formats. They are quite similar to INI files for the syntax. It is worth mentioning that the library [tomllib]() is part of the Python standard library from python versoin 3.11. 
 
 ```
 [section1]
@@ -222,7 +222,7 @@ from configparser import ConfigParser
 config = ConfigParser()
 ```
 
-Creating a configuration is equivalent of creating a dictionaries:
+Creating a configuration is equivalent to creating a dictionaries:
 
 ```
 config['simulation'] = {'time_step': 1.0, 'total_time': 200.0}
@@ -256,7 +256,7 @@ height = 0.5
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Using the [TOML]() documentation, read the configuration file that you create above.
+Using the [tomllib](https://docs.python.org/3/library/tomllib.html) (json[])docmumentation, write a toml file (withthe same element as the previous exercise and read it back).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -289,7 +289,7 @@ When writing research software CLIs are particularly suitable:
 
 ### Creating a command line interface in Python
 
-In Python, there is a very nice module called [argparse](https://docs.python.org/3/library/argparse.html). It allows to write in a very limited amount of lines a nice command line user interface. Again, that module is part of the standard library so you do not need to install anything.
+In Python, there is a very nice module called [argparse](https://docs.python.org/3/library/argparse.html). It allows to write, in a very limited amount of lines, a command line interface. Again, that module is part of the standard library so you do not need to install anything.
 
 As for the configuration files, we must start by importing the module and creating a parser object. The parser object can take a few arguments, the main ones are:
 
@@ -309,7 +309,35 @@ parser = argparse.ArgumentParser(prog='My program',
                                  description='This program is an example of command line interface in Python',
  				 epilog='Author: R. Thomas, 2024, UoS')
 
+
 ```
+
+Once this is written, you need to tell the program to analyse (parse) the arguments passed to program. This is done with the `parse_args()` method:
+
+```
+args = parser.parse.args()
+```
+
+if you save everything in a python file (e.g. `commandline.py`) and run `python commandline.py --help` you will see the following on the terminal:
+
+```
+usage: My program [-h]
+
+This program is an example of command line interface in Python
+
+options:
+  -h, --help  show this help message and exit
+
+Author: R. Thomas, 2024, UoS
+``` 
+
+
+You can see that the only option that was implemented is the `help`. It is done by constructing the command line interface and you do not need to implement it yourself. Now let's add extra arguments!
+
+
+
+
+
 
 
 Now we need to add arguments. To do so we need to use the `add_argument` method, part of the parser object:

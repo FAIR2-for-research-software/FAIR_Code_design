@@ -318,7 +318,7 @@ Once this is written, you need to tell the program to analyse (parse) the argume
 args = parser.parse.args()
 ```
 
-if you save everything in a python file (e.g. `commandline.py`) and run `python commandline.py --help` you will see the following on the terminal:
+If you save everything in a python file (e.g. `commandline.py`) and run `python commandline.py --help` you will see the following on the terminal:
 
 ```
 usage: My program [-h]
@@ -354,7 +354,7 @@ parser.add_argument('file')               # positional argument (mandatory)
 parser.add_argument('file2')              # positional argument (mandatory)
 parser.add_argument('-c', '--count')      # option that takes a value
 parser.add_argument('-n')                 # option that takes a value
-parser.add_argument('--max')                 # option that takes a value
+parser.add_argument('--max')              # option that takes a value
 ```
 
 If once again you want to print the help in the terminal `python commandline.py --help` you will see the following being displayed:
@@ -416,8 +416,6 @@ options:
 Author: R. Thomas, 2024, UoS
 ```
 
-
-
 It is possible to use extra options to define arguments, we list a few here:
 
 - `actions`: this options allows you to do 
@@ -428,15 +426,53 @@ It is possible to use extra options to define arguments, we list a few here:
 
 - `choices`: If you want to restrict the values an argument can take, you can use the `choice` option to add this contraints: `parser.add_argument('--color', choiced=['blue', 'red', 'green'])`. If the user pass 'purple' as value, an error will be raised. 
 
-- `help`: finally, and it is probably the most important option, you can provide a short description of the argument: `parser.add_argument('--color', help='Color of the curve displayed in the plot')` 
-
 Finally you must be able to retrieve all the argument values:
 
+####How to get values from the CLI?
+
+To get values from the command line interface you need to look into the `args` variable that you defined with the line `args = parser.parse_args()`. Each argument can be called via the structure 'arge.' + argument name:
+
 ```
-###retrieve all arguments 
 args = parser.parse_args()
-print(args.start, args.e, args.color)
+print(args) # Gives the namespace content
+print(args.file) #direct access to the 1st positional argument
+print(args.max) #direct access to the max optional argument
 ```
+
+Below we give a couple of examples of calls to the program with different configurations:
+```
+[user@user]$ python cli.py path/file1 path/file2 
+Namespace(file='file1', file2='file2', count=None, n=None, max=None)
+file1
+None
+None
+
+
+[user@user]$ python cli.py file1 file2 --count 3 --max 5
+Namespace(file='file1', file2='file2', count='3', n=None, max='5')
+file1
+3
+5
+```
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Create a Python script called `basic_cli.py` that:
+
+Accepts two arguments: `--input_file` (path to the data file) and `--output_dir` (directory for saving results). Prints out the values of these arguments.
+
+
+Expected output:
+
+```
+Input file: /data/input.txt
+Output directory: /results/
+```
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ## Final exercice: Mixing command line interface and configuration file 

@@ -324,7 +324,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Principles of Code design</h1>
-        <p>Last updated on 2024-07-30 |
+        <p>Last updated on 2024-10-28 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Principles.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -362,7 +362,98 @@ code?</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="dont-repeat-yourself-dry---rule-of-three">Don’t repeat yourself (DRY) - Rule of three<a class="anchor" aria-label="anchor" href="#dont-repeat-yourself-dry---rule-of-three"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="keep-it-simple-stupid-kiss-curlys-law---do-one-thing">Keep it simple, Stupid (KISS) &amp; Curly’s Law - Do one Thing<a class="anchor" aria-label="anchor" href="#keep-it-simple-stupid-kiss-curlys-law---do-one-thing"></a></h2>
+<hr class="half-width"><div class="section level4">
+<h4 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h4>
+<p>The DRY Principle states: “Don’t Repeat Yourself.” It encourages you
+to minimize duplication by centralizing similar code patterns. This
+leads to more readable, maintainable, and scalable code.</p>
+<p>Why DRY is it important: - Improves Readability: Code is clearer when
+it’s not cluttered with repeated logic. - Reduces Bugs: If you need to
+make changes, you only do it in one place, reducing the chance of
+errors. - Saves Time: Updating and testing code is faster when code is
+organized with minimal duplication.</p>
+<p>####Using functions to avoid repeting code</p>
+<p>Instead of writing the same code in multiple places in your script,
+create a function. This makes updates easier and avoids errors. For
+example consider the following code:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>price1 <span class="op">=</span> <span class="dv">100</span> <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>price2 <span class="op">=</span> <span class="dv">150</span> <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>price3 <span class="op">=</span> <span class="dv">200</span> <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="bu">print</span>(price1, price2, price3)</span></code></pre>
+</div>
+<p>The same operation is repeated three times with a different value. If
+you create a function that makes this operation you can refactor your
+code:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># With DRY Principle</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">def</span> calculate_price(base_price):</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="cf">return</span> base_price <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>price1 <span class="op">=</span> calculate_price(<span class="dv">100</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>price2 <span class="op">=</span> calculate_price(<span class="dv">150</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>price3 <span class="op">=</span> calculate_price(<span class="dv">200</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="bu">print</span>(price1, price2, price3)</span></code></pre>
+</div>
+<p>####Using loops instead of manual repetition</p>
+<p>In the previous examples we still call the function three time which
+is not optimal. In general, If you’re applying the same operation to
+multiple elements, use a loop to avoid repeated code blocks:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>prices <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="cf">for</span> price <span class="kw">in</span> prices:</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="bu">print</span>(calculate_price(price))</span></code></pre>
+</div>
+<p>####Using constants for common values</p>
+<p>When a value is repeated in multiple places, declare it as a constant
+variable. This way, you only need to change it once if necessary.
+Consider the following code:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>total <span class="op">=</span> (<span class="dv">100</span> <span class="op">*</span> <span class="fl">0.1</span>) <span class="op">+</span> (<span class="dv">200</span> <span class="op">*</span> <span class="fl">0.1</span>) <span class="op">+</span> (<span class="dv">300</span> <span class="op">*</span> <span class="fl">0.1</span>)</span></code></pre>
+</div>
+<p>The value <code>0.1</code> is repeated three times. If you want to
+change it, you will need to do it three times. To save time and to add
+some clarity to your code, you may want to declare the value
+<code>0.1</code>, as follows:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>TAX_RATE <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>total <span class="op">=</span> (<span class="dv">100</span> <span class="op">*</span> TAX_RATE) <span class="op">+</span> (<span class="dv">200</span> <span class="op">*</span> TAX_RATE) <span class="op">+</span> (<span class="dv">300</span> <span class="op">*</span> TAX_RATE)</span></code></pre>
+</div>
+<p>Now if you want to change <code>0.1</code> to <code>0.2</code> you
+need to do it only once. In addition, now you have a better idea of what
+that constant is! The code is already clearer.</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Write a code, without repetition, that produces the following
+output:</p>
+<pre><code>Hello, Alice!
+Hello, Bob!
+Hello, Charlie!</code></pre>
+</div>
+</div>
+</div>
+<p>####Summary</p>
+<p>DRY helps you write clear, efficient, and error-resistant code. Use
+functions, loops, and constants to reduce repetition. A DRY approach
+saves time and effort in the long run, especially when scaling or
+debugging code.</p>
+</div>
+</section><section><h2 class="section-heading" id="keep-it-simple-stupid-kiss-curlys-law---do-one-thing">Keep it simple, Stupid (KISS) &amp; Curly’s Law - Do one Thing<a class="anchor" aria-label="anchor" href="#keep-it-simple-stupid-kiss-curlys-law---do-one-thing"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="you-arent-gonna-need-it-yagni">You aren’t gonna need it (YAGNI)<a class="anchor" aria-label="anchor" href="#you-arent-gonna-need-it-yagni"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="principle-of-least-astonishment-pola">Principle of least astonishment (POLA)<a class="anchor" aria-label="anchor" href="#principle-of-least-astonishment-pola"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="code-for-the-maintainer">Code for the maintainer<a class="anchor" aria-label="anchor" href="#code-for-the-maintainer"></a></h2>
@@ -440,7 +531,7 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Principles.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Principles.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-07-30",
+  "dateModified": "2024-10-28",
   "datePublished": "2024-10-28"
 }
 

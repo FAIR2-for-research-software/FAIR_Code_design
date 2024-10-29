@@ -35,6 +35,71 @@ Why **YAGNI** is important:
 
 #### Applying YAGNI
 
+Let's consider the following instruction: create a function that implements a percentage discount price.
+Here is a solution that does not respect the YAGNI principle:
+ 
+```Python
+def calculate_discount(price, discount_type="percentage", value=10):
+    if discount_type == "percentage":
+        return price - (price * (value / 100))
+    elif discount_type == "fixed":
+        return price - value
+    else:
+        raise ValueError("Invalid discount type")
+```
+
+In that example, the software engineer has planned for possible other use cases (different type of discount) while not being required. It is an example of over-engineering. A better implementation would be:
+
+```Python
+def calculate_discount(price, discount_percentage):
+    return price - (price * (discount_percentage / 100))
+```
+
+#### Exercise
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Context: You’re working on a feature to calculate the final price of items in a shopping cart. Right now, the only two requirement are (1) to apply a fixed 10% discount to the total cart price and (2) return the final price with a `$` sign in front of the total price (e.g. $42.2). However, the initial implementation includes additional features that anticipate potential, but not confirmed, future requirements.
+
+```Python
+def calculate_final_price(prices, currency="USD", discount_type="percentage", discount_value=0.1, include_shipping=False, shipping_cost=5.0):
+
+    # Calculate the initial total price
+    total = sum(prices)
+
+    # Apply discount based on type
+    if discount_type == "percentage":
+        total -= total * discount_value
+    elif discount_type == "fixed":
+        total -= discount_value
+
+    # Include shipping if specified
+    if include_shipping:
+        total += shipping_cost
+
+    # Format total with currency symbol
+    if currency == "USD":
+        return f"${total:.2f}"
+    elif currency == "EUR":
+        return f"€{total:.2f}"
+    else:
+        raise ValueError("Unsupported currency")
+```
+
+Work on the `calculate_final_price` function to apply the YAGNI principle by removing unnecessary parameters and logic, focusing only on the known requirements.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+#### Summary
+
+- YAGNI encourages to code only the requirements you currently have.
+- Write lean, purpose-focused code and avoid implementing hypothetical features.
+- Keeps your code agile and maintainable.
+
 
 
 

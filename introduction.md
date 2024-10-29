@@ -72,7 +72,7 @@ By designing your code efficiently you will make it FAIRer. Code design is about
 
 - **Reusability**: Documentated code, use of docstrings and inline comments makes it easier for others to understand, use, and modify your code. Using modular design with single-task blocks also increases reusability. Indeed, small simple pieces can be more easily transferred to other projects or extended without significant refactoring.
 
-The goal of this lecture is to dive into the practices and learn a little bit more about how the way you code will greatly enhance maintainable, adaptable, and sustainable your software is in the long run.
+The goal of this lecture is to dive into these practices and learn a little bit more about how the way you code will greatly enhance how maintainable, adaptable, and sustainable your software is in the long run.
 
 
 [defressoft]: https://doi.org/10.5281/zenodo.5504016

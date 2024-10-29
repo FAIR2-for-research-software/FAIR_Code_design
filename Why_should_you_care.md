@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Why should you care?"
 teaching: 10
 exercises: 2
 ---

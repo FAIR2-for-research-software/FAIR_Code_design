@@ -65,6 +65,7 @@ contact: 'romain.thomas@sheffield.ac.uk'
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- Why_should_you_care.md
 - Principles.md
 - Code_structure.md
 - Writing_clean_code.md

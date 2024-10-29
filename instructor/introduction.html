@@ -219,11 +219,9 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#why-should-you-care">Why should you care?</a></li>
-<li><a href="#readability">Readability</a></li>
-<li><a href="#reusability">Reusability</a></li>
-<li><a href="#maintainability">Maintainability</a></li>
-<li><a href="#quizz">Quizz</a></li>
+        <ul><li><a href="#what-is-a-software-in-academia">What is a software in academia?</a></li>
+<li><a href="#reminder-the-fair-principles-applied-to-research-software">Reminder: The FAIR principles applied to research software</a></li>
+<li><a href="#code-design-at-the-service-of-the-fair-principle">Code design at the service of the FAIR principle</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -233,7 +231,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="Principles.html">2. Principles of Code design</a>
+        <a href="Why_should_you_care.html">2. Introduction</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -242,7 +240,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="Code_structure.html">3. Code structure</a>
+        <a href="Principles.html">3. Principles of Code design</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -251,7 +249,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="Writing_clean_code.html">4. The Zen of Python</a>
+        <a href="Code_structure.html">4. Code structure</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -260,7 +258,16 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="Dont_touch_your_code_anymore.html">5. Don't touch your code anymore!</a>
+        <a href="Writing_clean_code.html">5. The Zen of Python</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="Dont_touch_your_code_anymore.html">6. Don't touch your code anymore!</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -309,7 +316,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/Principles.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/Why_should_you_care.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -317,14 +324,14 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Home
         </a>
-        <a class="chapter-link float-end" href="../instructor/Principles.html" rel="next">
-          Next: Principles of Code...
+        <a class="chapter-link float-end" href="../instructor/Why_should_you_care.html" rel="next">
+          Next: Introduction...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction</h1>
-        <p>Last updated on 2024-10-22 |
+        <p>Last updated on 2024-10-29 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -345,7 +352,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>Why should you know about code design?</li>
+<ul><li>How can code design make your code more FAIR?</li>
 </ul></div>
 </div>
 </div>
@@ -353,329 +360,82 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Understand the 4 main concepts developed in this course:
-Maintainability, readability, reusability and scalibility</li>
+<ul><li>Understand the definition of software in research.</li>
+<li>Understand the FAIR principles as applied to research software.</li>
+<li>Understand how code design is related to the FAIR principles.</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="why-should-you-care">Why should you care?<a class="anchor" aria-label="anchor" href="#why-should-you-care"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="reproducibility-and-reliability">Reproducibility and Reliability<a class="anchor" aria-label="anchor" href="#reproducibility-and-reliability"></a></h3>
-<p>Good code practices ensure that research results are reproducible and
-reliable. Research findings are often scrutinized and validated by
-others in the field, and well-written code facilitates this process.
-Clean, well-documented, and well-tested code allows other researchers to
-replicate experiments, verify results, and build upon existing work,
-thus advancing scientific knowledge.</p>
-</div>
-<div class="section level3">
-<h3 id="efficiency-and-maintainability">Efficiency and Maintainability<a class="anchor" aria-label="anchor" href="#efficiency-and-maintainability"></a></h3>
-<p>Writing good code enhances efficiency and maintainability. Research
-projects can span several years and involve multiple collaborators.
-Readable and well-structured code makes it easier for current and future
-researchers to understand, modify, and extend the software. This reduces
-the time and effort required to troubleshoot issues, implement new
-features, or adapt the code for different datasets or experiments.</p>
-</div>
-<div class="section level3">
-<h3 id="collaboration-and-community-contribution">Collaboration and Community Contribution<a class="anchor" aria-label="anchor" href="#collaboration-and-community-contribution"></a></h3>
-<p>Good coding practices facilitate collaboration and contribution from
-the wider research community. Open-source research software, written
-with clear, standardized coding practices, attracts contributions from
-other researchers and developers. This collaborative environment can
-lead to improvements in the software, innovative uses, and more robust
-and versatile tools, ultimately benefiting the entire research
-community.</p>
-</div>
-</section><section><h2 class="section-heading" id="readability">Readability<a class="anchor" aria-label="anchor" href="#readability"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="definition-and-key-aspects">Definition and key aspects<a class="anchor" aria-label="anchor" href="#definition-and-key-aspects"></a></h3>
-<p>Readability in software refers to <strong>how easily a human reader
-can understand the purpose, control flow, and operation of the
-code</strong>. High readability means that the code is clear, easy to
-follow, and well-organized, which greatly enhances maintainability,
-collaboration, and reduces the likelihood of bugs.</p>
-<p>Key aspects:</p>
-<ul><li><p>Descriptve Naming: Use meaningful and descriptive names that
-convey the purpose of the variable.</p></li>
-<li><p>Consistent Formatting: Consistent indentation improves the visual
-structure of the code. Keeping lines of code within a reasonable length
-(usually 80-100 characters) prevents horizontal scrolling and improves
-readability.</p></li>
-<li><p>Comments and documentation: Brief comments within the code
-explaining non-obvious parts. Detailed documentation at the beginning of
-modules, classes, and functions explaining their purpose, parameters,
-and return values.</p></li>
-<li><p>Code structure: Breaking down code into functions, classes, and
-modules that each handle a specific task. Group related pieces of code
-together, and separate different functionalities clearly.</p></li>
-</ul></div>
-<div class="section level3">
-<h3 id="benefits">Benefits:<a class="anchor" aria-label="anchor" href="#benefits"></a></h3>
-<p>1 - <strong>Maintainability</strong>: Your code will be easier to
-understand and modify the code. It will also greatly reduce the risk of
-errors when introducing changes.</p>
-<p>2 - <strong>Collaboration</strong>: writing readable code will
-enhance teamwork and make it easy for others to contribute. Code reviews
-will be easy!</p>
-<p>3 - <strong>Efficiency</strong>: You are going to save a LOT of time.
-You will waste less time deciphering your code. That saved time will be
-used to develop the code.</p>
-<p>4 - <strong>Quality</strong>: Reduces the likelihood of bugs and
-errors, leading to more reliable code</p>
-</div>
-</section><section><h2 class="section-heading" id="reusability">Reusability<a class="anchor" aria-label="anchor" href="#reusability"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="definition-and-key-aspects-1">Definition and Key aspects<a class="anchor" aria-label="anchor" href="#definition-and-key-aspects-1"></a></h3>
-<p>Reusability in software refers to the ability to use existing
-software components (such as functions, classes, modules, or libraries)
-across multiple projects or in different parts of the same project
-without significant modification. Reusable code is designed to be
-generic and flexible, promoting efficiency, reducing redundancy, and
-enhancing maintainability.</p>
-<p>Key aspects:</p>
-<ul><li><p>Modularity: Encapsulate functionality within well-defined modules
-or classes that can be independently reused.</p></li>
-<li><p>Abstraction: Provide simple interfaces while hiding the complex
-implementation details.</p></li>
-<li><p>Parametrization: Design functions and methods that accept
-parameters to make them adaptable to different situations.</p></li>
-<li><p>Generic and Reusable Components: Develop generic libraries and
-utility functions that can be reused across multiple projects.</p></li>
-<li><p>Documentation and Naming: Provide comprehensive documentation for
-modules, classes, and functions to explain their usage.</p></li>
-<li><p>Avoid hardcoding values: Instead, use constants or configuration
-files.</p></li>
-</ul></div>
-<div class="section level3">
-<h3 id="benefits-1">Benefits:<a class="anchor" aria-label="anchor" href="#benefits-1"></a></h3>
-<ul><li><p><strong>Time saving</strong>: Reusable components save
-development time. You don’t need to rewrite from sratch! Avoids
-duplication of effort by using existing solutions for common
-tasks.</p></li>
-<li><p><strong>Consistency</strong>: Using the same code components
-across projects ensures consistency in functionality and
-behavior.</p></li>
-<li><p><strong>Maintainability</strong>: Reusable components can be
-maintained and updated independently, making it easier to manage large
-codebases.</p></li>
-<li><p><strong>Quality</strong>: Reusable components are often
-well-tested, leading to more reliable and bug-free software</p></li>
-</ul></div>
-</section><section><h2 class="section-heading" id="maintainability">Maintainability<a class="anchor" aria-label="anchor" href="#maintainability"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="definition-and-key-aspects-2">Definition and key aspects<a class="anchor" aria-label="anchor" href="#definition-and-key-aspects-2"></a></h3>
-<p>Maintainability in software refers to the ease with which a software
-system can be modified to correct faults, improve performance or other
-attributes, or adapt to a changed environment. Highly maintainable
-software is designed to be easily understood, tested, and updated by
-developers, ensuring that the software can evolve over time with minimal
-effort and cost.</p>
-<p>Key aspects:</p>
-<ul><li><p>Core readibility: your code should be organized logically with
-meaningful names for variables, functions and classes.</p></li>
-<li><p>Modularity: If you divide your software into distinct modules or
-components, each responsible for a specific functionality, you will
-greatly reduce dependencies.</p></li>
-<li><p>Documentation: The documentation of the code should be
-continuously updated to reflect the latest state of the
-sotware.</p></li>
-<li><p>Automated testing: Testing your software is important to make
-sure that modification and implementatio of new functionalities do not
-break it.</p></li>
-</ul></div>
-<div class="section level3">
-<h3 id="benefits-2">Benefits<a class="anchor" aria-label="anchor" href="#benefits-2"></a></h3>
-<ul><li><p><strong>Reduce technical debt</strong>: Maintainable code is
-easier to refacto ad improve over time, reducing the accumulation of
-technical debt. The cost and effort to maintain the software will be
-significantly reduced</p></li>
-<li><p><strong>Faster development</strong>: If you code is maintainable,
-it will be easier to understand, modify and extend. It will also be
-easier to identfy and fix bugs.</p></li>
-<li><p><strong>Increase collaboration</strong>: Having a maintainable
-code will make it easier for people to join you!</p></li>
-<li><p><strong>Adaptability to new requirements</strong>: if your code
-is maintainable it will be easier to adapt it to changing (or new)
-requirements, as it is often the case in research.</p></li>
-</ul></div>
-</section><section><h2 class="section-heading" id="quizz">Quizz<a class="anchor" aria-label="anchor" href="#quizz"></a></h2>
-<hr class="half-width"><p>Results of the Quiz in mentimeter slides. The question for each code
-is ‘Is this code readable, reusable, maintainable, scalable’?</p>
-<div id="challenge1" class="callout challenge">
+<section><h2 class="section-heading" id="what-is-a-software-in-academia">What is a software in academia?<a class="anchor" aria-label="anchor" href="#what-is-a-software-in-academia"></a></h2>
+<hr class="half-width"><p>It is not always easy to define what constitutes software in a
+research setting. The size of projects can vary from a small script of a
+few dozens of lines to a massive project with millions of lines. If you
+are interested in a discussion around a research software definition a
+good starting point is <a href="https://doi.org/10.5281/zenodo.5504016" class="external-link"><em>Defining Research
+Software: a controversial discussion</em></a>. An abbreviated summary of
+this paper and a pragmatic definition we use as a basis for this course
+is…</p>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<p>Code #1:</p>
-<pre><code>import numpy
-def process_list(data):
-    return [numpy.sqrt(x) * 2 + 3 for x in data if x * 1.5 &lt; 5]
-
-#Example usage
-input_data = [1, 2, 3, 4, 5, 6]
-result = process_list(input_data)
-print("processed list:", result)
-</code></pre>
+<p>Research Software includes source code files, algorithms, scripts,
+computational workflows and executables that were created during the
+research process or for a research purpose. Software components (e.g.,
+operating systems, libraries, dependencies, packages, scripts,etc.) that
+are used for research but were not created during or with a clear
+research intent should be considered software in research and not
+Research Software. This differentiation may vary between
+disciplines.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<ul><li>
-<strong>Readable</strong>: The code is readable because it uses a
-list comprehension that is relatively straightforward to understand for
-someone familiar with Python.</li>
-<li>
-<strong>Reusable</strong>: The function can be used with any list of
-integers to filter and transform the data.</li>
-<li>
-<strong>Scalable</strong>: The function uses a list comprehension,
-which is efficient for processing lists.</li>
-</ul><p>However, the code will be difficult to maintain because:</p>
-<ul><li>There are no comments explaining what the function is doing or why
-it’s doing it.</li>
-<li>Constraints are not explained.</li>
-<li>The logic includes “magic numbers” (2 and 3) without any explanation
-or named constants.</li>
-<li>There is no error handling, which makes it harder to maintain when
-unexpected inputs occur.</li>
+</section><section><h2 class="section-heading" id="reminder-the-fair-principles-applied-to-research-software">Reminder: The FAIR principles applied to research software<a class="anchor" aria-label="anchor" href="#reminder-the-fair-principles-applied-to-research-software"></a></h2>
+<hr class="half-width"><p>The FAIR principles (Findable, Accessible, Interoperable and
+Reusable) were originally designed for research data in order to
+“enhance their re-usability” (see <a href="https://doi.org/10.1038/sdata.2016.18" class="external-link">Wilkinson <em>et al</em>
+(2016)</a>). In this seminal paper it was made clear that while data was
+a central aspect of research, the principles should also apply to
+algorithms, tools and workflows that led to the production of that data.
+Few years later, in 2022, a set of recommendation was published (<a href="https://10.5281/zenodo.5504015." class="external-link">Chue Hon <em>et al.</em>
+(2022)</a>; <a href="https://doi.org/10.1038/s41597-022-01710-x" class="external-link">Barker
+<em>et al.</em> (2022)</a>) in order to apply these FAIR principle to
+research software. An overview of the FAIR principles adapted to
+research software are that…</p>
+<div id="keypoints2" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li><p>Findable: Software, and its associated metadata, is easy for both
+humans and machines to find.</p></li>
+<li><p>Accessible: Software, and its metadata, is retrievable via
+standardised protocols.</p></li>
+<li><p>Interoperable: Software interoperates with other software by
+exchanging data and/or metadata, and/or through interaction via
+Application Programming Interfaces (APIs), described through
+standards.</p></li>
+<li><p>Reusable: Software is both usable (can be executed) and reusable
+(can be understood, modified, built upon, or incorporated into other
+software).</p></li>
 </ul></div>
 </div>
 </div>
-</div>
-<div id="challenge2" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
-<div class="callout-content">
-<p>Code #2:</p>
-<pre><code>def b(m, n):
-    if m == 0:
-        return n + 1
-    elif m &gt; 0 and n == 0:
-        return b(m - 1, 1)
-    else:
-        return b(m - 1, b(m, n - 1))
-
-# Example usage
-result = b(3, 2)
-print("Result:", result)</code></pre>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>This code implements the Ackermann function, a classic example of a
-computationally intensive function.</p>
-<ul><li>
-<strong>Maintainable</strong>: The code is structured and easy to
-update.</li>
-<li>
-<strong>Reusable</strong>: You can call the b function with
-different arguments to compute the Ackermann function for different
-inputs.</li>
-<li>
-<strong>Scalable</strong>: It is a recursive function that computes
-the Ackermann function efficiently.</li>
-</ul><p>Nevertheless, the code is difficult to read:</p>
-<p>The code may not be very readable to someone unfamiliar with the
-Ackermann function or the specific implementation details. The function
-name <em>b</em> and the lack of comments or descriptive variable names
-may make it difficult to understand at first glance.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge3" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
-<div class="callout-content">
-<p>Code #3:</p>
-<pre><code>def calculate_statistics():
-    data = [23, 45, 12, 67, 34, 89, 23, 45, 23, 34]
-    total_sum = sum(data)
-    count = len(data)
-    average = total_sum / count
-
-    data_sorted = sorted(data)
-    if count % 2 == 0:
-        median = (data_sorted[count // 2 - 1] + data_sorted[count // 2]) / 2
-    else:
-        median = data_sorted[count // 2]
-
-    occurrences = {}
-    for num in data:
-        if num in occurrences:
-            occurrences[num] += 1
-        else:
-            occurrences[num] = 1
-    mode = max(occurrences, key=occurrences.get)
-
-    print("Sum:", total_sum)
-    print("Average:", average)
-    print("Median:", median)
-    print("Mode:", mode)
-
-# Calculate statistics for the specific data set
-calculate_statistics()
-</code></pre>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
-<div class="accordion-body">
-<ul><li>
-<strong>Maintainable</strong>: The code is well-structured, with
-clear variable names and straightforward logic. It’s easy to understand
-and modify if needed.</li>
-<li>
-<strong>Readable</strong>: The code uses descriptive variable names
-and simple constructs, making it easy to follow.</li>
-<li>
-<strong>Scalable</strong>: The code efficiently handles the data
-processing tasks (sum, average, median, mode) for a list of
-numbers.</li>
-</ul><p>However, the code is not reusable because the function
-calculate_statistics is hardcoded to work with a specific dataset
-defined within the function. It cannot be easily reused with different
-datasets without modifying the function itself.</p>
-</div>
-</div>
-</div>
-</div>
-<!--
+</section><section><h2 class="section-heading" id="code-design-at-the-service-of-the-fair-principle">Code design at the service of the FAIR principle<a class="anchor" aria-label="anchor" href="#code-design-at-the-service-of-the-fair-principle"></a></h2>
+<hr class="half-width"><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</section></div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/Principles.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/Why_should_you_care.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -683,8 +443,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Home
         </a>
-        <a class="chapter-link float-end" href="../instructor/Principles.html" rel="next">
-          Next: Principles of Code...
+        <a class="chapter-link float-end" href="../instructor/Why_should_you_care.html" rel="next">
+          Next: Introduction...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -743,7 +503,7 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/introduction.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/introduction.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-10-22",
+  "dateModified": "2024-10-29",
   "datePublished": "2024-10-29"
 }
 

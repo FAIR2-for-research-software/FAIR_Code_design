@@ -167,10 +167,12 @@ def format_average(average):
 
 In that version, each function does only one thing. The program is more readable, easier to debug, test or update.
 
+
+#### Exercice
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Use the KISS and Curly's law to simplofy the following code:
-
+Simplify the following code:
 
 ```Python
 def check_eligibility(age, member):
@@ -185,12 +187,120 @@ def check_eligibility(age, member):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+#### Summary
+
+- The KISS Principle encourages you to your code as simple as possible.
+- Curly’s Law advise you to keep functions focused on a single task.
+- Combining these principles improves code readability, maintainability and testability.
 
 
 ## You aren't gonna need it (YAGNI)
 
 
 ## Principle of least astonishment (POLA)
+
+#### Introduction
+
+The **Principle of Least Astonishment (POLA)** states that code should work in a way that does not surprise its users and maintainers. POLA encourages you to design code that aligns with common expectations.
+
+Why **POLA** is important:
+
+- Usability: When code works as expect ed, users and maintainers are less likely to misuse or misunderstand it.
+- Maintainability: Familiar and predictable patterns make the code easier to maintain and upgrade.
+- Collaboration: Using consistent and intuitive code make it easier for multiple people to work with and develop.
+
+
+#### Common violations
+
+Here are three common violation of POLA:
+
+
+- Naming Conventions: Function or variable names that don’t align with their purpose often lead to problems
+
+- Unexpected Return Types: Functions that return types users wouldn’t expect, such as a function sometimes returning an integer and other times returning None.
+
+- Multiple Functionalities: Using functions for multiple unrelated tasks often leads to unexpected behaviors.
+
+
+
+#### Applying POLA
+
+**Example 1:** Consider a function that returns different types based on a condition, which could confuse users who expect one type.
+
+```Python
+def calculate_total(items):
+    if not items:
+        return None  # If no items, return None
+    return sum(items)
+```
+
+The problem in that function is that depending on a condition, the returned value has a different type. To overcome this problem a potential solution is to return a number anyway:
+
+```Python
+def calculate_total(items):
+    if not items:
+        return 0  # Return 0 instead of None for consistency
+    return sum(items)
+```
+
+With this solution, the user of the code will always get the same type out of that function.
+
+
+**Example 2:** Consider a function that does two different tasks: processing some data and save them in a file. 
+
+```Python
+def process_data(data, save=False):
+    cleaned_data = [d.strip() for d in data]
+    if save:
+        with open('data.txt', 'w') as f:
+            f.write('\n'.join(cleaned_data))
+    return cleaned_data
+```
+
+The user may not expect that processing data will save them into a file as well. This can lead to data being overwriten. To overcome this potential problem, you might want to separate the two functionalities into two different functions:
+
+```Python
+def process_data(data):
+    return [d.strip() for d in data]
+
+def save_data(data, filename='data.txt'):
+    with open(filename, 'w') as f:
+        f.write('\n'.join(data))
+```
+
+This solution keeps each function's purpose clear.
+
+
+### Exercice 
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Refactor `fetch_records` to make it more predictable and intuitive. Ensure that it consistently returns a single type, separates responsibilities, and uses clear parameter names.
+
+
+```Python
+
+def fetch_records(records, keyword=None, limit=10, format_output=False):
+    # Filter records containing the keyword
+    filtered = [record for record in records if keyword in record]
+    
+    # If only one record is found, return it as a string
+    if len(filtered) == 1:
+        return filtered[0]
+    
+    # Limit the number of records returned
+    limited = filtered[:limit]
+    
+    # Format output as comma-separated values if requested
+    if format_output:
+        return ", ".join(limited)
+    
+    return limited  # Return a list by default
+
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## Code for the maintainer

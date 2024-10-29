@@ -91,9 +91,6 @@ Work on the `calculate_final_price` function to apply the YAGNI principle by rem
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-
-
-
 #### Summary
 
 - YAGNI encourages to code only the requirements you currently have.
@@ -191,9 +188,6 @@ def check_eligibility(age, member):
 - The KISS Principle encourages you to your code as simple as possible.
 - Curly’s Law advise you to keep functions focused on a single task.
 - Combining these principles improves code readability, maintainability and testability.
-
-
-
 
 ## Don't repeat yourself (DRY) - Rule of three
 

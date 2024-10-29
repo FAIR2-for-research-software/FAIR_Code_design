@@ -19,6 +19,9 @@ exercises: 2
 
 ## You aren't gonna need it (YAGNI)
 
+![xkcd.com](fig/xkcd_meme.png){ width=50% }
+
+
 #### Introduction
 
 The principle **YAGNI** stands for "You Aren't Gonna Need It". This principle encourages you yo build only what is needed right now, avoiding adding features or complexity for hypothetical future needs. It comes from Agile programming and aims to reduce spending time and resources on unnecessary code and keep the code clean and understandable.
@@ -27,10 +30,13 @@ Why **YAGNI** is important:
 
 - Simplicity: By avoiding unnecessary code you will reduce complexity, making it easier to read, maintain, and debug code.
 - Saving Time: Don't wast time by building features that may never be used.
-- Flexibility: If you write only what is needed it will be easier to change the code if requirements are changing.
+- Flexibility: Writing only what is needed makes any changes in requirements easier to implement.
 
 
 #### Applying YAGNI
+
+
+
 
 
 

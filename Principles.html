@@ -229,7 +229,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#dont-repeat-yourself-dry---rule-of-three">Don’t repeat yourself (DRY) - Rule of three</a></li>
-<li><a href="#keep-it-simple-stupid-kiss-curlys-law---do-one-thing">Keep it simple, Stupid (KISS) &amp; Curly’s Law - Do one Thing</a></li>
+<li><a href="#keep-it-simple-stupid-kiss-curlys-law">Keep it simple, Stupid (KISS) &amp; Curly’s Law</a></li>
 <li><a href="#you-arent-gonna-need-it-yagni">You aren’t gonna need it (YAGNI)</a></li>
 <li><a href="#principle-of-least-astonishment-pola">Principle of least astonishment (POLA)</a></li>
 <li><a href="#code-for-the-maintainer">Code for the maintainer</a></li>
@@ -324,7 +324,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Principles of Code design</h1>
-        <p>Last updated on 2024-10-28 |
+        <p>Last updated on 2024-10-29 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Principles.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -366,12 +366,14 @@ code?</li>
 It encourages you to minimize duplication by centralizing similar code
 patterns. This leads to more readable, maintainable, and scalable
 code.</p>
-<p>Why DRY is it important: - Improves Readability: Code is clearer when
-it’s not cluttered with repeated logic. - Reduces Bugs: If you need to
-make changes, you only do it in one place, reducing the chance of
-errors. - Saves Time: Updating and testing code is faster when code is
-organized with minimal duplication.</p>
-</div>
+<p>Why DRY is it important:</p>
+<ul><li>Improves Readability: Code is clearer when it’s not cluttered with
+repeated logic.</li>
+<li>Reduces Bugs: If you need to make changes, you only do it in one
+place, reducing the chance of errors.</li>
+<li>Saves Time: Updating and testing code is faster when code is
+organized with minimal duplication.</li>
+</ul></div>
 <div class="section level4">
 <h4 id="using-functions-to-avoid-repeting-code">Using functions to avoid repeting code<a class="anchor" aria-label="anchor" href="#using-functions-to-avoid-repeting-code"></a></h4>
 <p>Instead of writing the same code in multiple places in your script,
@@ -466,8 +468,96 @@ guideline suggesting that you should wait until a piece of code is
 repeated three times before refactoring it. It ensures that you only
 refactor when a pattern is stable and repeated enough time.</p>
 </div>
-</section><section><h2 class="section-heading" id="keep-it-simple-stupid-kiss-curlys-law---do-one-thing">Keep it simple, Stupid (KISS) &amp; Curly’s Law - Do one Thing<a class="anchor" aria-label="anchor" href="#keep-it-simple-stupid-kiss-curlys-law---do-one-thing"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="you-arent-gonna-need-it-yagni">You aren’t gonna need it (YAGNI)<a class="anchor" aria-label="anchor" href="#you-arent-gonna-need-it-yagni"></a></h2>
+</section><section><h2 class="section-heading" id="keep-it-simple-stupid-kiss-curlys-law">Keep it simple, Stupid (KISS) &amp; Curly’s Law<a class="anchor" aria-label="anchor" href="#keep-it-simple-stupid-kiss-curlys-law"></a></h2>
+<hr class="half-width"><div class="section level4">
+<h4 id="introduction-1">Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"></a></h4>
+<p>The <strong>KISS</strong> Principle stands for <strong>“Keep It
+Simple, Stupid”</strong> and points out that writing simple code should
+be a primary goal in design. Complex structure often leads to unreadable
+and error-prone code. This is especially important in research where
+maintaining code over a long time period is essential.</p>
+<p>Why <strong>KISS</strong> is important?</p>
+<ul><li>Readability: Simple code is easier to understand. There is a high
+chance that the person who will read your code the most is yourself, so
+help your future self.</li>
+<li>Maintainability: Bug are easier to be found and fixed when each
+component is simple.</li>
+<li>Upgrade: A simple code is easier to adapt to changes in the
+requirements.</li>
+</ul><p>It is easy to recognize complex code. When you have too many nested
+loops or <code>if</code> statements it means that your code is not
+optimal. In such case you might take a step back and try to simplify the
+structure.</p>
+<p>The <strong>Curly’s Law</strong> says that a function should focus on
+a single task. Each function should “do one thing” and “do it well,”
+meaning that if a function has multiple tasks, consider breaking it
+down.</p>
+<p>Why is the Curly’s Law important?</p>
+<ul><li>Reusability: Simple single-task function are easier to reuse.</li>
+<li>Bug fix: When you code is composed of simple function, potential
+issues are easier to localise.</li>
+<li>Testing: Simple single-task function are easier to test.</li>
+<li>Modularity: Code becomes more modular and organized.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="applying-kiss-and-curlys-law">Applying KISS and Curly’s Law<a class="anchor" aria-label="anchor" href="#applying-kiss-and-curlys-law"></a></h4>
+<p>Example 1: Simplifying a Complex Function</p>
+<p>Let’s consider a function that processes data by removing missing
+values, calculating the average, and returning the formatted result.</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]  <span class="co"># Remove missing values</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    average <span class="op">=</span> <span class="bu">sum</span>(cleaned_data) <span class="op">/</span> <span class="bu">len</span>(cleaned_data)    <span class="co"># Calculate average</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span>   </span></code></pre>
+</div>
+<p>This function does three tasks: remove missing values, compute
+average, formar the result. To apply KISS and the Curly’s law what you
+can do is to split this function into three simple independent
+functions:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> remove_missing(data):</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">def</span> calculate_average(data):</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="kw">def</span> format_average(average):</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span></span></code></pre>
+</div>
+<p>In that version, each function does only one thing. The program is
+more readable, easier to debug, test or update.</p>
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Use the KISS and Curly’s law to simplofy the following code:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> check_eligibility(age, member):</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>        <span class="cf">if</span> member:</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Eligible"</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Not eligible"</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Not eligible"</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="you-arent-gonna-need-it-yagni">You aren’t gonna need it (YAGNI)<a class="anchor" aria-label="anchor" href="#you-arent-gonna-need-it-yagni"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="principle-of-least-astonishment-pola">Principle of least astonishment (POLA)<a class="anchor" aria-label="anchor" href="#principle-of-least-astonishment-pola"></a></h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="code-for-the-maintainer">Code for the maintainer<a class="anchor" aria-label="anchor" href="#code-for-the-maintainer"></a></h2>
 <hr class="half-width"><!--
@@ -544,7 +634,7 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/Principles.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/Principles.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-10-28",
+  "dateModified": "2024-10-29",
   "datePublished": "2024-10-29"
 }
 

@@ -24,6 +24,7 @@ exercises: 2
 The DRY Principle states: **“Don’t Repeat Yourself.”** It encourages you to minimize duplication by centralizing similar code patterns. This leads to more readable, maintainable, and scalable code.
 
 Why DRY is it important:
+
 - Improves Readability: Code is clearer when it's not cluttered with repeated logic.
 - Reduces Bugs: If you need to make changes, you only do it in one place, reducing the chance of errors.
 - Saves Time: Updating and testing code is faster when code is organized with minimal duplication.
@@ -105,7 +106,85 @@ It is important to note that prematurly refactoring a code might lead to the une
 
 
 
-## Keep it simple, Stupid (KISS) & Curly's Law - Do one Thing
+## Keep it simple, Stupid (KISS) & Curly's Law
+
+#### Introduction
+
+The **KISS** Principle stands for **“Keep It Simple, Stupid”** and points out that writing simple code should be a primary goal in design. Complex structure often leads to unreadable and error-prone code. This is especially important in research where maintaining code over a long time period is essential.
+
+
+Why **KISS** is important?
+
+- Readability: Simple code is easier to understand. There is a high chance that the person who will read your code the most is yourself, so help your future self.
+- Maintainability: Bug are easier to be found and fixed when each component is simple.
+- Upgrade: A simple code is easier to adapt to changes in the requirements. 
+
+
+It is easy to recognize complex code. When you have too many nested loops or `if` statements it means that your code is not optimal. In such case you might take a step back and try to simplify the structure.
+
+
+The **Curly’s Law** says that a function should focus on a single task. Each function should "do one thing" and "do it well," meaning that if a function has multiple tasks, consider breaking it down.
+
+Why is the Curly’s Law important?
+
+- Reusability: Simple single-task function are easier to reuse.
+- Bug fix: When you code is composed of simple function, potential issues are easier to localise.
+- Testing: Simple single-task function are easier to test.
+- Modularity: Code becomes more modular and organized.
+
+
+#### Applying KISS and Curly's Law
+
+Example 1: Simplifying a Complex Function
+
+
+Let's consider a function that processes data by removing missing values, calculating the average, and returning the formatted result. 
+
+```Python
+def process_data(data):
+
+    cleaned_data = [x for x in data if x is not None]  # Remove missing values
+
+    average = sum(cleaned_data) / len(cleaned_data)    # Calculate average
+
+    return f"Average: {average:.2f}"   
+```
+
+This function does three tasks: remove missing values, compute average, formar the result. To apply KISS and the Curly's law what you can do is to split this function into three simple independent functions:
+
+
+```Python
+def remove_missing(data):
+    return [x for x in data if x is not None]
+
+def calculate_average(data):
+    return sum(data) / len(data)
+
+def format_average(average):
+    return f"Average: {average:.2f}"
+
+```
+
+In that version, each function does only one thing. The program is more readable, easier to debug, test or update.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Use the KISS and Curly's law to simplofy the following code:
+
+
+```Python
+def check_eligibility(age, member):
+    if age >= 18:
+        if member:
+            return "Eligible"
+        else:
+            return "Not eligible"
+    else:
+        return "Not eligible"
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ## You aren't gonna need it (YAGNI)

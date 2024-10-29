@@ -221,7 +221,7 @@
       <div class="accordion-body">
         <ul><li><a href="#what-is-a-software-in-academia">What is a software in academia?</a></li>
 <li><a href="#reminder-the-fair-principles-applied-to-research-software">Reminder: The FAIR principles applied to research software</a></li>
-<li><a href="#code-design-at-the-service-of-the-fair-principle">Code design at the service of the FAIR principle</a></li>
+<li><a href="#fair-principles-applied-to-code-design">FAIR principles applied to code design</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -428,11 +428,40 @@ software).</p></li>
 </ul></div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="code-design-at-the-service-of-the-fair-principle">Code design at the service of the FAIR principle<a class="anchor" aria-label="anchor" href="#code-design-at-the-service-of-the-fair-principle"></a></h2>
-<hr class="half-width"><!--
+</section><section><h2 class="section-heading" id="fair-principles-applied-to-code-design">FAIR principles applied to code design<a class="anchor" aria-label="anchor" href="#fair-principles-applied-to-code-design"></a></h2>
+<hr class="half-width"><p>By designing your code efficiently you will make it FAIRer. Code
+design is about making your code easy to locate, adapt, maintain and
+share. Here’s how each principle benefits from good design:</p>
+<ul><li><p><strong>Findability</strong>: While <em>Findable</em> generally
+means that your software is easy for other to find, organizing your code
+in a standardized directory structure (e.g., src/, data/, docs/) will
+help you and others to collaborate with you. Using clear and descriptive
+name (for files, variable, function, etc) make each part of your project
+easy to find.</p></li>
+<li><p><strong>Accessibility</strong>: Accessible code removes usage
+barriers. Separating configuration of the code from the main code makes
+the use of the code easier for people who are not proficient in the
+language you have used. This also means users with different setups can
+adapt the code quickly to their situation, ensuring a smooth integration
+into different environments.</p></li>
+<li><p><strong>Interoperability</strong>: Writing code in a modular way
+and using standard data format allows other systems to communicate with
+it.</p></li>
+<li><p><strong>Reusability</strong>: Documentated code, use of
+docstrings and inline comments makes it easier for others to understand,
+use, and modify your code. Using modular design with single-task blocks
+also increases reusability. Indeed, small simple pieces can be more
+easily transferred to other projects or extended without significant
+refactoring.</p></li>
+</ul><p>The goal of this lecture is to dive into the practices and learn a
+little bit more about how the way you code will greatly enhance
+maintainable, adaptable, and sustainable your software is in the long
+run.</p>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></div> <!-- / div.lesson-content -->
+ -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/Why_should_you_care.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>

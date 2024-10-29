@@ -477,13 +477,44 @@ software).</p></li>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="code-design-at-the-service-of-the-fair-principle">Code design at the service of the FAIR principle<a class="anchor" aria-label="anchor" href="#code-design-at-the-service-of-the-fair-principle"></a>
+</section><section><h2 class="section-heading" id="fair-principles-applied-to-code-design">FAIR principles applied to code design<a class="anchor" aria-label="anchor" href="#fair-principles-applied-to-code-design"></a>
 </h2>
 <hr class="half-width">
+<p>By designing your code efficiently you will make it FAIRer. Code
+design is about making your code easy to locate, adapt, maintain and
+share. Here’s how each principle benefits from good design:</p>
+<ul>
+<li><p><strong>Findability</strong>: While <em>Findable</em> generally
+means that your software is easy for other to find, organizing your code
+in a standardized directory structure (e.g., src/, data/, docs/) will
+help you and others to collaborate with you. Using clear and descriptive
+name (for files, variable, function, etc) make each part of your project
+easy to find.</p></li>
+<li><p><strong>Accessibility</strong>: Accessible code removes usage
+barriers. Separating configuration of the code from the main code makes
+the use of the code easier for people who are not proficient in the
+language you have used. This also means users with different setups can
+adapt the code quickly to their situation, ensuring a smooth integration
+into different environments.</p></li>
+<li><p><strong>Interoperability</strong>: Writing code in a modular way
+and using standard data format allows other systems to communicate with
+it.</p></li>
+<li><p><strong>Reusability</strong>: Documentated code, use of
+docstrings and inline comments makes it easier for others to understand,
+use, and modify your code. Using modular design with single-task blocks
+also increases reusability. Indeed, small simple pieces can be more
+easily transferred to other projects or extended without significant
+refactoring.</p></li>
+</ul>
+<p>The goal of this lecture is to dive into the practices and learn a
+little bit more about how the way you code will greatly enhance
+maintainable, adaptable, and sustainable your software is in the long
+run.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section><section id="aio-Why_should_you_care"><p>Content from <a href="Why_should_you_care.html">Why should you care?</a></p>
+ -->
+</section></section><section id="aio-Why_should_you_care"><p>Content from <a href="Why_should_you_care.html">Why should you care?</a></p>
 <hr>
 <p>Last updated on 2024-10-29 |
 
@@ -1438,7 +1469,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -1469,7 +1500,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1496,7 +1527,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -2409,7 +2440,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>

@@ -19,7 +19,7 @@ exercises: 2
 
 ## You aren't gonna need it (YAGNI)
 
-![xkcd.com](fig/xkcd_meme.png){ width=50% }
+![xkcd.com](fig/xkcd_meme.png){ width=90% }
 
 
 #### Introduction

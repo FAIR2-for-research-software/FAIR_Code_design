@@ -1033,7 +1033,7 @@ only on the known requirements.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1164,7 +1164,7 @@ more readable, easier to debug, test or update.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1279,9 +1279,9 @@ some clarity to your code, you may want to declare the value
 <p>Now if you want to change <code>0.1</code> to <code>0.2</code> you
 need to do it only once. In addition, now you have a better idea of what
 that constant is! The code is already clearer.</p>
-<div id="discussion1" class="callout discussion">
+<div id="challenge3" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
@@ -1291,6 +1291,27 @@ output:</p>
 <pre><code>Hello, Alice!
 Hello, Bob!
 Hello, Charlie!</code></pre>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> names:</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>    greet(name)</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1349,59 +1370,59 @@ tasks often leads to unexpected behaviors.</p></li>
 <p><strong>Example 1:</strong> Consider a function that returns
 different types based on a condition, which could confuse users who
 expect one type.</p>
-<div class="codewrapper sourceCode" id="cb15">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> items:</span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>  <span class="co"># If no items, return None</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(items)</span></code></pre>
-</div>
-<p>The problem in that function is that depending on a condition, the
-returned value has a different type. To overcome this problem a
-potential solution is to return a number anyway:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
 <span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> items:</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span>  <span class="co"># Return 0 instead of None for consistency</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>  <span class="co"># If no items, return None</span></span>
 <span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(items)</span></code></pre>
+</div>
+<p>The problem in that function is that depending on a condition, the
+returned value has a different type. To overcome this problem a
+potential solution is to return a number anyway:</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> items:</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span>  <span class="co"># Return 0 instead of None for consistency</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(items)</span></code></pre>
 </div>
 <p>With this solution, the user of the code will always get the same
 type out of that function.</p>
 <p><strong>Example 2:</strong> Consider a function that does two
 different tasks: processing some data and save them in a file.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">def</span> process_data(data, save<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [d.strip() <span class="cf">for</span> d <span class="kw">in</span> data]</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    <span class="cf">if</span> save:</span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.txt'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>            f.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(cleaned_data))</span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>    <span class="cf">return</span> cleaned_data</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">def</span> process_data(data, save<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [d.strip() <span class="cf">for</span> d <span class="kw">in</span> data]</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>    <span class="cf">if</span> save:</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.txt'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>            f.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(cleaned_data))</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>    <span class="cf">return</span> cleaned_data</span></code></pre>
 </div>
 <p>The user may not expect that processing data will save them into a
 file as well. This can lead to data being overwriten. To overcome this
 potential problem, you might want to separate the two functionalities
 into two different functions:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>    <span class="cf">return</span> [d.strip() <span class="cf">for</span> d <span class="kw">in</span> data]</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="kw">def</span> save_data(data, filename<span class="op">=</span><span class="st">'data.txt'</span>):</span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>        f.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(data))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>    <span class="cf">return</span> [d.strip() <span class="cf">for</span> d <span class="kw">in</span> data]</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="kw">def</span> save_data(data, filename<span class="op">=</span><span class="st">'data.txt'</span>):</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>        f.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(data))</span></code></pre>
 </div>
 <p>This solution keeps each function’s purpose clear.</p>
 </div>
 <div class="section level3">
 <h3 id="exercice-1">Exercice<a class="anchor" aria-label="anchor" href="#exercice-1"></a>
 </h3>
-<div id="discussion2" class="callout discussion">
+<div id="discussion1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -1411,26 +1432,26 @@ into two different functions:</p>
 <p>Refactor <code>fetch_records</code> to make it more predictable and
 intuitive. Ensure that it consistently returns a single type, separates
 responsibilities, and uses clear parameter names.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="kw">def</span> fetch_records(records, keyword<span class="op">=</span><span class="va">None</span>, limit<span class="op">=</span><span class="dv">10</span>, format_output<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>    <span class="co"># Filter records containing the keyword</span></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>    filtered <span class="op">=</span> [record <span class="cf">for</span> record <span class="kw">in</span> records <span class="cf">if</span> keyword <span class="kw">in</span> record]</span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>    </span>
-<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>    <span class="co"># If only one record is found, return it as a string</span></span>
-<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filtered) <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a>        <span class="cf">return</span> filtered[<span class="dv">0</span>]</span>
-<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>    </span>
-<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>    <span class="co"># Limit the number of records returned</span></span>
-<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>    limited <span class="op">=</span> filtered[:limit]</span>
-<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a>    </span>
-<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a>    <span class="co"># Format output as comma-separated values if requested</span></span>
-<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a>    <span class="cf">if</span> format_output:</span>
-<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">", "</span>.join(limited)</span>
-<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a>    </span>
-<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a>    <span class="cf">return</span> limited  <span class="co"># Return a list by default</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="kw">def</span> fetch_records(records, keyword<span class="op">=</span><span class="va">None</span>, limit<span class="op">=</span><span class="dv">10</span>, format_output<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>    <span class="co"># Filter records containing the keyword</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>    filtered <span class="op">=</span> [record <span class="cf">for</span> record <span class="kw">in</span> records <span class="cf">if</span> keyword <span class="kw">in</span> record]</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>    </span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>    <span class="co"># If only one record is found, return it as a string</span></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filtered) <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>        <span class="cf">return</span> filtered[<span class="dv">0</span>]</span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a>    </span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>    <span class="co"># Limit the number of records returned</span></span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a>    limited <span class="op">=</span> filtered[:limit]</span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a>    </span>
+<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a>    <span class="co"># Format output as comma-separated values if requested</span></span>
+<span id="cb20-14"><a href="#cb20-14" tabindex="-1"></a>    <span class="cf">if</span> format_output:</span>
+<span id="cb20-15"><a href="#cb20-15" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">", "</span>.join(limited)</span>
+<span id="cb20-16"><a href="#cb20-16" tabindex="-1"></a>    </span>
+<span id="cb20-17"><a href="#cb20-17" tabindex="-1"></a>    <span class="cf">return</span> limited  <span class="co"># Return a list by default</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1804,7 +1825,7 @@ logic and structure.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>This one-liner finds all prime numbers less than 100, squares them,
 and returns the sum of these squares.</p>
@@ -1847,7 +1868,7 @@ pass the following list of word
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2041,7 +2062,7 @@ to understand.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2150,7 +2171,7 @@ good implementation. For example</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>The function checks if a number is both even and a multiple of 5. A
 better way of doing it could be:</p>
@@ -2456,7 +2477,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>

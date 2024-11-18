@@ -1035,8 +1035,14 @@ only on the known requirements.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>def calculate_final_price(prices): # Calculate the total with a fixed
-10% discount total = sum(prices) * 0.9 return f”${total:.2f}”</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">def</span> calculate_final_price(prices):</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>    <span class="co"># Calculate the total with a fixed 10% discount</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    total <span class="op">=</span> <span class="bu">sum</span>(prices) <span class="op">*</span> <span class="fl">0.9</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"$</span><span class="sc">{</span>total<span class="sc">:.2f}</span><span class="ss">"</span></span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1097,32 +1103,32 @@ issues are easier to localise.</li>
 <p>Example 1: Simplifying a Complex Function</p>
 <p>Let’s consider a function that processes data by removing missing
 values, calculating the average, and returning the formatted result.</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]  <span class="co"># Remove missing values</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    average <span class="op">=</span> <span class="bu">sum</span>(cleaned_data) <span class="op">/</span> <span class="bu">len</span>(cleaned_data)    <span class="co"># Calculate average</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span>   </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]  <span class="co"># Remove missing values</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    average <span class="op">=</span> <span class="bu">sum</span>(cleaned_data) <span class="op">/</span> <span class="bu">len</span>(cleaned_data)    <span class="co"># Calculate average</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span>   </span></code></pre>
 </div>
 <p>This function does three tasks: remove missing values, compute
 average, formar the result. To apply KISS and the Curly’s law what you
 can do is to split this function into three simple independent
 functions:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> remove_missing(data):</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">def</span> calculate_average(data):</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="kw">def</span> format_average(average):</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> remove_missing(data):</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="kw">def</span> calculate_average(data):</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="kw">def</span> format_average(average):</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span></span></code></pre>
 </div>
 <p>In that version, each function does only one thing. The program is
 more readable, easier to debug, test or update.</p>
@@ -1138,17 +1144,17 @@ more readable, easier to debug, test or update.</p>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Simplify the following code:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> check_eligibility(age, member):</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>        <span class="cf">if</span> member:</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Eligible"</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Not eligible"</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Not eligible"</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> check_eligibility(age, member):</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>        <span class="cf">if</span> member:</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Eligible"</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Not eligible"</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Not eligible"</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1160,8 +1166,14 @@ more readable, easier to debug, test or update.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>def check_eligibility(age, member): if age &lt; 18 or not member:
-return “Not eligible” return “Eligible”</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> check_eligibility(age, member):</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">18</span> <span class="kw">or</span> <span class="kw">not</span> member:</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Not eligible"</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Eligible"</span></span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1205,28 +1217,28 @@ organized with minimal duplication.</li>
 <p>Instead of writing the same code in multiple places in your script,
 create a function. This makes updates easier and avoids errors. For
 example consider the following code:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>price1 <span class="op">=</span> <span class="dv">100</span> <span class="op">*</span> <span class="fl">1.2</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>price2 <span class="op">=</span> <span class="dv">150</span> <span class="op">*</span> <span class="fl">1.2</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>price3 <span class="op">=</span> <span class="dv">200</span> <span class="op">*</span> <span class="fl">1.2</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="bu">print</span>(price1, price2, price3)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>price1 <span class="op">=</span> <span class="dv">100</span> <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>price2 <span class="op">=</span> <span class="dv">150</span> <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>price3 <span class="op">=</span> <span class="dv">200</span> <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="bu">print</span>(price1, price2, price3)</span></code></pre>
 </div>
 <p>The same operation is repeated three times with a different value. If
 you create a function that makes this operation you can refactor your
 code:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># With DRY Principle</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">def</span> calculate_price(base_price):</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="cf">return</span> base_price <span class="op">*</span> <span class="fl">1.2</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>price1 <span class="op">=</span> calculate_price(<span class="dv">100</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>price2 <span class="op">=</span> calculate_price(<span class="dv">150</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>price3 <span class="op">=</span> calculate_price(<span class="dv">200</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="bu">print</span>(price1, price2, price3)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># With DRY Principle</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="kw">def</span> calculate_price(base_price):</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>    <span class="cf">return</span> base_price <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>price1 <span class="op">=</span> calculate_price(<span class="dv">100</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>price2 <span class="op">=</span> calculate_price(<span class="dv">150</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>price3 <span class="op">=</span> calculate_price(<span class="dv">200</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="bu">print</span>(price1, price2, price3)</span></code></pre>
 </div>
 </div>
 <div class="section level4">
@@ -1235,12 +1247,12 @@ code:</p>
 <p>In the previous examples we still call the function three time which
 is not optimal. In general, If you’re applying the same operation to
 multiple elements, use a loop to avoid repeated code blocks:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>prices <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>]</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="cf">for</span> price <span class="kw">in</span> prices:</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>    <span class="bu">print</span>(calculate_price(price))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>prices <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="cf">for</span> price <span class="kw">in</span> prices:</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>    <span class="bu">print</span>(calculate_price(price))</span></code></pre>
 </div>
 </div>
 <div class="section level4">
@@ -1249,20 +1261,20 @@ multiple elements, use a loop to avoid repeated code blocks:</p>
 <p>When a value is repeated in multiple places, declare it as a constant
 variable. This way, you only need to change it once if necessary.
 Consider the following code:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>total <span class="op">=</span> (<span class="dv">100</span> <span class="op">*</span> <span class="fl">0.1</span>) <span class="op">+</span> (<span class="dv">200</span> <span class="op">*</span> <span class="fl">0.1</span>) <span class="op">+</span> (<span class="dv">300</span> <span class="op">*</span> <span class="fl">0.1</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>total <span class="op">=</span> (<span class="dv">100</span> <span class="op">*</span> <span class="fl">0.1</span>) <span class="op">+</span> (<span class="dv">200</span> <span class="op">*</span> <span class="fl">0.1</span>) <span class="op">+</span> (<span class="dv">300</span> <span class="op">*</span> <span class="fl">0.1</span>)</span></code></pre>
 </div>
 <p>The value <code>0.1</code> is repeated three times. If you want to
 change it, you will need to do it three times. To save time and to add
 some clarity to your code, you may want to declare the value
 <code>0.1</code>, as follows:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>TAX_RATE <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>total <span class="op">=</span> (<span class="dv">100</span> <span class="op">*</span> TAX_RATE) <span class="op">+</span> (<span class="dv">200</span> <span class="op">*</span> TAX_RATE) <span class="op">+</span> (<span class="dv">300</span> <span class="op">*</span> TAX_RATE)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>TAX_RATE <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>total <span class="op">=</span> (<span class="dv">100</span> <span class="op">*</span> TAX_RATE) <span class="op">+</span> (<span class="dv">200</span> <span class="op">*</span> TAX_RATE) <span class="op">+</span> (<span class="dv">300</span> <span class="op">*</span> TAX_RATE)</span></code></pre>
 </div>
 <p>Now if you want to change <code>0.1</code> to <code>0.2</code> you
 need to do it only once. In addition, now you have a better idea of what
@@ -1337,52 +1349,52 @@ tasks often leads to unexpected behaviors.</p></li>
 <p><strong>Example 1:</strong> Consider a function that returns
 different types based on a condition, which could confuse users who
 expect one type.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> items:</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>  <span class="co"># If no items, return None</span></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(items)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> items:</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>  <span class="co"># If no items, return None</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(items)</span></code></pre>
 </div>
 <p>The problem in that function is that depending on a condition, the
 returned value has a different type. To overcome this problem a
 potential solution is to return a number anyway:</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> items:</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span>  <span class="co"># Return 0 instead of None for consistency</span></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(items)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> items:</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span>  <span class="co"># Return 0 instead of None for consistency</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(items)</span></code></pre>
 </div>
 <p>With this solution, the user of the code will always get the same
 type out of that function.</p>
 <p><strong>Example 2:</strong> Consider a function that does two
 different tasks: processing some data and save them in a file.</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> process_data(data, save<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [d.strip() <span class="cf">for</span> d <span class="kw">in</span> data]</span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>    <span class="cf">if</span> save:</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.txt'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>            f.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(cleaned_data))</span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>    <span class="cf">return</span> cleaned_data</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">def</span> process_data(data, save<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [d.strip() <span class="cf">for</span> d <span class="kw">in</span> data]</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    <span class="cf">if</span> save:</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.txt'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>            f.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(cleaned_data))</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>    <span class="cf">return</span> cleaned_data</span></code></pre>
 </div>
 <p>The user may not expect that processing data will save them into a
 file as well. This can lead to data being overwriten. To overcome this
 potential problem, you might want to separate the two functionalities
 into two different functions:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="cf">return</span> [d.strip() <span class="cf">for</span> d <span class="kw">in</span> data]</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="kw">def</span> save_data(data, filename<span class="op">=</span><span class="st">'data.txt'</span>):</span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>        f.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(data))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>    <span class="cf">return</span> [d.strip() <span class="cf">for</span> d <span class="kw">in</span> data]</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="kw">def</span> save_data(data, filename<span class="op">=</span><span class="st">'data.txt'</span>):</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>        f.write(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(data))</span></code></pre>
 </div>
 <p>This solution keeps each function’s purpose clear.</p>
 </div>
@@ -1399,26 +1411,26 @@ into two different functions:</p>
 <p>Refactor <code>fetch_records</code> to make it more predictable and
 intuitive. Ensure that it consistently returns a single type, separates
 responsibilities, and uses clear parameter names.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="kw">def</span> fetch_records(records, keyword<span class="op">=</span><span class="va">None</span>, limit<span class="op">=</span><span class="dv">10</span>, format_output<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    <span class="co"># Filter records containing the keyword</span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>    filtered <span class="op">=</span> [record <span class="cf">for</span> record <span class="kw">in</span> records <span class="cf">if</span> keyword <span class="kw">in</span> record]</span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>    </span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>    <span class="co"># If only one record is found, return it as a string</span></span>
-<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filtered) <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>        <span class="cf">return</span> filtered[<span class="dv">0</span>]</span>
-<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>    </span>
-<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>    <span class="co"># Limit the number of records returned</span></span>
-<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>    limited <span class="op">=</span> filtered[:limit]</span>
-<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>    </span>
-<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>    <span class="co"># Format output as comma-separated values if requested</span></span>
-<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>    <span class="cf">if</span> format_output:</span>
-<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">", "</span>.join(limited)</span>
-<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a>    </span>
-<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a>    <span class="cf">return</span> limited  <span class="co"># Return a list by default</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="kw">def</span> fetch_records(records, keyword<span class="op">=</span><span class="va">None</span>, limit<span class="op">=</span><span class="dv">10</span>, format_output<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>    <span class="co"># Filter records containing the keyword</span></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>    filtered <span class="op">=</span> [record <span class="cf">for</span> record <span class="kw">in</span> records <span class="cf">if</span> keyword <span class="kw">in</span> record]</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>    </span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>    <span class="co"># If only one record is found, return it as a string</span></span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(filtered) <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a>        <span class="cf">return</span> filtered[<span class="dv">0</span>]</span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>    </span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>    <span class="co"># Limit the number of records returned</span></span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>    limited <span class="op">=</span> filtered[:limit]</span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a>    </span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a>    <span class="co"># Format output as comma-separated values if requested</span></span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a>    <span class="cf">if</span> format_output:</span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">", "</span>.join(limited)</span>
+<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a>    </span>
+<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a>    <span class="cf">return</span> limited  <span class="co"># Return a list by default</span></span></code></pre>
 </div>
 </div>
 </div>

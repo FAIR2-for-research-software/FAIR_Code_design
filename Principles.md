@@ -109,10 +109,6 @@ def calculate_final_price(prices):
 - Keeps your code agile and maintainable.
 
 
-
-
-
-
 ## Keep it simple, Stupid (KISS) & Curly's Law
 
 #### Introduction
@@ -191,6 +187,16 @@ def check_eligibility(age, member):
     else:
         return "Not eligible"
 ```
+
+
+:::::::::::::::::::::::: solution
+
+def check_eligibility(age, member):
+    if age < 18 or not member:
+        return "Not eligible"
+    return "Eligible"
+
+:::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

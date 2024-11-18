@@ -88,7 +88,18 @@ def calculate_final_price(prices, currency="USD", discount_type="percentage", di
 
 Work on the `calculate_final_price` function to apply the YAGNI principle by removing unnecessary parameters and logic, focusing only on the known requirements.
 
+
+:::::::::::::::::::::::: solution
+
+def calculate_final_price(prices):
+    # Calculate the total with a fixed 10% discount
+    total = sum(prices) * 0.9
+    return f"${total:.2f}"
+
+:::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 #### Summary

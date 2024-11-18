@@ -91,11 +91,12 @@ Work on the `calculate_final_price` function to apply the YAGNI principle by rem
 
 :::::::::::::::::::::::: solution
 
+```Python
 def calculate_final_price(prices):
     # Calculate the total with a fixed 10% discount
     total = sum(prices) * 0.9
     return f"${total:.2f}"
-
+```
 :::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -191,10 +192,13 @@ def check_eligibility(age, member):
 
 :::::::::::::::::::::::: solution
 
+
+```Python
 def check_eligibility(age, member):
     if age < 18 or not member:
         return "Not eligible"
     return "Eligible"
+```
 
 :::::::::::::::::::::::::::::::::
 

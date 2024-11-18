@@ -332,7 +332,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Principles of Code design</h1>
-        <p>Last updated on 2024-10-29 |
+        <p>Last updated on 2024-11-18 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Principles.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -415,9 +415,9 @@ an example of over-engineering. A better implementation would be:</p>
 </div>
 <div class="section level4">
 <h4 id="exercise">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a></h4>
-<div id="discussion1" class="callout discussion">
+<div id="challenge1" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
@@ -458,6 +458,19 @@ requirements.</p>
 <p>Work on the <code>calculate_final_price</code> function to apply the
 YAGNI principle by removing unnecessary parameters and logic, focusing
 only on the known requirements.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>def calculate_final_price(prices): # Calculate the total with a fixed
+10% discount total = sum(prices) * 0.9 return f”${total:.2f}”</p>
+</div>
 </div>
 </div>
 </div>
@@ -538,7 +551,7 @@ more readable, easier to debug, test or update.</p>
 </div>
 <div class="section level4">
 <h4 id="exercice">Exercice<a class="anchor" aria-label="anchor" href="#exercice"></a></h4>
-<div id="discussion2" class="callout discussion">
+<div id="discussion1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -651,7 +664,7 @@ some clarity to your code, you may want to declare the value
 <p>Now if you want to change <code>0.1</code> to <code>0.2</code> you
 need to do it only once. In addition, now you have a better idea of what
 that constant is! The code is already clearer.</p>
-<div id="discussion3" class="callout discussion">
+<div id="discussion2" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -762,7 +775,7 @@ into two different functions:</p>
 </div>
 <div class="section level3">
 <h3 id="exercice-1">Exercice<a class="anchor" aria-label="anchor" href="#exercice-1"></a></h3>
-<div id="discussion4" class="callout discussion">
+<div id="discussion3" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -872,7 +885,7 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Principles.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Principles.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-10-29",
+  "dateModified": "2024-11-18",
   "datePublished": "2024-11-18"
 }
 

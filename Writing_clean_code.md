@@ -131,14 +131,18 @@ In the context of Python, *beautiful* means that the code is clean, readable and
 What is this code doing?
 
 ``` python
-print(sum(x**2 for x in range(2, 100) if all(x % d != 0 for d in range(2, int(x**0.5) + 1))))
+result = [x * 2 if x % 2 == 0 else x * 3 for x in range(10) if x % 2 != 1 and x != 4]
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution
 
-This one-liner finds all prime numbers less than 100, squares them, and returns the sum of these squares.
+This one-liner tries to:
+
+- Filter out odd numbers and the number 4.
+- For even numbers, double them.
+- For the rest, triple them.
 
 :::::::::::::::::::::::::::::::::
 
@@ -148,65 +152,24 @@ Beautiful code is aesthetically pleasing because it follows good design principl
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
-Rewrite the following one-liner:
 
-``` python
-words = ['apple', 'banana', 'cherry', 'date', 'fig', 'grape']
-result = [len(word) for word in words if len(word) % 2 == 0 and 'a' in word.lower()]
-```
-
-You will create three functions: `has_even_length`, `contains_letter_a`, `process_words` and you will pass the following list of word `words = ['apple', 'banana', 'cherry', 'date', 'fig', 'grape']`.
- 
+Rewrite the previous one line to make it more understandable
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution
 
 ``` python
-def has_even_length(word):
-    """
-    Check if the length of the word is even.
-    
-    Args:
-        word (str): The word to check.
-        
-    Returns:
-        bool: True if the length of the word is even, False otherwise.
-    """
-    return len(word) % 2 == 0
+result = []
+for x in range(10):
+    if x % 2 == 1 or x == 4:
+        continue
+    if x % 2 == 0:
+        result.append(x * 2)
+    else:
+        result.append(x * 3)
 
-def contains_letter_a(word):
-    """
-    Check if the word contains the letter 'a' (case-insensitive).
-    
-    Args:
-        word (str): The word to check.
-        
-    Returns:
-        bool: True if the word contains 'a', False otherwise.
-    """
-    return 'a' in word.lower()
-
-def process_words(words):
-    """
-    Process a list of words to return the lengths of words that are both even in length and contain the letter 'a'.
-    
-    Args:
-        words (list of str): The list of words to process.
-        
-    Returns:
-        list of int: A list of lengths of words that meet the criteria.
-    """
-    lengths = []
-    for word in words:
-        if has_even_length(word) and contains_letter_a(word):
-            lengths.append(len(word))
-    return lengths
-
-# Example usage:
-words = ['apple', 'banana', 'cherry', 'date', 'fig', 'grape']
-result = process_words(words)
-print(result)  # Output: [5, 6]
+print(result)
 ```
 
 :::::::::::::::::::::::::::::::::

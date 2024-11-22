@@ -336,7 +336,7 @@ implementation is easy to explain, it may be a good idea.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>The Zen of Python</h1>
-        <p>Last updated on 2024-10-22 |
+        <p>Last updated on 2024-11-22 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Writing_clean_code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -508,7 +508,7 @@ logic and structure.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">100</span>) <span class="cf">if</span> <span class="bu">all</span>(x <span class="op">%</span> d <span class="op">!=</span> <span class="dv">0</span> <span class="cf">for</span> d <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>(x<span class="op">**</span><span class="fl">0.5</span>) <span class="op">+</span> <span class="dv">1</span>))))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>result <span class="op">=</span> [x <span class="op">*</span> <span class="dv">2</span> <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> x <span class="op">*</span> <span class="dv">3</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">1</span> <span class="kw">and</span> x <span class="op">!=</span> <span class="dv">4</span>]</span></code></pre>
 </div>
 </div>
 </div>
@@ -520,9 +520,11 @@ logic and structure.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>This one-liner finds all prime numbers less than 100, squares them,
-and returns the sum of these squares.</p>
-</div>
+<p>This one-liner tries to:</p>
+<ul><li>Filter out odd numbers and the number 4.</li>
+<li>For even numbers, double them.</li>
+<li>For the rest, triple them.</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -542,17 +544,7 @@ unnecessary complexity and focuses on clarity.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>Rewrite the following one-liner:</p>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>, <span class="st">'date'</span>, <span class="st">'fig'</span>, <span class="st">'grape'</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>result <span class="op">=</span> [<span class="bu">len</span>(word) <span class="cf">for</span> word <span class="kw">in</span> words <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> <span class="st">'a'</span> <span class="kw">in</span> word.lower()]</span></code></pre>
-</div>
-<p>You will create three functions: <code>has_even_length</code>,
-<code>contains_letter_a</code>, <code>process_words</code> and you will
-pass the following list of word
-<code>words = ['apple', 'banana', 'cherry', 'date', 'fig', 'grape']</code>.</p>
+<p>Rewrite the previous one line to make it more understandable</p>
 </div>
 </div>
 </div>
@@ -563,53 +555,19 @@ pass the following list of word
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> has_even_length(word):</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">    Check if the length of the word is even.</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">        word (str): The word to check.</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">        bool: True if the length of the word is even, False otherwise.</span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(word) <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="kw">def</span> contains_letter_a(word):</span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">    Check if the word contains the letter 'a' (case-insensitive).</span></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">        word (str): The word to check.</span></span>
-<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">        bool: True if the word contains 'a', False otherwise.</span></span>
-<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">'a'</span> <span class="kw">in</span> word.lower()</span>
-<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a></span>
-<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="kw">def</span> process_words(words):</span>
-<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="co">    Process a list of words to return the lengths of words that are both even in length and contain the letter 'a'.</span></span>
-<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a><span class="co">        words (list of str): The list of words to process.</span></span>
-<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a><span class="co">        list of int: A list of lengths of words that meet the criteria.</span></span>
-<span id="cb8-34"><a href="#cb8-34" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb8-35"><a href="#cb8-35" tabindex="-1"></a>    lengths <span class="op">=</span> []</span>
-<span id="cb8-36"><a href="#cb8-36" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> words:</span>
-<span id="cb8-37"><a href="#cb8-37" tabindex="-1"></a>        <span class="cf">if</span> has_even_length(word) <span class="kw">and</span> contains_letter_a(word):</span>
-<span id="cb8-38"><a href="#cb8-38" tabindex="-1"></a>            lengths.append(<span class="bu">len</span>(word))</span>
-<span id="cb8-39"><a href="#cb8-39" tabindex="-1"></a>    <span class="cf">return</span> lengths</span>
-<span id="cb8-40"><a href="#cb8-40" tabindex="-1"></a></span>
-<span id="cb8-41"><a href="#cb8-41" tabindex="-1"></a><span class="co"># Example usage:</span></span>
-<span id="cb8-42"><a href="#cb8-42" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>, <span class="st">'date'</span>, <span class="st">'fig'</span>, <span class="st">'grape'</span>]</span>
-<span id="cb8-43"><a href="#cb8-43" tabindex="-1"></a>result <span class="op">=</span> process_words(words)</span>
-<span id="cb8-44"><a href="#cb8-44" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># Output: [5, 6]</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>result <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> x <span class="op">==</span> <span class="dv">4</span>:</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>        result.append(x <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>        result.append(x <span class="op">*</span> <span class="dv">3</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
 </div>
 </div>
@@ -630,19 +588,19 @@ breaks it is easier to modify or debug. Let’s see an example:</p>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>What is wrong with this code? Is it actually working?</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
 </div>
 </div>
@@ -650,69 +608,69 @@ breaks it is easier to modify or debug. Let’s see an example:</p>
 <p>So what are the rules?</p>
 <ul><li>Indentation: The convention is to use 4 spaces. Tabs are not
 recommended as they can lead to inconsistencies:</li>
-</ul><div class="codewrapper sourceCode" id="cb10">
+</ul><div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">True</span>:</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Indented correctly"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">True</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Indented correctly"</span>)</span></code></pre>
 </div>
 <ul><li>
 <strong>Whitespaces around operators</strong>: A single space on
 both sides of binary operators should be included
 (<code>+, -, *, /, =, ==, !=, &lt;, &gt;, &lt;=, &gt;=, etc</code>).</li>
-</ul><div class="codewrapper sourceCode" id="cb11">
+</ul><div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co">#This is bad</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>a<span class="op">=</span><span class="dv">2</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>b<span class="op">=</span><span class="dv">3</span></span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>c<span class="op">=</span><span class="dv">4</span></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>result<span class="op">=</span>a<span class="op">+</span>b<span class="op">+</span>c</span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co">#This is good</span></span>
-<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>result <span class="op">=</span> a <span class="op">+</span> b <span class="op">*</span> c</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">#This is bad</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>a<span class="op">=</span><span class="dv">2</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>b<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>c<span class="op">=</span><span class="dv">4</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>result<span class="op">=</span>a<span class="op">+</span>b<span class="op">+</span>c</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#This is good</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>result <span class="op">=</span> a <span class="op">+</span> b <span class="op">*</span> c</span></code></pre>
 </div>
 <ul><li>
 <strong>Comma and colon spacing</strong>: you shoud include a single
 space after a comma and you should include a space after the colon in
 dictionary:</li>
-</ul><div class="codewrapper sourceCode" id="cb12">
+</ul><div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#This is bad</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#This is good</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>dictionary <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#This is bad</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">#This is good</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>dictionary <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span></code></pre>
 </div>
 <ul><li>
 <strong>Blank lines</strong>: Use two blank lines before a top-level
 function or class definition and use a single blank line between method
 definitions inside a class.</li>
-</ul><div class="codewrapper sourceCode" id="cb13">
+</ul><div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># This is bad</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co"># This is good</span></span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># This is bad</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co"># This is good</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre>
 </div>
 <div id="discussion4" class="callout discussion">
 <div class="callout-square">
@@ -723,19 +681,19 @@ definitions inside a class.</li>
 <div class="callout-content">
 <p>Based on what we saw up to now, rewrite this code to make it easier
 to understand.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
-<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
 </div>
 </div>
@@ -747,63 +705,63 @@ to understand.</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> calculate_adjusted_sum(base_value, multiplier):</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="co">    Calculate and print the sum of the base_value and twice the multiplier.</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co">        base_value (int or float): The base value to which the adjusted multiplier will be added.</span></span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co">        multiplier (int or float): The value that will be doubled and added to the base value.</span></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>    adjusted_sum <span class="op">=</span> base_value <span class="op">+</span> (multiplier <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>    <span class="bu">print</span>(adjusted_sum, end<span class="op">=</span><span class="st">' '</span>)</span>
-<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The adjusted sum is:"</span>, base_value, multiplier)</span>
-<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a></span>
-<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a><span class="kw">def</span> add_two_numbers(x, y):</span>
-<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a><span class="co">    Return the sum of two numbers.</span></span>
-<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb15-18"><a href="#cb15-18" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb15-19"><a href="#cb15-19" tabindex="-1"></a><span class="co">        x (int or float): The first number.</span></span>
-<span id="cb15-20"><a href="#cb15-20" tabindex="-1"></a><span class="co">        y (int or float): The second number.</span></span>
-<span id="cb15-21"><a href="#cb15-21" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb15-22"><a href="#cb15-22" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb15-23"><a href="#cb15-23" tabindex="-1"></a><span class="co">        int or float: The sum of x and y.</span></span>
-<span id="cb15-24"><a href="#cb15-24" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb15-25"><a href="#cb15-25" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y</span>
-<span id="cb15-26"><a href="#cb15-26" tabindex="-1"></a></span>
-<span id="cb15-27"><a href="#cb15-27" tabindex="-1"></a></span>
-<span id="cb15-28"><a href="#cb15-28" tabindex="-1"></a><span class="kw">class</span> ValueChecker:</span>
-<span id="cb15-29"><a href="#cb15-29" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):</span>
-<span id="cb15-30"><a href="#cb15-30" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb15-31"><a href="#cb15-31" tabindex="-1"></a><span class="co">        Initialize with a specific value.</span></span>
-<span id="cb15-32"><a href="#cb15-32" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb15-33"><a href="#cb15-33" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb15-34"><a href="#cb15-34" tabindex="-1"></a><span class="co">            value (int or float): The value to be checked.</span></span>
-<span id="cb15-35"><a href="#cb15-35" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb15-36"><a href="#cb15-36" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">=</span> value</span>
-<span id="cb15-37"><a href="#cb15-37" tabindex="-1"></a></span>
-<span id="cb15-38"><a href="#cb15-38" tabindex="-1"></a>    <span class="kw">def</span> check_and_print_message(<span class="va">self</span>):</span>
-<span id="cb15-39"><a href="#cb15-39" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb15-40"><a href="#cb15-40" tabindex="-1"></a><span class="co">        Print a message based on whether the value is greater than 10 or not.</span></span>
-<span id="cb15-41"><a href="#cb15-41" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb15-42"><a href="#cb15-42" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.value <span class="op">&gt;</span> <span class="dv">10</span>:</span>
-<span id="cb15-43"><a href="#cb15-43" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"The value is greater than 10."</span>)</span>
-<span id="cb15-44"><a href="#cb15-44" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb15-45"><a href="#cb15-45" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"The value is 10 or less."</span>)</span>
-<span id="cb15-46"><a href="#cb15-46" tabindex="-1"></a></span>
-<span id="cb15-47"><a href="#cb15-47" tabindex="-1"></a></span>
-<span id="cb15-48"><a href="#cb15-48" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb15-49"><a href="#cb15-49" tabindex="-1"></a>numbers_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb15-50"><a href="#cb15-50" tabindex="-1"></a>key_value_pairs <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span>
-<span id="cb15-51"><a href="#cb15-51" tabindex="-1"></a></span>
-<span id="cb15-52"><a href="#cb15-52" tabindex="-1"></a><span class="co"># Add two numbers and print the result</span></span>
-<span id="cb15-53"><a href="#cb15-53" tabindex="-1"></a>result <span class="op">=</span> add_two_numbers(<span class="dv">5</span>, <span class="dv">10</span>)</span>
-<span id="cb15-54"><a href="#cb15-54" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum of numbers:"</span>, result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">def</span> calculate_adjusted_sum(base_value, multiplier):</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="co">    Calculate and print the sum of the base_value and twice the multiplier.</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">        base_value (int or float): The base value to which the adjusted multiplier will be added.</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">        multiplier (int or float): The value that will be doubled and added to the base value.</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>    adjusted_sum <span class="op">=</span> base_value <span class="op">+</span> (multiplier <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>    <span class="bu">print</span>(adjusted_sum, end<span class="op">=</span><span class="st">' '</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The adjusted sum is:"</span>, base_value, multiplier)</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="kw">def</span> add_two_numbers(x, y):</span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a><span class="co">    Return the sum of two numbers.</span></span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a><span class="co">        x (int or float): The first number.</span></span>
+<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a><span class="co">        y (int or float): The second number.</span></span>
+<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb14-22"><a href="#cb14-22" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb14-23"><a href="#cb14-23" tabindex="-1"></a><span class="co">        int or float: The sum of x and y.</span></span>
+<span id="cb14-24"><a href="#cb14-24" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb14-25"><a href="#cb14-25" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y</span>
+<span id="cb14-26"><a href="#cb14-26" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" tabindex="-1"></a><span class="kw">class</span> ValueChecker:</span>
+<span id="cb14-29"><a href="#cb14-29" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):</span>
+<span id="cb14-30"><a href="#cb14-30" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb14-31"><a href="#cb14-31" tabindex="-1"></a><span class="co">        Initialize with a specific value.</span></span>
+<span id="cb14-32"><a href="#cb14-32" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb14-33"><a href="#cb14-33" tabindex="-1"></a><span class="co">        Args:</span></span>
+<span id="cb14-34"><a href="#cb14-34" tabindex="-1"></a><span class="co">            value (int or float): The value to be checked.</span></span>
+<span id="cb14-35"><a href="#cb14-35" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb14-36"><a href="#cb14-36" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">=</span> value</span>
+<span id="cb14-37"><a href="#cb14-37" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" tabindex="-1"></a>    <span class="kw">def</span> check_and_print_message(<span class="va">self</span>):</span>
+<span id="cb14-39"><a href="#cb14-39" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb14-40"><a href="#cb14-40" tabindex="-1"></a><span class="co">        Print a message based on whether the value is greater than 10 or not.</span></span>
+<span id="cb14-41"><a href="#cb14-41" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb14-42"><a href="#cb14-42" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.value <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb14-43"><a href="#cb14-43" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"The value is greater than 10."</span>)</span>
+<span id="cb14-44"><a href="#cb14-44" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb14-45"><a href="#cb14-45" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"The value is 10 or less."</span>)</span>
+<span id="cb14-46"><a href="#cb14-46" tabindex="-1"></a></span>
+<span id="cb14-47"><a href="#cb14-47" tabindex="-1"></a></span>
+<span id="cb14-48"><a href="#cb14-48" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb14-49"><a href="#cb14-49" tabindex="-1"></a>numbers_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb14-50"><a href="#cb14-50" tabindex="-1"></a>key_value_pairs <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span>
+<span id="cb14-51"><a href="#cb14-51" tabindex="-1"></a></span>
+<span id="cb14-52"><a href="#cb14-52" tabindex="-1"></a><span class="co"># Add two numbers and print the result</span></span>
+<span id="cb14-53"><a href="#cb14-53" tabindex="-1"></a>result <span class="op">=</span> add_two_numbers(<span class="dv">5</span>, <span class="dv">10</span>)</span>
+<span id="cb14-54"><a href="#cb14-54" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum of numbers:"</span>, result)</span></code></pre>
 </div>
 <p>We actually see now that the class or the first function were not
 used at all in the rest of the code. If that codes stands like this,
@@ -830,18 +788,18 @@ good implementation. For example</p>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>What is this code doing?</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="kw">def</span> check_number(num):</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>    <span class="cf">if</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>        <span class="cf">if</span> num <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="kw">def</span> check_number(num):</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>    <span class="cf">if</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>        <span class="cf">if</span> num <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre>
 </div>
 <p>How could you make it easier to understand?</p>
 </div>
@@ -856,11 +814,11 @@ good implementation. For example</p>
 <div class="accordion-body">
 <p>The function checks if a number is both even and a multiple of 5. A
 better way of doing it could be:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">def</span> check_number(num):</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> num <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">def</span> check_number(num):</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> num <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -904,10 +862,10 @@ variables, and functions that can be simplified.</p></li>
 <div class="section level3">
 <h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a></h3>
 <p>To analyse a python file you can simply run:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
 </div>
 <p>When you run PyLint on a Python file, it provides an output with the
 following components:</p>
@@ -937,10 +895,10 @@ messages you see.</p>
 You can create a configuration file (.pylintrc) to customize the
 behavior of PyLint, such as enabling/disabling certain checks, adjusting
 thresholds, and more. Generate a configuration file using:</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -1025,8 +983,8 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Writing_clean_code.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Writing_clean_code.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-10-22",
-  "datePublished": "2024-11-21"
+  "dateModified": "2024-11-22",
+  "datePublished": "2024-11-22"
 }
 
   </script><script>

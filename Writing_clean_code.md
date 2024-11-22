@@ -172,7 +172,56 @@ for x in range(10):
 print(result)
 ```
 
+The advantages of this version:
+
+- Clarity: Each part of the logic is isolated—first filtering, then applying the transformation based on conditions.
+- Step-by-Step: It's clear what’s happening at each step without trying to parse it all at once.
+- Debuggable: It’s easier to debug and modify, especially if you need to change one part of the logic.
+- Maintainability: Each step is explicit, making it easier for others (or yourself in the future) to understand.
+
 :::::::::::::::::::::::::::::::::
+
+
+Nevertheless, this does not mean that you should over-complexify your code. While you start to know the language in more details, you will start to learn how it works and it will help you to be concise and efficient:
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Consider the following function:
+
+``` python
+def is_empty(lst):
+    if len(lst) == 0:
+        return True
+    else:
+        return False
+
+lst = []
+print(is_empty(lst))
+```
+
+Rewrite this in two lines.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution
+
+``` python
+lst = []
+print(not lst)
+```
+
+The advantages of this version:
+
+- Readability: It's immediately clear that the code checks if the list is empty.
+- Conciseness: The not operator works directly with lists in Python, making the code more succinct.
+- Simplicity: Eliminates unnecessary conditional checks and additional code.
+
+:::::::::::::::::::::::::::::::::
+
+
+
+
 
 
 ## Sparse is better than dense.

@@ -567,17 +567,23 @@ unnecessary complexity and focuses on clarity.</p>
 <span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a></span>
 <span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
+<p>The advantages of this version:</p>
+<ul><li>Clarity: Each part of the logic is isolated—first filtering, then
+applying the transformation based on conditions.</li>
+<li>Step-by-Step: It’s clear what’s happening at each step without
+trying to parse it all at once.</li>
+<li>Debuggable: It’s easier to debug and modify, especially if you need
+to change one part of the logic.</li>
+<li>Maintainability: Each step is explicit, making it easier for others
+(or yourself in the future) to understand.</li>
+</ul></div>
 </div>
 </div>
 </div>
-</div>
-</section><section><h2 class="section-heading" id="sparse-is-better-than-dense-">Sparse is better than dense.<a class="anchor" aria-label="anchor" href="#sparse-is-better-than-dense-"></a></h2>
-<hr class="half-width"><p>When you write your code it is important to make it readable.
-Avoiding cluttered code by making is sparse and spaced out makes it
-easier to read and increase clarity and readability. Use whitespaces,
-correct indentation and separation will make your code quicker to
-understand. Moreover, when code is spread out with proper comments and
-breaks it is easier to modify or debug. Let’s see an example:</p>
+<p>Nevertheless, this does not mean that you should over-complexify your
+code. While you start to know the language in more details, you will
+start to learn how it works and it will help you to be concise and
+efficient:</p>
 <div id="discussion3" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -585,114 +591,20 @@ breaks it is easier to modify or debug. Let’s see an example:</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>What is wrong with this code? Is it actually working?</p>
+<p>Consider the following function:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> is_empty(lst):</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(lst) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>lst <span class="op">=</span> []</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="bu">print</span>(is_empty(lst))</span></code></pre>
 </div>
-</div>
-</div>
-</div>
-<p>So what are the rules?</p>
-<ul><li>Indentation: The convention is to use 4 spaces. Tabs are not
-recommended as they can lead to inconsistencies:</li>
-</ul><div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">True</span>:</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Indented correctly"</span>)</span></code></pre>
-</div>
-<ul><li>
-<strong>Whitespaces around operators</strong>: A single space on
-both sides of binary operators should be included
-(<code>+, -, *, /, =, ==, !=, &lt;, &gt;, &lt;=, &gt;=, etc</code>).</li>
-</ul><div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">#This is bad</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>a<span class="op">=</span><span class="dv">2</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>b<span class="op">=</span><span class="dv">3</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>c<span class="op">=</span><span class="dv">4</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>result<span class="op">=</span>a<span class="op">+</span>b<span class="op">+</span>c</span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#This is good</span></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>result <span class="op">=</span> a <span class="op">+</span> b <span class="op">*</span> c</span></code></pre>
-</div>
-<ul><li>
-<strong>Comma and colon spacing</strong>: you shoud include a single
-space after a comma and you should include a space after the colon in
-dictionary:</li>
-</ul><div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#This is bad</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">#This is good</span></span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>dictionary <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span></code></pre>
-</div>
-<ul><li>
-<strong>Blank lines</strong>: Use two blank lines before a top-level
-function or class definition and use a single blank line between method
-definitions inside a class.</li>
-</ul><div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># This is bad</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co"># This is good</span></span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a></span>
-<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
-<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre>
-</div>
-<div id="discussion4" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
-<div class="callout-content">
-<p>Based on what we saw up to now, rewrite this code to make it easier
-to understand.</p>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
-</div>
+<p>Rewrite this in two lines.</p>
 </div>
 </div>
 </div>
@@ -703,63 +615,212 @@ to understand.</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">def</span> calculate_adjusted_sum(base_value, multiplier):</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="co">    Calculate and print the sum of the base_value and twice the multiplier.</span></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">        base_value (int or float): The base value to which the adjusted multiplier will be added.</span></span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">        multiplier (int or float): The value that will be doubled and added to the base value.</span></span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>    adjusted_sum <span class="op">=</span> base_value <span class="op">+</span> (multiplier <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>    <span class="bu">print</span>(adjusted_sum, end<span class="op">=</span><span class="st">' '</span>)</span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The adjusted sum is:"</span>, base_value, multiplier)</span>
-<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>lst <span class="op">=</span> []</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> lst)</span></code></pre>
+</div>
+<p>The advantages of this version:</p>
+<ul><li>Readability: It’s immediately clear that the code checks if the list
+is empty.</li>
+<li>Conciseness: The not operator works directly with lists in Python,
+making the code more succinct.</li>
+<li>Simplicity: Eliminates unnecessary conditional checks and additional
+code.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="sparse-is-better-than-dense-">Sparse is better than dense.<a class="anchor" aria-label="anchor" href="#sparse-is-better-than-dense-"></a></h2>
+<hr class="half-width"><p>When you write your code it is important to make it readable.
+Avoiding cluttered code by making is sparse and spaced out makes it
+easier to read and increase clarity and readability. Use whitespaces,
+correct indentation and separation will make your code quicker to
+understand. Moreover, when code is spread out with proper comments and
+breaks it is easier to modify or debug. Let’s see an example:</p>
+<div id="discussion4" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>What is wrong with this code? Is it actually working?</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>So what are the rules?</p>
+<ul><li>Indentation: The convention is to use 4 spaces. Tabs are not
+recommended as they can lead to inconsistencies:</li>
+</ul><div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">True</span>:</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Indented correctly"</span>)</span></code></pre>
+</div>
+<ul><li>
+<strong>Whitespaces around operators</strong>: A single space on
+both sides of binary operators should be included
+(<code>+, -, *, /, =, ==, !=, &lt;, &gt;, &lt;=, &gt;=, etc</code>).</li>
+</ul><div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">#This is bad</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>a<span class="op">=</span><span class="dv">2</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>b<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>c<span class="op">=</span><span class="dv">4</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>result<span class="op">=</span>a<span class="op">+</span>b<span class="op">+</span>c</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#This is good</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>result <span class="op">=</span> a <span class="op">+</span> b <span class="op">*</span> c</span></code></pre>
+</div>
+<ul><li>
+<strong>Comma and colon spacing</strong>: you shoud include a single
+space after a comma and you should include a space after the colon in
+dictionary:</li>
+</ul><div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co">#This is bad</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#This is good</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>dictionary <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span></code></pre>
+</div>
+<ul><li>
+<strong>Blank lines</strong>: Use two blank lines before a top-level
+function or class definition and use a single blank line between method
+definitions inside a class.</li>
+</ul><div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># This is bad</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co"># This is good</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>    <span class="kw">def</span> method_one(<span class="va">self</span>):</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>        <span class="cf">pass</span></span>
 <span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a></span>
-<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="kw">def</span> add_two_numbers(x, y):</span>
-<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a><span class="co">    Return the sum of two numbers.</span></span>
-<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a><span class="co">        x (int or float): The first number.</span></span>
-<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a><span class="co">        y (int or float): The second number.</span></span>
-<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb14-22"><a href="#cb14-22" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb14-23"><a href="#cb14-23" tabindex="-1"></a><span class="co">        int or float: The sum of x and y.</span></span>
-<span id="cb14-24"><a href="#cb14-24" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb14-25"><a href="#cb14-25" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y</span>
-<span id="cb14-26"><a href="#cb14-26" tabindex="-1"></a></span>
-<span id="cb14-27"><a href="#cb14-27" tabindex="-1"></a></span>
-<span id="cb14-28"><a href="#cb14-28" tabindex="-1"></a><span class="kw">class</span> ValueChecker:</span>
-<span id="cb14-29"><a href="#cb14-29" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):</span>
-<span id="cb14-30"><a href="#cb14-30" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb14-31"><a href="#cb14-31" tabindex="-1"></a><span class="co">        Initialize with a specific value.</span></span>
-<span id="cb14-32"><a href="#cb14-32" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb14-33"><a href="#cb14-33" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb14-34"><a href="#cb14-34" tabindex="-1"></a><span class="co">            value (int or float): The value to be checked.</span></span>
-<span id="cb14-35"><a href="#cb14-35" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb14-36"><a href="#cb14-36" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">=</span> value</span>
-<span id="cb14-37"><a href="#cb14-37" tabindex="-1"></a></span>
-<span id="cb14-38"><a href="#cb14-38" tabindex="-1"></a>    <span class="kw">def</span> check_and_print_message(<span class="va">self</span>):</span>
-<span id="cb14-39"><a href="#cb14-39" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb14-40"><a href="#cb14-40" tabindex="-1"></a><span class="co">        Print a message based on whether the value is greater than 10 or not.</span></span>
-<span id="cb14-41"><a href="#cb14-41" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb14-42"><a href="#cb14-42" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.value <span class="op">&gt;</span> <span class="dv">10</span>:</span>
-<span id="cb14-43"><a href="#cb14-43" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"The value is greater than 10."</span>)</span>
-<span id="cb14-44"><a href="#cb14-44" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb14-45"><a href="#cb14-45" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"The value is 10 or less."</span>)</span>
-<span id="cb14-46"><a href="#cb14-46" tabindex="-1"></a></span>
-<span id="cb14-47"><a href="#cb14-47" tabindex="-1"></a></span>
-<span id="cb14-48"><a href="#cb14-48" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb14-49"><a href="#cb14-49" tabindex="-1"></a>numbers_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb14-50"><a href="#cb14-50" tabindex="-1"></a>key_value_pairs <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span>
-<span id="cb14-51"><a href="#cb14-51" tabindex="-1"></a></span>
-<span id="cb14-52"><a href="#cb14-52" tabindex="-1"></a><span class="co"># Add two numbers and print the result</span></span>
-<span id="cb14-53"><a href="#cb14-53" tabindex="-1"></a>result <span class="op">=</span> add_two_numbers(<span class="dv">5</span>, <span class="dv">10</span>)</span>
-<span id="cb14-54"><a href="#cb14-54" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum of numbers:"</span>, result)</span></code></pre>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a>    <span class="kw">def</span> method_two(<span class="va">self</span>):</span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre>
+</div>
+<div id="discussion5" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Based on what we saw up to now, rewrite this code to make it easier
+to understand.</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">def</span> calculate_adjusted_sum(base_value, multiplier):</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="co">    Calculate and print the sum of the base_value and twice the multiplier.</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="co">        base_value (int or float): The base value to which the adjusted multiplier will be added.</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="co">        multiplier (int or float): The value that will be doubled and added to the base value.</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>    adjusted_sum <span class="op">=</span> base_value <span class="op">+</span> (multiplier <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>    <span class="bu">print</span>(adjusted_sum, end<span class="op">=</span><span class="st">' '</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The adjusted sum is:"</span>, base_value, multiplier)</span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="kw">def</span> add_two_numbers(x, y):</span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a><span class="co">    Return the sum of two numbers.</span></span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a><span class="co">        x (int or float): The first number.</span></span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a><span class="co">        y (int or float): The second number.</span></span>
+<span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a><span class="co">        int or float: The sum of x and y.</span></span>
+<span id="cb16-24"><a href="#cb16-24" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb16-25"><a href="#cb16-25" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y</span>
+<span id="cb16-26"><a href="#cb16-26" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" tabindex="-1"></a><span class="kw">class</span> ValueChecker:</span>
+<span id="cb16-29"><a href="#cb16-29" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):</span>
+<span id="cb16-30"><a href="#cb16-30" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb16-31"><a href="#cb16-31" tabindex="-1"></a><span class="co">        Initialize with a specific value.</span></span>
+<span id="cb16-32"><a href="#cb16-32" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb16-33"><a href="#cb16-33" tabindex="-1"></a><span class="co">        Args:</span></span>
+<span id="cb16-34"><a href="#cb16-34" tabindex="-1"></a><span class="co">            value (int or float): The value to be checked.</span></span>
+<span id="cb16-35"><a href="#cb16-35" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb16-36"><a href="#cb16-36" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">=</span> value</span>
+<span id="cb16-37"><a href="#cb16-37" tabindex="-1"></a></span>
+<span id="cb16-38"><a href="#cb16-38" tabindex="-1"></a>    <span class="kw">def</span> check_and_print_message(<span class="va">self</span>):</span>
+<span id="cb16-39"><a href="#cb16-39" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb16-40"><a href="#cb16-40" tabindex="-1"></a><span class="co">        Print a message based on whether the value is greater than 10 or not.</span></span>
+<span id="cb16-41"><a href="#cb16-41" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb16-42"><a href="#cb16-42" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.value <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb16-43"><a href="#cb16-43" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"The value is greater than 10."</span>)</span>
+<span id="cb16-44"><a href="#cb16-44" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-45"><a href="#cb16-45" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"The value is 10 or less."</span>)</span>
+<span id="cb16-46"><a href="#cb16-46" tabindex="-1"></a></span>
+<span id="cb16-47"><a href="#cb16-47" tabindex="-1"></a></span>
+<span id="cb16-48"><a href="#cb16-48" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb16-49"><a href="#cb16-49" tabindex="-1"></a>numbers_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb16-50"><a href="#cb16-50" tabindex="-1"></a>key_value_pairs <span class="op">=</span> {<span class="st">'key1'</span>: <span class="st">'value1'</span>, <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span>
+<span id="cb16-51"><a href="#cb16-51" tabindex="-1"></a></span>
+<span id="cb16-52"><a href="#cb16-52" tabindex="-1"></a><span class="co"># Add two numbers and print the result</span></span>
+<span id="cb16-53"><a href="#cb16-53" tabindex="-1"></a>result <span class="op">=</span> add_two_numbers(<span class="dv">5</span>, <span class="dv">10</span>)</span>
+<span id="cb16-54"><a href="#cb16-54" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum of numbers:"</span>, result)</span></code></pre>
 </div>
 <p>We actually see now that the class or the first function were not
 used at all in the rest of the code. If that codes stands like this,
@@ -778,7 +839,7 @@ to understand. If you are unable to explain what your code is doing then
 you should not leave it in your software. Conversely, if you are able to
 explain in an easy what your piece of code is doing, this is probably a
 good implementation. For example</p>
-<div id="discussion5" class="callout discussion">
+<div id="discussion6" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -786,37 +847,37 @@ good implementation. For example</p>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>What is this code doing?</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="kw">def</span> check_number(num):</span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>    <span class="cf">if</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>        <span class="cf">if</span> num <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="kw">def</span> check_number(num):</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    <span class="cf">if</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>        <span class="cf">if</span> num <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre>
 </div>
 <p>How could you make it easier to understand?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>The function checks if a number is both even and a multiple of 5. A
 better way of doing it could be:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">def</span> check_number(num):</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> num <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">def</span> check_number(num):</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> num <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -860,10 +921,10 @@ variables, and functions that can be simplified.</p></li>
 <div class="section level3">
 <h3 id="running-pylint">Running pylint<a class="anchor" aria-label="anchor" href="#running-pylint"></a></h3>
 <p>To analyse a python file you can simply run:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">pylint</span> your_python_file.py</span></code></pre>
 </div>
 <p>When you run PyLint on a Python file, it provides an output with the
 following components:</p>
@@ -873,7 +934,7 @@ line number, and a brief description.</li>
 number of errors, warnings, and refactor suggestions.</li>
 <li>Score: An overall score out of 10, reflecting the code quality based
 on the issues detected.</li>
-</ul><div id="discussion6" class="callout discussion">
+</ul><div id="discussion7" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -893,10 +954,10 @@ messages you see.</p>
 You can create a configuration file (.pylintrc) to customize the
 behavior of PyLint, such as enabling/disabling certain checks, adjusting
 thresholds, and more. Generate a configuration file using:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 </div>
 <div class="section level3">

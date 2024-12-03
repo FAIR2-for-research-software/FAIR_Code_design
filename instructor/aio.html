@@ -900,7 +900,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-Principles"><p>Content from <a href="Principles.html">Principles of Code design</a></p>
 <hr>
-<p>Last updated on 2024-11-18 |
+<p>Last updated on 2024-12-03 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Principles.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -934,6 +934,10 @@ code?</li>
 </div>
 </div>
 </div>
+<p>Coding principles are guidelines and best practices that anybody
+writing code should follow to write clean, maintainable and efficient
+code. They enhance code quality and ensure it is readable, reusable and
+less prone to errors.</p>
 <section><h2 class="section-heading" id="you-arent-gonna-need-it-yagni">You aren’t gonna need it (YAGNI)<a class="anchor" aria-label="anchor" href="#you-arent-gonna-need-it-yagni"></a>
 </h2>
 <hr class="half-width">
@@ -942,11 +946,11 @@ code?</li>
 <h4 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h4>
 <p>The principle <strong>YAGNI</strong> stands for “You Aren’t Gonna
-Need It”. This principle encourages you yo build only what is needed
-right now, avoiding adding features or complexity for hypothetical
-future needs. It comes from Agile programming and aims to reduce
-spending time and resources on unnecessary code and keep the code clean
-and understandable.</p>
+Need It”. This principle encourages you to build only what is needed
+right now, avoiding adding features for hypothetical future needs. It
+comes from Agile programming and aims to reduce spending time and
+resources on unnecessary code and keep the code clean and
+understandable.</p>
 <p>Why <strong>YAGNI</strong> is important:</p>
 <ul>
 <li>Simplicity: By avoiding unnecessary code you will reduce complexity,
@@ -966,13 +970,36 @@ respect the YAGNI principle:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> calculate_discount(price, discount_type<span class="op">=</span><span class="st">"percentage"</span>, value<span class="op">=</span><span class="dv">10</span>):</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="cf">if</span> discount_type <span class="op">==</span> <span class="st">"percentage"</span>:</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>        <span class="cf">return</span> price <span class="op">-</span> (price <span class="op">*</span> (value <span class="op">/</span> <span class="dv">100</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="cf">elif</span> discount_type <span class="op">==</span> <span class="st">"fixed"</span>:</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>        <span class="cf">return</span> price <span class="op">-</span> value</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid discount type"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> calculate_discount(price, discount_type<span class="op">=</span><span class="st">"percentage"</span>, value<span class="op">=</span><span class="fl">10.0</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co">    This function applies a discount to a price</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co">    price   : float</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co">              Original price</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co">    discount_type: str</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co">                   type of discount [percentage of fixed]</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co">    value:  float</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co">            discount to be applied</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co">    Return</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co">    ------</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co">    discounted_price: float</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co">                      final price after applying discount</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="co">    Raises</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="co">    ------</span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="co">    ValueError</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="co">            if the discount type is not 'percentage' or 'fixed'</span></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>    <span class="cf">if</span> discount_type <span class="op">==</span> <span class="st">"percentage"</span>:</span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>        <span class="cf">return</span> price <span class="op">-</span> (price <span class="op">*</span> (value <span class="op">/</span> <span class="dv">100</span>))</span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>    <span class="cf">elif</span> discount_type <span class="op">==</span> <span class="st">"fixed"</span>:</span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>        <span class="cf">return</span> price <span class="op">-</span> value</span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid discount type"</span>)</span></code></pre>
 </div>
 <p>In that example, the software engineer has planned for possible other
 use cases (different type of discount) while not being required. It is
@@ -981,7 +1008,21 @@ an example of over-engineering. A better implementation would be:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> calculate_discount(price, discount_percentage):</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="cf">return</span> price <span class="op">-</span> (price <span class="op">*</span> (discount_percentage <span class="op">/</span> <span class="dv">100</span>))</span></code></pre>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">    Function that applies a discount. The discount is given as a percentage of the original price.</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">    Parameter</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">    ---------</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">    price:  float</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">            original price</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">    Return</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">    ------</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">    final_price: float</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">                final price after applying discount</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    final_price <span class="op">=</span> price <span class="op">-</span> (price <span class="op">*</span> (discount_percentage <span class="op">/</span> <span class="dv">100</span>))</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="cf">return</span> final_price</span></code></pre>
 </div>
 </div>
 <div class="section level4">
@@ -1528,7 +1569,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -1559,7 +1600,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1586,7 +1627,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -1846,7 +1887,7 @@ logic and structure.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>This one-liner tries to:</p>
 <ul>
@@ -1883,7 +1924,7 @@ unnecessary complexity and focuses on clarity.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1947,7 +1988,7 @@ efficient:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2108,7 +2149,7 @@ to understand.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2217,7 +2258,7 @@ good implementation. For example</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>The function checks if a number is both even and a multiple of 5. A
 better way of doing it could be:</p>
@@ -2524,7 +2565,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>

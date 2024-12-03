@@ -239,7 +239,7 @@ def triangle_area(base, height):
 area = rectangle_area(10, 20)
 ```
 
-In that version, functions are specific and easy to understand and there is no unecessary complexity in shape management. It is easier to maintain and extend.
+In that version, functions are specific and easy to understand and there is no unnecessary complexity in shape management. It is easier to maintain and extend.
 
 #### Exercice
 
@@ -330,7 +330,7 @@ def format_average(average):
 
 #### Introduction
 
-The DRY Principle states: **“Don’t Repeat Yourself.”** It encourages you to minimize duplication by centralizing similar code patterns. This leads to more readable, maintainable, and scalable code.
+The DRY Principle states: **“Don’t Repeat Yourself.”** It encourages you to minimize duplication by refactoring similar code patterns. This leads to more readable, maintainable, and scalable code.
 
 Why DRY is it important:
 
@@ -425,7 +425,7 @@ for name in names:
 
 **DRY helps you write clear, efficient, and error-resistant code**. Use functions, loops, and constants to reduce repetition. A DRY approach **saves time and effort in the long run**, especially when scaling or debugging code.
 
-It is important to note that prematurly refactoring a code might lead to the unecessary complexity. This is why **DRY** is often associated to the **Rule of Three**. The latter is a guideline suggesting that you should wait until a piece of code is repeated three times before refactoring it. It ensures that you only refactor when a pattern is stable and repeated enough time.
+It is important to note that prematurely refactoring a code might lead to the unnecessary complexity. This is why **DRY** is often associated to the **Rule of Three**. The latter is a guideline suggesting that you should wait until a piece of code is repeated three times before refactoring it. It ensures that you only refactor when a pattern is stable and repeated enough time.
 
 
 
@@ -442,7 +442,7 @@ The **Principle of Least Astonishment (POLA)** states that code should work in a
 
 Why **POLA** is important:
 
-- Usability: When code works as expect ed, users and maintainers are less likely to misuse or misunderstand it.
+- Usability: When code works as expected, users and maintainers are less likely to misuse or misunderstand it.
 - Maintainability: Familiar and predictable patterns make the code easier to maintain and upgrade.
 - Collaboration: Using consistent and intuitive code make it easier for multiple people to work with and develop.
 
@@ -513,28 +513,65 @@ This solution keeps each function's purpose clear.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Refactor `fetch_records` to make it more predictable and intuitive. Ensure that it consistently returns a single type, separates responsibilities, and uses clear parameter names.
+Refactor `calculate area` to make it more predictable and intuitive. 
 
 
 ```Python
 
-def fetch_records(records, keyword=None, limit=10, format_output=False):
-    # Filter records containing the keyword
-    filtered = [record for record in records if keyword in record]
-    
-    # If only one record is found, return it as a string
-    if len(filtered) == 1:
-        return filtered[0]
-    
-    # Limit the number of records returned
-    limited = filtered[:limit]
-    
-    # Format output as comma-separated values if requested
-    if format_output:
-        return ", ".join(limited)
-    
-    return limited  # Return a list by default
+from math import pi
 
+def calculate_area(shape, a, b=0):
+    if shape == "rectangle":
+        return a * b  # Expects both `a` and `b`
+    elif shape == "circle":
+        return pi * (a ** 2)  # Ignores `b`
+    elif shape == "triangle":
+        return 0.5 * a * b  # Expects `a` as base and `b` as height
+    else:
+        return "Unknown shape"
+
+# Example usage:
+print(calculate_area("rectangle", 5))       
+print(calculate_area("circle", 3, 4))       
+print(calculate_area("triangle", 6, 3))     
+print(calculate_area("hexagon", 5, 5))     
 ```
+
+:::::::::::::::::::::::: solution
+
+
+```Python
+from math import pi
+
+# Specific functions for each shape
+def rectangle_area(length, width):
+    if length <= 0 or width <= 0:
+        return "Error: Length and width must be positive numbers."
+    return length * width
+
+def circle_area(radius):
+    if radius <= 0:
+        return "Error: Radius must be a positive number."
+    return pi * radius ** 2
+
+def triangle_area(base, height):
+    if base <= 0 or height <= 0:
+        return "Error: Base and height must be positive numbers."
+    return 0.5 * base * height
+
+# Example usage
+rect_area = rectangle_area(10, 5)          # Expected: Valid rectangle area
+circle_area_invalid = circle_area(-3)     # Expected: Error message
+tri_area = triangle_area(6, 3)            # Expected: Valid triangle area
+rect_invalid = rectangle_area(10, -5)     # Expected: Error message
+
+# Output results
+print(f"Rectangle Area: {rect_area}")
+print(f"Circle Area: {circle_area_invalid}")
+print(f"Triangle Area: {tri_area}")
+print(f"Invalid Rectangle Area: {rect_invalid}")
+```
+
+:::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

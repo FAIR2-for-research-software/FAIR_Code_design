@@ -17,6 +17,10 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+Coding principles are guidelines and best practices that anybody writing code should follow to write clean, maintainable and efficient code. They enhance code quality and ensure it is readable, reusable and less prone to errors.
+
+
 ## You aren't gonna need it (YAGNI)
 
 ![xkcd.com](fig/xkcd_meme.png){ width=90% }
@@ -24,7 +28,7 @@ exercises: 2
 
 #### Introduction
 
-The principle **YAGNI** stands for "You Aren't Gonna Need It". This principle encourages you yo build only what is needed right now, avoiding adding features or complexity for hypothetical future needs. It comes from Agile programming and aims to reduce spending time and resources on unnecessary code and keep the code clean and understandable.
+The principle **YAGNI** stands for "You Aren't Gonna Need It". This principle encourages you to build only what is needed right now, avoiding adding features for hypothetical future needs. It comes from Agile programming and aims to reduce spending time and resources on unnecessary code and keep the code clean and understandable.
 
 Why **YAGNI** is important:
 
@@ -39,7 +43,30 @@ Let's consider the following instruction: create a function that implements a pe
 Here is a solution that does not respect the YAGNI principle:
  
 ```Python
-def calculate_discount(price, discount_type="percentage", value=10):
+def calculate_discount(price, discount_type="percentage", value=10.0):
+    '''
+    This function applies a discount to a price
+
+    Parameters
+    ----------
+    price   : float
+              Original price
+    discount_type: str
+                   type of discount [percentage of fixed]
+    value:  float
+            discount to be applied
+
+    Return
+    ------
+    discounted_price: float
+                      final price after applying discount
+
+    Raises
+    ------
+    ValueError
+            if the discount type is not 'percentage' or 'fixed'
+
+    '''
     if discount_type == "percentage":
         return price - (price * (value / 100))
     elif discount_type == "fixed":
@@ -52,7 +79,21 @@ In that example, the software engineer has planned for possible other use cases 
 
 ```Python
 def calculate_discount(price, discount_percentage):
-    return price - (price * (discount_percentage / 100))
+    '''
+    Function that applies a discount. The discount is given as a percentage of the original price.
+
+    Parameter
+    ---------
+    price:  float
+            original price
+
+    Return
+    ------
+    final_price: float
+                final price after applying discount
+    '''
+    final_price = price - (price * (discount_percentage / 100))
+    return final_price
 ```
 
 #### Exercise

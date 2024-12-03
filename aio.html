@@ -743,7 +743,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -798,7 +798,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -867,7 +867,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1074,7 +1074,7 @@ only on the known requirements.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1215,19 +1215,20 @@ maintain and extend.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>Simplify the following code:</p>
+<p>Let’s consider a function that processes data by removing values,
+calculating the average and returning a formatted result :</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> check_eligibility(age, member):</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>        <span class="cf">if</span> member:</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Eligible"</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"Not eligible"</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Not eligible"</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]  <span class="co"># Remove missing values</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    average <span class="op">=</span> <span class="bu">sum</span>(cleaned_data) <span class="op">/</span> <span class="bu">len</span>(cleaned_data)    <span class="co"># Calculate average</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span>  </span></code></pre>
 </div>
+<p>Using KISS and Curly’s law, rewrite this code.</p>
 </div>
 </div>
 </div>
@@ -1236,15 +1237,62 @@ maintain and extend.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> check_eligibility(age, member):</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">18</span> <span class="kw">or</span> <span class="kw">not</span> member:</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Not eligible"</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Eligible"</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> remove_missing(data):</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">    This function is removing missing data from a list</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">    Parameter</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">    ---------</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">    data   : list</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">             list of numbers</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">    Return</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">    ------</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">    cleaned_data: list</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">                  of data without missing values</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a>    clenaed_data <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]</span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a>    <span class="cf">return</span> cleaned_data</span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="kw">def</span> calculate_average(data):</span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">    This function computes the average of the input data</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="co">    data   : list</span></span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="co">             of numbers</span></span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="co">    Return</span></span>
+<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a><span class="co">    ------</span></span>
+<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a><span class="co">    average : float</span></span>
+<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a><span class="co">              average of the data</span></span>
+<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a>    average <span class="op">=</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
+<span id="cb8-34"><a href="#cb8-34" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" tabindex="-1"></a>    <span class="cf">return</span> average</span>
+<span id="cb8-36"><a href="#cb8-36" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" tabindex="-1"></a><span class="kw">def</span> format_average(average):</span>
+<span id="cb8-38"><a href="#cb8-38" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb8-39"><a href="#cb8-39" tabindex="-1"></a><span class="co">    Format the number as given in parameter as string.</span></span>
+<span id="cb8-40"><a href="#cb8-40" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" tabindex="-1"></a><span class="co">    Parameter</span></span>
+<span id="cb8-42"><a href="#cb8-42" tabindex="-1"></a><span class="co">    ---------</span></span>
+<span id="cb8-43"><a href="#cb8-43" tabindex="-1"></a><span class="co">    average    : float</span></span>
+<span id="cb8-44"><a href="#cb8-44" tabindex="-1"></a><span class="co">                 number to format</span></span>
+<span id="cb8-45"><a href="#cb8-45" tabindex="-1"></a></span>
+<span id="cb8-46"><a href="#cb8-46" tabindex="-1"></a><span class="co">    Return</span></span>
+<span id="cb8-47"><a href="#cb8-47" tabindex="-1"></a><span class="co">    ------</span></span>
+<span id="cb8-48"><a href="#cb8-48" tabindex="-1"></a><span class="co">    formatted_string    : str</span></span>
+<span id="cb8-49"><a href="#cb8-49" tabindex="-1"></a><span class="co">                          of the form 'Average: X.YZ'</span></span>
+<span id="cb8-50"><a href="#cb8-50" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb8-51"><a href="#cb8-51" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1371,7 +1419,7 @@ Hello, Charlie!</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

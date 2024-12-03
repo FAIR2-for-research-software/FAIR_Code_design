@@ -245,28 +245,75 @@ In that version, functions are specific and easy to understand and there is no u
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Simplify the following code:
+Let's consider a function that processes data by removing values, calculating the average and returning a formatted result :
 
 ```Python
-def check_eligibility(age, member):
-    if age >= 18:
-        if member:
-            return "Eligible"
-        else:
-            return "Not eligible"
-    else:
-        return "Not eligible"
+def process_data(data):
+
+    cleaned_data = [x for x in data if x is not None]  # Remove missing values
+
+    average = sum(cleaned_data) / len(cleaned_data)    # Calculate average
+
+    return f"Average: {average:.2f}"  
 ```
 
+Using KISS and Curly's law, rewrite this code.
 
 :::::::::::::::::::::::: solution
 
 
 ```Python
-def check_eligibility(age, member):
-    if age < 18 or not member:
-        return "Not eligible"
-    return "Eligible"
+def remove_missing(data):
+    '''
+    This function is removing missing data from a list
+    Parameter
+    ---------
+    data   : list
+             list of numbers
+
+    Return
+    ------
+    cleaned_data: list
+                  of data without missing values
+    '''
+    clenaed_data = [x for x in data if x is not None]
+
+    return cleaned_data
+
+
+def calculate_average(data):
+    '''
+    This function computes the average of the input data
+
+    Parameters
+    ----------
+    data   : list
+             of numbers
+
+    Return
+    ------
+    average : float
+              average of the data
+    '''
+    average = sum(data) / len(data)
+
+    return average
+
+def format_average(average):
+    '''
+    Format the number as given in parameter as string.
+
+    Parameter
+    ---------
+    average    : float
+                 number to format
+
+    Return
+    ------
+    formatted_string    : str
+                          of the form 'Average: X.YZ'
+    '''
+    return f"Average: {average:.2f}"
 ```
 
 :::::::::::::::::::::::::::::::::

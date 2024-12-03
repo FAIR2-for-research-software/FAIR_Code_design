@@ -505,7 +505,7 @@ only on the known requirements.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -560,39 +560,70 @@ issues are easier to localise.</li>
 <li>Modularity: Code becomes more modular and organized.</li>
 </ul></div>
 <div class="section level4">
-<h4 id="applying-kiss-and-curlys-law">Applying KISS and Curly’s Law<a class="anchor" aria-label="anchor" href="#applying-kiss-and-curlys-law"></a></h4>
-<p>Example 1: Simplifying a Complex Function</p>
-<p>Let’s consider a function that processes data by removing missing
-values, calculating the average, and returning the formatted result.</p>
+<h4 id="applying-kiss-and-curlys-law-simplifying-a-complex-function">Applying KISS and Curly’s Law : Simplifying a Complex Function<a class="anchor" aria-label="anchor" href="#applying-kiss-and-curlys-law-simplifying-a-complex-function"></a></h4>
+<p>Let’s consider a function that compute the area of circles,
+rectangles and triangles:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> process_data(data):</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    cleaned_data <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]  <span class="co"># Remove missing values</span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> calculate_area(shape, dimensions):</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">    This function compute the area of a given geometrical shape</span></span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    average <span class="op">=</span> <span class="bu">sum</span>(cleaned_data) <span class="op">/</span> <span class="bu">len</span>(cleaned_data)    <span class="co"># Calculate average</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span>   </span></code></pre>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">    shape   : str</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">              shape to consider. Can be rectangle, circle or triangle</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">    dimensions: list</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">                of dimension to consider. For rectangle and triangle you need to give a list</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">                of 2 numbers. For circle, you need to pass a list of one quantity (radius).</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">    Return</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">    ------</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">    area      : float</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">                area of the shape</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co">    Raises</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co">    ------</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co">    ValueError</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co">            if the shape is not recognised</span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a>    <span class="cf">if</span> shape <span class="op">==</span> <span class="st">"rectangle"</span>:</span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a>        area <span class="op">=</span> dimensions[<span class="dv">0</span>] <span class="op">*</span> dimensions[<span class="dv">1</span>]</span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a>    <span class="cf">elif</span> shape <span class="op">==</span> <span class="st">"circle"</span>:</span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a>        area <span class="op">=</span> <span class="fl">3.14159</span> <span class="op">*</span> (dimensions[<span class="dv">0</span>] <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a>    <span class="cf">elif</span> shape <span class="op">==</span> <span class="st">"triangle"</span>:</span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a>        area <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> dimensions[<span class="dv">0</span>] <span class="op">*</span> dimensions[<span class="dv">1</span>]</span>
+<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Unsupported shape!"</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a>    <span class="cf">return</span> area</span>
+<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a>        </span>
+<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a>area <span class="op">=</span> calculate_area(<span class="st">"rectangle"</span>, [<span class="dv">10</span>, <span class="dv">20</span>])</span></code></pre>
 </div>
-<p>This function does three tasks: remove missing values, compute
-average, formar the result. To apply KISS and the Curly’s law what you
-can do is to split this function into three simple independent
-functions:</p>
+<p>This function is able to compute the area of each shape. To apply
+KISS and the Curly’s law what you can do is to split this function into
+three simple independent functions:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> remove_missing(data):</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="cf">return</span> [x <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> rectangle_area(length, width):</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="cf">return</span> length <span class="op">*</span> width</span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="kw">def</span> calculate_average(data):</span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="kw">def</span> circle_area(radius):</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">3.14159</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="kw">def</span> format_average(average):</span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Average: </span><span class="sc">{</span>average<span class="sc">:.2f}</span><span class="ss">"</span></span></code></pre>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="kw">def</span> triangle_area(base, height):</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0.5</span> <span class="op">*</span> base <span class="op">*</span> height</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co"># Simple and clear usage</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>area <span class="op">=</span> rectangle_area(<span class="dv">10</span>, <span class="dv">20</span>)</span></code></pre>
 </div>
-<p>In that version, each function does only one thing. The program is
-more readable, easier to debug, test or update.</p>
+<p>In that version, functions are specific and easy to understand and
+there is no unecessary complexity in shape management. It is easier to
+maintain and extend.</p>
 </div>
 <div class="section level4">
 <h4 id="exercice">Exercice<a class="anchor" aria-label="anchor" href="#exercice"></a></h4>
@@ -624,7 +655,7 @@ more readable, easier to debug, test or update.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -748,7 +779,7 @@ Hello, Charlie!</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

@@ -178,40 +178,68 @@ Why is the Curly’s Law important?
 - Modularity: Code becomes more modular and organized.
 
 
-#### Applying KISS and Curly's Law
-
-Example 1: Simplifying a Complex Function
+#### Applying KISS and Curly's Law : Simplifying a Complex Function
 
 
-Let's consider a function that processes data by removing missing values, calculating the average, and returning the formatted result. 
+Let's consider a function that compute the area of circles, rectangles and triangles: 
 
 ```Python
-def process_data(data):
+def calculate_area(shape, dimensions):
+    '''
+    This function compute the area of a given geometrical shape
 
-    cleaned_data = [x for x in data if x is not None]  # Remove missing values
 
-    average = sum(cleaned_data) / len(cleaned_data)    # Calculate average
+    Parameters
+    ----------
+    shape   : str
+              shape to consider. Can be rectangle, circle or triangle
 
-    return f"Average: {average:.2f}"   
+    dimensions: list
+                of dimension to consider. For rectangle and triangle you need to give a list
+                of 2 numbers. For circle, you need to pass a list of one quantity (radius).
+
+    Return
+    ------
+    area      : float
+                area of the shape
+
+    Raises
+    ------
+    ValueError
+            if the shape is not recognised
+    '''
+    if shape == "rectangle":
+        area = dimensions[0] * dimensions[1]
+    elif shape == "circle":
+        area = 3.14159 * (dimensions[0] ** 2)
+    elif shape == "triangle":
+        area = 0.5 * dimensions[0] * dimensions[1]
+    else:
+        raise ValueError("Unsupported shape!")
+
+    return area
+        
+area = calculate_area("rectangle", [10, 20])
 ```
 
-This function does three tasks: remove missing values, compute average, formar the result. To apply KISS and the Curly's law what you can do is to split this function into three simple independent functions:
+This function is able to compute the area of each shape. To apply KISS and the Curly's law what you can do is to split this function into three simple independent functions:
 
 
 ```Python
-def remove_missing(data):
-    return [x for x in data if x is not None]
+def rectangle_area(length, width):
+    return length * width
 
-def calculate_average(data):
-    return sum(data) / len(data)
+def circle_area(radius):
+    return 3.14159 * radius ** 2
 
-def format_average(average):
-    return f"Average: {average:.2f}"
+def triangle_area(base, height):
+    return 0.5 * base * height
 
+# Simple and clear usage
+area = rectangle_area(10, 20)
 ```
 
-In that version, each function does only one thing. The program is more readable, easier to debug, test or update.
-
+In that version, functions are specific and easy to understand and there is no unecessary complexity in shape management. It is easier to maintain and extend.
 
 #### Exercice
 

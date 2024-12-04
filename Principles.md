@@ -428,12 +428,6 @@ for name in names:
 It is important to note that prematurely refactoring a code might lead to the unnecessary complexity. This is why **DRY** is often associated to the **Rule of Three**. The latter is a guideline suggesting that you should wait until a piece of code is repeated three times before refactoring it. It ensures that you only refactor when a pattern is stable and repeated enough time.
 
 
-
-
-
-
-
-
 ## Principle of least astonishment (POLA)
 
 #### Introduction

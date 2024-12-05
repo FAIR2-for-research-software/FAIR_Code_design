@@ -115,8 +115,6 @@ In the following we will be using INI files. We will start by a simple exercice 
 Using the text editor of your choice, create an INI file with three sections: simulation, environment and initial conditions. 
 In the first section, two parameters are given: `time_step` set at 0.01s and `total_time` set at 100.0s. The environment section also has two parameters with `gravity` at 9.81 and `air_resistance` at 0.02. Finally the initial conditions are: `velocity` at 10.0 km/s, `angle` at 45 degrees and `height` at 1m.
 
-Do the same for a TOML file.
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution
@@ -270,7 +268,7 @@ asparagus = 2
 beetroots = 4
 ```
 
-Read it using configparser then change the number of beetroot to 2 and the number of oranges to 5. Then save it back on disk in a different file.
+Read it using the configparser library. Then you will change the number of beetroot to 2 and the number of oranges to 5 and a section 'pastries' with 5 croissants. Then save it back on disk in a different file.
 
 
 
@@ -293,7 +291,7 @@ config['fruits']['oranges'] = str(5)
 config['vegetables']['beetroots'] = str(2)
 
 ###Add a section with a new key/pair value
-config['pastries'] = {'croissants': '3'}
+config['pastries'] = {'croissants': '5'}
 
 
 ##save it back

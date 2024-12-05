@@ -787,8 +787,8 @@ the arguments passed to program. This is done with the
 <code>parse_args()</code> method:</p>
 <pre><code><span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse_args</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 <p>If you save everything in a python file
-(e.g. <code>commandline.py</code>) and run
-<code>python commandline.py --help</code> you will see the following on
+(e.g. <code>cli_course.py</code>) and run
+<code>python cli_course.py --help</code> you will see the following on
 the terminal:</p>
 <pre><code>usage: cli_course.py [-h]
 
@@ -807,7 +807,11 @@ arguments!</p>
 <p>The <code>argparse</code> modules implements the
 <code>add_argument</code> method to add argument. Based on the code we
 prepared before, you would use if this way:</p>
-<pre><code>parser.add_argument(SOMETHING TO ADD HERE)</code></pre>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>parser.add_argument(SOMETHING TO ADD HERE)</span></code></pre>
+</div>
 <p>Two main types of arguments are possible: - Optional arguments: their
 name start by <code>-</code> or <code>--</code> and are called in the
 terminal by their name. They can be ignored by the user. - Positional

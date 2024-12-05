@@ -353,7 +353,7 @@ Once this is written, you need to tell the program to analyse (parse) the argume
 args = parser.parse_args()
 ```
 
-If you save everything in a python file (e.g. `commandline.py`) and run `python commandline.py --help` you will see the following on the terminal:
+If you save everything in a python file (e.g. `cli_course.py`) and run `python cli_course.py --help` you will see the following on the terminal:
 
 ```
 usage: cli_course.py [-h]
@@ -374,7 +374,7 @@ You can see that the only option that was implemented is the `help`. It is done 
 
 The `argparse` modules implements the `add_argument` method to add argument. Based on the code we prepared before, you would use if this way:
 
-```
+``` Python
 parser.add_argument(SOMETHING TO ADD HERE)
 ```
 

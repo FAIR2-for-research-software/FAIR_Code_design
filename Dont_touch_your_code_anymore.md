@@ -342,17 +342,15 @@ import argparse
 
 
 ###create the parser object
-parser = argparse.ArgumentParser(prog='My program',
-                                 description='This program is an example of command line interface in Python',
- 				 epilog='Author: R. Thomas, 2024, UoS')
-
+parser = argparse.ArgumentParser(description='This program is an example of command line interface in Python',
+ 				                         epilog='Author: R. Thomas, 2024, UoS')
 
 ```
 
 Once this is written, you need to tell the program to analyse (parse) the arguments passed to program. This is done with the `parse_args()` method:
 
 ```
-args = parser.parse.args()
+args = parser.parse_args()
 ```
 
 If you save everything in a python file (e.g. `commandline.py`) and run `python commandline.py --help` you will see the following on the terminal:

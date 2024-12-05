@@ -3046,7 +3046,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Dont_touch_your_code_anymore"><p>Content from <a href="Dont_touch_your_code_anymore.html">Don't touch your code anymore!</a></p>
 <hr>
-<p>Last updated on 2024-10-28 |
+<p>Last updated on 2024-12-05 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Dont_touch_your_code_anymore.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3084,25 +3084,25 @@ applications.</li>
 </div>
 </div>
 </div>
+<p>Until now, what we have seen deals with the design of the code itself
+and how to make it cleaner, more readable and maintainable. Now we are
+going to see how to reduce the amount of time you change the code while
+still modify parameters. Research is often based on a trial-error or
+trial-trial loops. You will often find yourself trying to rerun a code
+with different parameters to try different configuration. Hard coding
+this values can lead to inflexibility and error-prone results because it
+means that you will need to go change the code itself to change the
+configuration. In addition, and unless you are able to track very well
+all your trials, you will probably loose track of some of them.</p>
 <section><h2 class="section-heading" id="configuration-files">Configuration files<a class="anchor" aria-label="anchor" href="#configuration-files"></a>
 </h2>
 <hr class="half-width">
 <div class="section level3">
 <h3 id="why-would-need-them">Why would need them?<a class="anchor" aria-label="anchor" href="#why-would-need-them"></a>
 </h3>
-<p>Until now, what we have seen deals with the design of the code itself
-and how to make it cleaner, more readable and maintainable. Now we are
-going to see how to actually stop touching while still modifying it.
-Research is often based on a trial-error or trial-trial loops. You will
-often find yourself trying to rerun a code with different parameters to
-try different configuration. Hard coding this values can lead to
-inflexibility and error-prone results because it means that you will
-need to go change the code itself to change the configuration. In
-addition, and unless you are able to track very well all your trials,
-you will probably loose track of some of them.</p>
-<p>Configuration files will allow you to adjust these parameters outside
-the code, improving reproducibility and making the code usable across
-different contexts.</p>
+<p>Configuration files will allow you to adjust some parameters of the
+code (it can be filenames, directories, values, etc) while actually
+leaving the code untouched.</p>
 <p>Benefits:</p>
 <ul>
 <li>
@@ -3197,8 +3197,8 @@ install a third party package called <a href="https://pyyaml.org/" class="extern
 widely use in Python (a simple example is the setup.py file for
 installation that became a pyproject.toml file in the last years). They
 allow structure and data formats. They are quite similar to INI files
-for the syntax. It is worth mentioning that the library <a href="">tomllib</a> is part of the Python standard library from python
-versoin 3.11.</li>
+for the syntax. It is worth mentioning that the library <a href="https://docs.python.org/3/library/tomllib.html" class="external-link">tomllib</a> is
+part of the Python standard library from python versoin 3.11.</li>
 </ul>
 <pre><code>[section1]
 key1 = value1
@@ -3357,19 +3357,31 @@ value is <code>1</code>, <code>yes</code>, <code>true</code> or
 configuration file programatically. <strong>Configparser</strong> allows
 the user to write INI files as well. As for reading them, everything
 starts by importing the module and creating an object:</p>
-<pre><code>#Let's import the ConfigParser object directly
-from configparser import ConfigParser
-
-# And create a config object
-config = ConfigParser()</code></pre>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">#Let's import the ConfigParser object directly</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="im">from</span> configparser <span class="im">import</span> ConfigParser </span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># And create a config object</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>config <span class="op">=</span> ConfigParser()</span></code></pre>
+</div>
 <p>Creating a configuration is equivalent to creating a
 dictionaries:</p>
-<pre><code>config['simulation'] = {'time_step': 1.0, 'total_time': 200.0}
-config['environment'] = {'gravity': 9.81, 'air_resistance': 0.02}
-config['initial_conditions'] = {'velocity': 5.0, 'angle': 30.0, 'height': 0.5}</code></pre>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>config[<span class="st">'simulation'</span>] <span class="op">=</span> {<span class="st">'time_step'</span>: <span class="fl">1.0</span>, <span class="st">'total_time'</span>: <span class="fl">200.0</span>}</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>config[<span class="st">'environment'</span>] <span class="op">=</span> {<span class="st">'gravity'</span>: <span class="fl">9.81</span>, <span class="st">'air_resistance'</span>: <span class="fl">0.02</span>}</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>config[<span class="st">'initial_conditions'</span>] <span class="op">=</span> {<span class="st">'velocity'</span>: <span class="fl">5.0</span>, <span class="st">'angle'</span>: <span class="fl">30.0</span>, <span class="st">'height'</span>: <span class="fl">0.5</span>}</span></code></pre>
+</div>
 <p>And finally you will have to save it:</p>
-<pre><code>with open('config_file_program.ini', 'w') as configfile: ##This open the condif_file_program.ini in write mode
-    config.write(configfile)</code></pre>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'config_file_program.ini'</span>, <span class="st">'w'</span>) <span class="im">as</span> configfile: <span class="co">##This open the condif_file_program.ini in write mode</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    config.write(configfile)</span></code></pre>
+</div>
 <p>After running that piece of code, you will end with a new file called
 <code>config_file_program.ini</code> with the following content:</p>
 <pre><code>[simulation]
@@ -3732,8 +3744,8 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/aio.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/aio.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-12-04",
-  "datePublished": "2024-12-04"
+  "dateModified": "2024-12-05",
+  "datePublished": "2024-12-05"
 }
 
   </script><script>

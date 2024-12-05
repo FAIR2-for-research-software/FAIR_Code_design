@@ -379,8 +379,8 @@ parser.add_argument(SOMETHING TO ADD HERE)
 ```
 
 Two main types of arguments are possible:
-- Optional arguments: their name start by `-` or `--` and are called in the terminal by their name. They can be ignored by the user.
-- Positional arguments: Their name DO NOT start by `-` or `--`, the user cannot ignore them and they are not to be called by their name (just the value need to be passed).
+* Optional arguments: their name start by `-` or `--` and are called in the terminal by their name. They can be ignored by the user.
+* Positional arguments: Their name DO NOT start by `-` or `--`, the user cannot ignore them and they are not to be called by their name (just the value need to be passed).
 
 For example, you can add this three lines before the `args = parser.parse.args()` in the file `commandline.py` that you created before:
 
@@ -396,7 +396,7 @@ If once again you want to print the help in the terminal `python commandline.py 
 
 
 ```
-usage: My program [-h] [-c COUNT] [-n N] [--max MAX] file file2
+usage: cli_course.py [-h] [-c COUNT] [-n N] [--max MAX] file file2
 
 This program is an example of command line interface in Python
 
@@ -404,7 +404,7 @@ positional arguments:
   file
   file2
 
-options:
+optional arguments:
   -h, --help            show this help message and exit
   -c COUNT, --count COUNT
   -n N

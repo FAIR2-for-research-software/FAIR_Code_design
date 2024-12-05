@@ -19,14 +19,14 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+Until now, what we have seen deals with the design of the code itself and how to make it cleaner, more readable and maintainable. Now we are going to see how to reduce the amount of time you change the code while still modify parameters. 
+Research is often based on a trial-error or trial-trial loops. You will often find yourself trying to rerun a code with different parameters to try different configuration. Hard coding this values can lead to inflexibility and error-prone results because it means that you will need to go change the code itself to change the configuration. In addition, and unless you are able to track very well all your trials, you will probably loose track of some of them. 
+
 ## Configuration files
 
 ### Why would need them?
 
-Until now, what we have seen deals with the design of the code itself and how to make it cleaner, more readable and maintainable. Now we are going to see how to actually stop touching while still modifying it. 
-Research is often based on a trial-error or trial-trial loops. You will often find yourself trying to rerun a code with different parameters to try different configuration. Hard coding this values can lead to inflexibility and error-prone results because it means that you will need to go change the code itself to change the configuration. In addition, and unless you are able to track very well all your trials, you will probably loose track of some of them. 
-
-Configuration files will allow you to adjust these parameters outside the code, improving reproducibility and making the code usable across different contexts.
+Configuration files will allow you to adjust some parameters of the code (it can be filenames, directories, values, etc) while actually leaving the code untouched. 
 
 Benefits:
 
@@ -93,7 +93,7 @@ section2:
 YAML files work also with sections and keyword/value pairs.  
 
 
-- TOML files are a bit more recent than the other ones but start to be widely use in Python (a simple example is the setup.py file for installation that became a pyproject.toml file in the last years). They allow structure and data formats. They are quite similar to INI files for the syntax. It is worth mentioning that the library [tomllib]() is part of the Python standard library from python versoin 3.11. 
+- TOML files are a bit more recent than the other ones but start to be widely use in Python (a simple example is the setup.py file for installation that became a pyproject.toml file in the last years). They allow structure and data formats. They are quite similar to INI files for the syntax. It is worth mentioning that the library [tomllib](https://docs.python.org/3/library/tomllib.html) is part of the Python standard library from python versoin 3.11. 
 
 ```
 [section1]
@@ -214,7 +214,7 @@ It will also be giving a string...And that can be annoying when you have some ot
 In some occasions it might also be interesting to be able to write configuration file programatically. **Configparser** allows the user to write INI files as well.
 As for reading them, everything starts by importing the module and creating an object:
 
-```
+``` Python
 #Let's import the ConfigParser object directly
 from configparser import ConfigParser 
 
@@ -224,7 +224,7 @@ config = ConfigParser()
 
 Creating a configuration is equivalent to creating a dictionaries:
 
-```
+``` Python
 config['simulation'] = {'time_step': 1.0, 'total_time': 200.0}
 config['environment'] = {'gravity': 9.81, 'air_resistance': 0.02}
 config['initial_conditions'] = {'velocity': 5.0, 'angle': 30.0, 'height': 0.5}
@@ -232,14 +232,14 @@ config['initial_conditions'] = {'velocity': 5.0, 'angle': 30.0, 'height': 0.5}
 
 And finally you will have to save it:
 
-```
+``` Python
 with open('config_file_program.ini', 'w') as configfile: ##This open the condif_file_program.ini in write mode
     config.write(configfile)
 ```
 
 After running that piece of code, you will end with a new file called `config_file_program.ini` with the following content:
 
-```
+``` 
 [simulation]
 time_step = 1.0
 total_time = 200.0

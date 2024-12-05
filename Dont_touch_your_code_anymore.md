@@ -356,11 +356,11 @@ args = parser.parse_args()
 If you save everything in a python file (e.g. `commandline.py`) and run `python commandline.py --help` you will see the following on the terminal:
 
 ```
-usage: My program [-h]
+usage: cli_course.py [-h]
 
 This program is an example of command line interface in Python
 
-options:
+optional arguments:
   -h, --help  show this help message and exit
 
 Author: R. Thomas, 2024, UoS

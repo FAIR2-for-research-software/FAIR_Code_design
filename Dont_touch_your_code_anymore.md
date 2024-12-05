@@ -216,10 +216,10 @@ As for reading them, everything starts by importing the module and creating an o
 
 ``` Python
 #Let's import the ConfigParser object directly
-import configparser
+import ConfigParser 
 
 # And create a config object
-config = configparser.ConfigParser()
+config = ConfigParser()
 ```
 
 Creating a configuration is equivalent to creating a dictionaries:
@@ -233,7 +233,7 @@ config['initial_conditions'] = {'velocity': 5.0, 'angle': 30.0, 'height': 0.5}
 And finally you will have to save it:
 
 ``` Python
-with open('config_file_program.ini', 'w') as configfile: ##This open the condif_file_program.ini in write mode
+with open('config_file_program.ini', 'w') as configfile: ##This open the config_file_program.ini in write mode
     config.write(configfile)
 ```
 
@@ -256,7 +256,53 @@ height = 0.5
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Using the [tomllib](https://docs.python.org/3/library/tomllib.html) (json[])docmumentation, write a toml file (withthe same element as the previous exercise and read it back).
+Consider the following INI file:
+
+```
+[fruits]
+oranges = 3
+lemons = 6
+apples = 5
+
+[vegetables]
+onions = 1
+asparagus = 2
+beetroots = 4
+```
+
+Read it using configparser then change the number of beetroot to 2 and the number of oranges to 5. Then save it back on disk in a different file.
+
+
+
+:::::::::::::::::::::::: solution
+
+
+```Python
+##Import the package
+import configparser
+
+###create the object
+config = configparser.ConfigParser()
+
+##read the file
+config.read('conf_fruit.ini')
+
+
+###Change the values
+config['fruits']['oranges'] = str(5)
+config['vegetables']['beetroots'] = str(2)
+
+###Add a section with a new key/pair value
+config['pastries'] = {'croissants': '3'}
+
+
+##save it back
+with open('new_conf_fruits', 'w') as openconfig:
+    config.write(openconfig)
+```
+
+:::::::::::::::::::::::::::::::::
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

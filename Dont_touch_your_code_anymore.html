@@ -779,15 +779,13 @@ arguments, the main ones are:</p>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
 <span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a></span>
 <span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="co">###create the parser object</span></span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(prog<span class="op">=</span><span class="st">'My program'</span>,</span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>                                 description<span class="op">=</span><span class="st">'This program is an example of command line interface in Python'</span>,</span>
-<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a> 				 epilog<span class="op">=</span><span class="st">'Author: R. Thomas, 2024, UoS'</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a></span></code></pre>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">'This program is an example of command line interface in Python'</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a> 				                         epilog<span class="op">=</span><span class="st">'Author: R. Thomas, 2024, UoS'</span>)</span></code></pre>
 </div>
 <p>Once this is written, you need to tell the program to analyse (parse)
 the arguments passed to program. This is done with the
 <code>parse_args()</code> method:</p>
-<pre><code><span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse.args</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<pre><code><span><span class="va">args</span> <span class="op">=</span> <span class="fu">parser.parse_args</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 <p>If you save everything in a python file
 (e.g. <code>commandline.py</code>) and run
 <code>python commandline.py --help</code> you will see the following on

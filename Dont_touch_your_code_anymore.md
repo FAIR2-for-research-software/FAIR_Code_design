@@ -216,10 +216,10 @@ As for reading them, everything starts by importing the module and creating an o
 
 ``` Python
 #Let's import the ConfigParser object directly
-from configparser import ConfigParser 
+import configparser
 
 # And create a config object
-config = ConfigParser()
+config = configparser.ConfigParser()
 ```
 
 Creating a configuration is equivalent to creating a dictionaries:

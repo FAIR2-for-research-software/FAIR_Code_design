@@ -3715,22 +3715,19 @@ Find the instructions below:</p>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>The program that you will create will take an optional configuration
-file. If not configuration file is given, the program will load an
-internal one that you can find <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/blob/main/final_exercice/config_default.conf" class="external-link">here</a>
-(you need to put this next to your code). To do this you will create an
-optional argument <code>--file</code>.</p>
-<p>arguments:</p>
+file as argument <code>--file</code>. If not configuration file is
+given, the program will load an internal one that you can find <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/blob/main/final_exercice/config_default.conf" class="external-link">here</a>
+(you need to put this next to your code).</p>
+<p>other arguments:</p>
 <ul>
 <li>
-<code>--name</code>: This argument requires a name. If it is used,
-the value given will replace the default name in the configuration
-file.</li>
+<code>--name</code>: This argument requires a (user) name. If it is
+used by the user, the value given will replace the name in the
+configuration file.</li>
 <li>
 <code>--save</code>: This argument require a directory as value. If
 used, the configuration is saved into that directory under the name
-<code>X_config.ini</code> where <code>X</code> is the name of the user
-found in the configuration file OR the one given by the
-<code>--name</code> argument.</li>
+<code>new_config.ini</code>.</li>
 </ul>
 </div>
 </div>

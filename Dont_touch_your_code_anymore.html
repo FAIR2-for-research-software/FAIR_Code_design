@@ -508,7 +508,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -693,7 +693,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -812,9 +812,9 @@ prepared before, you would use if this way:</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>parser.add_argument(SOMETHING TO ADD HERE)</span></code></pre>
 </div>
-<p>Two main types of arguments are possible: - Optional arguments: their
+<p>Two main types of arguments are possible: * Optional arguments: their
 name start by <code>-</code> or <code>--</code> and are called in the
-terminal by their name. They can be ignored by the user. - Positional
+terminal by their name. They can be ignored by the user. * Positional
 arguments: Their name DO NOT start by <code>-</code> or <code>--</code>,
 the user cannot ignore them and they are not to be called by their name
 (just the value need to be passed).</p>
@@ -833,7 +833,7 @@ the user cannot ignore them and they are not to be called by their name
 <p>If once again you want to print the help in the terminal
 <code>python commandline.py --help</code> you will see the following
 being displayed:</p>
-<pre><code>usage: My program [-h] [-c COUNT] [-n N] [--max MAX] file file2
+<pre><code>usage: cli_course.py [-h] [-c COUNT] [-n N] [--max MAX] file file2
 
 This program is an example of command line interface in Python
 
@@ -841,7 +841,7 @@ positional arguments:
   file
   file2
 
-options:
+optional arguments:
   -h, --help            show this help message and exit
   -c COUNT, --count COUNT
   -n N

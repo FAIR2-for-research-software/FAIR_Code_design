@@ -502,7 +502,6 @@ has two parameters with <code>gravity</code> at 9.81 and
 <code>air_resistance</code> at 0.02. Finally the initial conditions are:
 <code>velocity</code> at 10.0 km/s, <code>angle</code> at 45 degrees and
 <code>height</code> at 1m.</p>
-<p>Do the same for a TOML file.</p>
 </div>
 </div>
 </div>
@@ -684,8 +683,9 @@ apples = 5
 onions = 1
 asparagus = 2
 beetroots = 4</code></pre>
-<p>Read it using configparser then change the number of beetroot to 2
-and the number of oranges to 5. Then save it back on disk in a different
+<p>Read it using the configparser library. Then you will change the
+number of beetroot to 2 and the number of oranges to 5 and a section
+‘pastries’ with 5 croissants. Then save it back on disk in a different
 file.</p>
 </div>
 </div>
@@ -715,7 +715,7 @@ file.</p>
 <span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>config[<span class="st">'vegetables'</span>][<span class="st">'beetroots'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="dv">2</span>)</span>
 <span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a></span>
 <span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a><span class="co">###Add a section with a new key/pair value</span></span>
-<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a>config[<span class="st">'pastries'</span>] <span class="op">=</span> {<span class="st">'croissants'</span>: <span class="st">'3'</span>}</span>
+<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a>config[<span class="st">'pastries'</span>] <span class="op">=</span> {<span class="st">'croissants'</span>: <span class="st">'5'</span>}</span>
 <span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a></span>
 <span id="cb17-18"><a href="#cb17-18" tabindex="-1"></a></span>
 <span id="cb17-19"><a href="#cb17-19" tabindex="-1"></a><span class="co">##save it back</span></span>

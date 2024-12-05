@@ -453,17 +453,17 @@ Author: R. Thomas, 2024, UoS
 
 It is possible to use extra options to define arguments, we list a few here:
 
-- `actions`: this options allows you to do 
+- `action`: this options allows you to do store boolean values.
 
 - `default`: This allows you to define a default value for the argument. In the case thr argument will not be used by the user, the default value will be selected: `parser.add_argument('--color', default='blue')`.
 
 - `type`: By default, the argument will be extracted as strings. Nevertheless, it is possible to have them interpreted as other types using the `type` argument: `parser.add_argument('-i', type=int)`. It the user passes a value that cannot be converted to the expected type an error will be returned.
 
-- `choices`: If you want to restrict the values an argument can take, you can use the `choice` option to add this contraints: `parser.add_argument('--color', choiced=['blue', 'red', 'green'])`. If the user pass 'purple' as value, an error will be raised. 
+- `choices`: If you want to restrict the values an argument can take, you can use the `choice` option to add this contraints: `parser.add_argument('--color', choices=['blue', 'red', 'green'])`. If the user pass 'purple' as value, an error will be raised. 
 
 Finally you must be able to retrieve all the argument values:
 
-####How to get values from the CLI?
+#### How to get values from the CLI?
 
 To get values from the command line interface you need to look into the `args` variable that you defined with the line `args = parser.parse_args()`. Each argument can be called via the structure 'arge.' + argument name:
 
@@ -476,20 +476,15 @@ print(args.max) #direct access to the max optional argument
 
 Below we give a couple of examples of calls to the program with different configurations:
 ```
-[user@user]$ python cli.py path/file1 path/file2 
-Namespace(file='file1', file2='file2', count=None, n=None, max=None)
-file1
-None
-None
+[user@user]$ python cli_course.py file1path/file.py -c 3 --max 5
+usage: cli_course.py [-h] [-c COUNT] [-n N] [--max MAX] file file2
+cli_course.py: error: too few arguments  ####<---One positional argument is missing.
 
-
-[user@user]$ python cli.py file1 file2 --count 3 --max 5
-Namespace(file='file1', file2='file2', count='3', n=None, max='5')
-file1
-3
-5
+[user@user]$ python cli_course.py file1path/file.py file2path/file2.py -c 3
+Namespace(count='3', file='file1path/file.py', file2='file2path/file2.py', max=None, n=None)
+file1path/file.py
+None
 ```
-
 
 ::::::::::::::::::::::::::::::::::::: challenge
 

@@ -570,3 +570,47 @@ user-friendly, such as a `README` file that explains what the package does and h
 and a `LICENSE` file that specifies the terms under which the code can be used. There is another
 session on [Packaging](https://rse.shef.ac.uk/training/fair4rs/#packaging) which will go
 into more detail on how to create and share Python packages.
+
+
+## Final exercise : Rewriting a Python Script
+
+In this final exercise, you will rewrite a Python script that is poorly structured and difficult to read,
+with a large amount of repeated code.
+
+:::::::::::: challenge
+
+#### Challenge 5
+You can find the script here: [student_scores.py](files/student_scores.py).
+
+This Python script is designed to read in a data file containing student names and scores
+(all generated randomly!), although here we just include the data as a text string in the script
+to save having to download a separate file.
+
+After checking there are no errors with the input, the script then goes through each student,
+calculates their total score across the three exams and prints out a summary of the data.
+It then calculates the average score for each assignment, and prints out the student with the
+highest total score in the class.
+
+You can download it and run it on your local computer using `python test_script.py`.
+The output should look like this:
+
+```output
+studentid  firstname  surname    score1  score2  score3  total
+39816      Fiona      Ellis      15      18      16      49
+40859      Philip     Holdcroft  12      17      15      44
+71625      Kathleen   Ingram     20      19      19      58
+91462      David      Nicholson  14      16      18      48
+97297      Mark       Walch      18      20      17      55
+Average score1: 15.80
+Average score2: 18.00
+Average score3: 18.00
+Student with highest total: Kathleen Ingram (58.00)
+```
+
+Your task is to rewrite this script using functions and classes to make it more modular and reusable.
+You can also move code out of the script into separate files and modules if you think it will make
+the code easier to manage.
+
+Make sure when you're done that the output of the script is the same as the original.
+
+::::::::::::

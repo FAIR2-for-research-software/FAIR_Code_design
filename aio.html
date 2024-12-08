@@ -726,15 +726,18 @@ is ‘Is this code readable, reusable, maintainable’?</p>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Code #1:</p>
-<pre><code>import math
-def process_list(data):
-    return [math.sqrt(x) * 2 + 3 for x in data if x * 1.5 &lt; 5]
-
-#Example usage
-input_data = [1, 2, 3, 4, 5, 6]
-result = process_list(input_data)
-print("processed list:", result)
-</code></pre>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">def</span> process_list(data):</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="cf">return</span> [math.sqrt(x) <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="cf">for</span> x <span class="kw">in</span> data <span class="cf">if</span> x <span class="op">*</span> <span class="fl">1.5</span> <span class="op">&lt;</span> <span class="dv">5</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co">#Example usage</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>input_data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>result <span class="op">=</span> process_list(input_data)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"processed list:"</span>, result)</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -743,7 +746,7 @@ print("processed list:", result)
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -776,17 +779,21 @@ unexpected inputs occur.</li>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Code #2:</p>
-<pre><code>def b(m, n):
-    if m == 0:
-        return n + 1
-    elif m &gt; 0 and n == 0:
-        return b(m - 1, 1)
-    else:
-        return b(m - 1, b(m, n - 1))
-
-# Example usage
-result = b(3, 2)
-print("Result:", result)</code></pre>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> b(m, n):</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="cf">if</span> m <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="cf">elif</span> m <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>        <span class="cf">return</span> b(m <span class="op">-</span> <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>        <span class="cf">return</span> b(m <span class="op">-</span> <span class="dv">1</span>, b(m, n <span class="op">-</span> <span class="dv">1</span>))</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>result <span class="op">=</span> b(<span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Result:"</span>, result)</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -795,7 +802,7 @@ print("Result:", result)</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>This code implements the Ackermann function, a classic example of a
 computationally intensive function.</p>
@@ -825,34 +832,37 @@ may make it difficult to understand at first glance.</p>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Code #3:</p>
-<pre><code>def calculate_statistics():
-    data = [23, 45, 12, 67, 34, 89, 23, 45, 23, 34]
-    total_sum = sum(data)
-    count = len(data)
-    average = total_sum / count
-
-    data_sorted = sorted(data)
-    if count % 2 == 0:
-        median = (data_sorted[count // 2 - 1] + data_sorted[count // 2]) / 2
-    else:
-        median = data_sorted[count // 2]
-
-    occurrences = {}
-    for num in data:
-        if num in occurrences:
-            occurrences[num] += 1
-        else:
-            occurrences[num] = 1
-    mode = max(occurrences, key=occurrences.get)
-
-    print("Sum:", total_sum)
-    print("Average:", average)
-    print("Median:", median)
-    print("Mode:", mode)
-
-# Calculate statistics for the specific data set
-calculate_statistics()
-</code></pre>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> calculate_statistics():</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    data <span class="op">=</span> [<span class="dv">23</span>, <span class="dv">45</span>, <span class="dv">12</span>, <span class="dv">67</span>, <span class="dv">34</span>, <span class="dv">89</span>, <span class="dv">23</span>, <span class="dv">45</span>, <span class="dv">23</span>, <span class="dv">34</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    total_sum <span class="op">=</span> <span class="bu">sum</span>(data)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    count <span class="op">=</span> <span class="bu">len</span>(data)</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    average <span class="op">=</span> total_sum <span class="op">/</span> count</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    </span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    data_sorted <span class="op">=</span> <span class="bu">sorted</span>(data)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="cf">if</span> count <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>        median <span class="op">=</span> (data_sorted[count <span class="op">//</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>] <span class="op">+</span> data_sorted[count <span class="op">//</span> <span class="dv">2</span>]) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>        median <span class="op">=</span> data_sorted[count <span class="op">//</span> <span class="dv">2</span>]</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>    occurrences <span class="op">=</span> {}</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    <span class="cf">for</span> num <span class="kw">in</span> data:</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>        <span class="cf">if</span> num <span class="kw">in</span> occurrences:</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>            occurrences[num] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>            occurrences[num] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>    mode <span class="op">=</span> <span class="bu">max</span>(occurrences, key<span class="op">=</span>occurrences.get)</span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Sum:"</span>, total_sum)</span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Average:"</span>, average)</span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Median:"</span>, median)</span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Mode:"</span>, mode)</span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co"># Calculate statistics for the specific data set</span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a>calculate_statistics()</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -861,7 +871,7 @@ calculate_statistics()
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ul>
 <li>
@@ -1818,7 +1828,7 @@ logic and structure.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>This one-liner tries to:</p>
 <ul>
@@ -1855,7 +1865,7 @@ unnecessary complexity and focuses on clarity.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1919,7 +1929,7 @@ efficient:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2080,7 +2090,7 @@ to understand.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2189,7 +2199,7 @@ good implementation. For example</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>The function checks if a number is both even and a multiple of 5. A
 better way of doing it could be:</p>
@@ -3225,7 +3235,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -3414,7 +3424,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

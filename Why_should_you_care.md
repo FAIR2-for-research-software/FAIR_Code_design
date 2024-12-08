@@ -140,12 +140,12 @@ print("processed list:", result)
 
 ::::::::::::::::: solution
 
-- **Readable**: The code is readable because it uses a list comprehension that is relatively straightforward to understand for someone familiar with Python.
 - **Reusable**: The function can be used with any list of integers to filter and transform the data.
+
+- **Partially Readable**: The code is readable because it uses a simple structure that is easy to follow. But it is impossible to understant its purpose. There are no comments explaining what the function is doing or why it’s doing it.
 
 However, the code will be difficult to maintain because:
 
-- There are no comments explaining what the function is doing or why it’s doing it.
 - Constraints are not explained.
 - The logic includes "magic numbers" (2 and 3) without any explanation or named constants.
 - There is no error handling, which makes it harder to maintain when unexpected inputs occur.

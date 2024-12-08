@@ -121,7 +121,7 @@ Results of the Quiz in mentimeter slides. The question for each code is 'Is this
 
 Code #1: 
 
-```
+```Python
 import math
 def process_list(data):
     return [math.sqrt(x) * 2 + 3 for x in data if x * 1.5 < 5]
@@ -155,7 +155,7 @@ However, the code will be difficult to maintain because:
 
 Code #2: 
 
-```
+```Python
 def b(m, n):
     if m == 0:
         return n + 1
@@ -188,7 +188,7 @@ The code may not be very readable to someone unfamiliar with the Ackermann funct
 
 Code #3: 
 
-```
+```Python
 def calculate_statistics():
     data = [23, 45, 12, 67, 34, 89, 23, 45, 23, 34]
     total_sum = sum(data)

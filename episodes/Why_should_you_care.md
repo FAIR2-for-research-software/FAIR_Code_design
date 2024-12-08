@@ -124,7 +124,12 @@ Code #1:
 ```Python
 import math
 def process_list(data):
-    return [math.sqrt(x) * 2 + 3 for x in data if x * 1.5 < 5]
+    processed_list = []
+    for x in data:
+        if x * 1.5 < 5:
+            processed_list.append(math.sqrt(x) * 2 +3)
+
+    return processed_list
 
 #Example usage
 input_data = [1, 2, 3, 4, 5, 6]
@@ -145,40 +150,6 @@ However, the code will be difficult to maintain because:
 - The logic includes "magic numbers" (2 and 3) without any explanation or named constants.
 - There is no error handling, which makes it harder to maintain when unexpected inputs occur.
 
-::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::::
-
-
-
-::::::::::::::::::::::::::::::::: challenge
-
-Code #2: 
-
-```Python
-def b(m, n):
-    if m == 0:
-        return n + 1
-    elif m > 0 and n == 0:
-        return b(m - 1, 1)
-    else:
-        return b(m - 1, b(m, n - 1))
-
-# Example usage
-result = b(3, 2)
-print("Result:", result)
-```
-
-::::::::::::::::: solution
-
-This code implements the Ackermann function, a classic example of a computationally intensive function.
-
-- **Maintainable**: The code is structured and easy to update. 
-- **Reusable**: You can call the b function with different arguments to compute the Ackermann function for different inputs. 
-
-Nevertheless, the code is difficult to read:
-
-The code may not be very readable to someone unfamiliar with the Ackermann function or the specific implementation details. The function name *b* and the lack of comments or descriptive variable names may make it difficult to understand at first glance.
 ::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::

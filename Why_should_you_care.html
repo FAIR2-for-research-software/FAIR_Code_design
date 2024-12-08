@@ -546,17 +546,14 @@ is ‘Is this code readable, reusable, maintainable’?</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<ul><li>
-<strong>Readable</strong>: The code is readable because it uses a
-list comprehension that is relatively straightforward to understand for
-someone familiar with Python.</li>
-<li>
-<strong>Reusable</strong>: The function can be used with any list of
-integers to filter and transform the data.</li>
+<ul><li><p><strong>Reusable</strong>: The function can be used with any list
+of integers to filter and transform the data.</p></li>
+<li><p><strong>Partially Readable</strong>: The code is readable because
+it uses a simple structure that is easy to follow. But it is impossible
+to understant its purpose. There are no comments explaining what the
+function is doing or why it’s doing it.</p></li>
 </ul><p>However, the code will be difficult to maintain because:</p>
-<ul><li>There are no comments explaining what the function is doing or why
-it’s doing it.</li>
-<li>Constraints are not explained.</li>
+<ul><li>Constraints are not explained.</li>
 <li>The logic includes “magic numbers” (2 and 3) without any explanation
 or named constants.</li>
 <li>There is no error handling, which makes it harder to maintain when

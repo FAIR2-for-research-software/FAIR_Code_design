@@ -127,7 +127,7 @@ def process_list(data):
     processed_list = []
     for x in data:
         if x * 1.5 < 5:
-            processed_list.append(math.sqrt(x) * 2 +3)
+            processed_list.append(math.sqrt(x) * 2 + 3)
 
     return processed_list
 

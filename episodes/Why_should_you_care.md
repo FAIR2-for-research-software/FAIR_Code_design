@@ -115,16 +115,16 @@ Key aspects:
 
 ## Quizz
 
-Results of the Quiz in mentimeter slides. The question for each code is 'Is this code readable, reusable, maintainable, scalable'?
+Results of the Quiz in mentimeter slides. The question for each code is 'Is this code readable, reusable, maintainable'?
 
 ::::::::::::::::::::::::::::::::: challenge
 
 Code #1: 
 
 ```
-import numpy
+import math
 def process_list(data):
-    return [numpy.sqrt(x) * 2 + 3 for x in data if x * 1.5 < 5]
+    return [math.sqrt(x) * 2 + 3 for x in data if x * 1.5 < 5]
 
 #Example usage
 input_data = [1, 2, 3, 4, 5, 6]
@@ -137,7 +137,6 @@ print("processed list:", result)
 
 - **Readable**: The code is readable because it uses a list comprehension that is relatively straightforward to understand for someone familiar with Python.
 - **Reusable**: The function can be used with any list of integers to filter and transform the data.
-- **Scalable**: The function uses a list comprehension, which is efficient for processing lists.
 
 However, the code will be difficult to maintain because:
 
@@ -176,7 +175,6 @@ This code implements the Ackermann function, a classic example of a computationa
 
 - **Maintainable**: The code is structured and easy to update. 
 - **Reusable**: You can call the b function with different arguments to compute the Ackermann function for different inputs. 
-- **Scalable**: It is a recursive function that computes the Ackermann function efficiently.
 
 Nevertheless, the code is difficult to read:
 
@@ -225,8 +223,6 @@ calculate_statistics()
 
 - **Maintainable**: The code is well-structured, with clear variable names and straightforward logic. It's easy to understand and modify if needed.
 - **Readable**: The code uses descriptive variable names and simple constructs, making it easy to follow.
-- **Scalable**: The code efficiently handles the data processing tasks (sum, average, median, mode) for a list of numbers.
-
 
 However, the code is not reusable because the function calculate_statistics is hardcoded to work with a specific dataset defined within the function. It cannot be easily reused with different datasets without modifying the function itself.
 

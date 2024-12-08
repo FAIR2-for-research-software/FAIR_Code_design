@@ -333,7 +333,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Why should you care?</h1>
-        <p>Last updated on 2024-10-29 |
+        <p>Last updated on 2024-12-08 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Why_should_you_care.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -512,7 +512,7 @@ requirements, as it is often the case in research.</p></li>
 </ul></div>
 </section><section><h2 class="section-heading" id="quizz">Quizz<a class="anchor" aria-label="anchor" href="#quizz"></a></h2>
 <hr class="half-width"><p>Results of the Quiz in mentimeter slides. The question for each code
-is ‘Is this code readable, reusable, maintainable, scalable’?</p>
+is ‘Is this code readable, reusable, maintainable’?</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -521,9 +521,9 @@ is ‘Is this code readable, reusable, maintainable, scalable’?</p>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Code #1:</p>
-<pre><code>import numpy
+<pre><code>import math
 def process_list(data):
-    return [numpy.sqrt(x) * 2 + 3 for x in data if x * 1.5 &lt; 5]
+    return [math.sqrt(x) * 2 + 3 for x in data if x * 1.5 &lt; 5]
 
 #Example usage
 input_data = [1, 2, 3, 4, 5, 6]
@@ -547,9 +547,6 @@ someone familiar with Python.</li>
 <li>
 <strong>Reusable</strong>: The function can be used with any list of
 integers to filter and transform the data.</li>
-<li>
-<strong>Scalable</strong>: The function uses a list comprehension,
-which is efficient for processing lists.</li>
 </ul><p>However, the code will be difficult to maintain because:</p>
 <ul><li>There are no comments explaining what the function is doing or why
 it’s doing it.</li>
@@ -600,9 +597,6 @@ update.</li>
 <strong>Reusable</strong>: You can call the b function with
 different arguments to compute the Ackermann function for different
 inputs.</li>
-<li>
-<strong>Scalable</strong>: It is a recursive function that computes
-the Ackermann function efficiently.</li>
 </ul><p>Nevertheless, the code is difficult to read:</p>
 <p>The code may not be very readable to someone unfamiliar with the
 Ackermann function or the specific implementation details. The function
@@ -665,10 +659,6 @@ and modify if needed.</li>
 <li>
 <strong>Readable</strong>: The code uses descriptive variable names
 and simple constructs, making it easy to follow.</li>
-<li>
-<strong>Scalable</strong>: The code efficiently handles the data
-processing tasks (sum, average, median, mode) for a list of
-numbers.</li>
 </ul><p>However, the code is not reusable because the function
 calculate_statistics is hardcoded to work with a specific dataset
 defined within the function. It cannot be easily reused with different
@@ -752,8 +742,8 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Why_should_you_care.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Why_should_you_care.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-10-29",
-  "datePublished": "2024-12-05"
+  "dateModified": "2024-12-08",
+  "datePublished": "2024-12-08"
 }
 
   </script><script>

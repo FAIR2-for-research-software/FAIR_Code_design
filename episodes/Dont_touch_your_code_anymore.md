@@ -175,7 +175,7 @@ Eventually, you will need to extract the values in the configuration file. You c
 ['time_step', 'total_time']
 ```
 
-You can also extract everything at once, in that caseeach couple key/value will be called an *item*:
+You can also extract everything at once, in that case each couple key/value will be called an *item*:
 
 ``` Python
 >>> items_in_simulation = parser.items('simulation')
@@ -184,6 +184,14 @@ You can also extract everything at once, in that caseeach couple key/value will 
 ``` 
 
 That method will return a *list* of *tuples*, each *tuple* will contain the couple key/value. Values will always be of type string. 
+
+
+Alternatively, you can turn each section to a dictionary:
+
+``` Python
+>>> dict(parser['simulation'])
+{'time_step': '0.01', 'total_time': '100.0'}
+```
 
 Finally, you can access directly values of keys inside a given section like this:
 

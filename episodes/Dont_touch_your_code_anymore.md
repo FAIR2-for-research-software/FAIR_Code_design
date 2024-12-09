@@ -514,11 +514,11 @@ It all start with a configuration [file](https://github.com/FAIR2-for-research-s
 
 You will create four python files in a directory called 'final':
 
-* a main.py: it will contain the main code of the program
-* a cli.py: that will contain the command line interface
-* a conf.py: that will handle configuration file
-* a simulation.py that will handle the simulation that we are going to fake.
-* a __init__.py that will stay empty.
+* a `main.py`: it will contain the main code of the program
+* a `cli.py`: that will contain the command line interface
+* a `conf.py`: that will handle configuration file
+* a `simulation.py` that will handle the simulation that we are going to fake.
+* a `__init__.py` that will stay empty.
 
 You will start by creating the command line interface in the cli.py file with the following optional arguments:
 
@@ -526,7 +526,7 @@ You will start by creating the command line interface in the cli.py file with th
 * `--timestamp`: that will take a float as value
 * `--save`: an action argument. If used it should be true, false otherwise.
 
-You should wrap this up in a function called 'command_line'.
+You should wrap this up in a function called `command_line`.
 
 In the **main.py**, you will import the file cli.py and call the `command_line` function. You should get the value of all the arguments and we are going to analysing the arguments. If the argument `--config` is empty (=None), you will close the program with a message printed in terminal ('No config file passed...exit'). 
 

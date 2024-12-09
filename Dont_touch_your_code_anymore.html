@@ -507,7 +507,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -692,7 +692,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -970,39 +970,46 @@ fake.</li>
 <li>a <strong>init</strong>.py that will stay empty.</li>
 </ul><p>You will start by creating the command line interface in the cli.py
 file with the following optional arguments:</p>
-<ul><li>–config: that will take a string value and the user will use it to
-pass the configuration file.</li>
-<li>–timestamp: that will take a float as value</li>
-<li>–save: an action argument. If used it should be true, false
-otherwise.</li>
+<ul><li>
+<code>--config</code>: that will take a string value and the user
+will use it to pass the configuration file.</li>
+<li>
+<code>--timestamp</code>: that will take a float as value</li>
+<li>
+<code>--save</code>: an action argument. If used it should be true,
+false otherwise.</li>
 </ul><p>You should wrap this up in a function called ‘command_line’.</p>
-<p>In the main.py, you will import the file cli.py and call the
-command_line function and start analysing the arguments. If the argument
-–config is empty (=None), you will close the program with a message
-printed in terminal (‘No config file passed…exit’).</p>
-<p>If something is passed the code wil continue and you will read the
-configuration file. This will be done by calling the conf.py file where
-you will create a function call ‘read_conf’ that takes the file as
-argument. This function will return a dictionary with the complete
-configuration. In the main.py, you must retrieve this complete
+<p>In the <strong>main.py</strong>, you will import the file cli.py and
+call the <code>command_line</code> function. You should get the value of
+all the arguments and we are going to analysing the arguments. If the
+argument <code>--config</code> is empty (=None), you will close the
+program with a message printed in terminal (‘No config file
+passed…exit’).</p>
+<p>If something is passed to <code>--config</code> the code wil continue
+and you will read the configuration file. This will be done by calling
+the <strong>conf.py</strong> file where you will create a function call
+<code>read_conf</code> that takes the file as argument. This function
+will return a dictionary with the complete configuration. In the
+<strong>main.py</strong>, you must retrieve this complete
 configuration.</p>
-<p>Once you are there, check the timestamp option from the command line
-interface. If something has been given, you should replace, in the
-configuration, the value under Parameters/time_step by the value given
-by the user.</p>
+<p>Once you are there, check the <code>--timestamp</code> option from
+the command line interface. If something has been given, you should
+replace, in the configuration, the value under
+<code>Parameters/time_step</code> by the value given by the user.</p>
 <p>With this final configuration (updated or not, depending on the
-user’s request) you will create a simulation. This will be done in the
-simulation.py. In that file you will create a ‘Simulation’ class, that
-takes the three parameters L, M and H from the configuration file as
-parameters. These parameters will become properties of that class. You
-will create a method (function inside that class) called ‘get_total()’
-and that makes the addition L+M.</p>
-<p>In the main.py, you will create a Simulation object and then print
-the result of the ‘get_total()’ method.</p>
-<p>Finally, if the user called the ‘–save’ argument, you will use a
-function ‘write_conf()’ that you will create in the conf.py file that
-will write the final configuration to a file called
-‘final_conf.ini’.</p>
+user’s request) you will create a simulation. This will be done in
+<strong>simulation.py</strong>. In that file you will create a
+<code>Simulation</code> class, that takes the three parameters
+<code>L</code>, <code>M</code> and <code>H</code> from the configuration
+file as parameters. These parameters will become properties of that
+class. You will create a method (function inside that class) called
+<code>get_total()</code> that makes the addition L+M.</p>
+<p>Back to <strong>main.py</strong>, you will create a Simulation object
+and then print the result of the <code>get_total()</code> method.</p>
+<p>Finally, if the user called the <code>--save</code> argument, you
+will use a function <code>write_conf()</code> that you will create in
+the <strong>conf.py</strong> file that will write the final
+configuration to a file called <strong>final_conf.ini.</strong></p>
 </div>
 </div>
 </div>

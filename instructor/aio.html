@@ -849,7 +849,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-Code_structure"><p>Content from <a href="Code_structure.html">Code structure</a></p>
 <hr>
-<p>Last updated on 2024-12-04 |
+<p>Last updated on 2024-12-09 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Code_structure.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -1581,6 +1581,55 @@ specifies the terms under which the code can be used. There is another
 session on <a href="https://rse.shef.ac.uk/training/fair4rs/#packaging" class="external-link">Packaging</a>
 which will go into more detail on how to create and share Python
 packages.</p>
+</section><section><h2 class="section-heading" id="final-exercise-rewriting-a-python-script">Final exercise : Rewriting a Python Script<a class="anchor" aria-label="anchor" href="#final-exercise-rewriting-a-python-script"></a>
+</h2>
+<hr class="half-width">
+<p>In this final exercise, you will rewrite a Python script that is
+poorly structured and difficult to read, with a large amount of repeated
+code.</p>
+<div id="challenge-5" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="challenge-5" class="callout-inner">
+<h3 class="callout-title">Challenge 5</h3>
+<div class="callout-content">
+<p>You can find the script here: <a href="../files/student_scores.py">student_scores.py</a>.</p>
+<p>This Python script is designed to read in a data file containing
+student names and scores (all generated randomly!), although here we
+just include the data as a text string in the script to save having to
+download a separate file.</p>
+<p>After checking there are no errors with the input, the script then
+goes through each student, calculates their total score across the three
+exams and prints out a summary of the data. It then calculates the
+average score for each assignment, and prints out the student with the
+highest total score in the class.</p>
+<p>You can download it and run it on your local computer using
+<code>python test_script.py</code>. The output should look like
+this:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>studentid  firstname  surname    score1  score2  score3  total
+39816      Fiona      Ellis      15      18      16      49
+40859      Philip     Holdcroft  12      17      15      44
+71625      Kathleen   Ingram     20      19      19      58
+91462      David      Nicholson  14      16      18      48
+97297      Mark       Walch      18      20      17      55
+Average score1: 15.80
+Average score2: 18.00
+Average score3: 18.00
+Student with highest total: Kathleen Ingram (58.00)</code></pre>
+</div>
+<p>Your task is to rewrite this script using functions and classes to
+make it more modular and reusable. You can also move code out of the
+script into separate files and modules if you think it will make the
+code easier to manage.</p>
+<p>Make sure when you’re done that the output of the script is the same
+as the original.</p>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -3746,8 +3795,8 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/aio.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/aio.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-12-08",
-  "datePublished": "2024-12-08"
+  "dateModified": "2024-12-09",
+  "datePublished": "2024-12-09"
 }
 
   </script><script>

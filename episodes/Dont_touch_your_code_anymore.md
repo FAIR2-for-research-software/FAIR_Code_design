@@ -528,7 +528,7 @@ You will create four python files in a directory called 'final':
 *  `simulation.py` that will handle the simulation that we are going to fake.
 *  `__init__.py` that will stay empty.
 
-You will start by creating the command line interface in the cli.py file with the following optional arguments:
+You will start by creating the command line interface in the **cli.py** file with the following optional arguments:
 
 * `--config`: that will take a string value and the user will use it to pass the configuration file.
 * `--timestamp`: that will take a float as value
@@ -536,7 +536,7 @@ You will start by creating the command line interface in the cli.py file with th
 
 You should wrap this up in a function called `command_line`.
 
-In the **main.py**, you will import the file cli.py and call the `command_line` function. You should get the value of all the arguments and we are going to analysing them. If the argument `--config` is empty (=None), you will close the program with a message printed in terminal ('No config file passed...exit'). 
+In the **main.py**, you will import the file **cli.py** and call the `command_line` function. You should get the value of all the arguments and we are going to analysing them. If the argument `--config` is empty (=None), you will close the program with a message printed in terminal ('No config file passed...exit'). 
 
 If something is passed to `--config` the code wil continue and you will read the configuration file. This will be done by calling the **conf.py** file where you will create a function call `read_conf` that takes the file as argument. This function will return a dictionary with the complete configuration. In the **main.py**, you must retrieve this complete configuration.
 

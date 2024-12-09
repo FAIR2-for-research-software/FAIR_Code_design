@@ -2486,7 +2486,7 @@ only on the known requirements.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2649,7 +2649,7 @@ calculating the average and returning a formatted result :</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2831,7 +2831,7 @@ Hello, Charlie!</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2993,7 +2993,7 @@ intuitive.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3294,7 +3294,7 @@ file. You can get all the keys inside a section at once:</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> options <span class="op">=</span> parser.options(<span class="st">'simulation'</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>[<span class="st">'time_step'</span>, <span class="st">'total_time'</span>]</span></code></pre>
 </div>
-<p>You can also extract everything at once, in that caseeach couple
+<p>You can also extract everything at once, in that case each couple
 key/value will be called an <em>item</em>:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3306,23 +3306,30 @@ key/value will be called an <em>item</em>:</p>
 <p>That method will return a <em>list</em> of <em>tuples</em>, each
 <em>tuple</em> will contain the couple key/value. Values will always be
 of type string.</p>
-<p>Finally, you can access directly values of keys inside a given
-section like this:</p>
+<p>Alternatively, you can turn each section to a dictionary:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> time_step <span class="op">=</span> parser[<span class="st">'simulation'</span>][<span class="st">'time_step'</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(time_step)</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fl">0.01</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">dict</span>(parser[<span class="st">'simulation'</span>])</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>{<span class="st">'time_step'</span>: <span class="st">'0.01'</span>, <span class="st">'total_time'</span>: <span class="st">'100.0'</span>}</span></code></pre>
 </div>
-<p>By default, <em>ALL</em> values will be a <em>string</em>. Another
-option is to use the method <code>.get()</code>:</p>
+<p>Finally, you can access directly values of keys inside a given
+section like this:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> time_step_with_get <span class="op">=</span> parser.get(<span class="st">'simulation'</span>, <span class="st">'time_step'</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(time_step_with_get)</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> time_step <span class="op">=</span> parser[<span class="st">'simulation'</span>][<span class="st">'time_step'</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(time_step)</span>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fl">0.01</span></span></code></pre>
+</div>
+<p>By default, <em>ALL</em> values will be a <em>string</em>. Another
+option is to use the method <code>.get()</code>:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> time_step_with_get <span class="op">=</span> parser.get(<span class="st">'simulation'</span>, <span class="st">'time_step'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(time_step_with_get)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fl">0.01</span></span></code></pre>
 </div>
 <p>It will also be giving a string…And that can be annoying when you
 have some other types because you will have to convert everything to the
@@ -3350,30 +3357,30 @@ value is <code>1</code>, <code>yes</code>, <code>true</code> or
 configuration file programatically. <strong>Configparser</strong> allows
 the user to write INI files as well. As for reading them, everything
 starts by importing the module and creating an object:</p>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">#Let's import the ConfigParser object directly</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="im">import</span> ConfigParser </span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># And create a config object</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>config <span class="op">=</span> ConfigParser()</span></code></pre>
-</div>
-<p>Creating a configuration is equivalent to creating a
-dictionaries:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>config[<span class="st">'simulation'</span>] <span class="op">=</span> {<span class="st">'time_step'</span>: <span class="fl">1.0</span>, <span class="st">'total_time'</span>: <span class="fl">200.0</span>}</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>config[<span class="st">'environment'</span>] <span class="op">=</span> {<span class="st">'gravity'</span>: <span class="fl">9.81</span>, <span class="st">'air_resistance'</span>: <span class="fl">0.02</span>}</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>config[<span class="st">'initial_conditions'</span>] <span class="op">=</span> {<span class="st">'velocity'</span>: <span class="fl">5.0</span>, <span class="st">'angle'</span>: <span class="fl">30.0</span>, <span class="st">'height'</span>: <span class="fl">0.5</span>}</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">#Let's import the ConfigParser object directly</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="im">import</span> ConfigParser </span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># And create a config object</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>config <span class="op">=</span> ConfigParser()</span></code></pre>
 </div>
-<p>And finally you will have to save it:</p>
+<p>Creating a configuration is equivalent to creating a
+dictionaries:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'config_file_program.ini'</span>, <span class="st">'w'</span>) <span class="im">as</span> configfile: <span class="co">##This open the config_file_program.ini in write mode</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    config.write(configfile)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>config[<span class="st">'simulation'</span>] <span class="op">=</span> {<span class="st">'time_step'</span>: <span class="fl">1.0</span>, <span class="st">'total_time'</span>: <span class="fl">200.0</span>}</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>config[<span class="st">'environment'</span>] <span class="op">=</span> {<span class="st">'gravity'</span>: <span class="fl">9.81</span>, <span class="st">'air_resistance'</span>: <span class="fl">0.02</span>}</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>config[<span class="st">'initial_conditions'</span>] <span class="op">=</span> {<span class="st">'velocity'</span>: <span class="fl">5.0</span>, <span class="st">'angle'</span>: <span class="fl">30.0</span>, <span class="st">'height'</span>: <span class="fl">0.5</span>}</span></code></pre>
+</div>
+<p>And finally you will have to save it:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'config_file_program.ini'</span>, <span class="st">'w'</span>) <span class="im">as</span> configfile: <span class="co">##This open the config_file_program.ini in write mode</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    config.write(configfile)</span></code></pre>
 </div>
 <p>After running that piece of code, you will end with a new file called
 <code>config_file_program.ini</code> with the following content:</p>
@@ -3420,30 +3427,30 @@ file.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co">##Import the package</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="im">import</span> configparser</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="co">###create the object</span></span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>config <span class="op">=</span> configparser.ConfigParser()</span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="co">##read the file</span></span>
-<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>config.read(<span class="st">'conf_fruit.ini'</span>)</span>
-<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a></span>
-<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="co">###Change the values</span></span>
-<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>config[<span class="st">'fruits'</span>][<span class="st">'oranges'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="dv">5</span>)</span>
-<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>config[<span class="st">'vegetables'</span>][<span class="st">'beetroots'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="dv">2</span>)</span>
-<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a></span>
-<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a><span class="co">###Add a section with a new key/pair value</span></span>
-<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a>config[<span class="st">'pastries'</span>] <span class="op">=</span> {<span class="st">'croissants'</span>: <span class="st">'5'</span>}</span>
-<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a></span>
-<span id="cb17-18"><a href="#cb17-18" tabindex="-1"></a></span>
-<span id="cb17-19"><a href="#cb17-19" tabindex="-1"></a><span class="co">##save it back</span></span>
-<span id="cb17-20"><a href="#cb17-20" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'new_conf_fruits'</span>, <span class="st">'w'</span>) <span class="im">as</span> openconfig:</span>
-<span id="cb17-21"><a href="#cb17-21" tabindex="-1"></a>    config.write(openconfig)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co">##Import the package</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="im">import</span> configparser</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="co">###create the object</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>config <span class="op">=</span> configparser.ConfigParser()</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="co">##read the file</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>config.read(<span class="st">'conf_fruit.ini'</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a><span class="co">###Change the values</span></span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>config[<span class="st">'fruits'</span>][<span class="st">'oranges'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="dv">5</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>config[<span class="st">'vegetables'</span>][<span class="st">'beetroots'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="dv">2</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a><span class="co">###Add a section with a new key/pair value</span></span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a>config[<span class="st">'pastries'</span>] <span class="op">=</span> {<span class="st">'croissants'</span>: <span class="st">'5'</span>}</span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a><span class="co">##save it back</span></span>
+<span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'new_conf_fruits'</span>, <span class="st">'w'</span>) <span class="im">as</span> openconfig:</span>
+<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a>    config.write(openconfig)</span></code></pre>
 </div>
 </div>
 </div>
@@ -3504,16 +3511,16 @@ arguments, the main ones are:</p>
 <code>epilog</code>: Text displayed at the bottom of the help</li>
 </ul>
 <p>We would proceed as follows:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co">###import the library</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="im">import</span> argparse</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="co">###create the parser object</span></span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">'This program is an example of command line interface in Python'</span>,</span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a> 				                         epilog<span class="op">=</span><span class="st">'Author: R. Thomas, 2024, UoS'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co">###import the library</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="im">import</span> argparse</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="co">###create the parser object</span></span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">'This program is an example of command line interface in Python'</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a> 				                         epilog<span class="op">=</span><span class="st">'Author: R. Thomas, 2024, UoS'</span>)</span></code></pre>
 </div>
 <p>Once this is written, you need to tell the program to analyse (parse)
 the arguments passed to program. This is done with the
@@ -3541,10 +3548,10 @@ arguments!</p>
 <p>The <code>argparse</code> modules implements the
 <code>add_argument</code> method to add argument. Based on the code we
 prepared before, you would use if this way:</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>parser.add_argument(SOMETHING TO ADD HERE)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>parser.add_argument(SOMETHING TO ADD HERE)</span></code></pre>
 </div>
 <p>Two main types of arguments are possible: * Optional arguments: their
 name start by <code>-</code> or <code>--</code> and are called in the
@@ -3555,14 +3562,14 @@ the user cannot ignore them and they are not to be called by their name
 <p>For example, you can add this three lines before the
 <code>args = parser.parse.args()</code> in the file
 <code>commandline.py</code> that you created before:</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>parser.add_argument(<span class="st">'file'</span>)               <span class="co"># positional argument (mandatory)</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>parser.add_argument(<span class="st">'file2'</span>)              <span class="co"># positional argument (mandatory)</span></span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-c'</span>, <span class="st">'--count'</span>)      <span class="co"># option that takes a value</span></span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>parser.add_argument(<span class="st">'-n'</span>)                 <span class="co"># option that takes a value</span></span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>parser.add_argument(<span class="st">'--max'</span>)              <span class="co"># option that takes a value</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>parser.add_argument(<span class="st">'file'</span>)               <span class="co"># positional argument (mandatory)</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>parser.add_argument(<span class="st">'file2'</span>)              <span class="co"># positional argument (mandatory)</span></span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-c'</span>, <span class="st">'--count'</span>)      <span class="co"># option that takes a value</span></span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>parser.add_argument(<span class="st">'-n'</span>)                 <span class="co"># option that takes a value</span></span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>parser.add_argument(<span class="st">'--max'</span>)              <span class="co"># option that takes a value</span></span></code></pre>
 </div>
 <p>If once again you want to print the help in the terminal
 <code>python commandline.py --help</code> you will see the following
@@ -3597,14 +3604,14 @@ program with a small help. As is stands now, displaying the help tells
 you what are the arguments to be used but nothing tell you what they
 actually are. To prevent any confusion, add a one-liner help to your
 argument:</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>parser.add_argument(<span class="st">'file'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'input data file to the program'</span>)          <span class="co"># position argument</span></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>parser.add_argument(<span class="st">'file2'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Configuration file to the program'</span>)      <span class="co"># position argument</span></span>
-<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-c'</span>, <span class="st">'--count'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Number of counts per iteration'</span>) <span class="co"># option that takes a value</span></span>
-<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>parser.add_argument(<span class="st">'-n'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Number of iteration'</span>)                       <span class="co"># option that takes a value</span></span>
-<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a>parser.add_argument(<span class="st">'--max'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Maximum population per iteration'</span>)       <span class="co"># option that takes a value</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>parser.add_argument(<span class="st">'file'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'input data file to the program'</span>)          <span class="co"># position argument</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>parser.add_argument(<span class="st">'file2'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Configuration file to the program'</span>)      <span class="co"># position argument</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>parser.add_argument(<span class="st">'-c'</span>, <span class="st">'--count'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Number of counts per iteration'</span>) <span class="co"># option that takes a value</span></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>parser.add_argument(<span class="st">'-n'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Number of iteration'</span>)                       <span class="co"># option that takes a value</span></span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>parser.add_argument(<span class="st">'--max'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Maximum population per iteration'</span>)       <span class="co"># option that takes a value</span></span></code></pre>
 </div>
 <p>These short descriptions will be displayed when using the help:</p>
 <pre><code>usage: My program [-h] [-c COUNT] [-n N] [--max MAX] file file2

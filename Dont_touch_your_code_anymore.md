@@ -513,6 +513,7 @@ For this last part of the final lecture we will combine a bit of everything we h
 It all start with a configuration [file](https://github.com/FAIR2-for-research-software/FAIR_Code_design/blob/main/Conf_cli_codes/final/conffile.ini) that you should download.
 
 You will create four python files in a directory called 'final':
+
 * a main.py: it will contain the main code of the program
 * a cli.py: that will contain the command line interface
 * a conf.py: that will handle configuration file
@@ -520,9 +521,11 @@ You will create four python files in a directory called 'final':
 * a __init__.py that will stay empty.
 
 You will start by creating the command line interface in the cli.py file with the following optional arguments:
+
 * --config: that will take a string value and the user will use it to pass the configuration file.
 * --timestamp: that will take a float as value
 * --save: an action argument. If used it should be true, false otherwise.
+
 You should wrap this up in a function called 'command_line'.
 
 In the main.py, you will import the file cli.py and call the command_line function and start analysing the arguments. If the argument --config is empty (=None), you will close the program with a message printed in terminal ('No config file passed...exit'). 

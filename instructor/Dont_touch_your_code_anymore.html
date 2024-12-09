@@ -509,7 +509,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -701,7 +701,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1002,12 +1002,12 @@ You should get the value of all the arguments and we are going to
 analysing them. If the argument <code>--config</code> is empty (=None),
 you will close the program with a message printed in terminal (‘No
 config file passed…exit’).</p>
-<p>If something is passed to <code>--config</code> the code wil continue
-and you will read the configuration file. This will be done by calling
-the <strong>conf.py</strong> file where you will create a function call
-<code>read_conf</code> that takes the file as argument. This function
-will return a dictionary with the complete configuration. In the
-<strong>main.py</strong>, you must retrieve this complete
+<p>If something is passed to <code>--config</code> the code will
+continue and you will read the configuration file. This will be done by
+calling the <strong>conf.py</strong> file where you will create a
+function call <code>read_conf</code> that takes the file as argument.
+This function will return a dictionary with the complete configuration.
+In the <strong>main.py</strong>, you must retrieve this complete
 configuration.</p>
 <p>Once you are there, check the <code>--timestamp</code> option from
 the command line interface. If something has been given, you should

@@ -503,18 +503,39 @@ Output directory: /results/
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Final exercice: Mixing command line interface and configuration file 
+## Final exercice: Mixing everything
 
-For this last part of the final lecture we will combine both package we just reviewed: `argparse` and `configparser`. Find the instructions below:
+For this last part of the final lecture we will combine a bit of everything we have seen during the module (you should plan for an hour for this exercice).
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-The program that you will create will take an optional configuration file as argument `--file`. If not configuration file is given, the program will load an internal one that you can find [here](https://github.com/Romain-Thomas-Shef/FAIR_Code_design/blob/main/final_exercice/config_default.conf) (you need to put this next to your code). 
+It all start with a configuration [file](https://github.com/FAIR2-for-research-software/FAIR_Code_design/blob/main/Conf_cli_codes/final/conffile.ini) that you should download.
 
-other arguments:
+You will create four python files in a directory called 'final':
+* a main.py: it will contain the main code of the program
+* a cli.py: that will contain the command line interface
+* a conf.py: that will handle configuration file
+* a simulation.py that will handle the simulation that we are going to fake.
+* a __init__.py that will stay empty.
 
-- `--name`: This argument requires a (user) name. If it is used by the user, the value given will replace the name in the configuration file.
-- `--save`: This argument require a directory as value. If used, the configuration is saved into that directory under the name `new_config.ini`.
- 
+You will start by creating the command line interface in the cli.py file with the following optional arguments:
+* --config: that will take a string value and the user will use it to pass the configuration file.
+* --timestamp: that will take a float as value
+* --save: an action argument. If used it should be true, false otherwise.
+You should wrap this up in a function called 'command_line'.
+
+In the main.py, you will import the file cli.py and call the command_line function and start analysing the arguments. If the argument --config is empty (=None), you will close the program with a message printed in terminal ('No config file passed...exit'). 
+
+If something is passed the code wil continue and you will read the configuration file. This will be done by calling the conf.py file where you will create a function call 'read_conf' that takes the file as argument. This function will return a dictionary with the complete configuration. In the main.py, you must retrieve this complete configuration.
+
+Once you are there, check the timestamp option from the command line interface. If something has been given, you should replace, in the configuration, the value under Parameters/time_step by the value given by the user.
+
+
+With this final configuration (updated or not, depending on the user's request) you will create a simulation. This will be done in the simulation.py. In that file you will create a 'Simulation' class, that takes the three parameters L, M and H from the configuration file as parameters. These parameters will become properties of that class. You will create a method (function inside that class) called 'get_total()' and that makes the addition L+M. 
+
+In the main.py, you will create a Simulation object and then print the result of the 'get_total()' method.
+
+Finally, if the user called the '--save' argument, you will use a function 'write_conf()' that you will create in the conf.py file that will write the final configuration to a file called 'final_conf.ini'.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::

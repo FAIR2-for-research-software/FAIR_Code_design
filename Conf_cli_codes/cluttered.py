@@ -1,5 +1,8 @@
-def   example_function(param1,param2):print(param1+param2*2) 
-def   another_function(x,y):return x+y
+def   example_function(param1,param2):
+    print(param1+param2*2) 
+
+def another_function(x,y):
+    return x+y
 class MyClass: 
     def __init__(self,param): self.param=param
     def  method(self): 

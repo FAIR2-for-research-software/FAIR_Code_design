@@ -60,17 +60,13 @@ software. An overview of the FAIR principles adapted to research software are th
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## FAIR principles applied to code design
+## How can Code Design help the FAIR principles?
 
-By designing your code efficiently you will make it FAIRer. Code design is about making your code easy to locate, adapt, maintain and share. Here's how each principle benefits from good design:
-
-- **Findability**: While *Findable* generally means that your software is easy for other to find, organizing your code in a standardized directory structure (e.g., src/, data/, docs/) will help you and others to collaborate with you. Using clear and descriptive name (for files, variable, function, etc) make each part of your project easy to find. 
-
-- **Accessibility**: Accessible code removes usage barriers. Separating configuration of the code from the main code makes the use of the code easier for people who are not proficient in the language you have used. This also means users with different setups can adapt the code quickly to their situation, ensuring a smooth integration into different environments.
+By designing your code efficiently you will make it FAIRer. Code design is about making your code easy to read, adapt, maintain and share. Here's how some of the principles benefit from good design:
 
 - **Interoperability**: Writing code in a modular way and using standard data format allows other systems to communicate with it.  
 
-- **Reusability**: Documentated code, use of docstrings and inline comments makes it easier for others to understand, use, and modify your code. Using modular design with single-task blocks also increases reusability. Indeed, small simple pieces can be more easily transferred to other projects or extended without significant refactoring.
+- **Reusability**: Documented code, use of docstrings and comments makes it easier for others to understand, use, and modify your code. Using modular design with single-task blocks also increases reusability. Indeed, small simple pieces can be more easily transferred to other projects or extended without significant refactoring.
 
 The goal of this lecture is to dive into these practices and learn a little bit more about how the way you code will greatly enhance how maintainable, adaptable, and sustainable your software is in the long run.
 

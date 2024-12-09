@@ -115,7 +115,7 @@ Key aspects:
 
 ## Quizz
 
-Results of the Quiz in mentimeter slides. The question for each code is 'Is this code readable, reusable, maintainable'?
+The question for each code is 'Is this code readable, reusable and maintainable'?
 
 ::::::::::::::::::::::::::::::::: challenge
 
@@ -142,7 +142,7 @@ print("processed list:", result)
 
 - **Reusable**: The function can be used with any list of integers to filter and transform the data.
 
-- **Partially Readable**: The code is readable because it uses a simple structure that is easy to follow. But it is impossible to understant its purpose. There are no comments explaining what the function is doing or why it’s doing it.
+- **Partially Readable**: The code is readable because it uses a simple structure that is easy to follow. But it is impossible to understand its purpose. There are no comments explaining what the function is doing or why it’s doing it.
 
 However, the code will be difficult to maintain because:
 
@@ -157,7 +157,7 @@ However, the code will be difficult to maintain because:
 
 ::::::::::::::::::::::::::::::::: challenge
 
-Code #3: 
+Code #2: 
 
 ```Python
 def calculate_statistics():

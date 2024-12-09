@@ -507,7 +507,7 @@ has two parameters with <code>gravity</code> at 9.81 and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Creating a file <code>'config.ini'</code> with the following
 content.</p>
@@ -692,7 +692,7 @@ file.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -962,12 +962,14 @@ for this exercice).</p>
 <p>It all start with a configuration <a href="https://github.com/FAIR2-for-research-software/FAIR_Code_design/blob/main/Conf_cli_codes/final/conffile.ini" class="external-link">file</a>
 that you should download.</p>
 <p>You will create four python files in a directory called ‘final’:</p>
-<ul><li>a main.py: it will contain the main code of the program</li>
-<li>a cli.py: that will contain the command line interface</li>
-<li>a conf.py: that will handle configuration file</li>
-<li>a simulation.py that will handle the simulation that we are going to
-fake.</li>
-<li>a <strong>init</strong>.py that will stay empty.</li>
+<ul><li>a <code>main.py</code>: it will contain the main code of the
+program</li>
+<li>a <code>cli.py</code>: that will contain the command line
+interface</li>
+<li>a <code>conf.py</code>: that will handle configuration file</li>
+<li>a <code>simulation.py</code> that will handle the simulation that we
+are going to fake.</li>
+<li>a <code>__init__.py</code> that will stay empty.</li>
 </ul><p>You will start by creating the command line interface in the cli.py
 file with the following optional arguments:</p>
 <ul><li>
@@ -978,7 +980,8 @@ will use it to pass the configuration file.</li>
 <li>
 <code>--save</code>: an action argument. If used it should be true,
 false otherwise.</li>
-</ul><p>You should wrap this up in a function called ‘command_line’.</p>
+</ul><p>You should wrap this up in a function called
+<code>command_line</code>.</p>
 <p>In the <strong>main.py</strong>, you will import the file cli.py and
 call the <code>command_line</code> function. You should get the value of
 all the arguments and we are going to analysing the arguments. If the

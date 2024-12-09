@@ -538,7 +538,7 @@ You should wrap this up in a function called `command_line`.
 
 In the **main.py**, you will import the file **cli.py** and call the `command_line` function. You should get the value of all the arguments and we are going to analysing them. If the argument `--config` is empty (=None), you will close the program with a message printed in terminal ('No config file passed...exit'). 
 
-If something is passed to `--config` the code wil continue and you will read the configuration file. This will be done by calling the **conf.py** file where you will create a function call `read_conf` that takes the file as argument. This function will return a dictionary with the complete configuration. In the **main.py**, you must retrieve this complete configuration.
+If something is passed to `--config` the code will continue and you will read the configuration file. This will be done by calling the **conf.py** file where you will create a function call `read_conf` that takes the file as argument. This function will return a dictionary with the complete configuration. In the **main.py**, you must retrieve this complete configuration.
 
 Once you are there, check the `--timestamp` option from the command line interface. If something has been given, you should replace, in the configuration, the value under `Parameters/time_step` by the value given by the user.
 

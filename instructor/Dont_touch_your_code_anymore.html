@@ -963,18 +963,21 @@ for this exercice).</p>
 <div class="callout-content">
 <p>It all start with a configuration <a href="https://github.com/FAIR2-for-research-software/FAIR_Code_design/blob/main/Conf_cli_codes/final/conffile.ini" class="external-link">file</a>
 that you should download.</p>
-<p>You will create four python files in a directory called ‘final’: * a
-main.py: it will contain the main code of the program * a cli.py: that
-will contain the command line interface * a conf.py: that will handle
-configuration file * a simulation.py that will handle the simulation
-that we are going to fake. * a <strong>init</strong>.py that will stay
-empty.</p>
-<p>You will start by creating the command line interface in the cli.py
-file with the following optional arguments: * –config: that will take a
-string value and the user will use it to pass the configuration file. *
-–timestamp: that will take a float as value * –save: an action argument.
-If used it should be true, false otherwise. You should wrap this up in a
-function called ‘command_line’.</p>
+<p>You will create four python files in a directory called ‘final’:</p>
+<ul><li>a main.py: it will contain the main code of the program</li>
+<li>a cli.py: that will contain the command line interface</li>
+<li>a conf.py: that will handle configuration file</li>
+<li>a simulation.py that will handle the simulation that we are going to
+fake.</li>
+<li>a <strong>init</strong>.py that will stay empty.</li>
+</ul><p>You will start by creating the command line interface in the cli.py
+file with the following optional arguments:</p>
+<ul><li>–config: that will take a string value and the user will use it to
+pass the configuration file.</li>
+<li>–timestamp: that will take a float as value</li>
+<li>–save: an action argument. If used it should be true, false
+otherwise.</li>
+</ul><p>You should wrap this up in a function called ‘command_line’.</p>
 <p>In the main.py, you will import the file cli.py and call the
 command_line function and start analysing the arguments. If the argument
 –config is empty (=None), you will close the program with a message

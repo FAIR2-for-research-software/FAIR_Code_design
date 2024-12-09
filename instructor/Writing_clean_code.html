@@ -336,7 +336,7 @@ implementation is easy to explain, it may be a good idea.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>The Zen of Python</h1>
-        <p>Last updated on 2024-11-22 |
+        <p>Last updated on 2024-12-09 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Writing_clean_code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -652,16 +652,17 @@ breaks it is easier to modify or debug. Let’s see an example:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The result is:"</span>,  param1,param2) </span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="kw">class</span>  MyClass: <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param):<span class="va">self</span>.param<span class="op">=</span>param</span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="kw">def</span>  method(<span class="va">self</span>):<span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>:<span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="cf">else</span>:<span class="bu">print</span>(<span class="st">"Value is 10 or less"</span>) </span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span>   example_function(param1,param2):<span class="bu">print</span>(param1<span class="op">+</span>param2<span class="op">*</span><span class="dv">2</span>) </span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="kw">def</span>   another_function(x,y):<span class="cf">return</span> x<span class="op">+</span>y</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="kw">class</span> MyClass: </span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,param): <span class="va">self</span>.param<span class="op">=</span>param</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>    <span class="kw">def</span>  method(<span class="va">self</span>): </span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.param <span class="op">&gt;</span><span class="dv">10</span>: <span class="bu">print</span>(<span class="st">"Value is greater than 10"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>        <span class="cf">else</span>: <span class="bu">print</span>(<span class="st">"Value 10"</span>) </span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>my_list<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>dictionary<span class="op">=</span>{<span class="st">'key1'</span>:<span class="st">'value1'</span>,<span class="st">'key2'</span>:<span class="st">'value2'</span>}</span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>result<span class="op">=</span>another_function(<span class="dv">5</span>,<span class="dv">10</span>) </span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1044,7 +1045,7 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Writing_clean_code.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Writing_clean_code.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-11-22",
+  "dateModified": "2024-12-09",
   "datePublished": "2024-12-09"
 }
 

@@ -984,8 +984,8 @@ interface</li>
 are going to fake.</li>
 <li>
 <code>__init__.py</code> that will stay empty.</li>
-</ul><p>You will start by creating the command line interface in the cli.py
-file with the following optional arguments:</p>
+</ul><p>You will start by creating the command line interface in the
+<strong>cli.py</strong> file with the following optional arguments:</p>
 <ul><li>
 <code>--config</code>: that will take a string value and the user
 will use it to pass the configuration file.</li>
@@ -996,11 +996,12 @@ will use it to pass the configuration file.</li>
 false otherwise.</li>
 </ul><p>You should wrap this up in a function called
 <code>command_line</code>.</p>
-<p>In the <strong>main.py</strong>, you will import the file cli.py and
-call the <code>command_line</code> function. You should get the value of
-all the arguments and we are going to analysing them. If the argument
-<code>--config</code> is empty (=None), you will close the program with
-a message printed in terminal (‘No config file passed…exit’).</p>
+<p>In the <strong>main.py</strong>, you will import the file
+<strong>cli.py</strong> and call the <code>command_line</code> function.
+You should get the value of all the arguments and we are going to
+analysing them. If the argument <code>--config</code> is empty (=None),
+you will close the program with a message printed in terminal (‘No
+config file passed…exit’).</p>
 <p>If something is passed to <code>--config</code> the code wil continue
 and you will read the configuration file. This will be done by calling
 the <strong>conf.py</strong> file where you will create a function call

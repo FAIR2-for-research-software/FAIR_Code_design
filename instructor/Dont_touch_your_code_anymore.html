@@ -266,8 +266,7 @@
       <div class="accordion-body">
         <ul><li><a href="#configuration-files">Configuration files</a></li>
 <li><a href="#using-command-line-interfaces">Using command line interfaces</a></li>
-<li><a href="#final-exercice-mixing-command-line-interface-and-configuration-file">Final exercice: Mixing command line interface and configuration
-file</a></li>
+<li><a href="#final-exercice-mixing-everything">Final exercice: Mixing everything</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -332,7 +331,7 @@ file</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Don't touch your code anymore!</h1>
-        <p>Last updated on 2024-12-05 |
+        <p>Last updated on 2024-12-09 |
 
         <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/edit/main/episodes/Dont_touch_your_code_anymore.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -951,11 +950,10 @@ Output directory: /results/</code></pre>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="final-exercice-mixing-command-line-interface-and-configuration-file">Final exercice: Mixing command line interface and configuration
-file<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-command-line-interface-and-configuration-file"></a></h2>
-<hr class="half-width"><p>For this last part of the final lecture we will combine both package
-we just reviewed: <code>argparse</code> and <code>configparser</code>.
-Find the instructions below:</p>
+</section><section><h2 class="section-heading" id="final-exercice-mixing-everything">Final exercice: Mixing everything<a class="anchor" aria-label="anchor" href="#final-exercice-mixing-everything"></a></h2>
+<hr class="half-width"><p>For this last part of the final lecture we will combine a bit of
+everything we have seen during the module (you should plan for an hour
+for this exercice).</p>
 <div id="discussion3" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -963,20 +961,48 @@ Find the instructions below:</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>The program that you will create will take an optional configuration
-file as argument <code>--file</code>. If not configuration file is
-given, the program will load an internal one that you can find <a href="https://github.com/Romain-Thomas-Shef/FAIR_Code_design/blob/main/final_exercice/config_default.conf" class="external-link">here</a>
-(you need to put this next to your code).</p>
-<p>other arguments:</p>
-<ul><li>
-<code>--name</code>: This argument requires a (user) name. If it is
-used by the user, the value given will replace the name in the
-configuration file.</li>
-<li>
-<code>--save</code>: This argument require a directory as value. If
-used, the configuration is saved into that directory under the name
-<code>new_config.ini</code>.</li>
-</ul></div>
+<p>It all start with a configuration <a href="https://github.com/FAIR2-for-research-software/FAIR_Code_design/blob/main/Conf_cli_codes/final/conffile.ini" class="external-link">file</a>
+that you should download.</p>
+<p>You will create four python files in a directory called ‘final’: * a
+main.py: it will contain the main code of the program * a cli.py: that
+will contain the command line interface * a conf.py: that will handle
+configuration file * a simulation.py that will handle the simulation
+that we are going to fake. * a <strong>init</strong>.py that will stay
+empty.</p>
+<p>You will start by creating the command line interface in the cli.py
+file with the following optional arguments: * –config: that will take a
+string value and the user will use it to pass the configuration file. *
+–timestamp: that will take a float as value * –save: an action argument.
+If used it should be true, false otherwise. You should wrap this up in a
+function called ‘command_line’.</p>
+<p>In the main.py, you will import the file cli.py and call the
+command_line function and start analysing the arguments. If the argument
+–config is empty (=None), you will close the program with a message
+printed in terminal (‘No config file passed…exit’).</p>
+<p>If something is passed the code wil continue and you will read the
+configuration file. This will be done by calling the conf.py file where
+you will create a function call ‘read_conf’ that takes the file as
+argument. This function will return a dictionary with the complete
+configuration. In the main.py, you must retrieve this complete
+configuration.</p>
+<p>Once you are there, check the timestamp option from the command line
+interface. If something has been given, you should replace, in the
+configuration, the value under Parameters/time_step by the value given
+by the user.</p>
+<p>With this final configuration (updated or not, depending on the
+user’s request) you will create a simulation. This will be done in the
+simulation.py. In that file you will create a ‘Simulation’ class, that
+takes the three parameters L, M and H from the configuration file as
+parameters. These parameters will become properties of that class. You
+will create a method (function inside that class) called ‘get_total()’
+and that makes the addition L+M.</p>
+<p>In the main.py, you will create a Simulation object and then print
+the result of the ‘get_total()’ method.</p>
+<p>Finally, if the user called the ‘–save’ argument, you will use a
+function ‘write_conf()’ that you will create in the conf.py file that
+will write the final configuration to a file called
+‘final_conf.ini’.</p>
+</div>
 </div>
 </div>
 <!--
@@ -1054,7 +1080,7 @@ any links that you are not going to use.
   "url": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Dont_touch_your_code_anymore.html",
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Dont_touch_your_code_anymore.html",
   "dateCreated": "2024-06-11",
-  "dateModified": "2024-12-05",
+  "dateModified": "2024-12-09",
   "datePublished": "2024-12-09"
 }
 

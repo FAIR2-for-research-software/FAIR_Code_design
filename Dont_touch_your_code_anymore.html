@@ -962,14 +962,19 @@ for this exercice).</p>
 <p>It all start with a configuration <a href="https://github.com/FAIR2-for-research-software/FAIR_Code_design/blob/main/Conf_cli_codes/final/conffile.ini" class="external-link">file</a>
 that you should download.</p>
 <p>You will create four python files in a directory called ‘final’:</p>
-<ul><li>a <code>main.py</code>: it will contain the main code of the
+<ul><li>
+<code>main.py</code>: it will contain the main code of the
 program</li>
-<li>a <code>cli.py</code>: that will contain the command line
+<li>
+<code>cli.py</code>: that will contain the command line
 interface</li>
-<li>a <code>conf.py</code>: that will handle configuration file</li>
-<li>a <code>simulation.py</code> that will handle the simulation that we
+<li>
+<code>conf.py</code>: that will handle configuration file</li>
+<li>
+<code>simulation.py</code> that will handle the simulation that we
 are going to fake.</li>
-<li>a <code>__init__.py</code> that will stay empty.</li>
+<li>
+<code>__init__.py</code> that will stay empty.</li>
 </ul><p>You will start by creating the command line interface in the cli.py
 file with the following optional arguments:</p>
 <ul><li>
@@ -984,10 +989,9 @@ false otherwise.</li>
 <code>command_line</code>.</p>
 <p>In the <strong>main.py</strong>, you will import the file cli.py and
 call the <code>command_line</code> function. You should get the value of
-all the arguments and we are going to analysing the arguments. If the
-argument <code>--config</code> is empty (=None), you will close the
-program with a message printed in terminal (‘No config file
-passed…exit’).</p>
+all the arguments and we are going to analysing them. If the argument
+<code>--config</code> is empty (=None), you will close the program with
+a message printed in terminal (‘No config file passed…exit’).</p>
 <p>If something is passed to <code>--config</code> the code wil continue
 and you will read the configuration file. This will be done by calling
 the <strong>conf.py</strong> file where you will create a function call

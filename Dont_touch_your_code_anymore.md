@@ -548,4 +548,12 @@ Back to **main.py**, you will create a Simulation object and then print the resu
 
 Finally, if the user called the `--save` argument, you will use a function `write_conf()` that you will create in the **conf.py** file that will write the final configuration to a file called **final_conf.ini.**
 
+
+:::::::::::::::::::::::: solution
+
+
+The solution of the code can be found in the [github repository](https://github.com/FAIR2-for-research-software/FAIR_Code_design/tree/main/final_exercice)
+
+:::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::::::::::::::

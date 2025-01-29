@@ -14,9 +14,15 @@ authors:
     affiliation: University of Sheffield
     orcid: https://orcid.org/0000-0001-8385-3276
 repository-code: https://github.com/Romain-Thomas-Shef/FAIR_Code_design
-url: '' # FIXME
+url: 'https://fair2-for-research-software.github.io/FAIR_Code_design/'
 abstract: >-
-  # FIXME
+  This course on Code Design introduces essential principles and best practices for writing clean, maintainable, and
+  efficient code. It will introduce some standard design patterns that are useful to make your code more generic and
+  maintainable and that will make your life easier as your code base grows. We will begin with the importance of good
+  code design and examine some examples of non-optimally written code, trying to identify where we could make
+  improvements. Focusing on Python language, we will look at how to create functions, classes and see how to organise a
+  source code. We will then learn how we can write clean code, adhering to naming conventions, commenting, and following
+  PEP 8 guidelines.
 keywords:
   - carpentries
   - fair4rs

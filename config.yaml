@@ -1,0 +1,87 @@
+#------------------------------------------------------------
+# Values for this lesson.
+#------------------------------------------------------------
+
+# Which carpentry is this (swc, dc, lc, or cp)?
+# swc: Software Carpentry
+# dc: Data Carpentry
+# lc: Library Carpentry
+# cp: Carpentries (to use for instructor training for instance)
+# incubator: The Carpentries Incubator
+carpentry: 'incubator'
+
+# Overall title for pages.
+title: 'Design you code! (and write less of it)'
+
+# Date the lesson was created (YYYY-MM-DD, this is empty by default)
+created: 2024-06-11
+
+# Comma-separated list of keywords for the lesson
+keywords: 'software, lesson, The Carpentries, FAIR4RS'
+
+# Life cycle stage of the lesson
+# possible values: pre-alpha, alpha, beta, stable
+# (the default, pre-alpha, is the appropriate for brand new lessons)
+life_cycle: 'pre-alpha'
+
+# License of the lesson
+license: 'CC-BY 4.0'
+
+# Link to the source repository for this lesson
+source: 'https://github.com/Romain-Thomas-Shef/FAIR_Code_design'
+
+# Default branch of your lesson
+branch: 'main'
+
+# Who to contact if there are any issues
+contact: 'romain.thomas@sheffield.ac.uk'
+
+# Custom URL if you are deploying to a URL that is not the default
+# github pages domain
+# url:
+
+# Navigation ------------------------------------------------
+#
+# Use the following menu items to specify the order of
+# individual pages in each dropdown section. Leave blank to
+# include all pages in the folder.
+#
+# Example -------------
+#
+# episodes:
+# - introduction.md
+# - first-steps.md
+#
+# learners:
+# - setup.md
+#
+# instructors:
+# - instructor-notes.md
+#
+# profiles:
+# - one-learner.md
+# - another-learner.md
+
+# Order of episodes in your lesson
+episodes: 
+- introduction.md
+- Why_should_you_care.md
+- Code_structure.md
+- Writing_clean_code.md
+- Principles.md
+- Dont_touch_your_code_anymore.md
+
+# Information for Learners
+learners: 
+
+# Information for Instructors
+instructors: 
+
+# Learner Profiles
+profiles: 
+
+# Customisation ---------------------------------------------
+#
+# This space below is where custom yaml items (e.g. pinning
+# sandpaper and varnish versions) should live
+varnish: RSE-Sheffield/uos-varnish@main

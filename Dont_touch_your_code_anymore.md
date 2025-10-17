@@ -310,6 +310,16 @@ with open('new_conf_fruits', 'w') as openconfig:
 :::::::::::::::::::::::::::::::::
 
 
+
+### Real life examples
+
+The configparser library is used in a lot of software. Here are a few examples:
+
+- [Aronnax](https://joss.theoj.org/papers/10.21105/joss.07942) is using configparser [here](https://github.com/edoddridge/aronnax/blob/master/aronnax/driver.py) (function: `default_configuration`)
+- [curvesimulator](https://github.com/lichtgestalter/curvesimulator/tree/master) is using configparser [here](https://github.com/lichtgestalter/curvesimulator/blob/6e9eb922166f373466d04253a0ffe6d2b5379809/src/curvesimulator/cs_parameters.py) and you can find example of [configuration files](https://github.com/lichtgestalter/curvesimulator/tree/6e9eb922166f373466d04253a0ffe6d2b5379809/configurations).
+- [STON](https://github.com/Romain-Thomas-Shef/STON/tree/main) is using configparser [here](https://github.com/Romain-Thomas-Shef/STON/blob/main/ston/utils/conf.py) 
+
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Using command line interfaces
@@ -557,3 +567,11 @@ The solution of the code can be found in the [github repository](https://github.
 :::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Real life examples
+
+Argparse is the go-to library for command line interfaces in Python:
+
+- [REGENS](https://joss.theoj.org/papers/10.21105/joss.02743) is using argparse [here](https://github.com/EpistasisLab/regens/blob/da0a4db5ecdcc54979704d07b5871dfe10f334cb/regens.py#L3)
+- [dfitspy](https://joss.theoj.org/papers/10.21105/joss.01249) is using argparse [here](https://github.com/Romain-Thomas-Shef/dfitspy/blob/ea66967156470f7255523fc8cd587bd2059de34d/dfitspy/cli.py)
+- The [GO-TO]() telescope (Gravitational wave Optical Transient Observer) is using it [here](https://github.com/GOTO-OBS/gtecs-control/blob/master/gtecs/control/_obs_scripts/autoFocus.py)

@@ -236,7 +236,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#functions">Functions</a></li>
@@ -413,11 +413,11 @@ the <code>result</code> variable:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>result <span class="op">=</span> add(<span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a>result <span class="op">=</span> add(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -465,12 +465,12 @@ function from outside the function, you will get an error:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> my_function():</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="cf">return</span> x</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>result <span class="op">=</span> my_function()</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="kw">def</span> my_function():</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a>    x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a>    <span class="cf">return</span> x</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a>result <span class="op">=</span> my_function()</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="bu">print</span>(x)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -494,18 +494,18 @@ code harder to understand and debug.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">def</span> my_function(z):</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y <span class="op">+</span> z</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>result <span class="op">=</span> my_function(<span class="dv">3</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'x:'</span>, x)</span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'y:'</span>, y)</span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Result:'</span>, result)</span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'z:'</span>, z)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>y <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a><span class="kw">def</span> my_function(z):</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>    x <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>    <span class="cf">return</span> x <span class="op">+</span> y <span class="op">+</span> z</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>result <span class="op">=</span> my_function(<span class="dv">3</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="bu">print</span>(<span class="st">'x:'</span>, x)</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a><span class="bu">print</span>(<span class="st">'y:'</span>, y)</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a><span class="bu">print</span>(<span class="st">'Result:'</span>, result)</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="bu">print</span>(<span class="st">'z:'</span>, z)</span></code></pre>
 </div>
 </div>
 </div>
@@ -556,12 +556,12 @@ calculate its area:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>   width <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>   height <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="kw">def</span> get_area(<span class="va">self</span>):</span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width <span class="op">*</span> <span class="va">self</span>.height</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="kw">class</span> Rectangle:</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a>   width <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a>   height <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1" aria-label="code-block-7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1" aria-label="code-block-7-5"></a>    <span class="kw">def</span> get_area(<span class="va">self</span>):</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1" aria-label="code-block-7-6"></a>        <span class="cf">return</span> <span class="va">self</span>.width <span class="op">*</span> <span class="va">self</span>.height</span></code></pre>
 </div>
 <div id="the-self-parameter" class="callout">
 <div class="callout-square">
@@ -587,9 +587,9 @@ methods using the <code>.</code> operator:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>my_rectangle <span class="op">=</span> Rectangle()</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This rectangle has a width of'</span>, my_rectangle.width, <span class="st">'and a height of'</span>, my_rectangle.height)</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Its area is'</span>, my_rectangle.get_area())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a>my_rectangle <span class="op">=</span> Rectangle()</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1" aria-label="code-block-8-2"></a><span class="bu">print</span>(<span class="st">'This rectangle has a width of'</span>, my_rectangle.width, <span class="st">'and a height of'</span>, my_rectangle.height)</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a><span class="bu">print</span>(<span class="st">'Its area is'</span>, my_rectangle.get_area())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -609,17 +609,17 @@ class that is being created):</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, width, height):</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>    <span class="kw">def</span> get_area(<span class="va">self</span>):</span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width <span class="op">*</span> <span class="va">self</span>.height</span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>my_rectangle <span class="op">=</span> Rectangle(<span class="dv">10</span>, <span class="dv">20</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This rectangle has a width of'</span>, my_rectangle.width, <span class="st">'and a height of'</span>, my_rectangle.height)</span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Its area is'</span>, my_rectangle.get_area())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="kw">class</span> Rectangle:</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1" aria-label="code-block-10-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, width, height):</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1" aria-label="code-block-10-3"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1" aria-label="code-block-10-4"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1" aria-label="code-block-10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1" aria-label="code-block-10-6"></a>    <span class="kw">def</span> get_area(<span class="va">self</span>):</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1" aria-label="code-block-10-7"></a>        <span class="cf">return</span> <span class="va">self</span>.width <span class="op">*</span> <span class="va">self</span>.height</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1" aria-label="code-block-10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1" aria-label="code-block-10-9"></a>my_rectangle <span class="op">=</span> Rectangle(<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1" aria-label="code-block-10-10"></a><span class="bu">print</span>(<span class="st">'This rectangle has a width of'</span>, my_rectangle.width, <span class="st">'and a height of'</span>, my_rectangle.height)</span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1" aria-label="code-block-10-11"></a><span class="bu">print</span>(<span class="st">'Its area is'</span>, my_rectangle.get_area())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -661,9 +661,9 @@ stock.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'orange'</span>]</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>fruit_prices <span class="op">=</span> [<span class="fl">1.00</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>]</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>fruit_count <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">15</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a>fruits <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'orange'</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1" aria-label="code-block-12-2"></a>fruit_prices <span class="op">=</span> [<span class="fl">1.00</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1" aria-label="code-block-12-3"></a>fruit_count <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">15</span>]</span></code></pre>
 </div>
 <p>Create a class called <code>Stock</code> that has properties called
 <code>name</code>, <code>price</code>, <code>count</code>, and two
@@ -685,26 +685,26 @@ value of the stock.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">class</span> Stock:</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, price, count):</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>        <span class="va">self</span>.price <span class="op">=</span> price</span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>        <span class="va">self</span>.count <span class="op">=</span> count</span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>    <span class="kw">def</span> display(<span class="va">self</span>):</span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'Each </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> costs £</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>price<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>    <span class="kw">def</span> get_total_value(<span class="va">self</span>):</span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.price <span class="op">*</span> <span class="va">self</span>.count</span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a>fruits <span class="op">=</span> [</span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>    Stock(<span class="st">'apple'</span>, <span class="fl">1.00</span>, <span class="dv">10</span>),</span>
-<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a>    Stock(<span class="st">'banana'</span>, <span class="fl">0.50</span>, <span class="dv">20</span>),</span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a>    Stock(<span class="st">'orange'</span>, <span class="fl">0.75</span>, <span class="dv">15</span>)</span>
-<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a>]</span>
-<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
-<span id="cb13-20"><a href="#cb13-20" tabindex="-1"></a>    fruit.display()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="kw">class</span> Stock:</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1" aria-label="code-block-13-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, price, count):</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1" aria-label="code-block-13-3"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1" aria-label="code-block-13-4"></a>        <span class="va">self</span>.price <span class="op">=</span> price</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1" aria-label="code-block-13-5"></a>        <span class="va">self</span>.count <span class="op">=</span> count</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1" aria-label="code-block-13-6"></a></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1" aria-label="code-block-13-7"></a>    <span class="kw">def</span> display(<span class="va">self</span>):</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1" aria-label="code-block-13-8"></a>        <span class="bu">print</span>(<span class="ss">f'Each </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> costs £</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>price<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1" aria-label="code-block-13-9"></a></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1" aria-label="code-block-13-10"></a>    <span class="kw">def</span> get_total_value(<span class="va">self</span>):</span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1" aria-label="code-block-13-11"></a>        <span class="cf">return</span> <span class="va">self</span>.price <span class="op">*</span> <span class="va">self</span>.count</span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1" aria-label="code-block-13-12"></a></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1" aria-label="code-block-13-13"></a></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1" aria-label="code-block-13-14"></a>fruits <span class="op">=</span> [</span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1" aria-label="code-block-13-15"></a>    Stock(<span class="st">'apple'</span>, <span class="fl">1.00</span>, <span class="dv">10</span>),</span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1" aria-label="code-block-13-16"></a>    Stock(<span class="st">'banana'</span>, <span class="fl">0.50</span>, <span class="dv">20</span>),</span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1" aria-label="code-block-13-17"></a>    Stock(<span class="st">'orange'</span>, <span class="fl">0.75</span>, <span class="dv">15</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" tabindex="-1" aria-label="code-block-13-18"></a>]</span>
+<span id="cb13-19"><a href="#cb13-19" tabindex="-1" aria-label="code-block-13-19"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
+<span id="cb13-20"><a href="#cb13-20" tabindex="-1" aria-label="code-block-13-20"></a>    fruit.display()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -749,23 +749,23 @@ methods.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">class</span> Shop:</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, stock):</span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>        <span class="va">self</span>.stock <span class="op">=</span> stock</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>    <span class="kw">def</span> display_stock(<span class="va">self</span>):</span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> <span class="va">self</span>.stock:</span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>            item.display()</span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>    <span class="kw">def</span> get_total_stock_value(<span class="va">self</span>):</span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>        total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> <span class="va">self</span>.stock:</span>
-<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a>            total <span class="op">+=</span> item.get_total_value()</span>
-<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a>        <span class="cf">return</span> total</span>
-<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a>shop <span class="op">=</span> Shop(fruits)</span>
-<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a>shop.display_stock()</span>
-<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Total stock value:'</span>, shop.get_total_stock_value())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="kw">class</span> Shop:</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1" aria-label="code-block-15-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, stock):</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1" aria-label="code-block-15-3"></a>        <span class="va">self</span>.stock <span class="op">=</span> stock</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1" aria-label="code-block-15-4"></a></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1" aria-label="code-block-15-5"></a>    <span class="kw">def</span> display_stock(<span class="va">self</span>):</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1" aria-label="code-block-15-6"></a>        <span class="cf">for</span> item <span class="kw">in</span> <span class="va">self</span>.stock:</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1" aria-label="code-block-15-7"></a>            item.display()</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1" aria-label="code-block-15-8"></a></span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1" aria-label="code-block-15-9"></a>    <span class="kw">def</span> get_total_stock_value(<span class="va">self</span>):</span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1" aria-label="code-block-15-10"></a>        total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1" aria-label="code-block-15-11"></a>        <span class="cf">for</span> item <span class="kw">in</span> <span class="va">self</span>.stock:</span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1" aria-label="code-block-15-12"></a>            total <span class="op">+=</span> item.get_total_value()</span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1" aria-label="code-block-15-13"></a>        <span class="cf">return</span> total</span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1" aria-label="code-block-15-14"></a></span>
+<span id="cb15-15"><a href="#cb15-15" tabindex="-1" aria-label="code-block-15-15"></a>shop <span class="op">=</span> Shop(fruits)</span>
+<span id="cb15-16"><a href="#cb15-16" tabindex="-1" aria-label="code-block-15-16"></a>shop.display_stock()</span>
+<span id="cb15-17"><a href="#cb15-17" tabindex="-1" aria-label="code-block-15-17"></a><span class="bu">print</span>(<span class="st">'Total stock value:'</span>, shop.get_total_stock_value())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -808,7 +808,7 @@ this:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">python</span> my_script.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a><span class="ex">python</span> my_script.py</span></code></pre>
 </div>
 <p>When you’re writing a large program, it’s a good idea to split your
 code into multiple files to make it easier to manage, and to make it
@@ -823,19 +823,19 @@ multiplication, and division.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co">"""calculator.py"""</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="kw">def</span> subtract(a, b):</span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">-</span> b</span>
-<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a><span class="kw">def</span> multiply(a, b):</span>
-<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span>
-<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a></span>
-<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
-<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="co">"""calculator.py"""</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1" aria-label="code-block-18-3"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1" aria-label="code-block-18-4"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1" aria-label="code-block-18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1" aria-label="code-block-18-6"></a><span class="kw">def</span> subtract(a, b):</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1" aria-label="code-block-18-7"></a>    <span class="cf">return</span> a <span class="op">-</span> b</span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1" aria-label="code-block-18-8"></a></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1" aria-label="code-block-18-9"></a><span class="kw">def</span> multiply(a, b):</span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1" aria-label="code-block-18-10"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1" aria-label="code-block-18-11"></a></span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1" aria-label="code-block-18-12"></a><span class="kw">def</span> divide(a, b):</span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1" aria-label="code-block-18-13"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code></pre>
 </div>
 <p>Now, in another script or module, you can import the
 <code>calculator</code> module and use its functions by using the
@@ -843,11 +843,11 @@ multiplication, and division.</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co">"""script.py"""</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="im">import</span> calculator</span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>result <span class="op">=</span> calculator.add(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1" aria-label="code-block-19-1"></a><span class="co">"""script.py"""</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1" aria-label="code-block-19-2"></a><span class="im">import</span> calculator</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1" aria-label="code-block-19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1" aria-label="code-block-19-4"></a>result <span class="op">=</span> calculator.add(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1" aria-label="code-block-19-5"></a><span class="bu">print</span>(result)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -861,9 +861,9 @@ more readable:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="im">from</span> calculator <span class="im">import</span> add</span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>result <span class="op">=</span> add(<span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1" aria-label="code-block-21-1"></a><span class="im">from</span> calculator <span class="im">import</span> add</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1" aria-label="code-block-21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1" aria-label="code-block-21-3"></a>result <span class="op">=</span> add(<span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre>
 </div>
 <p>Python comes with a lot of built-in modules that you can import and
 use in your code, collectively known as the <strong>Standard
@@ -886,19 +886,19 @@ code that only runs when the module is run as a script:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co">"""calculator.py"""</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>    result <span class="op">=</span> add(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Test result:'</span>, result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1" aria-label="code-block-22-1"></a><span class="co">"""calculator.py"""</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1" aria-label="code-block-22-2"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1" aria-label="code-block-22-3"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1" aria-label="code-block-22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1" aria-label="code-block-22-5"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1" aria-label="code-block-22-6"></a>    result <span class="op">=</span> add(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1" aria-label="code-block-22-7"></a>    <span class="bu">print</span>(<span class="st">'Test result:'</span>, result)</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> python calculator.py</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ex">Test</span> result: 8</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1" aria-label="code-block-23-1"></a><span class="ex">$</span> python calculator.py</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1" aria-label="code-block-23-2"></a><span class="ex">Test</span> result: 8</span></code></pre>
 </div>
 <p>If you didn’t include the <code>if __name__ == '__main__':</code>
 check, then every time you tried to import the <code>add()</code>
@@ -931,18 +931,18 @@ by using the <code>from</code> keyword:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="im">import</span> my_package.calculator</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>my_package.calculator.add(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>OR</span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="im">from</span> my_package <span class="im">import</span> calculator</span>
-<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>calculator.add(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a></span>
-<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a>OR</span>
-<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a></span>
-<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a><span class="im">from</span> my_package.calculator <span class="im">import</span> add</span>
-<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a>add(<span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1" aria-label="code-block-25-1"></a><span class="im">import</span> my_package.calculator</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1" aria-label="code-block-25-2"></a>my_package.calculator.add(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1" aria-label="code-block-25-3"></a></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1" aria-label="code-block-25-4"></a>OR</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1" aria-label="code-block-25-5"></a></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1" aria-label="code-block-25-6"></a><span class="im">from</span> my_package <span class="im">import</span> calculator</span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1" aria-label="code-block-25-7"></a>calculator.add(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1" aria-label="code-block-25-8"></a></span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1" aria-label="code-block-25-9"></a>OR</span>
+<span id="cb25-10"><a href="#cb25-10" tabindex="-1" aria-label="code-block-25-10"></a></span>
+<span id="cb25-11"><a href="#cb25-11" tabindex="-1" aria-label="code-block-25-11"></a><span class="im">from</span> my_package.calculator <span class="im">import</span> add</span>
+<span id="cb25-12"><a href="#cb25-12" tabindex="-1" aria-label="code-block-25-12"></a>add(<span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre>
 </div>
 <p>If your package grows large enough, you can also create sub-packages
 within your package by creating subdirectories with their own
@@ -1038,11 +1038,11 @@ modules like this:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="im">from</span> research_project.data <span class="im">import</span> load_data</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="im">from</span> research_project.plot <span class="im">import</span> plot_data</span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>data <span class="op">=</span> load_data(<span class="st">'data.csv'</span>)</span>
-<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>plot_data(cleaned_data)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1" aria-label="code-block-27-1"></a><span class="im">from</span> research_project.data <span class="im">import</span> load_data</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1" aria-label="code-block-27-2"></a><span class="im">from</span> research_project.plot <span class="im">import</span> plot_data</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1" aria-label="code-block-27-3"></a></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1" aria-label="code-block-27-4"></a>data <span class="op">=</span> load_data(<span class="st">'data.csv'</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1" aria-label="code-block-27-5"></a>plot_data(cleaned_data)</span></code></pre>
 </div>
 <p>Although it seems like a lot of files for a small amount of code,
 this structure makes it easier to manage and maintain the project over
@@ -1157,7 +1157,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.0" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/RSE-Sheffield/uos-varnish/tree/main" class="external-link">varnish (1.0.7)</a> [UoS fork]</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.1" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/RSE-Sheffield/uos-varnish/tree/main" class="external-link">varnish (1.0.7)</a> [UoS fork]</p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1180,7 +1180,7 @@ any links that you are not going to use.
   "identifier": "https://Romain-Thomas-Shef.github.io/FAIR_Code_design/instructor/Code_structure.html",
   "dateCreated": "2024-06-11",
   "dateModified": "2024-12-09",
-  "datePublished": "2026-04-14"
+  "datePublished": "2026-04-21"
 }
 
   </script><script>
